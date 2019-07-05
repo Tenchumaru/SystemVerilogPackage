@@ -1,11 +1,4 @@
-#define WIN32_LEAN_AND_MEAN
-
-#include <Windows.h>
-#include <cstdio>
-#include <set>
-#include <string>
-#include "exports.h"
-#include "keywords.h"
+#include "stdafx.h"
 
 bool alert(char const* s) {
 	return ::MessageBoxA(::GetForegroundWindow(), s, NULL, MB_ICONERROR | MB_OKCANCEL) == IDOK;

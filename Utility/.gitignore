@@ -1,2 +1,6 @@
 # output files
+parser.h
+parser.inl
 parser.output
+scanner.h
+scanner.inl

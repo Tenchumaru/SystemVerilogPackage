@@ -18,37 +18,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="scanner_u.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="extract_keywords.js" />
-    <None Include="make_lex_rules.js" />
-    <None Include="Makefile" />
-    <None Include="parser_e.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="parser_p.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="scanner_d.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="scanner.l">
+    <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
-    </None>
-    <None Include="parser.y">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    </ClCompile>
     <ClCompile Include="exports.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="parser.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="scanner.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,11 +44,43 @@
     <ClInclude Include="keywords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="parser.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="scanner.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="extract_keywords.js" />
+    <None Include="make_lex_rules.js" />
+    <None Include="parser_e.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="parser_p.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="scanner_d.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="scanner_u.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="parser.inl">
+      <Filter>Generated Files</Filter>
+    </None>
+    <None Include="scanner.inl">
+      <Filter>Generated Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="parser.y" />
+    <CustomBuild Include="scanner.l" />
   </ItemGroup>
 </Project>
