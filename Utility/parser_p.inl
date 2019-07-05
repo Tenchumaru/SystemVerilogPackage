@@ -12,13 +12,6 @@ static bool const is_parsing= true;
 #define P(nl,nr) (nl)->promote((nr), false)
 #define I(nl,nr) (nl)->promote((nr), true)
 
-#define OutputDebugString _OutputDebugString
-#ifdef _DEBUG
-#	define DebugBreak _DebugBreak
-#else
-#	define DebugBreak() ((void)0)
-#endif
-
 static void yyerror(struct YYLTYPE* yylloc, parse_results& results, yyscan_t scanner, char const* message);
 YY_DECL;
 

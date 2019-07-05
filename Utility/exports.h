@@ -2,6 +2,8 @@
 
 #include <vector>
 
+typedef void* yyscan_t;
+
 #define YY_DECL int yylex(union YYSTYPE* yylval_param, struct YYLTYPE* yylloc_param, bool is_parsing, yyscan_t yyscanner)
 
 enum whitespace_behavior { zero, one, start_of_line, newline, can_start_line, };
@@ -36,11 +38,6 @@ enum TokenType
 	LineComment = 9,
 	Comment = 10,
 };
-
-void _OutputDebugString(char const* s);
-#ifdef _DEBUG
-void _DebugBreak();
-#endif
 
 int zz_scan_string(char const* s, bool is_in_comment, int& i);
 void zz_parse(char const* s, parse_results& results);

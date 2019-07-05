@@ -66,7 +66,7 @@ output          { return DBOUT(OUTPUT, Identifier); }
 return          { return DBOUT(RETURN, Identifier); }
 begin           { return DBOUT(BEGIN_, Identifier); }
 inout           { return DBOUT(INOUT, Identifier); }
-input           { return DBOUT(INPUT, Identifier); }
+input           { return DBOUT(INPUT_, Identifier); }
 logic           { return DBOUT(LOGIC, Identifier); }
 case            { return DBOUT(CASE, Identifier); }
 else            { return DBOUT(ELSE, Identifier); }

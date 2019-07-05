@@ -20,10 +20,7 @@
 // Select the token based on whether I'm also parsing or only scanning.
 #define SELECT(v1,v2) (is_parsing ? (v1) : (v2))
 
-#define OutputDebugString _OutputDebugString
 #ifdef _DEBUG
-#	define DebugBreak _DebugBreak
-
 static char const* token_names[]= {
   "$end", "error", "$undefined", "PARAMETER", "TYPEDEF", "ENUM", "INPUT",
   "INOUT", "OUTPUT", "INTEGER", "RETURN", "UNSIGNED", "LOGIC", "TRI",
@@ -40,38 +37,37 @@ static char const* token_names[]= {
 
 static int _DBOUT(struct YYLTYPE* yylloc, char const* s, int v) {
 	char buf[99];
-	OutputDebugString("token '");
-	OutputDebugString(s);
-	OutputDebugString("' (");
+	OutputDebugStringA("token '");
+	OutputDebugStringA(s);
+	OutputDebugStringA("' (");
 	sprintf_s(buf, "%d,%d,%d,%d", yylloc->first_line, yylloc->first_column, yylloc->last_line, yylloc->last_column);
-	OutputDebugString(buf);
-	OutputDebugString(") (");
+	OutputDebugStringA(buf);
+	OutputDebugStringA(") (");
 	if(v >= 258) {
-		OutputDebugString(token_names[v - 255]);
+		OutputDebugStringA(token_names[v - 255]);
 	} else if(v == '\'') {
-		OutputDebugString("'\\''");
+		OutputDebugStringA("'\\''");
 	} else {
 		buf[0]= '\'';
 		buf[1]= (char)v;
 		buf[2]= '\'';
 		buf[3]= '\0';
-		OutputDebugString(buf);
+		OutputDebugStringA(buf);
 	}
 	sprintf_s(buf, "): %d\n", v);
-	OutputDebugString(buf);
+	OutputDebugStringA(buf);
 	return v;
 }
 
 static void _ECHO(char const* s) {
-	OutputDebugString("unexpected text '");
-	OutputDebugString(s);
-	OutputDebugString("'\n");
+	OutputDebugStringA("unexpected text '");
+	OutputDebugStringA(s);
+	OutputDebugStringA("'\n");
 }
 
 #	define DBOUT(v1,v2) _DBOUT(yylloc, yytext, SELECT(v1, v2))
 #	define ECHO _ECHO(yytext)
 #else
-#	define DebugBreak() ((void)0)
 #	define DBOUT SELECT
 #	define ECHO ((void)0)
 #endif

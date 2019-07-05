@@ -71,12 +71,12 @@ extern "C" __declspec(dllexport) int GetTokenType(char const* s, bool isInCommen
 static void dump(parse_results const& results) {
 	static char const* wsb_text[]= { "zero", "one", "start_of_line", "newline", "can_start_line" };
 	char buf[99];
-	sprintf_s(buf, "results @ 0x%p (%d)\n", results, results.terminals.size());
-	OutputDebugString(buf);
+	sprintf_s(buf, "results @ 0x%p (%d)\n", &results, results.terminals.size());
+	OutputDebugStringA(buf);
 	if(!results.terminals.empty()) {
 		for(std::vector<parse_result>::const_iterator i= results.terminals.begin(); i != results.terminals.end(); ++i) {
 			sprintf_s(buf, "\t%d, %d, %d, %s, %s\n", i->indent_level, i->line, i->column, wsb_text[i->before], wsb_text[i->after]);
-			OutputDebugString(buf);
+			OutputDebugStringA(buf);
 		}
 	}
 }
@@ -99,13 +99,3 @@ extern "C" __declspec(dllexport) void GetParseResults(std::vector<parse_result>*
 		count= parse->size();
 	std::copy_n(parse->begin(), count, results);
 }
-
-void _OutputDebugString(char const* s) {
-	OutputDebugString(s);
-}
-
-#ifdef _DEBUG
-void _DebugBreak() {
-	DebugBreak();
-}
-#endif
