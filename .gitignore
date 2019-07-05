@@ -1,0 +1,16 @@
+# temporary files
+*.sw[op]
+*~
+tmp/
+tesst*
+
+# Visual Studio files
+*.user
+.vs/
+
+# output files
+Debug/
+Release/
+bin/
+obj/
+x64/

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7DC5FED-DC8E-4706-817C-510B125A71F4}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>nmake -nologo Configuration=$(Configuration) "WindowsSdkDir=$(WindowsSdkDir)"</NMakeBuildCommandLine>
+    <NMakeOutput>..\SystemVerilogPackage\bin\$(Configuration)\Utility.dll</NMakeOutput>
+    <NMakeCleanCommandLine>nmake -nologo Configuration=$(Configuration) clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>nmake -nologo Configuration=$(Configuration) "WindowsSdkDir=$(WindowsSdkDir)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>nmake -nologo Configuration=$(Configuration) "WindowsSdkDir=$(WindowsSdkDir)"</NMakeBuildCommandLine>
+    <NMakeOutput>..\SystemVerilogPackage\bin\$(Configuration)\Utility.dll</NMakeOutput>
+    <NMakeCleanCommandLine>nmake -nologo Configuration=$(Configuration) clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>nmake -nologo Configuration=$(Configuration) "WindowsSdkDir=$(WindowsSdkDir)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="extract_keywords.js" />
+    <None Include="Makefile" />
+    <None Include="make_lex_rules.js" />
+    <None Include="parser.y" />
+    <None Include="parser_e.inl" />
+    <None Include="parser_p.inl" />
+    <None Include="scanner.l" />
+    <None Include="scanner_d.inl" />
+    <None Include="scanner_u.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="exports.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="scanner.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="exports.h" />
+    <ClInclude Include="keywords.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="scanner.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
