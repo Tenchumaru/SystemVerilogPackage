@@ -7,6 +7,7 @@ tesst*
 # Visual Studio files
 *.user
 .vs/
+packages/
 
 # output files
 Debug/
