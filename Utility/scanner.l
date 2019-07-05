@@ -25,8 +25,8 @@ zoo     {num}?'[01]
 
 %%
 		// This is executed upon entering yylex.
-		yylloc_param->first_line= yylloc_param->last_line;
-		yylloc_param->first_column= yylloc_param->last_column;
+		yylloc_param->first_line = yylloc_param->last_line;
+		yylloc_param->first_column = yylloc_param->last_column;
 
 {ws}            { if(is_parsing) SKIP(); else return DBOUT(0, WhiteSpace); }
 \n              { if(is_parsing) NL(); else DebugBreak(); }

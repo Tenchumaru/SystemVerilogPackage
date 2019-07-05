@@ -3,12 +3,9 @@ using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Package;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.Win32;
 
 namespace Adrezdi.SystemVerilogPackage
 {
@@ -33,7 +30,7 @@ namespace Adrezdi.SystemVerilogPackage
     [ProvideLanguageService(typeof(SystemVerilogLanguageService),
         "SystemVerilog",
         106,             // resource ID of localized language name
-        //CodeSense = true,             // Supports IntelliSense
+                         //CodeSense = true,             // Supports IntelliSense
         CodeSense = false,
         //RequestStockColors = false,   // Supplies custom colors
         RequestStockColors = true,

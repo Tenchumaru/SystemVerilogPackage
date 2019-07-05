@@ -21,7 +21,7 @@
 #define SELECT(v1,v2) (is_parsing ? (v1) : (v2))
 
 #ifdef _DEBUG
-static char const* token_names[]= {
+static char const* token_names[] = {
   "$end", "error", "$undefined", "PARAMETER", "TYPEDEF", "ENUM", "INPUT",
   "INOUT", "OUTPUT", "INTEGER", "RETURN", "UNSIGNED", "LOGIC", "TRI",
   "WIRE", "REG", "FUNCTION", "ENDFUNCTION", "INTERFACE", "ENDINTERFACE",
@@ -48,10 +48,10 @@ static int _DBOUT(struct YYLTYPE* yylloc, char const* s, int v) {
 	} else if(v == '\'') {
 		OutputDebugStringA("'\\''");
 	} else {
-		buf[0]= '\'';
-		buf[1]= (char)v;
-		buf[2]= '\'';
-		buf[3]= '\0';
+		buf[0] = '\'';
+		buf[1] = (char)v;
+		buf[2] = '\'';
+		buf[3] = '\0';
 		OutputDebugStringA(buf);
 	}
 	sprintf_s(buf, "): %d\n", v);

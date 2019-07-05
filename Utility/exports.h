@@ -24,8 +24,7 @@ struct parse_results {
 	~parse_results();
 };
 
-enum TokenType
-{
+enum TokenType {
 	Unknown = 0,
 	Text = 1,
 	Keyword = 2,

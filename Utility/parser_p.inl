@@ -5,7 +5,7 @@
 typedef union YYSTYPE YYSTYPE;
 #include "scanner.h"
 
-static bool const is_parsing= true;
+static bool const is_parsing = true;
 
 #define C(n) n= results.create()
 #define T(n,l,b,e) ((n)->add((l).first_line, (l).first_column, (b), (e)))

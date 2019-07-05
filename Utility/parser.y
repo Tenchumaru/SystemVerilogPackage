@@ -6,7 +6,7 @@
 
 %initial-action {
 	// I want the locations to use zero-based indexing.
-	yylloc= YYLTYPE();
+	yylloc = YYLTYPE();
 }
 
 %{
@@ -97,7 +97,7 @@ ENUM type1 '{' enum_values '}' { C($$); T($$, @1, start_of_line, one); P($$, $2)
 
 type1:
 base_type
-| base_type brackets { $$= $1; P($$, $2); }
+| base_type brackets { $$ = $1; P($$, $2); }
 | INTEGER { C($$); T($$, @1, start_of_line, zero); }
 | INTEGER UNSIGNED { C($$); T($$, @1, start_of_line, one); T($$, @2, one, zero); }
 | ID { C($$); T($$, @1, start_of_line, zero); }
@@ -111,7 +111,7 @@ LOGIC { C($$); T($$, @1, start_of_line, zero); }
 ;
 
 enum_values:
-enum_value more_enum_values { $$= $1; P($$, $2); }
+enum_value more_enum_values { $$ = $1; P($$, $2); }
 ;
 
 enum_value:
@@ -121,49 +121,49 @@ ID { C($$); T($$, @1, zero, one); }
 
 more_enum_values:
 %empty { C($$); }
-| more_enum_values ',' enum_value { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_enum_values ',' enum_value { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 expr:
 VALUE { C($$); T($$, @1, zero, one); }
 | STRING { C($$); T($$, @1, zero, one); }
 | id
-| id args { $$= $1; P($$, $2); }
-| id brackets { $$= $1; P($$, $2); }
-| expr AND expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr OR expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr EQ expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr NEQ expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr GE expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr LE expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '<' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '>' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr ASL expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr LSL expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr ASR expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr LSR expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '+' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '-' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '&' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '|' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '^' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '*' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '/' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr '%' expr { $$= $1; T($$, @2, one, one); P($$, $3); }
-| expr POWER expr { $$= $1; T($$, @2, one, one); P($$, $3); }
+| id args { $$ = $1; P($$, $2); }
+| id brackets { $$ = $1; P($$, $2); }
+| expr AND expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr OR expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr EQ expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr NEQ expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr GE expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr LE expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '<' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '>' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr ASL expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr LSL expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr ASR expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr LSR expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '+' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '-' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '&' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '|' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '^' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '*' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '/' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr '%' expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
+| expr POWER expr { $$ = $1; T($$, @2, one, one); P($$, $3); }
 | '&' expr %prec NEG { C($$); T($$, @1, zero, zero); P($$, $2); }
 | '|' expr %prec NEG { C($$); T($$, @1, zero, zero); P($$, $2); }
 | '^' expr %prec NEG { C($$); T($$, @1, zero, zero); P($$, $2); }
 | '-' expr %prec NEG { C($$); T($$, @1, zero, zero); P($$, $2); }
 | INC expr { C($$); T($$, @1, zero, zero); P($$, $2); }
 | DEC expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| expr INC { $$= $1; T($$, @2, zero, zero); }
-| expr DEC { $$= $1; T($$, @2, zero, zero); }
+| expr INC { $$ = $1; T($$, @2, zero, zero); }
+| expr DEC { $$ = $1; T($$, @2, zero, zero); }
 | '(' expr ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, one); }
 | '!' expr { C($$); T($$, @1, zero, zero); P($$, $2); }
 | '~' expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| expr '?' expr ':' expr { $$= $1; T($$, @2, one, one); P($$, $3); T($$, @4, one, one); P($$, $5); }
-| expr '{' expr '}' { $$= $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| expr '?' expr ':' expr { $$ = $1; T($$, @2, one, one); P($$, $3); T($$, @4, one, one); P($$, $5); }
+| expr '{' expr '}' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 | compound_expr
 ;
 
@@ -179,32 +179,32 @@ more_exprs:
 
 params:
 %empty { C($$); }
-| param more_params { $$= $1; P($$, $2); }
+| param more_params { $$ = $1; P($$, $2); }
 ;
 
 more_params:
 %empty { C($$); }
-| more_params ',' param { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_params ',' param { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 param:
-inout type ID { $$= $1; P($$, $2); T($$, @1, one, zero); }
-| inout ID { $$= $1; T($$, @2, one, zero); }
-| type ID { $$= $1; T($$, @2, one, zero); }
+inout type ID { $$ = $1; P($$, $2); T($$, @1, one, zero); }
+| inout ID { $$ = $1; T($$, @2, one, zero); }
+| type ID { $$ = $1; T($$, @2, one, zero); }
 | ID '.' ID ID { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, one); T($$, @3, one, zero); }
 | ID { C($$); T($$, @1, zero, zero); }
 ;
 
 interface_body:
 %empty { C($$); }
-| interface_body interface_statement { $$= $1; P($$, $2); }
+| interface_body interface_statement { $$ = $1; P($$, $2); }
 ;
 
 module_body:
 %empty { C($$); }
-| module_body statement { $$= $1; P($$, $2); }
-| module_body always statement { $$= $1; P($$, $2); I($$, $3); }
-| module_body generate { $$= $1; P($$, $2); }
+| module_body statement { $$ = $1; P($$, $2); }
+| module_body always statement { $$ = $1; P($$, $2); I($$, $3); }
+| module_body generate { $$ = $1; P($$, $2); }
 ;
 
 generate:
@@ -217,16 +217,16 @@ declaration
 ;
 
 modport_params:
-modport_param1 more_modport_params { $$= $1; P($$, $2); }
+modport_param1 more_modport_params { $$ = $1; P($$, $2); }
 ;
 
 modport_param1:
-inout ID { $$= $1; T($$, @2, one, zero); }
+inout ID { $$ = $1; T($$, @2, one, zero); }
 ;
 
 more_modport_params:
 %empty { C($$); }
-| more_modport_params ',' modport_param { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_modport_params ',' modport_param { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 modport_param:
@@ -241,7 +241,7 @@ ID { C($$); T($$, @1, zero, zero); }
 
 body:
 %empty { C($$); }
-| statement body { $$= $1; P($$, $2); }
+| statement body { $$ = $1; P($$, $2); }
 ;
 
 statement:
@@ -249,25 +249,25 @@ parameter
 | typedef
 | declaration
 | ID args ';' { C($$); T($$, @1, start_of_line, one); P($$, $2); T($$, @3, zero, newline); }
-| begin body end { $$= $1; I($$, $2); P($$, $3); $$->dedent(); }
+| begin body end { $$ = $1; I($$, $2); P($$, $3); $$->dedent(); }
 | '#' VALUE ';' { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, zero); T($$, @3, zero, newline); }
 | ASSIGN reference '=' expr ';' { C($$); T($$, @1, start_of_line, one); P($$, $2); T($$, @3, zero, one); P($$, $4); T($$, @5, zero, newline); }
 | IF '(' expr ')' statement %prec THEN { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, newline); I($$, $5); }
 | IF '(' expr ')' statement ELSE statement { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, newline); I($$, $5); T($$, @6, start_of_line, newline); I($$, $7); }
 | CASE '(' expr ')' case_body ENDCASE epilog { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, newline); I($$, $5); T($$, @6, start_of_line, $7->any() ? one : newline); P($$, $7); }
 | FOR '(' ID '=' expr ';' expr ';' expr ')' statement { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, one); P($$, $5); T($$, @6, zero, one); P($$, $7); T($$, @8, zero, one); P($$, $9); T($$, @10, zero, newline); I($$, $11); }
-| reference '=' expr ';' { $$= $1; $1->terminals[0].before= start_of_line; --$1->terminals[0].indent_level; T($$, @2, zero, one); P($$, $3); T($$, @4, zero, newline); }
-| reference LE expr ';' { $$= $1; $1->terminals[0].before= start_of_line; --$1->terminals[0].indent_level; T($$, @2, zero, one); P($$, $3); T($$, @4, zero, newline); }
+| reference '=' expr ';' { $$ = $1; $1->terminals[0].before = start_of_line; --$1->terminals[0].indent_level; T($$, @2, zero, one); P($$, $3); T($$, @4, zero, newline); }
+| reference LE expr ';' { $$ = $1; $1->terminals[0].before = start_of_line; --$1->terminals[0].indent_level; T($$, @2, zero, one); P($$, $3); T($$, @4, zero, newline); }
 | RETURN expr ';' { C($$); T($$, @1, start_of_line, one); P($$, $2); T($$, @3, zero, newline); }
 ;
 
 declaration:
-type instance more_instances ';' { $$= $1; P($$, $2); P($$, $3); T($$, @4, zero, newline); }
+type instance more_instances ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, newline); }
 | GENVAR ids ';' { C($$); T($$, @1, start_of_line, one); P($$, $2); T($$, @3, zero, newline); }
 ;
 
 brackets:
-bracket more_brackets { $$= $1; P($$, $2); }
+bracket more_brackets { $$ = $1; P($$, $2); }
 ;
 
 bracket:
@@ -277,7 +277,7 @@ bracket:
 
 more_brackets:
 %empty { C($$); }
-| more_brackets bracket { $$= $1; P($$, $2); }
+| more_brackets bracket { $$ = $1; P($$, $2); }
 ;
 
 instance:
@@ -289,7 +289,7 @@ instance:
 
 more_instances:
 %empty { C($$); }
-| more_instances ',' instance { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_instances ',' instance { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 ids:
@@ -298,7 +298,7 @@ ID more_ids { C($$); T($$, @1, zero, one); P($$, $2); }
 
 more_ids:
 %empty { C($$); }
-| more_ids ',' ID { $$= $1; T($$, @2, zero, one); T($$, @1, zero, zero); }
+| more_ids ',' ID { $$ = $1; T($$, @2, zero, one); T($$, @1, zero, zero); }
 ;
 
 args:
@@ -307,19 +307,19 @@ args:
 ;
 
 arg:
-expr { $$= $1; }
+expr { $$ = $1; }
 | '.' ID { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 | '.' ID '(' expr ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 more_args:
 %empty { C($$); }
-| more_args ',' arg { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_args ',' arg { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 case_body:
 %empty { C($$); }
-| case_body case_tag statement { $$= $1; P($$, $2); I($$, $3); }
+| case_body case_tag statement { $$ = $1; P($$, $2); I($$, $3); }
 ;
 
 case_tag:
@@ -336,7 +336,7 @@ instance
 
 more_references:
 %empty { C($$); }
-| more_references ',' reference { $$= $1; T($$, @2, zero, one); P($$, $3); }
+| more_references ',' reference { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 always:
@@ -349,7 +349,7 @@ ALWAYS { C($$); T($$, @1, start_of_line, one); }
 ;
 
 edges:
-edge more_edges { $$= $1; P($$, $2); }
+edge more_edges { $$ = $1; P($$, $2); }
 ;
 
 edge:
@@ -359,8 +359,8 @@ POSEDGE id { C($$); T($$, @1, zero, one); P($$, $2); }
 
 more_edges:
 %empty { C($$); }
-| more_edges ',' edge { $$= $1; T($$, @2, zero, one); P($$, $3); }
-| more_edges OH_ARE edge { $$= $1; T($$, @2, one, one); P($$, $3); }
+| more_edges ',' edge { $$ = $1; T($$, @2, zero, one); P($$, $3); }
+| more_edges OH_ARE edge { $$ = $1; T($$, @2, one, one); P($$, $3); }
 ;
 
 inout:

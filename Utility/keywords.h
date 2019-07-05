@@ -1,6 +1,6 @@
 #pragma once
 
-static char const* keywords[]= {
+static char const* keywords[] = {
 	"$fullskew",
 	"$hold",
 	"$nochange",

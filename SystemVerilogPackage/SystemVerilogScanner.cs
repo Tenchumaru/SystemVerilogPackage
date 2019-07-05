@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 using Microsoft.VisualStudio.Package;
 using Microsoft.VisualStudio.TextManager.Interop;
 
@@ -10,7 +7,7 @@ namespace Adrezdi.SystemVerilogPackage
 {
     internal class SystemVerilogScanner : IScanner
     {
-        private static Dictionary<TokenType, TokenColor> tokenDict = new Dictionary<TokenType, TokenColor> {
+        private static readonly Dictionary<TokenType, TokenColor> tokenDict = new Dictionary<TokenType, TokenColor> {
             { TokenType.Unknown, TokenColor.Text },
             { TokenType.Text, TokenColor.Text },
             { TokenType.Keyword, TokenColor.Keyword },
@@ -23,7 +20,7 @@ namespace Adrezdi.SystemVerilogPackage
             { TokenType.LineComment, TokenColor.Comment },
             { TokenType.Comment, TokenColor.Comment },
         };
-        private IVsTextBuffer buffer;
+        private readonly IVsTextBuffer buffer;
         private string source;
         private int offset;
 
