@@ -64,7 +64,7 @@ parameter
 
 parameter:
 PARAMETER type ID '=' expr ';' { C($$); T($$, @1, start_of_line, one); P($$, $2); T($$, @3, one, one); T($$, @4, zero, one); P($$, $5); T($$, @6, zero, newline); }
-| PARAMETER ID '=' expr ';' { T($$, @1, start_of_line, one); T($$, @2, one, one); T($$, @3, zero, one); P($$, $4); T($$, @5, zero, newline); }
+| PARAMETER ID '=' expr ';' { C($$); T($$, @1, start_of_line, one); T($$, @2, one, one); T($$, @3, zero, one); P($$, $4); T($$, @5, zero, newline); }
 ;
 
 typedef:
@@ -86,6 +86,7 @@ MODULE ID pparams ';' module_body ENDMODULE epilog { C($$); T($$, @1, start_of_l
 
 pparams:
 %empty { C($$); }
+| '#' '(' PARAMETER ID ')' '(' params ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, one); T($$, @4, one, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); T($$, @8, can_start_line, zero); }
 | '#' '(' PARAMETER ID '=' expr ')' '(' params ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, one); T($$, @4, one, zero); T($$, @5, zero, one); P($$, $6); T($$, @7, zero, zero); T($$, @8, zero, zero); P($$, $9); T($$, @10, can_start_line, zero); }
 | '(' params ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, can_start_line, zero); }
 ;
