@@ -2,298 +2,274 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
+using HtmlAgilityPack;
 
 namespace mksvgrmr
 {
     class Program
     {
-        private static TextWriter fout;
-        private static Regex ws = new Regex(@"[\s]+", RegexOptions.Compiled);
-        private static Dictionary<string, Rule> optionalItems = new Dictionary<string, Rule>();
-        private static Dictionary<string, Rule> repeatedItems = new Dictionary<string, Rule>();
-        private static Dictionary<string, int> choices = new Dictionary<string, int>();
-        private static Regex repeatedRx = new Regex(@"[^']\{([^{}]*)\}", RegexOptions.Compiled);
-        private static Regex optionalRx = new Regex(@"[^']\[([^\[\]]*)\]", RegexOptions.Compiled);
-        private static string[] leftTokens = { "==", "===", "!=", "!==", "=?=", "!?=", "&&", "||", "**", ">=", ">>", "<<", ">>>", "<<<" };
-        private static string[] rightTokens = { "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>=", "<<<=", ">>>=" };
+        // Table 11-2:  Operator precedence and associativity, p. 221
+        private static readonly string[][] tokenCollections = ProcessTokens(new[] {
+            new[] { "left", "()", "[]", "::", "." },
+            new[] { "token", "!", "~", "~&", "~|", "++", "--" },
+            new[] { "left", "**" },
+            new[] { "left", "*", "/", "%" },
+            new[] { "left", "+", "-" },
+            new[] { "left", "<<", ">>", "<<<", ">>>" },
+            new[] { "left", "<", "<=", ">", ">=", "inside", "dist" },
+            new[] { "left", "==", "!=", "===", "!==", "==?", "!=?" },
+            new[] { "left", "&" },
+            new[] { "left", "^", "~^", "^~" },
+            new[] { "left", "|" },
+            new[] { "left", "&&" },
+            new[] { "left", "||" },
+            new[] { "right", "?", ":" },
+            new[] { "right", "->", "<->" },
+            new[] { "nonassoc", "=", "+=", "-=", "*=", "/=", "%=", "&=", "^=", "|=", "<<=", ">>=", "<<<=", ">>>=", ":=", ":/" },
+            new[] { "token", "{}", "{{}}" },
+        });
 
-        static void print(params object[] args)
+        private static string[][] ProcessTokens(string[][] tokens)
         {
-            var s = string.Join(" ", args);
+            var q = tokens.Select(a => a.Select((s, i) => i == 0 ? '%' + s : s.Length == 1 ? String.Format("'{0}'", s) : Rule.AsLiteral(s)).ToArray());
+            return q.ToArray();
+        }
+
+        private static TextWriter fout;
+
+        private static readonly List<Rule> extras = new List<Rule>();
+        private static readonly HashSet<string> literals = new HashSet<string>();
+
+        class Rule
+        {
+            public string Name { get; private set; }
+            public List<string> RightHandSide { get; private set; } = new List<string>();
+            private static readonly Dictionary<char, string> literalMap = new Dictionary<char, string>
+            {
+                { '&', "AMP" },
+                { '@', "AT" },
+                { '\'', "APOS" },
+                { '!', "BANG" },
+                { ':', "C" },
+                { ')', "CP" },
+                { '}', "CCB" },
+                { ']', "CSB" },
+                { '$', "D" },
+                { '.', "DOT" },
+                { '=', "E" },
+                { '>', "G" },
+                { '^', "H" },
+                { '<', "L" },
+                { '-', "M" },
+                { '#', "N" },
+                { '(', "OP" },
+                { '{', "OCB" },
+                { '[', "OSB" },
+                { '%', "P" },
+                { '?', "Q" },
+                { '+', "PLUS" },
+                { '|', "PIPE" },
+                { '*', "S" },
+                { '~', "T" },
+                { ';', "SEMI" },
+                { '/', "V" },
+            };
+
+            internal Rule(string name, IEnumerator<HtmlNode> nodes)
+            {
+                Name = name;
+                while(nodes.MoveNext())
+                {
+                    var n = nodes.Current;
+                    var innerText = n.InnerText.Trim();
+                    if(n.NodeType == HtmlNodeType.Text)
+                    {
+                        if(innerText == "{" || innerText == "[")
+                        {
+                            var s = String.Format("{0}_{1}", name, extras.Count);
+                            var r = new Rule(s, nodes);
+                            extras.Add(r);
+                            RightHandSide.Add(s);
+                        }
+                        else if(innerText == "]")
+                        {
+                            // This is the end of a zero-or-one sub-rule.
+                            RightHandSide.InsertRange(0, new[] { "%empty", "|" });
+                            return;
+                        }
+                        else if(innerText == "}")
+                        {
+                            // This is the end of a zero-or-more sub-rule.
+                            RightHandSide.InsertRange(0, new[] { "%empty", "|", name });
+                            return;
+                        }
+                        else if(innerText == "|")
+                        {
+                            RightHandSide.Add("|");
+                        }
+                        else if(!innerText.Any())
+                        {
+                            // Ignore whitespace.
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    else if(n.NodeType == HtmlNodeType.Element)
+                    {
+                        if(n.Name == "a" && n.ChildNodes.Single().NodeType == HtmlNodeType.Text)
+                        {
+                            RightHandSide.Add(innerText);
+                        }
+                        else if(n.Name == "br" && !n.ChildNodes.Any())
+                        {
+                            // Ignore line breaks.
+                        }
+                        else if(n.Name == "sup")
+                        {
+                            // Ignore superscripts.
+                        }
+                        else if(n.Name == "font" && n.Attributes.Single().Value == "purple" && n.ChildNodes.Single().Name == "b")
+                        {
+                            var literal = Unescape(n.ChildNodes[0].InnerText.Trim());
+                            if(literal == "'")
+                            {
+                                literal = "'\\''";
+                            }
+                            else if(literal.Length == 1)
+                            {
+                                literal = String.Format("'{0}'", literal);
+                            }
+                            else
+                            {
+                                literal = AsLiteral(literal);
+                                literals.Add(literal);
+                            }
+                            RightHandSide.Add(literal);
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+            }
+
+            public override string ToString() => Name + ":" + Environment.NewLine + String.Join(" ", RightHandSide).Replace(" |", Environment.NewLine + "|") + Environment.NewLine + ";" + Environment.NewLine;
+
+            private string Unescape(string s) => s.Replace("&gt;", ">").Replace("&lt;", "<").Replace("&amp;", "&");
+
+            internal static string AsLiteral(string literal)
+            {
+                if(literal.All(c => Char.IsLower(c)))
+                {
+                    return literal.ToUpperInvariant();
+                }
+                string s;
+                s = String.Join("", from c in literal select literalMap.TryGetValue(c, out s) ? s : c.ToString());
+                return Char.IsDigit(s[0]) ? "_" + s : s;
+            }
+        }
+
+        static void Print(params object[] args)
+        {
+            var s = String.Join(" ", args);
             fout.WriteLine(s);
         }
 
         static void Main(string[] args)
         {
             // Parse the command line arguments.
-            bool excludeIdentifiers = false;
-            if(args[0] == "-i")
+            string text;
+            if(args.Any())
             {
-                excludeIdentifiers = true;
-                args = args.Skip(1).ToArray();
+                var filePath = args.First();
+                text = File.ReadAllText(filePath);
             }
-            string lastSection = excludeIdentifiers ? "A.9.4" : "A.9.3";
-            var text = File.ReadAllText(args[0]);
-
-            // Include only modules through identifier branches and exclude comments and strings.
-            text = text.Split(new[] { "A.1.3" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(new[] { "A.9.5" }, StringSplitOptions.RemoveEmptyEntries)[0];
-            text = Regex.Replace(text, @"^[\S\s]+?H2.", "", RegexOptions.IgnoreCase);
-            text = text.Split(new[] { "A.9.2" }, StringSplitOptions.RemoveEmptyEntries)[0] + text.Split(new[] { lastSection }, StringSplitOptions.RemoveEmptyEntries)[1];
-            text = text.Split(new[] { "A.8.8" }, StringSplitOptions.RemoveEmptyEntries)[0] + text.Split(new[] { "A.9.1" }, StringSplitOptions.RemoveEmptyEntries)[1];
-
-            // Apply fixes.
-            text = Regex.Replace(text, @"<.span>\s*:\s", ":</span> ", RegexOptions.IgnoreCase); // broken literal
-            text = Regex.Replace(text, @"this[^.]*.", "this</SPAN> <SPAN CLASS=\"BNFkeyword\">.</SPAN> ");
-            text = Regex.Replace(text, @"super[^.]*.", "super</SPAN> <SPAN CLASS=\"BNFkeyword\">.</SPAN> ");
-            text = Regex.Replace(text, @"::=\s*<.p>", "::= ", RegexOptions.IgnoreCase);
-
-            // Remove C identifiers.
-            if(!excludeIdentifiers)
+            else
             {
-                ReplaceIdentifier("1267956", "c_identifier ::= ID", ref text);
-                ReplaceIdentifier("1031035", "simple_identifier ::= IDD", ref text);
-                ReplaceIdentifier("1031041", "system_function_identifier ::= DID", ref text);
-                ReplaceIdentifier("1031043", "system_task_identifier ::= DID", ref text);
+                var client = new System.Net.WebClient();
+                text = client.DownloadString("https://insights.sigasi.com/tech/systemverilog.ebnf.html");
             }
 
-            // Remove superscripts.
-            text = Regex.Replace(text, @"<span\s*class..superscript[\S\s]*?span>", " ", RegexOptions.IgnoreCase);
+            // Perform pre-parsing fix-ups.
+            text = text.Replace("wand | wor", "wand</b></font> <br> | <font color=\"purple\"><b>wor");
 
-            // Replace HTML token specifications with fancily quoted ones.
-            var rx = new Regex(@".span class..BNFkeyword..\s*([\S\s]*?)\s*..span.", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            Match parts;
-            for(int i = 0; (parts = rx.Match(text, i)).Success;)
+            // Parse the document, excluding certain useless or terminal-based rules.
+            var doc = new HtmlDocument();
+            doc.LoadHtml(text);
+            var dts = doc.DocumentNode.SelectNodes("//dt");
+            var dds = doc.DocumentNode.SelectNodes("//dd");
+            var uselessRules = new[] { "array_identifier", "block_comment", "comment", "comment_text",
+                "covergroup_variable_identifier", "formal_identifier", "one_line_comment" };
+            var q = from p in Enumerable.Zip(dts, dds, (t, n) => new { RuleName = t.ChildNodes.First().InnerText, Node = n })
+                    where !uselessRules.Contains(p.RuleName) && p.Node.SelectNodes("em") == null
+                    select new Rule(p.RuleName, p.Node.ChildNodes.SelectMany(n => AsNodes(n)).GetEnumerator());
+            q = q.ToList();
+
+            // Determine if there are any badly-formed literals.
+            var badLiteral = literals.FirstOrDefault(l => !l.All(c => Char.IsLetterOrDigit(c) || c == '_'));
+            if(badLiteral != null)
             {
-                i = parts.Index;
-                var token = parts.Groups[1].Value;
-                var literals = ws.Split(token);
-                token = " @''" + string.Join("''@ @''", literals) + "''@ ";
-                text = text.Substring(0, parts.Index) + token + text.Substring(parts.Index + parts.Length);
+                throw new Exception();
             }
 
-            // To enable easier repeated and optional item replacement, use a
-            // different place-holder for literal square brackets and curly braces.
-            text = text.Replace("@''[''@", "@@OSB@@").Replace("@'']''@", "@@CSB@@").Replace("@''{''@", "@@OCB@@").Replace("@''}''@", "@@CCB@@");
-
-            // Remove anchor, break, emphasis, and header tags.
-            text = Regex.Replace(text, @"<a[\S\s]*?>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.a>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<br[^>]*.", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<em[\S\s]*?>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.em>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<h2[\S\s]+?h2>", " ", RegexOptions.IgnoreCase);
-
-            // Remove the opening paragraph tags and replace the closing paragraph tags with a fancily formatted Yacc-rule-ending semicolon.
-            text = Regex.Replace(text, @"<p\s*class..bnf_syntaxitem.>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.p>", " ;;; ", RegexOptions.IgnoreCase);
-
-            // Remove the rest of the tags.
-            text = Regex.Replace(text, @"<[\S\s]*?>", " ", RegexOptions.IgnoreCase);
-
-            // Replace the entities.
-            text = text.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&").Replace("&quot;", @"\");
-
-            // Replace single-character literals with themselves.
-            text = text.Replace("@'''''@", @"'\''").Replace(@"@''\''@", @"'\\'");
-            text = Regex.Replace(text, "@'('.')'@", "$1", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"\s+([,;:=()])\s+", " '$1' ");
-
-            // Replace multi-character literals with a capitalized symbol.
-            var tokens = new Dictionary<string, string>();
-            rx = new Regex(@"@''(\S+?)''@", RegexOptions.Compiled);
-            for(int i = 0, j = 0; (parts = rx.Match(text, i)).Success;)
-            {
-                i = parts.Index;
-                var key = parts.Groups[1].Value;
-                string name;
-                if(tokens.ContainsKey(key))
-                {
-                    name = tokens[key];
-                }
-                else
-                {
-                    name = char.ToLower(key[0]) < 'a' || char.ToLower(key[0]) > 'z' || Regex.IsMatch(key, @"\W") ? "TOKEN" + ++j : key.ToUpper() + "_";
-                    tokens[key] = name;
-                }
-                text = rx.Replace(text, " " + name + " ", 1);
-            }
-
-            // Remove scanner-level constructs.
-            text = Regex.Replace(text, @"\sescaped_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\scell_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\sconfig_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\sinstance_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\slibrary_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\stext_macro_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\stopmodule_identifier\s*::=[^;]+...", " ");
-            text = text.Replace("escaped_identifier", "EID");
-            text = text.Replace("string_literal", "STRING");
-            text = Regex.Replace(text, @"\} \[ \{([^:]*)\} \]", "} { $1 }");
-
-            // Handle repeated items, optional items, and embedded choices.
-            ReplaceRepeatedItems(ref text);
-            ReplaceOptionalItems(ref text);
-            AddChoices(ref text);
-
-            // Restore the literal brackets and braces.
-            Func<string, string> fn = s => { return s.Replace("@@OSB@@", "'['").Replace("@@CSB@@", "']'").Replace("@@OCB@@", "'{'").Replace("@@CCB@@", "'}'"); };
-            text = fn(text);
-
-            // Replace all white space with a single space.
-            text = ws.Replace(text, " ");
-
-            // Replace invalid nonterminal names.
-            text = text.Replace(" $", " _d_");
-
-            // Format for human readability.
-            text = Regex.Replace(text, @"\s+(\w+)\s*:?:=\s*", "\r\n$1:\r\n");
-            text = Regex.Replace(text, @"\s+\|\s*", "\r\n| ");
-            text = Regex.Replace(text, @"\s+;;;\s*", "\r\n;\r\n\r\n");
-            text = text.Trim();
+            // Perform post-parsing fix-ups.
+            q.Single(r => r.Name == "interface_declaration").RightHandSide.AddRange(new[] { "|", "interface_class_declaration" });
 
             // Prepare the output.
             using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
             {
                 // Print the token declarations.
-                print("%token ID");
-                print("%token EID");
-                print("%token DID");
-                print("%token IDD");
-                print("%token STRING");
-                foreach(var pair in tokens)
+                Print("%token CID");
+                Print("%token EID");
+                Print("%token SID");
+                Print("%token SYSID");
+                foreach(var literal in literals.Except(tokenCollections.SelectMany(a => a)).OrderBy(s => s))
                 {
-                    string tokenType = leftTokens.Contains(pair.Key) ? "%left" : rightTokens.Contains(pair.Key) ? "%right" : "%token";
-                    print(tokenType, pair.Value, '"' + pair.Key.Replace(@"\", @"\\") + '"');
+                    Print("%token", literal);
+                }
+                foreach(var tokens in tokenCollections.Reverse())
+                {
+                    Print(String.Join(" ", tokens));
                 }
 
                 // Print the separator between the Yacc sections.
-                print();
-                print("%%");
-                print();
+                Print();
+                Print("%%");
+                Print();
 
                 // Print the text.
-                print(text);
-
-                // Print the repeated item rules.
-                foreach(var part in repeatedItems.Values)
+                Print("text: library_text | source_text ;");
+                foreach(var item in q.Concat(extras))
                 {
-                    print();
-                    print(part.name + ":");
-                    print("%empty");
-                    print("|", part.name, fn(string.Join(" ", part.rhs)));
-                    print(';');
+                    Print(item);
                 }
-
-                // Print the optional item rules.
-                foreach(var part in optionalItems.Values)
-                {
-                    print();
-                    print(part.name + ":");
-                    print("%empty");
-                    print("|", fn(string.Join(" ", part.rhs)));
-                    print(';');
-                }
+                Print("c_identifier: CID ;");
+                Print("escaped_identifier: EID ;");
+                Print("file_path_spec: STRING ;");
+                Print("simple_identifier: SID ;");
+                Print("string_literal: STRING ;");
+                Print("system_tf_identifier: SYSID ;");
             }
         }
 
-        private static void AddChoices(ref string text)
+        private static IEnumerable<HtmlNode> AsNodes(HtmlNode node)
         {
-            string s = "";
-            foreach(var item in choices)
+            if(node.NodeType == HtmlNodeType.Text)
             {
-                s += string.Format(" choice_{0} ::= {1} ;;; ", item.Value, item.Key);
+                return from s in node.InnerText.Split(new[] { '\n', '\r', '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                       select HtmlNode.CreateNode(s);
             }
-            text += s;
-        }
-
-        private static void ReplaceOptionalItems(ref string text)
-        {
-            // Replace optional items with a new rule.
-            Match parts;
-            for(int i = 0; (parts = optionalRx.Match(text)).Success;)
+            else
             {
-                i = parts.Index;
-                var s = parts.Groups[1].Value;
-                CheckForChoice(ref s, ref text);
-                ReplaceRepeatedItems(ref s);
-                var rhs = ws.Split(s.Trim());
-                var key = string.Join(":", rhs);
-                string name;
-                if(optionalItems.ContainsKey(key))
-                {
-                    name = optionalItems[key].name;
-                }
-                else
-                {
-                    name = "optional_" + optionalItems.Count;
-                    optionalItems[key] = new Rule { name = name, rhs = rhs };
-                }
-                text = optionalRx.Replace(text, " " + name + " ", 1, i);
+                return new[] { node };
             }
-        }
-
-        private static void ReplaceRepeatedItems(ref string text)
-        {
-            // Replace repeated items with a new rule.
-            Match parts;
-            for(int i = 0; (parts = repeatedRx.Match(text)).Success;)
-            {
-                i = parts.Index;
-                var s = parts.Groups[1].Value;
-                CheckForChoice(ref s, ref text);
-                ReplaceOptionalItems(ref s);
-                var rhs = ws.Split(s.Trim());
-                var key = string.Join(":", rhs);
-                string name;
-                if(repeatedItems.ContainsKey(key))
-                {
-                    name = repeatedItems[key].name;
-                }
-                else
-                {
-                    name = "repeated_" + repeatedItems.Count;
-                    repeatedItems[key] = new Rule { name = name, rhs = rhs };
-                }
-                text = repeatedRx.Replace(text, " " + name + " ", 1, i);
-            }
-        }
-
-        private static void CheckForChoice(ref string s, ref string text)
-        {
-            var ar = s.Split('|');
-            if(ar.Length > 1)
-            {
-                s = ws.Replace(s, " ").Trim();
-                int i;
-                if(choices.ContainsKey(s))
-                    i = choices[s];
-                else
-                {
-                    i = choices.Count;
-                    choices.Add(s, i);
-                }
-                s = string.Format(" choice_{0} ", i);
-            }
-        }
-
-        private static void ReplaceIdentifier(string pgfId, string rule, ref string text)
-        {
-            int i = text.IndexOf(pgfId);
-            i = text.LastIndexOf("<p", i, StringComparison.InvariantCultureIgnoreCase);
-            int j = text.IndexOf("</p>", i, StringComparison.InvariantCultureIgnoreCase);
-            text = text.Substring(0, i) + " " + rule + " ;;; " + text.Substring(j + 4);
-        }
-    }
-
-    class Rule
-    {
-        public string name;
-        public string[] rhs;
-
-        public override string ToString()
-        {
-            return string.Format("{0}: {1}", name, string.Join(" ", rhs));
         }
     }
 }
