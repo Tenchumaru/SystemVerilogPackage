@@ -86,7 +86,7 @@ namespace mksvgrmr
                     {
                         if(innerText == "{" || innerText == "[")
                         {
-                            var s = String.Format("{0}_{1}", name, extras.Count);
+                            var s = $"{name}_{extras.Count}";
                             var r = new Rule(s, nodes);
                             extras.Add(r);
                             RightHandSide.Add(s);
@@ -139,7 +139,7 @@ namespace mksvgrmr
                             }
                             else if(literal.Length == 1)
                             {
-                                literal = String.Format("'{0}'", literal);
+                                literal = $"'{literal}'";
                             }
                             else
                             {
