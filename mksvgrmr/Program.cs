@@ -168,7 +168,7 @@ namespace mksvgrmr
             {
                 if(literal.All(c => Char.IsLower(c)))
                 {
-                    return literal.ToUpperInvariant();
+                    return literal.ToUpperInvariant() + '_';
                 }
                 string s;
                 s = String.Join("", from c in literal select literalMap.TryGetValue(c, out s) ? s : c.ToString());
