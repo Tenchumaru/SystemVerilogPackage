@@ -205,10 +205,11 @@ namespace mksvgrmr
             doc.LoadHtml(text);
             var dts = doc.DocumentNode.SelectNodes("//dt");
             var dds = doc.DocumentNode.SelectNodes("//dd");
-            var uselessRules = new[] { "array_identifier", "block_comment", "comment", "comment_text",
-                "covergroup_variable_identifier", "formal_identifier", "one_line_comment" };
+            var removedRules = new[] { "array_identifier", "covergroup_variable_identifier", "formal_identifier", "block_comment",
+                "comment", "comment_text", "one_line_comment" };
             var q = from p in Enumerable.Zip(dts, dds, (t, n) => new { RuleName = t.ChildNodes.First().InnerText, Node = n })
-                    where !uselessRules.Contains(p.RuleName) && p.Node.SelectNodes("em") == null
+                    where !removedRules.Contains(p.RuleName) && p.Node.SelectNodes("em") == null &&
+                    (!p.Node.ParentNode.PreviousSibling.PreviousSibling.InnerText.Contains("Numbers") || p.RuleName == "number")
                     select new Rule(p.RuleName, p.Node.ChildNodes.SelectMany(n => AsNodes(n)).GetEnumerator());
             q = q.ToList();
 
@@ -226,6 +227,9 @@ namespace mksvgrmr
             using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
             {
                 // Print the token declarations.
+                Print("%token INTEGRAL_NUMBER");
+                Print("%token REAL_NUMBER");
+                Print("%token UNBASED_UNSIZED_LITERAL");
                 Print("%token CID");
                 Print("%token EID");
                 Print("%token SID");
@@ -256,6 +260,12 @@ namespace mksvgrmr
                 Print("simple_identifier: SID ;");
                 Print("string_literal: STRING ;");
                 Print("system_tf_identifier: SYSID ;");
+                Print("fixed_point_number: REAL_NUMBER ;"); // only unsigned.unsigned
+                Print("integral_number: INTEGRAL_NUMBER ;");
+                Print("real_number: REAL_NUMBER ;");
+                Print("unbased_unsized_literal: UNBASED_UNSIZED_LITERAL ;");
+                Print("unsigned_number: INTEGRAL_NUMBER ;");
+                Print();
             }
         }
 
