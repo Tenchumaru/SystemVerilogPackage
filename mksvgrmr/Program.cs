@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using HtmlAgilityPack;
 
 namespace mksvgrmr
@@ -74,6 +75,12 @@ namespace mksvgrmr
                 { ';', "SEMI" },
                 { '/', "V" },
             };
+
+            internal Rule(string name, string rightHandSide)
+            {
+                Name = name;
+                RightHandSide.Add(rightHandSide);
+            }
 
             internal Rule(string name, IEnumerator<HtmlNode> nodes)
             {
@@ -160,7 +167,7 @@ namespace mksvgrmr
                 }
             }
 
-            public override string ToString() => Name + ":" + Environment.NewLine + String.Join(" ", RightHandSide).Replace(" |", Environment.NewLine + "|") + Environment.NewLine + ";" + Environment.NewLine;
+            public override string ToString() => Name + ": " + String.Join(" ", RightHandSide);
 
             private string Unescape(string s) => s.Replace("&gt;", ">").Replace("&lt;", "<").Replace("&amp;", "&");
 
@@ -173,6 +180,72 @@ namespace mksvgrmr
                 string s;
                 s = String.Join("", from c in literal select literalMap.TryGetValue(c, out s) ? s : c.ToString());
                 return Char.IsDigit(s[0]) ? "_" + s : s;
+            }
+
+            internal string Render(IEnumerable<Rule> rules)
+            {
+                // Separate right-hand sides.
+                var rightHandSides = new List<List<string>> { new List<string>() };
+                foreach(var item in RightHandSide)
+                {
+                    if(item == "|")
+                    {
+                        rightHandSides.Add(new List<string>());
+                    }
+                    else
+                    {
+                        rightHandSides.Last().Add(item);
+                    }
+                }
+
+                var sb = new StringBuilder(Name);
+                sb.Append(':').AppendLine();
+                RenderRightHandSide(rules, sb, rightHandSides[0]);
+                foreach(var rightHandSide in rightHandSides.Skip(1))
+                {
+                    sb.Append("| ");
+                    RenderRightHandSide(rules, sb, rightHandSide);
+                }
+                sb.Append(';').AppendLine();
+                return sb.ToString();
+            }
+
+            private void RenderRightHandSide(IEnumerable<Rule> rules, StringBuilder sb, List<string> rightHandSide)
+            {
+                sb.Append(String.Join(" ", rightHandSide));
+                if(rightHandSide.Count > 1)
+                {
+                    sb.Append(" {");
+                    if(rightHandSide[0] == Name || rules.Any(r => r.Name == rightHandSide[0]))
+                    {
+                        sb.Append(" $$ = $1;");
+                    }
+                    else
+                    {
+                        sb.Append(" C($$); T($$, @1, zero, zero);");
+                    }
+                    foreach(var item in rightHandSide.Select((s, i) => new { Name = s, Number = i + 1 }).Skip(1))
+                    {
+                        if(rules.Any(r => r.Name == item.Name))
+                        {
+                            sb.Append($" P($$, ${item.Number});");
+                        }
+                        else
+                        {
+                            sb.Append($" T($$, @{item.Number}, zero, zero);");
+                        }
+                    }
+                    sb.Append(" }");
+                }
+                else if(rightHandSide[0] == "%empty")
+                {
+                    sb.Append(" { C($$); }");
+                }
+                else if(!rules.Any(r => r.Name == rightHandSide[0]))
+                {
+                    sb.Append(" { C($$); T($$, @1, zero, zero); }");
+                }
+                sb.AppendLine();
             }
         }
 
@@ -223,17 +296,31 @@ namespace mksvgrmr
             // Perform post-parsing fix-ups.
             q.Single(r => r.Name == "interface_declaration").RightHandSide.AddRange(new[] { "|", "interface_class_declaration" });
 
+            // Add missing rules.
+            extras.Add(new Rule("c_identifier", "CID_"));
+            extras.Add(new Rule("escaped_identifier", "EID_"));
+            extras.Add(new Rule("file_path_spec", "STRING_"));
+            extras.Add(new Rule("simple_identifier", "SID_"));
+            extras.Add(new Rule("string_literal", "STRING_"));
+            extras.Add(new Rule("system_tf_identifier", "SYSID_"));
+            extras.Add(new Rule("fixed_point_number", "REAL_NUMBER_")); // only unsigned.unsigned
+            extras.Add(new Rule("integral_number", "INTEGRAL_NUMBER_"));
+            extras.Add(new Rule("real_number", "REAL_NUMBER_"));
+            extras.Add(new Rule("unbased_unsized_literal", "UNBASED_UNSIZED_LITERAL_"));
+            extras.Add(new Rule("unsigned_number", "INTEGRAL_NUMBER_"));
+            q = q.Concat(extras).ToArray();
+
             // Prepare the output.
             using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
             {
                 // Print the token declarations.
-                Print("%token INTEGRAL_NUMBER");
-                Print("%token REAL_NUMBER");
-                Print("%token UNBASED_UNSIZED_LITERAL");
-                Print("%token CID");
-                Print("%token EID");
-                Print("%token SID");
-                Print("%token SYSID");
+                Print("%token INTEGRAL_NUMBER_");
+                Print("%token REAL_NUMBER_");
+                Print("%token UNBASED_UNSIZED_LITERAL_");
+                Print("%token CID_");
+                Print("%token EID_");
+                Print("%token SID_");
+                Print("%token SYSID_");
                 foreach(var literal in literals.Except(tokenCollections.SelectMany(a => a)).OrderBy(s => s))
                 {
                     Print("%token", literal);
@@ -243,6 +330,13 @@ namespace mksvgrmr
                     Print(String.Join(" ", tokens));
                 }
 
+                // Print the rule types.
+                Print();
+                foreach(var item in q)
+                {
+                    Print("%type<results>", item.Name);
+                }
+
                 // Print the separator between the Yacc sections.
                 Print();
                 Print("%%");
@@ -250,22 +344,11 @@ namespace mksvgrmr
 
                 // Print the text.
                 Print("text: library_text | source_text ;");
-                foreach(var item in q.Concat(extras))
-                {
-                    Print(item);
-                }
-                Print("c_identifier: CID ;");
-                Print("escaped_identifier: EID ;");
-                Print("file_path_spec: STRING ;");
-                Print("simple_identifier: SID ;");
-                Print("string_literal: STRING ;");
-                Print("system_tf_identifier: SYSID ;");
-                Print("fixed_point_number: REAL_NUMBER ;"); // only unsigned.unsigned
-                Print("integral_number: INTEGRAL_NUMBER ;");
-                Print("real_number: REAL_NUMBER ;");
-                Print("unbased_unsized_literal: UNBASED_UNSIZED_LITERAL ;");
-                Print("unsigned_number: INTEGRAL_NUMBER ;");
                 Print();
+                foreach(var item in q)
+                {
+                    Print(item.Render(q));
+                }
             }
         }
 
