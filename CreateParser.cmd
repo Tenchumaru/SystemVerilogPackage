@@ -1,12 +1,36 @@
 @ECHO OFF
 SETLOCAL
 
-SET D=%~dp0
-SET PARSER="%~dp0Utility\parser.y"
+CD %~dp0
 SET T=%TEMP%\%RANDOM%
-mksvgrmr\bin\Debug\mksvgrmr.exe "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %PARSER%
-win_bison --output=%T%x %PARSER% 2> %T%
-cscript //nologo add_ignore.js %PARSER% %T%
-COPY "%~dp0header.y"+%PARSER%+"%~dp0footer.y" %T%
-MOVE /Y %T% %PARSER%
-DEL %T%x
+
+REM Create the parser.
+mksvgrmr\bin\Debug\mksvgrmr.exe parser "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
+win_bison --output=NUL %T% 2> %T%_
+cscript //nologo add_ignore.js %T% %T%_
+COPY /B header.y+%T%+footer.y %T%_
+CALL :copy_if_newer %T%_ Utility\parser.y
+DEL %T%
+
+REM Create the scanner.
+mksvgrmr\bin\Debug\mksvgrmr.exe scanner "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
+COPY /B header.l+%T%+footer.l %T%_
+CALL :copy_if_newer %T%_ Utility\scanner.l
+DEL %T%
+
+EXIT /B
+
+:copy_if_newer
+IF NOT EXIST %2 (
+	ECHO Creating %2
+	MOVE /Y %1 %2
+) ELSE (
+	FC %1 %2 > NUL
+	IF ERRORLEVEL 1 (
+		ECHO Updating %2
+		MOVE /Y %1 %2
+	) ELSE (
+		ECHO No change to %2
+		DEL %1
+	)
+)

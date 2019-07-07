@@ -12,36 +12,6 @@ namespace mksvgrmr
         {
             public string Name { get; private set; }
             public List<string> RightHandSide { get; private set; } = new List<string>();
-            private static readonly Dictionary<char, string> literalMap = new Dictionary<char, string>
-            {
-                { '&', "AMP" },
-                { '@', "AT" },
-                { '\'', "APOS" },
-                { '!', "BANG" },
-                { ':', "C" },
-                { ')', "CP" },
-                { '}', "CCB" },
-                { ']', "CSB" },
-                { '$', "D" },
-                { '.', "DOT" },
-                { '=', "E" },
-                { '>', "G" },
-                { '^', "H" },
-                { '<', "L" },
-                { '-', "M" },
-                { '#', "N" },
-                { '(', "OP" },
-                { '{', "OCB" },
-                { '[', "OSB" },
-                { '%', "P" },
-                { '?', "Q" },
-                { '+', "PLUS" },
-                { '|', "PIPE" },
-                { '*', "S" },
-                { '~', "T" },
-                { ';', "SEMI" },
-                { '/', "V" },
-            };
 
             internal Rule(string name, string rightHandSide)
             {
@@ -117,7 +87,7 @@ namespace mksvgrmr
                             }
                             else
                             {
-                                literal = AsLiteral(literal);
+                                literal = AsToken(literal);
                                 literals.Add(literal);
                             }
                             RightHandSide.Add(literal);
@@ -135,19 +105,6 @@ namespace mksvgrmr
             }
 
             public override string ToString() => Name + ": " + String.Join(" ", RightHandSide);
-
-            private string Unescape(string s) => s.Replace("&gt;", ">").Replace("&lt;", "<").Replace("&amp;", "&");
-
-            internal static string AsLiteral(string literal)
-            {
-                if(literal.All(c => Char.IsLower(c)))
-                {
-                    return literal.ToUpperInvariant() + '_';
-                }
-                string s;
-                s = String.Join("", from c in literal select literalMap.TryGetValue(c, out s) ? s : c.ToString());
-                return Char.IsDigit(s[0]) ? "_" + s : s;
-            }
 
             internal string Render(IEnumerable<Rule> rules)
             {

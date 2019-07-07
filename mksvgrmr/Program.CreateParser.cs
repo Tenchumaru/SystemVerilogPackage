@@ -8,33 +8,6 @@ namespace mksvgrmr
 {
     partial class Program
     {
-        // Table 11-2:  Operator precedence and associativity, p. 221
-        private static readonly string[][] tokenCollections = ProcessTokens(new[] {
-            new[] { "left", "()", "[]", "::", "." },
-            new[] { "token", "!", "~", "~&", "~|", "++", "--" },
-            new[] { "left", "**" },
-            new[] { "left", "*", "/", "%" },
-            new[] { "left", "+", "-" },
-            new[] { "left", "<<", ">>", "<<<", ">>>" },
-            new[] { "left", "<", "<=", ">", ">=", "inside", "dist" },
-            new[] { "left", "==", "!=", "===", "!==", "==?", "!=?" },
-            new[] { "left", "&" },
-            new[] { "left", "^", "~^", "^~" },
-            new[] { "left", "|" },
-            new[] { "left", "&&" },
-            new[] { "left", "||" },
-            new[] { "right", "?", ":" },
-            new[] { "right", "->", "<->" },
-            new[] { "nonassoc", "=", "+=", "-=", "*=", "/=", "%=", "&=", "^=", "|=", "<<=", ">>=", "<<<=", ">>>=", ":=", ":/" },
-            new[] { "token", "{}", "{{}}" },
-        });
-
-        private static string[][] ProcessTokens(string[][] tokens)
-        {
-            var q = tokens.Select(a => a.Select((s, i) => i == 0 ? '%' + s : s.Length == 1 ? String.Format("'{0}'", s) : Rule.AsLiteral(s)).ToArray());
-            return q.ToArray();
-        }
-
         private static TextWriter fout;
         private static readonly List<Rule> extras = new List<Rule>();
         private static readonly HashSet<string> literals = new HashSet<string>();
@@ -45,11 +18,8 @@ namespace mksvgrmr
             fout.WriteLine(s);
         }
 
-        private static void CreateParser(string[] args, string text)
+        private static void CreateParser(string outputFilePath, string text)
         {
-            // Perform pre-parsing fix-ups.
-            text = text.Replace("wand | wor", "wand</b></font> <br> | <font color=\"purple\"><b>wor");
-
             // Parse the document, excluding certain useless or terminal-based rules.
             var doc = new HtmlDocument();
             doc.LoadHtml(text);
@@ -59,7 +29,7 @@ namespace mksvgrmr
                 "comment", "comment_text", "one_line_comment" };
             var q = from p in Enumerable.Zip(dts, dds, (t, n) => new { RuleName = t.ChildNodes.First().InnerText, Node = n })
                     where !removedRules.Contains(p.RuleName) && p.Node.SelectNodes("em") == null &&
-                    (!p.Node.ParentNode.PreviousSibling.PreviousSibling.InnerText.Contains("Numbers") || p.RuleName == "number")
+                    (p.Node.ParentNode.PreviousSibling.PreviousSibling.InnerText != "Numbers" || p.RuleName == "number")
                     select new Rule(p.RuleName, p.Node.ChildNodes.SelectMany(n => AsNodes(n)).GetEnumerator());
             q = q.ToList();
 
@@ -88,7 +58,7 @@ namespace mksvgrmr
             q = q.Concat(extras).ToArray();
 
             // Prepare the output.
-            using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
+            using(fout = outputFilePath != null ? File.CreateText(outputFilePath) : Console.Out)
             {
                 // Print the token declarations.
                 Print("%token INTEGRAL_NUMBER_");
@@ -98,13 +68,13 @@ namespace mksvgrmr
                 Print("%token EID_");
                 Print("%token SID_");
                 Print("%token SYSID_");
-                foreach(var literal in literals.Except(tokenCollections.SelectMany(a => a)).OrderBy(s => s))
+                foreach(var literal in literals.Except(operatorCollections.SelectMany(a => a)).OrderBy(s => s))
                 {
                     Print("%token", literal);
                 }
-                foreach(var tokens in tokenCollections.Reverse())
+                foreach(var operators in operatorCollections.Reverse())
                 {
-                    Print(String.Join(" ", tokens));
+                    Print(String.Join(" ", operators));
                 }
 
                 // Print the rule types.

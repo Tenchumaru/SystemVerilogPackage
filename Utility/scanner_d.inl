@@ -8,10 +8,10 @@
 #define YY_USER_ACTION yylloc->last_column += yyleng;
 
 // Skip to next line.
-#define NL() do { yylloc->last_line= ++yylloc->first_line; yylloc->first_column= yylloc->last_column= 0; } while(false)
+#define NL() do { yylloc->last_line = ++yylloc->first_line; yylloc->first_column = yylloc->last_column = 0; } while(false)
 
 // Skip matched text.
-#define SKIP() yylloc->first_column= yylloc->last_column
+#define SKIP() yylloc->first_column = yylloc->last_column
 
 // Although I'm not using it since I set the noyyset_extra option above, the
 // scanner still invokes it.
