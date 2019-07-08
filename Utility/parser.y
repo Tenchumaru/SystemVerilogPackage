@@ -4531,7 +4531,7 @@ path_delay_expression
 ;
 
 t01_path_delay_expression:
-path_delay_expression
+path_delay_expression /* ignore */
 ;
 
 t10_path_delay_expression:
@@ -5061,7 +5061,7 @@ number
 | identifier
 | module_path_concatenation
 | module_path_multiple_concatenation
-| function_subroutine_call
+| function_subroutine_call /* ignore */
 | '(' module_path_mintypmax_expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
@@ -5114,7 +5114,7 @@ time_unit:
 ;
 
 implicit_class_handle:
-THIS_ { C($$); T($$, @1, zero, zero); }
+THIS_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 | SUPER_ { C($$); T($$, @1, zero, zero); }
 | THIS_ '.' SUPER_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); }
 ;
@@ -5369,7 +5369,7 @@ hierarchical_identifier
 ;
 
 hierarchical_task_identifier:
-hierarchical_identifier
+hierarchical_identifier /* ignore */
 ;
 
 hierarchical_tf_identifier:
@@ -5595,7 +5595,7 @@ description_6:
 ;
 
 description_7:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | description_7 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -5620,7 +5620,7 @@ module_nonansi_header_11:
 ;
 
 module_ansi_header_12:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | module_ansi_header_12 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -5675,7 +5675,7 @@ module_declaration_22:
 ;
 
 module_declaration_23:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | module_declaration_23 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -5770,7 +5770,7 @@ interface_nonansi_header_41:
 ;
 
 interface_ansi_header_42:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | interface_ansi_header_42 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -5865,7 +5865,7 @@ program_nonansi_header_60:
 ;
 
 program_ansi_header_61:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | program_ansi_header_61 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -6025,7 +6025,7 @@ package_declaration_92:
 ;
 
 timeunits_declaration_93:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | '/' time_literal { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
@@ -6125,7 +6125,7 @@ interface_port_header_112:
 ;
 
 ansi_port_declaration_113:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | net_port_header
 | interface_port_header
 ;
@@ -6141,7 +6141,7 @@ ansi_port_declaration_115:
 ;
 
 ansi_port_declaration_116:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | variable_port_header
 ;
 
@@ -6221,7 +6221,7 @@ module_or_generate_item_131:
 ;
 
 module_or_generate_item_132:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | module_or_generate_item_132 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -6261,7 +6261,7 @@ config_declaration_139:
 ;
 
 design_statement_140_140:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
@@ -6276,7 +6276,7 @@ inst_name_142:
 ;
 
 cell_clause_143:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
@@ -6286,7 +6286,7 @@ liblist_clause_144:
 ;
 
 use_clause_145:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
@@ -6306,8 +6306,8 @@ use_clause_148:
 ;
 
 use_clause_149:
-%empty { C($$); }
-| library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| library_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
 ;
 
 use_clause_150:
@@ -6451,12 +6451,12 @@ class_method_177:
 ;
 
 class_method_178:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | class_method_178 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
 class_method_179:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | class_method_179 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
@@ -6567,7 +6567,7 @@ dist_item_200:
 ;
 
 constraint_prototype_201:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | constraint_prototype_qualifier
 ;
 
@@ -6669,8 +6669,8 @@ type_declaration_220:
 ;
 
 type_declaration_221:
-%empty { C($$); }
-| ENUM_ { C($$); T($$, @1, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| ENUM_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 | STRUCT_ { C($$); T($$, @1, zero, zero); }
 | UNION_ { C($$); T($$, @1, zero, zero); }
 | CLASS_ { C($$); T($$, @1, zero, zero); }
@@ -6678,7 +6678,7 @@ type_declaration_221:
 ;
 
 net_type_declaration_222_222:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 | class_scope
 ;
@@ -6689,7 +6689,7 @@ net_type_declaration_222:
 ;
 
 net_type_declaration_224:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 | class_scope
 ;
@@ -6760,7 +6760,7 @@ data_type_237:
 ;
 
 data_type_238:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | class_scope
 | package_scope
 ;
@@ -7036,7 +7036,7 @@ pulse_control_specparam_292:
 ;
 
 variable_decl_assignment_293:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | variable_decl_assignment_293 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
@@ -7061,7 +7061,7 @@ variable_decl_assignment_297:
 ;
 
 class_new_298:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | class_scope
 ;
 
@@ -7086,7 +7086,7 @@ function_declaration_302:
 ;
 
 function_body_declaration_303:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
@@ -7107,9 +7107,9 @@ function_body_declaration_306:
 ;
 
 function_body_declaration_307:
-%empty { C($$); }
-| interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
-| class_scope
+%empty /* { C($$); } -- ignore */
+| interface_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
+| class_scope /* ignore */
 ;
 
 function_body_declaration_308:
@@ -7178,7 +7178,7 @@ task_declaration_320:
 ;
 
 task_body_declaration_321:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
@@ -7199,9 +7199,9 @@ task_body_declaration_324:
 ;
 
 task_body_declaration_325:
-%empty { C($$); }
-| interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
-| class_scope
+%empty /* { C($$); } -- ignore */
+| interface_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
+| class_scope /* ignore */
 ;
 
 task_body_declaration_326:
@@ -7270,7 +7270,7 @@ tf_port_declaration_338:
 ;
 
 task_prototype_339_339:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | tf_port_list
 ;
 
@@ -7720,7 +7720,7 @@ let_port_item_428:
 ;
 
 let_expression_429:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
@@ -7775,7 +7775,7 @@ let_list_of_arguments_438:
 ;
 
 covergroup_declaration_440_440:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | tf_port_list
 ;
 
@@ -7810,18 +7810,18 @@ coverage_spec_or_option_446:
 ;
 
 coverage_event_447:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | tf_port_list
 ;
 
 hierarchical_btf_identifier_448:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | hierarchical_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
 
 cover_point_449_449:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | data_type_or_implicit
 ;
 
@@ -7851,7 +7851,7 @@ bins_or_empty_452:
 ;
 
 bins_or_options_455:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | WILDCARD_ { C($$); T($$, @1, zero, zero); }
 ;
 
@@ -7876,8 +7876,8 @@ bins_or_options_459:
 ;
 
 bins_or_options_460:
-%empty { C($$); }
-| WILDCARD_ { C($$); T($$, @1, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
 bins_or_options_461_461:
@@ -7901,8 +7901,8 @@ bins_or_options_464:
 ;
 
 bins_or_options_465:
-%empty { C($$); }
-| WILDCARD_ { C($$); T($$, @1, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
 bins_or_options_466_466:
@@ -7921,8 +7921,8 @@ bins_or_options_468:
 ;
 
 bins_or_options_469:
-%empty { C($$); }
-| WILDCARD_ { C($$); T($$, @1, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
 bins_or_options_470:
@@ -7936,17 +7936,17 @@ bins_or_options_471:
 ;
 
 bins_or_options_472_472_472:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | covergroup_expression
 ;
 
 bins_or_options_472_472:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | bins_or_options_472_472_472
 ;
 
 bins_or_options_472:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | bins_or_options_472_472
 ;
 
@@ -8381,7 +8381,7 @@ udp_nonansi_declaration_560:
 ;
 
 udp_ansi_declaration_561:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | udp_ansi_declaration_561 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -8401,7 +8401,7 @@ udp_declaration_564:
 ;
 
 udp_declaration_565:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | udp_declaration_565 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -8431,7 +8431,7 @@ udp_output_declaration_570:
 ;
 
 udp_output_declaration_571:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | udp_output_declaration_571 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -8456,7 +8456,7 @@ combinational_body_575:
 ;
 
 sequential_body_576:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | udp_initial_statement
 ;
 
@@ -8536,7 +8536,7 @@ net_alias_591:
 ;
 
 blocking_assignment_592:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 | package_scope
@@ -8549,7 +8549,7 @@ nonblocking_assignment_593:
 
 action_block_594:
 %empty { C($$); }
-| statement
+| statement /* ignore */
 ;
 
 seq_block_595:
@@ -8678,8 +8678,8 @@ case_statement_619:
 ;
 
 case_statement_620:
-%empty { C($$); }
-| unique_priority
+%empty /* { C($$); } -- ignore */
+| unique_priority /* ignore */
 ;
 
 case_statement_621:
@@ -8688,8 +8688,8 @@ case_statement_621:
 ;
 
 case_statement_622:
-%empty { C($$); }
-| unique_priority
+%empty /* { C($$); } -- ignore */
+| unique_priority /* ignore */
 ;
 
 case_statement_623:
@@ -8838,13 +8838,13 @@ loop_variables_650:
 ;
 
 deferred_immediate_assertion_item_652:
-%empty { C($$); }
-| block_identifier ':' { $$ = $1; T($$, @2, zero, zero); }
+%empty /* { C($$); } -- ignore */
+| block_identifier ':' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
 ;
 
 clocking_declaration_653:
 %empty { C($$); }
-| DEFAULT_ { C($$); T($$, @1, zero, zero); }
+| DEFAULT_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
 clocking_declaration_654:
@@ -8928,7 +8928,7 @@ randsequence_statement_669:
 ;
 
 production_670:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | data_type_or_void
 ;
 
@@ -9038,7 +9038,7 @@ specify_output_terminal_descriptor_691:
 ;
 
 parallel_edge_sensitive_path_description_692:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | edge_identifier
 ;
 
@@ -9053,8 +9053,8 @@ parallel_edge_sensitive_path_description_694:
 ;
 
 full_edge_sensitive_path_description_695:
-%empty { C($$); }
-| edge_identifier
+%empty /* { C($$); } -- ignore */
+| edge_identifier /* ignore */
 ;
 
 full_edge_sensitive_path_description_696:
@@ -9343,7 +9343,7 @@ module_path_concatenation_752:
 ;
 
 streaming_concatenation_753:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | slice_size
 ;
 
@@ -9423,7 +9423,7 @@ list_of_arguments_767:
 ;
 
 method_call_body_769:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | method_call_body_769 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
@@ -9544,8 +9544,8 @@ constant_primary_792:
 ;
 
 constant_primary_793:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 | class_scope
 ;
 
@@ -9560,7 +9560,7 @@ constant_primary_795:
 ;
 
 primary_796:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | class_qualifier
 | package_scope
 ;
@@ -9576,7 +9576,7 @@ primary_798:
 ;
 
 class_qualifier_799:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | localCC { C($$); T($$, @1, zero, zero); }
 ;
 
@@ -9663,9 +9663,9 @@ variable_lvalue_815:
 ;
 
 nonrange_variable_lvalue_816:
-%empty { C($$); }
-| implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| implicit_class_handle '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
+| package_scope /* ignore */
 ;
 
 attribute_instance_817:
@@ -9689,22 +9689,22 @@ hierarchical_identifier_820:
 ;
 
 ps_class_identifier_821:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
 ps_covergroup_identifier_822:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 ;
 
 ps_checker_identifier_823:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
 ps_identifier_824:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
@@ -9716,28 +9716,28 @@ ps_or_hierarchical_array_identifier_825:
 ;
 
 ps_or_hierarchical_net_identifier_826:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 ;
 
 ps_or_hierarchical_property_identifier_827:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 ;
 
 ps_or_hierarchical_sequence_identifier_828:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
 ps_or_hierarchical_tf_identifier_829:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 ;
 
 ps_parameter_identifier_830:
-%empty { C($$); }
-| package_scope
+%empty /* { C($$); } -- ignore */
+| package_scope /* ignore */
 | class_scope
 ;
 
@@ -9747,14 +9747,14 @@ ps_parameter_identifier_831_831:
 ;
 
 ps_parameter_identifier_831:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | ps_parameter_identifier_831 generate_block_identifier ps_parameter_identifier_831_831 '.' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 ps_type_identifier_833:
-%empty { C($$); }
+%empty /* { C($$); } -- ignore */
 | localCC { C($$); T($$, @1, zero, zero); }
-| package_scope
+| package_scope /* ignore */
 ;
 
 c_identifier:

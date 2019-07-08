@@ -49,7 +49,7 @@ function ReadAllLines(fileName) {
 function Main() {
   var args, rx, lines, match, text, fout, i, n;
   args = ParseArguments();
-  rx = new RegExp('^' + args.fileName.replace('\\', '..') + ':([0-9]+).*rule useless');
+  rx = /:([0-9]+).*rule useless/;
   lines = ReadAllLines(args.fileName);
   while(!args.input.AtEndOfStream) {
     match = rx.exec(args.input.ReadLine());
