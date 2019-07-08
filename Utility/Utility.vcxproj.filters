@@ -78,6 +78,9 @@
     <None Include="scanner.inl">
       <Filter>Generated Files</Filter>
     </None>
+    <None Include="names.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="parser.y" />

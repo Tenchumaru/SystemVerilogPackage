@@ -32,6 +32,7 @@
   <ItemGroup>
     <None Include="extract_keywords.js" />
     <None Include="make_lex_rules.js" />
+    <None Include="names.inl" />
     <None Include="parser.inl" />
     <CustomBuild Include="parser.y">
       <FileType>Document</FileType>

@@ -22,17 +22,8 @@
 
 #ifdef _DEBUG
 static char const* token_names[] = {
-  "$end", "error", "$undefined", "PARAMETER", "TYPEDEF", "ENUM", "INPUT",
-  "INOUT", "OUTPUT", "INTEGER", "RETURN", "UNSIGNED", "LOGIC", "TRI",
-  "WIRE", "REG", "FUNCTION", "ENDFUNCTION", "INTERFACE", "ENDINTERFACE",
-  "MODPORT", "MODULE", "ENDMODULE", "BEGIN_", "END", "ALWAYS",
-  "ALWAYS_COMB", "ALWAYS_FF", "ALWAYS_LATCH", "INITIAL_", "POSEDGE",
-  "NEGEDGE", "OH_ARE", "VALUE", "GENVAR", "GENERATE", "ENDGENERATE",
-  "ASSIGN", "CASE", "DEFAULT", "ENDCASE", "IF", "FOR", "ID", "STRING",
-  "';'", "THEN", "ELSE", "'='", "'?'", "':'", "AND", "OR", "EQ", "NEQ",
-  "GE", "LE", "'<'", "'>'", "ASL", "LSL", "ASR", "LSR", "'+'", "'-'",
-  "'&'", "'|'", "'^'", "'*'", "'/'", "'%'", "'!'", "'~'", "POWER", "NEG",
-  "'{'", "'}'", "INC", "DEC", "'('", "')'", "'#'", "','", "'\\''", "'.'",
+  "$end", "error", "$undefined",
+#include "names.inl"
 };
 
 static int _DBOUT(struct YYLTYPE* yylloc, char const* s, int v) {

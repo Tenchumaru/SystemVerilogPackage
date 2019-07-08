@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		footer.y = footer.y
 		header.l = header.l
 		header.y = header.y
+		mknames.js = mknames.js
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility.Test", "Utility.Test\Utility.Test.vcxproj", "{38F6B1D6-55E7-4DEB-A4F5-6AC66FC3F8AB}"

@@ -6,11 +6,12 @@ SET T=%TEMP%\%RANDOM%
 
 REM Create the parser.
 mksvgrmr\bin\Debug\mksvgrmr.exe parser "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
-win_bison --output=NUL %T% 2> %T%_
+win_bison --output=NUL --defines=%T%__ %T% 2> %T%_
 cscript //nologo add_ignore.js %T% %T%_
+cscript //nologo mknames.js %T%__ Utility\names.inl
 COPY /B header.y+%T%+footer.y %T%_
 CALL :copy_if_newer %T%_ Utility\parser.y
-DEL %T%
+DEL %T%*
 
 REM Create the scanner.
 mksvgrmr\bin\Debug\mksvgrmr.exe scanner "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
