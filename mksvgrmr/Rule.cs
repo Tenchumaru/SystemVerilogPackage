@@ -13,10 +13,10 @@ namespace mksvgrmr
             public string Name { get; private set; }
             public List<string> RightHandSide { get; private set; } = new List<string>();
 
-            internal Rule(string name, string rightHandSide)
+            internal Rule(string name, params string[] rightHandSide)
             {
                 Name = name;
-                RightHandSide.Add(rightHandSide);
+                RightHandSide.AddRange(rightHandSide);
             }
 
             internal Rule(string name, IEnumerator<HtmlNode> nodes)

@@ -9770,7 +9770,8 @@ STRING_ { C($$); T($$, @1, zero, zero); }
 ;
 
 simple_identifier:
-SID_ { C($$); T($$, @1, zero, zero); }
+CID_ { C($$); T($$, @1, zero, zero); }
+| SID_ { C($$); T($$, @1, zero, zero); }
 ;
 
 string_literal:

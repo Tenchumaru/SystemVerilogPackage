@@ -47,7 +47,7 @@ namespace mksvgrmr
             extras.Add(new Rule("c_identifier", "CID_"));
             extras.Add(new Rule("escaped_identifier", "EID_"));
             extras.Add(new Rule("file_path_spec", "STRING_"));
-            extras.Add(new Rule("simple_identifier", "SID_"));
+            extras.Add(new Rule("simple_identifier", "CID_", "|", "SID_"));
             extras.Add(new Rule("string_literal", "STRING_"));
             extras.Add(new Rule("system_tf_identifier", "SYSID_"));
             extras.Add(new Rule("fixed_point_number", "REAL_NUMBER_")); // only unsigned.unsigned
