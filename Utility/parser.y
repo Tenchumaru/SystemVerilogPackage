@@ -39,6 +39,7 @@
 
 %type<results> definition parameter typedef function interface module generate
 %type<results> pparams type type1 base_type enum_values enum_value case_tag
+%type<results> type_mod type_args type_arg more_type_args
 %type<results> more_enum_values expr compound_expr more_exprs params
 %type<results> more_params param interface_body module_body interface_statement
 %type<results> modport_params modport_param1 more_modport_params modport_param
@@ -101,7 +102,27 @@ base_type
 | base_type brackets { $$ = $1; P($$, $2); }
 | INTEGER { C($$); T($$, @1, start_of_line, zero); }
 | INTEGER UNSIGNED { C($$); T($$, @1, start_of_line, one); T($$, @2, one, zero); }
-| ID { C($$); T($$, @1, start_of_line, zero); }
+| ID type_mod { C($$); T($$, @1, start_of_line, zero); P($$, $2); }
+;
+
+type_mod:
+%empty { C($$); }
+| '#' '(' type_args ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+;
+
+type_args:
+%empty { C($$); }
+| type_arg more_type_args { $$ = $1; P($$, $2); }
+;
+
+type_arg:
+ID { C($$); T($$, @1, zero, zero); }
+| VALUE { C($$); T($$, @1, zero, zero); }
+;
+
+more_type_args:
+%empty { C($$); }
+| more_type_args ',' type_arg { $$ = $1; T($$, @2, zero, one); P($$, $3); }
 ;
 
 base_type:
