@@ -46,7 +46,7 @@
 %type<results> edges edge more_edges id body statement declaration brackets
 %type<results> bracket more_brackets instance more_instances ids more_ids args
 %type<results> arg more_args case_body reference more_references always inout
-%type<results> begin end epilog
+%type<results> hierarchy begin end epilog
 
 %%
 
@@ -303,8 +303,7 @@ more_brackets:
 ;
 
 instance:
-%empty { C($$); }
-| ID { C($$); T($$, @1, zero, zero); }
+ID { C($$); T($$, @1, zero, zero); }
 | ID args { C($$); T($$, @1, zero, zero); P($$, $2); }
 | ID brackets { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
@@ -351,9 +350,13 @@ ID ':' { C($$); T($$, @1, start_of_line, zero); T($$, @2, zero, newline); }
 ;
 
 reference:
-instance
-| ID '.' instance { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); }
+instance hierarchy { $$ = $1; P($$, $2); }
 | '{' reference more_references '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+;
+
+hierarchy:
+%empty { C($$); }
+| hierarchy '.' instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 more_references:
