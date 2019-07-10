@@ -12,12 +12,12 @@
 }
 
 <STR>{
-\n          { if(is_parsing) { NL(); BEGIN(INITIAL); return DBOUT(STRING_, String); } else DebugBreak(); }
-\"          { BEGIN(INITIAL); return DBOUT(STRING_, String); }
+\n          { if(is_parsing) { NL(); BEGIN(INITIAL); return DBOUT(STRING, String); } else DebugBreak(); }
+\"          { BEGIN(INITIAL); return DBOUT(STRING, String); }
 \\[0-9]+    |
 \\.         |
 [^\\\n\"]+  ;
-<<EOF>>     { BEGIN(INITIAL); return DBOUT(STRING_, String); }
+<<EOF>>     { BEGIN(INITIAL); return DBOUT(STRING, String); }
 }
 
 <BACKTICK>{

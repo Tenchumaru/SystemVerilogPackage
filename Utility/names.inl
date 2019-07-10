@@ -5,6 +5,7 @@
 "EID_",
 "SID_",
 "SYSID_",
+"STRING",
 "_01",
 "_10",
 "_1APOSb0",

@@ -23,6 +23,7 @@
 %token EID_
 %token SID_
 %token SYSID_
+%token STRING
 %token _01
 %token _10
 %token _1APOSb0
@@ -9766,7 +9767,7 @@ EID_ { C($$); T($$, @1, zero, zero); }
 ;
 
 file_path_spec:
-STRING_ { C($$); T($$, @1, zero, zero); }
+STRING { C($$); T($$, @1, zero, zero); }
 ;
 
 simple_identifier:
@@ -9775,7 +9776,7 @@ CID_ { C($$); T($$, @1, zero, zero); }
 ;
 
 string_literal:
-STRING_ { C($$); T($$, @1, zero, zero); }
+STRING { C($$); T($$, @1, zero, zero); }
 ;
 
 system_tf_identifier:
