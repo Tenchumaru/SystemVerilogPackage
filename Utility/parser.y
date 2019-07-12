@@ -1078,825 +1078,554 @@
 %type<results> module_ansi_header_12
 %type<results> module_ansi_header_13
 %type<results> module_ansi_header_14
-%type<results> module_ansi_header_15
-%type<results> module_ansi_header_16
+%type<results> module_declaration_15
+%type<results> module_declaration_16
 %type<results> module_declaration_17
 %type<results> module_declaration_18
 %type<results> module_declaration_19
-%type<results> module_declaration_20
-%type<results> module_declaration_21
-%type<results> module_declaration_22
-%type<results> module_declaration_23
-%type<results> module_declaration_24
-%type<results> module_declaration_25
-%type<results> module_declaration_26
-%type<results> module_declaration_27
-%type<results> interface_declaration_28
-%type<results> interface_declaration_29
-%type<results> interface_declaration_30
-%type<results> interface_declaration_31
-%type<results> interface_declaration_32
-%type<results> interface_declaration_33
-%type<results> interface_declaration_34
-%type<results> interface_declaration_35
-%type<results> interface_declaration_36
-%type<results> interface_declaration_37
-%type<results> interface_nonansi_header_38
-%type<results> interface_nonansi_header_39
-%type<results> interface_nonansi_header_40
-%type<results> interface_nonansi_header_41
-%type<results> interface_ansi_header_42
-%type<results> interface_ansi_header_43
-%type<results> interface_ansi_header_44
-%type<results> interface_ansi_header_45
-%type<results> interface_ansi_header_46
-%type<results> program_declaration_47
-%type<results> program_declaration_48
-%type<results> program_declaration_49
-%type<results> program_declaration_50
-%type<results> program_declaration_51
-%type<results> program_declaration_52
-%type<results> program_declaration_53
-%type<results> program_declaration_54
-%type<results> program_declaration_55
-%type<results> program_declaration_56
-%type<results> program_nonansi_header_57
-%type<results> program_nonansi_header_58
-%type<results> program_nonansi_header_59
-%type<results> program_nonansi_header_60
-%type<results> program_ansi_header_61
-%type<results> program_ansi_header_62
-%type<results> program_ansi_header_63
-%type<results> program_ansi_header_64
-%type<results> program_ansi_header_65
-%type<results> checker_declaration_66_66
-%type<results> checker_declaration_66
-%type<results> checker_declaration_68_68
-%type<results> checker_declaration_68
-%type<results> checker_declaration_70
-%type<results> class_declaration_71
-%type<results> class_declaration_72
-%type<results> class_declaration_73
-%type<results> class_declaration_74_74
-%type<results> class_declaration_74
-%type<results> class_declaration_76_76
-%type<results> class_declaration_76
-%type<results> class_declaration_78
-%type<results> class_declaration_79
-%type<results> interface_class_type_80
-%type<results> interface_class_declaration_81
-%type<results> interface_class_declaration_82_82
-%type<results> interface_class_declaration_82
-%type<results> interface_class_declaration_84
-%type<results> interface_class_declaration_85
-%type<results> interface_class_item_86
-%type<results> package_declaration_87
-%type<results> package_declaration_88
-%type<results> package_declaration_89
-%type<results> package_declaration_90_90
-%type<results> package_declaration_90
-%type<results> package_declaration_92
-%type<results> timeunits_declaration_93
-%type<results> parameter_port_list_94
-%type<results> parameter_port_list_95
-%type<results> list_of_ports_96
-%type<results> list_of_port_declarations_97_97
-%type<results> list_of_port_declarations_97_98_98
-%type<results> list_of_port_declarations_97_98
-%type<results> list_of_port_declarations_97
-%type<results> port_declaration_101
-%type<results> port_declaration_102
-%type<results> port_declaration_103
-%type<results> port_declaration_104
-%type<results> port_declaration_105
-%type<results> port_106
-%type<results> port_107
-%type<results> port_expression_108
-%type<results> net_port_header_109
-%type<results> variable_port_header_110
-%type<results> interface_port_header_111
-%type<results> interface_port_header_112
-%type<results> ansi_port_declaration_113
-%type<results> ansi_port_declaration_114
-%type<results> ansi_port_declaration_115
-%type<results> ansi_port_declaration_116
-%type<results> ansi_port_declaration_117
-%type<results> ansi_port_declaration_118
-%type<results> ansi_port_declaration_119
-%type<results> ansi_port_declaration_120
-%type<results> elaboration_system_task_121_121
-%type<results> elaboration_system_task_121
-%type<results> elaboration_system_task_123_123
-%type<results> elaboration_system_task_123
-%type<results> elaboration_system_task_125_125
-%type<results> elaboration_system_task_125
-%type<results> elaboration_system_task_127_127
-%type<results> elaboration_system_task_127
-%type<results> module_or_generate_item_129
-%type<results> module_or_generate_item_130
-%type<results> module_or_generate_item_131
-%type<results> module_or_generate_item_132
-%type<results> module_or_generate_item_133
-%type<results> non_port_module_item_134
-%type<results> bind_directive_135
-%type<results> bind_target_instance_list_136
-%type<results> config_declaration_137
-%type<results> config_declaration_138
-%type<results> config_declaration_139
-%type<results> design_statement_140_140
-%type<results> design_statement_140
-%type<results> inst_name_142
-%type<results> cell_clause_143
-%type<results> liblist_clause_144
-%type<results> use_clause_145
-%type<results> use_clause_146
-%type<results> use_clause_147
-%type<results> use_clause_148
-%type<results> use_clause_149
-%type<results> use_clause_150
-%type<results> use_clause_151
-%type<results> interface_or_generate_item_152
-%type<results> interface_or_generate_item_153
-%type<results> interface_or_generate_item_154
-%type<results> non_port_program_item_155
-%type<results> non_port_program_item_156
-%type<results> non_port_program_item_157
-%type<results> non_port_program_item_158
-%type<results> non_port_program_item_159
-%type<results> checker_port_list_160
-%type<results> checker_port_item_161
-%type<results> checker_port_item_162
-%type<results> checker_port_item_163
-%type<results> checker_port_item_164
-%type<results> checker_or_generate_item_declaration_165
-%type<results> class_item_166
-%type<results> class_item_167
-%type<results> class_item_168
-%type<results> class_item_169
-%type<results> class_item_170
-%type<results> class_property_171
-%type<results> class_property_172
-%type<results> class_property_173
-%type<results> class_method_174
-%type<results> class_method_175
-%type<results> class_method_176
-%type<results> class_method_177
-%type<results> class_method_178
-%type<results> class_method_179
-%type<results> class_constructor_prototype_180_180
-%type<results> class_constructor_prototype_180
-%type<results> method_qualifier_182
-%type<results> class_constructor_declaration_183
-%type<results> class_constructor_declaration_184_184
-%type<results> class_constructor_declaration_184
-%type<results> class_constructor_declaration_186
-%type<results> class_constructor_declaration_187_187
-%type<results> class_constructor_declaration_187
-%type<results> class_constructor_declaration_189
-%type<results> class_constructor_declaration_190
-%type<results> constraint_declaration_191
-%type<results> constraint_block_192
-%type<results> solve_before_list_193
-%type<results> constraint_primary_194
-%type<results> constraint_expression_195
-%type<results> constraint_expression_196
-%type<results> constraint_expression_197
-%type<results> constraint_set_198
-%type<results> dist_list_199
-%type<results> dist_item_200
-%type<results> constraint_prototype_201
-%type<results> constraint_prototype_202
-%type<results> extern_constraint_declaration_203
-%type<results> identifier_list_204
-%type<results> anonymous_program_205
-%type<results> specparam_declaration_206
-%type<results> data_declaration_207
-%type<results> data_declaration_208
-%type<results> data_declaration_209
-%type<results> package_import_declaration_210
-%type<results> package_export_declaration_211
-%type<results> net_declaration_212
-%type<results> net_declaration_213
-%type<results> net_declaration_214
-%type<results> net_declaration_215
-%type<results> net_declaration_216
-%type<results> net_declaration_217
-%type<results> net_declaration_218_218
-%type<results> net_declaration_218
-%type<results> type_declaration_220
-%type<results> type_declaration_221
-%type<results> net_type_declaration_222_222
-%type<results> net_type_declaration_222
-%type<results> net_type_declaration_224
-%type<results> data_type_225
-%type<results> data_type_226
-%type<results> data_type_227
-%type<results> data_type_228_228
-%type<results> data_type_228
-%type<results> data_type_230
-%type<results> data_type_231
-%type<results> data_type_232
-%type<results> data_type_233
-%type<results> data_type_234
-%type<results> data_type_235
-%type<results> data_type_236
-%type<results> data_type_237
-%type<results> data_type_238
-%type<results> data_type_239
-%type<results> implicit_data_type_240
-%type<results> implicit_data_type_241
-%type<results> enum_base_type_242
-%type<results> enum_base_type_243
-%type<results> enum_base_type_244
-%type<results> enum_base_type_245
-%type<results> enum_name_declaration_246_246
-%type<results> enum_name_declaration_246
-%type<results> enum_name_declaration_248
-%type<results> class_type_249
-%type<results> class_type_250_250
-%type<results> class_type_250
-%type<results> net_port_type_252
-%type<results> struct_union_member_253
-%type<results> struct_union_member_254
-%type<results> struct_union_255
-%type<results> delay3_256_256
-%type<results> delay3_256
-%type<results> delay2_258
-%type<results> list_of_defparam_assignments_259
-%type<results> list_of_genvar_identifiers_260
-%type<results> list_of_interface_identifiers_261
-%type<results> list_of_interface_identifiers_262_262
-%type<results> list_of_interface_identifiers_262
-%type<results> list_of_net_decl_assignments_264
-%type<results> list_of_param_assignments_265
-%type<results> list_of_port_identifiers_266
-%type<results> list_of_port_identifiers_267_267
-%type<results> list_of_port_identifiers_267
-%type<results> list_of_udp_port_identifiers_269
-%type<results> list_of_specparam_assignments_270
-%type<results> list_of_tf_variable_identifiers_271
-%type<results> list_of_tf_variable_identifiers_272
-%type<results> list_of_tf_variable_identifiers_273_273
-%type<results> list_of_tf_variable_identifiers_273_274
-%type<results> list_of_tf_variable_identifiers_273
-%type<results> list_of_type_assignments_276
-%type<results> list_of_variable_decl_assignments_277
-%type<results> list_of_variable_identifiers_278
-%type<results> list_of_variable_identifiers_279_279
-%type<results> list_of_variable_identifiers_279
-%type<results> list_of_variable_port_identifiers_281
-%type<results> list_of_variable_port_identifiers_282
-%type<results> list_of_variable_port_identifiers_283_283
-%type<results> list_of_variable_port_identifiers_283_284
-%type<results> list_of_variable_port_identifiers_283
-%type<results> net_decl_assignment_286
-%type<results> net_decl_assignment_287
-%type<results> param_assignment_288
-%type<results> param_assignment_289
-%type<results> type_assignment_290
-%type<results> pulse_control_specparam_291
-%type<results> pulse_control_specparam_292
-%type<results> variable_decl_assignment_293
-%type<results> variable_decl_assignment_294
-%type<results> variable_decl_assignment_295
-%type<results> variable_decl_assignment_296
-%type<results> variable_decl_assignment_297
-%type<results> class_new_298
-%type<results> class_new_299
-%type<results> dynamic_array_new_300
-%type<results> queue_dimension_301
-%type<results> function_declaration_302
-%type<results> function_body_declaration_303
-%type<results> function_body_declaration_304
-%type<results> function_body_declaration_305
-%type<results> function_body_declaration_306
-%type<results> function_body_declaration_307
-%type<results> function_body_declaration_308
-%type<results> function_body_declaration_309
-%type<results> function_body_declaration_310
-%type<results> function_body_declaration_311
-%type<results> function_prototype_312_312
-%type<results> function_prototype_312
-%type<results> dpi_import_export_314
-%type<results> dpi_import_export_315
-%type<results> dpi_import_export_316
-%type<results> dpi_import_export_317
-%type<results> dpi_import_export_318
-%type<results> dpi_import_export_319
-%type<results> task_declaration_320
-%type<results> task_body_declaration_321
-%type<results> task_body_declaration_322
-%type<results> task_body_declaration_323
-%type<results> task_body_declaration_324
-%type<results> task_body_declaration_325
-%type<results> task_body_declaration_326
-%type<results> task_body_declaration_327
-%type<results> task_body_declaration_328
-%type<results> task_body_declaration_329
-%type<results> tf_port_list_330
-%type<results> tf_port_item_331
-%type<results> tf_port_item_332
-%type<results> tf_port_item_333
-%type<results> tf_port_item_334_334
-%type<results> tf_port_item_334_335
-%type<results> tf_port_item_334
-%type<results> tf_port_declaration_337
-%type<results> tf_port_declaration_338
-%type<results> task_prototype_339_339
-%type<results> task_prototype_339
-%type<results> block_item_declaration_341
-%type<results> block_item_declaration_342
-%type<results> block_item_declaration_343
-%type<results> block_item_declaration_344
-%type<results> block_item_declaration_345
-%type<results> overload_proto_formals_346
-%type<results> modport_declaration_347
-%type<results> modport_item_348
-%type<results> modport_ports_declaration_349
-%type<results> modport_ports_declaration_350
-%type<results> modport_ports_declaration_351
-%type<results> modport_simple_ports_declaration_352
-%type<results> modport_simple_port_353
-%type<results> modport_tf_ports_declaration_354
-%type<results> concurrent_assertion_item_355
-%type<results> cover_sequence_statement_356
-%type<results> cover_sequence_statement_357
-%type<results> property_instance_358_358
-%type<results> property_instance_358
-%type<results> property_list_of_arguments_360
-%type<results> property_list_of_arguments_361_361
-%type<results> property_list_of_arguments_361
-%type<results> property_list_of_arguments_363_363
-%type<results> property_list_of_arguments_363
-%type<results> property_list_of_arguments_365
-%type<results> property_list_of_arguments_366_366
-%type<results> property_list_of_arguments_366
-%type<results> property_declaration_368_368
-%type<results> property_declaration_368
-%type<results> property_declaration_370
-%type<results> property_declaration_371
-%type<results> property_declaration_372
-%type<results> property_port_list_373
-%type<results> property_port_item_374
-%type<results> property_port_item_375_375
-%type<results> property_port_item_375
-%type<results> property_port_item_377
-%type<results> property_port_item_378
-%type<results> property_spec_379
-%type<results> property_spec_380
-%type<results> property_expr_381
-%type<results> property_expr_382
-%type<results> property_expr_383
-%type<results> property_expr_384
-%type<results> property_expr_385
-%type<results> property_expr_386
-%type<results> property_expr_387
-%type<results> property_expr_388
-%type<results> property_case_item_389
-%type<results> property_case_item_390
-%type<results> property_case_item_391
-%type<results> property_case_item_392
-%type<results> sequence_declaration_393_393
-%type<results> sequence_declaration_393
-%type<results> sequence_declaration_395
-%type<results> sequence_declaration_396
-%type<results> sequence_declaration_397
-%type<results> sequence_port_list_398
-%type<results> sequence_port_item_399
-%type<results> sequence_port_item_400_400
-%type<results> sequence_port_item_400
-%type<results> sequence_port_item_402
-%type<results> sequence_port_item_403
-%type<results> sequence_expr_404
-%type<results> sequence_expr_405
-%type<results> sequence_expr_406
-%type<results> sequence_expr_407
-%type<results> sequence_expr_408
-%type<results> sequence_expr_409
-%type<results> sequence_expr_410
-%type<results> sequence_instance_411_411
-%type<results> sequence_instance_411
-%type<results> sequence_list_of_arguments_413
-%type<results> sequence_list_of_arguments_414_414
-%type<results> sequence_list_of_arguments_414
-%type<results> sequence_list_of_arguments_416_416
-%type<results> sequence_list_of_arguments_416
-%type<results> sequence_list_of_arguments_418
-%type<results> sequence_list_of_arguments_419_419
-%type<results> sequence_list_of_arguments_419
-%type<results> expression_or_dist_421_421
-%type<results> expression_or_dist_421
-%type<results> let_declaration_423_423
-%type<results> let_declaration_423
-%type<results> let_port_list_425
-%type<results> let_port_item_426
-%type<results> let_port_item_427
-%type<results> let_port_item_428
-%type<results> let_expression_429
-%type<results> let_expression_430_430
-%type<results> let_expression_430
-%type<results> let_list_of_arguments_432
-%type<results> let_list_of_arguments_433_433
-%type<results> let_list_of_arguments_433
-%type<results> let_list_of_arguments_435_435
-%type<results> let_list_of_arguments_435
-%type<results> let_list_of_arguments_437
-%type<results> let_list_of_arguments_438_438
-%type<results> let_list_of_arguments_438
-%type<results> covergroup_declaration_440_440
-%type<results> covergroup_declaration_440
-%type<results> covergroup_declaration_442
-%type<results> covergroup_declaration_443
-%type<results> covergroup_declaration_444
-%type<results> coverage_spec_or_option_445
-%type<results> coverage_spec_or_option_446
-%type<results> coverage_event_447
-%type<results> hierarchical_btf_identifier_448
-%type<results> cover_point_449_449
-%type<results> cover_point_449
-%type<results> cover_point_451
-%type<results> bins_or_empty_452_452
-%type<results> bins_or_empty_452_453
-%type<results> bins_or_empty_452
-%type<results> bins_or_options_455
-%type<results> bins_or_options_456_456
-%type<results> bins_or_options_456
-%type<results> bins_or_options_458
-%type<results> bins_or_options_459
-%type<results> bins_or_options_460
-%type<results> bins_or_options_461_461
-%type<results> bins_or_options_461
-%type<results> bins_or_options_463
-%type<results> bins_or_options_464
-%type<results> bins_or_options_465
-%type<results> bins_or_options_466_466
-%type<results> bins_or_options_466
-%type<results> bins_or_options_468
-%type<results> bins_or_options_469
-%type<results> bins_or_options_470
-%type<results> bins_or_options_471
-%type<results> bins_or_options_472_472_472
-%type<results> bins_or_options_472_472
-%type<results> bins_or_options_472
-%type<results> bins_or_options_475
-%type<results> bins_or_options_476
-%type<results> trans_list_477
-%type<results> trans_set_478
-%type<results> cover_cross_479
-%type<results> cover_cross_480
-%type<results> list_of_cross_items_481
-%type<results> cross_body_482
-%type<results> bins_selection_or_option_483
-%type<results> bins_selection_or_option_484
-%type<results> bins_selection_485
-%type<results> select_expression_486
-%type<results> select_expression_487
-%type<results> select_condition_488
-%type<results> bins_expression_489
-%type<results> covergroup_range_list_490
-%type<results> gate_instantiation_491
-%type<results> gate_instantiation_492
-%type<results> gate_instantiation_493
-%type<results> gate_instantiation_494
-%type<results> gate_instantiation_495
-%type<results> gate_instantiation_496
-%type<results> gate_instantiation_497
-%type<results> gate_instantiation_498
-%type<results> gate_instantiation_499
-%type<results> gate_instantiation_500
-%type<results> gate_instantiation_501
-%type<results> gate_instantiation_502
-%type<results> gate_instantiation_503
-%type<results> gate_instantiation_504
-%type<results> gate_instantiation_505
-%type<results> gate_instantiation_506
-%type<results> gate_instantiation_507
-%type<results> gate_instantiation_508
-%type<results> gate_instantiation_509
-%type<results> gate_instantiation_510
-%type<results> cmos_switch_instance_511
-%type<results> enable_gate_instance_512
-%type<results> mos_switch_instance_513
-%type<results> n_input_gate_instance_514
-%type<results> n_input_gate_instance_515
-%type<results> n_output_gate_instance_516
-%type<results> n_output_gate_instance_517
-%type<results> pass_switch_instance_518
-%type<results> pass_enable_switch_instance_519
-%type<results> pull_gate_instance_520
-%type<results> module_instantiation_521
-%type<results> module_instantiation_522
-%type<results> parameter_value_assignment_523
-%type<results> list_of_parameter_assignments_524
-%type<results> list_of_parameter_assignments_525
-%type<results> named_parameter_assignment_526
-%type<results> hierarchical_instance_527
-%type<results> name_of_instance_528
-%type<results> list_of_port_connections_529
-%type<results> list_of_port_connections_530
-%type<results> ordered_port_connection_531
-%type<results> ordered_port_connection_532
-%type<results> named_port_connection_533
-%type<results> named_port_connection_534_534
-%type<results> named_port_connection_534
-%type<results> named_port_connection_536
-%type<results> interface_instantiation_537
-%type<results> interface_instantiation_538
-%type<results> program_instantiation_539
-%type<results> program_instantiation_540
-%type<results> checker_instantiation_541
-%type<results> list_of_checker_port_connections_542
-%type<results> list_of_checker_port_connections_543
-%type<results> ordered_checker_port_connection_544
-%type<results> ordered_checker_port_connection_545
-%type<results> named_checker_port_connection_546
-%type<results> named_checker_port_connection_547_547
-%type<results> named_checker_port_connection_547
-%type<results> named_checker_port_connection_549
-%type<results> generate_region_550
-%type<results> genvar_initialization_551
-%type<results> if_generate_construct_552
-%type<results> case_generate_construct_553
-%type<results> case_generate_item_554
-%type<results> case_generate_item_555
-%type<results> generate_block_556
-%type<results> generate_block_557
-%type<results> generate_block_558
-%type<results> generate_block_559
-%type<results> udp_nonansi_declaration_560
-%type<results> udp_ansi_declaration_561
-%type<results> udp_declaration_562
-%type<results> udp_declaration_563
-%type<results> udp_declaration_564
-%type<results> udp_declaration_565
-%type<results> udp_declaration_566
-%type<results> udp_declaration_567
-%type<results> udp_port_list_568
-%type<results> udp_declaration_port_list_569
-%type<results> udp_output_declaration_570
-%type<results> udp_output_declaration_571
-%type<results> udp_output_declaration_572
-%type<results> udp_input_declaration_573
-%type<results> udp_reg_declaration_574
-%type<results> combinational_body_575
-%type<results> sequential_body_576
-%type<results> sequential_body_577
-%type<results> level_input_list_578
-%type<results> edge_input_list_579
-%type<results> edge_input_list_580
-%type<results> udp_instantiation_581
-%type<results> udp_instantiation_582
-%type<results> udp_instantiation_583
-%type<results> udp_instance_584
-%type<results> udp_instance_585
-%type<results> continuous_assign_586
-%type<results> continuous_assign_587
-%type<results> continuous_assign_588
-%type<results> list_of_net_assignments_589
-%type<results> list_of_variable_assignments_590
-%type<results> net_alias_591
-%type<results> blocking_assignment_592
-%type<results> nonblocking_assignment_593
-%type<results> action_block_594
-%type<results> seq_block_595
-%type<results> seq_block_596
-%type<results> seq_block_597
-%type<results> seq_block_598
-%type<results> par_block_599
-%type<results> par_block_600
-%type<results> par_block_601
-%type<results> par_block_602
-%type<results> statement_or_null_603
-%type<results> statement_604
-%type<results> statement_605
-%type<results> function_statement_or_null_606
-%type<results> variable_identifier_list_607
-%type<results> event_expression_608
-%type<results> event_expression_609
-%type<results> event_expression_610
-%type<results> jump_statement_611
-%type<results> wait_statement_612
-%type<results> event_trigger_613
-%type<results> conditional_statement_614
-%type<results> conditional_statement_615
-%type<results> conditional_statement_616
-%type<results> cond_predicate_617
-%type<results> case_statement_618
-%type<results> case_statement_619
-%type<results> case_statement_620
-%type<results> case_statement_621
-%type<results> case_statement_622
-%type<results> case_statement_623
-%type<results> case_item_624
-%type<results> case_item_625
-%type<results> case_pattern_item_626
-%type<results> case_pattern_item_627
-%type<results> case_inside_item_628
-%type<results> randcase_statement_629
-%type<results> open_range_list_630
-%type<results> pattern_631
-%type<results> pattern_632
-%type<results> pattern_633
-%type<results> assignment_pattern_634
-%type<results> assignment_pattern_635
-%type<results> assignment_pattern_636
-%type<results> assignment_pattern_637
-%type<results> assignment_pattern_expression_638
-%type<results> assignment_pattern_net_lvalue_639
-%type<results> assignment_pattern_variable_lvalue_640
-%type<results> loop_statement_641
-%type<results> loop_statement_642
-%type<results> loop_statement_643
-%type<results> loop_statement_644
-%type<results> for_initialization_645
-%type<results> for_variable_declaration_646
-%type<results> for_variable_declaration_647
-%type<results> for_step_648
-%type<results> loop_variables_649
-%type<results> loop_variables_650_650
-%type<results> loop_variables_650
-%type<results> deferred_immediate_assertion_item_652
-%type<results> clocking_declaration_653
-%type<results> clocking_declaration_654
-%type<results> clocking_declaration_655
-%type<results> clocking_declaration_656
-%type<results> clocking_declaration_657
-%type<results> clocking_declaration_658
-%type<results> clocking_item_659
-%type<results> clocking_direction_660
-%type<results> clocking_direction_661
-%type<results> clocking_direction_662
-%type<results> clocking_direction_663
-%type<results> list_of_clocking_decl_assign_664
-%type<results> clocking_decl_assign_665
-%type<results> clocking_skew_666
-%type<results> clocking_drive_667
-%type<results> randsequence_statement_668
-%type<results> randsequence_statement_669
-%type<results> production_670
-%type<results> production_671
-%type<results> production_672
-%type<results> rs_rule_673_673
-%type<results> rs_rule_673
-%type<results> rs_production_list_675
-%type<results> rs_production_list_676
-%type<results> rs_production_list_677
-%type<results> rs_code_block_678
-%type<results> rs_code_block_679
-%type<results> production_item_680
-%type<results> rs_if_else_681
-%type<results> rs_case_682
-%type<results> rs_case_item_683
-%type<results> rs_case_item_684
-%type<results> specify_block_685
-%type<results> parallel_path_description_686
-%type<results> full_path_description_687
-%type<results> list_of_path_inputs_688
-%type<results> list_of_path_outputs_689
-%type<results> specify_input_terminal_descriptor_690
-%type<results> specify_output_terminal_descriptor_691
-%type<results> parallel_edge_sensitive_path_description_692
-%type<results> parallel_edge_sensitive_path_description_693
-%type<results> parallel_edge_sensitive_path_description_694
-%type<results> full_edge_sensitive_path_description_695
-%type<results> full_edge_sensitive_path_description_696
-%type<results> full_edge_sensitive_path_description_697
-%type<results> setup_timing_check_698_698
-%type<results> setup_timing_check_698
-%type<results> hold_timing_check_700_700
-%type<results> hold_timing_check_700
-%type<results> setuphold_timing_check_702_702
-%type<results> setuphold_timing_check_702_703_703
-%type<results> setuphold_timing_check_702_703_704_704
-%type<results> setuphold_timing_check_702_703_704_705_705
-%type<results> setuphold_timing_check_702_703_704_705_706_706
-%type<results> setuphold_timing_check_702_703_704_705_706
-%type<results> setuphold_timing_check_702_703_704_705
-%type<results> setuphold_timing_check_702_703_704
-%type<results> setuphold_timing_check_702_703
-%type<results> setuphold_timing_check_702
-%type<results> recovery_timing_check_712_712
-%type<results> recovery_timing_check_712
-%type<results> removal_timing_check_714_714
-%type<results> removal_timing_check_714
-%type<results> recrem_timing_check_716_716
-%type<results> recrem_timing_check_716_717_717
-%type<results> recrem_timing_check_716_717_718_718
-%type<results> recrem_timing_check_716_717_718_719_719
-%type<results> recrem_timing_check_716_717_718_719_720_720
-%type<results> recrem_timing_check_716_717_718_719_720
-%type<results> recrem_timing_check_716_717_718_719
-%type<results> recrem_timing_check_716_717_718
-%type<results> recrem_timing_check_716_717
-%type<results> recrem_timing_check_716
-%type<results> skew_timing_check_726_726
-%type<results> skew_timing_check_726
-%type<results> timeskew_timing_check_728_728
-%type<results> timeskew_timing_check_728_729_729
-%type<results> timeskew_timing_check_728_729_730_730
-%type<results> timeskew_timing_check_728_729_730
-%type<results> timeskew_timing_check_728_729
-%type<results> timeskew_timing_check_728
-%type<results> fullskew_timing_check_734_734
-%type<results> fullskew_timing_check_734_735_735
-%type<results> fullskew_timing_check_734_735_736_736
-%type<results> fullskew_timing_check_734_735_736
-%type<results> fullskew_timing_check_734_735
-%type<results> fullskew_timing_check_734
-%type<results> period_timing_check_740_740
-%type<results> period_timing_check_740
-%type<results> width_timing_check_742_742
-%type<results> width_timing_check_742
-%type<results> nochange_timing_check_744_744
-%type<results> nochange_timing_check_744
-%type<results> timing_check_event_746
-%type<results> timing_check_event_747
-%type<results> controlled_timing_check_event_748
-%type<results> edge_control_specifier_749
-%type<results> concatenation_750
-%type<results> constant_concatenation_751
-%type<results> module_path_concatenation_752
-%type<results> streaming_concatenation_753
-%type<results> stream_concatenation_754
-%type<results> stream_expression_755
-%type<results> tf_call_756
-%type<results> tf_call_757
-%type<results> system_tf_call_758
-%type<results> system_tf_call_759
-%type<results> subroutine_call_760
-%type<results> list_of_arguments_761
-%type<results> list_of_arguments_762_762
-%type<results> list_of_arguments_762
-%type<results> list_of_arguments_764_764
-%type<results> list_of_arguments_764
-%type<results> list_of_arguments_766
-%type<results> list_of_arguments_767_767
-%type<results> list_of_arguments_767
-%type<results> method_call_body_769
-%type<results> method_call_body_770
-%type<results> array_manipulation_call_771
-%type<results> array_manipulation_call_772
-%type<results> array_manipulation_call_773
-%type<results> randomize_call_774
-%type<results> randomize_call_775_775
-%type<results> randomize_call_775
-%type<results> randomize_call_777_777_777
-%type<results> randomize_call_777_777
-%type<results> randomize_call_777
-%type<results> inc_or_dec_expression_780
-%type<results> inc_or_dec_expression_781
-%type<results> conditional_expression_782
-%type<results> constant_expression_783
-%type<results> constant_expression_784
-%type<results> constant_expression_785
-%type<results> expression_786
-%type<results> expression_787
-%type<results> tagged_union_expression_788
-%type<results> module_path_conditional_expression_789
-%type<results> module_path_expression_790
-%type<results> module_path_expression_791
-%type<results> constant_primary_792
-%type<results> constant_primary_793
-%type<results> constant_primary_794
-%type<results> constant_primary_795
-%type<results> primary_796
-%type<results> primary_797
-%type<results> primary_798
-%type<results> class_qualifier_799
-%type<results> class_qualifier_800
-%type<results> bit_select_801
-%type<results> select_802_802
-%type<results> select_802
-%type<results> select_804
-%type<results> nonrange_select_805_805
-%type<results> nonrange_select_805
-%type<results> constant_bit_select_807
-%type<results> constant_select_808_808
-%type<results> constant_select_808
-%type<results> constant_select_810
-%type<results> net_lvalue_811
-%type<results> net_lvalue_812
-%type<results> variable_lvalue_813
-%type<results> variable_lvalue_814
-%type<results> variable_lvalue_815
-%type<results> nonrange_variable_lvalue_816
-%type<results> attribute_instance_817
-%type<results> attr_spec_818
-%type<results> hierarchical_identifier_819
-%type<results> hierarchical_identifier_820
-%type<results> ps_class_identifier_821
-%type<results> ps_covergroup_identifier_822
-%type<results> ps_checker_identifier_823
-%type<results> ps_identifier_824
-%type<results> ps_or_hierarchical_array_identifier_825
-%type<results> ps_or_hierarchical_net_identifier_826
-%type<results> ps_or_hierarchical_property_identifier_827
-%type<results> ps_or_hierarchical_sequence_identifier_828
-%type<results> ps_or_hierarchical_tf_identifier_829
-%type<results> ps_parameter_identifier_830
-%type<results> ps_parameter_identifier_831_831
-%type<results> ps_parameter_identifier_831
-%type<results> ps_type_identifier_833
+%type<results> interface_declaration_20
+%type<results> interface_declaration_21
+%type<results> interface_declaration_22
+%type<results> interface_declaration_23
+%type<results> interface_declaration_24
+%type<results> interface_nonansi_header_25
+%type<results> interface_nonansi_header_26
+%type<results> interface_ansi_header_27
+%type<results> interface_ansi_header_28
+%type<results> program_declaration_29
+%type<results> program_declaration_30
+%type<results> program_declaration_31
+%type<results> program_declaration_32
+%type<results> program_declaration_33
+%type<results> program_nonansi_header_34
+%type<results> program_nonansi_header_35
+%type<results> program_ansi_header_36
+%type<results> program_ansi_header_37
+%type<results> checker_declaration_38_38
+%type<results> checker_declaration_38
+%type<results> checker_declaration_40_40
+%type<results> checker_declaration_40
+%type<results> checker_declaration_42
+%type<results> class_declaration_43
+%type<results> class_declaration_44_44
+%type<results> class_declaration_44
+%type<results> class_declaration_46_46
+%type<results> class_declaration_46
+%type<results> class_declaration_48
+%type<results> class_declaration_49
+%type<results> interface_class_type_50
+%type<results> interface_class_declaration_51_51
+%type<results> interface_class_declaration_51
+%type<results> interface_class_declaration_53
+%type<results> interface_class_item_54
+%type<results> package_declaration_55
+%type<results> package_declaration_56_56
+%type<results> package_declaration_56
+%type<results> package_declaration_58
+%type<results> timeunits_declaration_59
+%type<results> parameter_port_list_60
+%type<results> parameter_port_list_61
+%type<results> list_of_ports_62
+%type<results> list_of_port_declarations_63_63
+%type<results> list_of_port_declarations_63_64_64
+%type<results> list_of_port_declarations_63_64
+%type<results> list_of_port_declarations_63
+%type<results> port_declaration_67
+%type<results> port_declaration_68
+%type<results> port_declaration_69
+%type<results> port_declaration_70
+%type<results> port_declaration_71
+%type<results> port_72
+%type<results> port_expression_73
+%type<results> net_port_header_74
+%type<results> interface_port_header_75
+%type<results> ansi_port_declaration_76
+%type<results> ansi_port_declaration_77
+%type<results> ansi_port_declaration_78
+%type<results> ansi_port_declaration_79
+%type<results> ansi_port_declaration_80
+%type<results> ansi_port_declaration_81
+%type<results> elaboration_system_task_82_82
+%type<results> elaboration_system_task_82
+%type<results> elaboration_system_task_84_84
+%type<results> elaboration_system_task_84
+%type<results> module_or_generate_item_86
+%type<results> module_or_generate_item_87
+%type<results> module_or_generate_item_88
+%type<results> module_or_generate_item_89
+%type<results> module_or_generate_item_90
+%type<results> non_port_module_item_91
+%type<results> bind_directive_92
+%type<results> bind_target_instance_list_93
+%type<results> config_declaration_94
+%type<results> config_declaration_95
+%type<results> config_declaration_96
+%type<results> design_statement_97_97
+%type<results> design_statement_97
+%type<results> inst_name_99
+%type<results> liblist_clause_100
+%type<results> use_clause_101
+%type<results> use_clause_102
+%type<results> use_clause_103
+%type<results> interface_or_generate_item_104
+%type<results> interface_or_generate_item_105
+%type<results> interface_or_generate_item_106
+%type<results> non_port_program_item_107
+%type<results> non_port_program_item_108
+%type<results> non_port_program_item_109
+%type<results> non_port_program_item_110
+%type<results> non_port_program_item_111
+%type<results> checker_port_list_112
+%type<results> checker_port_item_113
+%type<results> checker_port_item_114
+%type<results> checker_port_item_115
+%type<results> checker_port_item_116
+%type<results> checker_or_generate_item_declaration_117
+%type<results> class_item_118
+%type<results> class_item_119
+%type<results> class_item_120
+%type<results> class_item_121
+%type<results> class_item_122
+%type<results> class_property_123
+%type<results> class_property_124
+%type<results> class_method_125
+%type<results> class_method_126
+%type<results> class_method_127
+%type<results> class_method_128
+%type<results> class_method_129
+%type<results> class_method_130
+%type<results> class_constructor_prototype_131_131
+%type<results> class_constructor_prototype_131
+%type<results> method_qualifier_133
+%type<results> class_constructor_declaration_134
+%type<results> class_constructor_declaration_135
+%type<results> class_constructor_declaration_136
+%type<results> class_constructor_declaration_137
+%type<results> class_constructor_declaration_138
+%type<results> constraint_declaration_139
+%type<results> constraint_block_140
+%type<results> solve_before_list_141
+%type<results> constraint_primary_142
+%type<results> constraint_expression_143
+%type<results> constraint_expression_144
+%type<results> constraint_expression_145
+%type<results> constraint_set_146
+%type<results> dist_list_147
+%type<results> dist_item_148
+%type<results> constraint_prototype_149
+%type<results> identifier_list_150
+%type<results> anonymous_program_151
+%type<results> specparam_declaration_152
+%type<results> data_declaration_153
+%type<results> data_declaration_154
+%type<results> package_import_declaration_155
+%type<results> package_export_declaration_156
+%type<results> net_declaration_157
+%type<results> net_declaration_158
+%type<results> net_declaration_159
+%type<results> net_declaration_160
+%type<results> net_declaration_161
+%type<results> net_declaration_162
+%type<results> net_declaration_163_163
+%type<results> net_declaration_163
+%type<results> type_declaration_165
+%type<results> type_declaration_166
+%type<results> net_type_declaration_167_167
+%type<results> net_type_declaration_167
+%type<results> data_type_169
+%type<results> data_type_170
+%type<results> data_type_171
+%type<results> data_type_172
+%type<results> data_type_173
+%type<results> data_type_174
+%type<results> data_type_175
+%type<results> data_type_176
+%type<results> data_type_177
+%type<results> data_type_178
+%type<results> data_type_179
+%type<results> implicit_data_type_180
+%type<results> enum_name_declaration_181_181
+%type<results> enum_name_declaration_181
+%type<results> class_type_183
+%type<results> net_port_type_184
+%type<results> struct_union_member_185
+%type<results> struct_union_member_186
+%type<results> struct_union_187
+%type<results> delay3_188_188
+%type<results> delay3_188
+%type<results> list_of_defparam_assignments_190
+%type<results> list_of_genvar_identifiers_191
+%type<results> list_of_interface_identifiers_192
+%type<results> list_of_interface_identifiers_193_193
+%type<results> list_of_interface_identifiers_193
+%type<results> list_of_net_decl_assignments_195
+%type<results> list_of_param_assignments_196
+%type<results> list_of_port_identifiers_197
+%type<results> list_of_port_identifiers_198_198
+%type<results> list_of_port_identifiers_198
+%type<results> list_of_udp_port_identifiers_200
+%type<results> list_of_specparam_assignments_201
+%type<results> list_of_tf_variable_identifiers_202
+%type<results> list_of_tf_variable_identifiers_203
+%type<results> list_of_tf_variable_identifiers_204_204
+%type<results> list_of_tf_variable_identifiers_204
+%type<results> list_of_type_assignments_206
+%type<results> list_of_variable_decl_assignments_207
+%type<results> list_of_variable_identifiers_208
+%type<results> list_of_variable_identifiers_209_209
+%type<results> list_of_variable_identifiers_209
+%type<results> list_of_variable_port_identifiers_211
+%type<results> list_of_variable_port_identifiers_212_212
+%type<results> list_of_variable_port_identifiers_212
+%type<results> net_decl_assignment_214
+%type<results> param_assignment_215
+%type<results> param_assignment_216
+%type<results> type_assignment_217
+%type<results> pulse_control_specparam_218
+%type<results> variable_decl_assignment_219
+%type<results> variable_decl_assignment_220
+%type<results> variable_decl_assignment_221
+%type<results> variable_decl_assignment_222
+%type<results> dynamic_array_new_223
+%type<results> queue_dimension_224
+%type<results> function_body_declaration_225
+%type<results> function_body_declaration_226
+%type<results> function_body_declaration_227
+%type<results> function_body_declaration_228
+%type<results> function_body_declaration_229
+%type<results> function_body_declaration_230
+%type<results> dpi_import_export_231
+%type<results> dpi_import_export_232
+%type<results> dpi_import_export_233
+%type<results> task_body_declaration_234
+%type<results> task_body_declaration_235
+%type<results> task_body_declaration_236
+%type<results> task_body_declaration_237
+%type<results> task_body_declaration_238
+%type<results> tf_port_list_239
+%type<results> tf_port_item_240
+%type<results> tf_port_item_241
+%type<results> tf_port_item_242_242
+%type<results> tf_port_item_242
+%type<results> tf_port_declaration_244
+%type<results> block_item_declaration_245
+%type<results> block_item_declaration_246
+%type<results> block_item_declaration_247
+%type<results> block_item_declaration_248
+%type<results> block_item_declaration_249
+%type<results> overload_proto_formals_250
+%type<results> modport_declaration_251
+%type<results> modport_item_252
+%type<results> modport_ports_declaration_253
+%type<results> modport_ports_declaration_254
+%type<results> modport_ports_declaration_255
+%type<results> modport_simple_ports_declaration_256
+%type<results> modport_tf_ports_declaration_257
+%type<results> concurrent_assertion_item_258
+%type<results> cover_sequence_statement_259
+%type<results> cover_sequence_statement_260
+%type<results> property_instance_261_261
+%type<results> property_instance_261
+%type<results> property_list_of_arguments_263
+%type<results> property_list_of_arguments_264
+%type<results> property_list_of_arguments_265
+%type<results> property_list_of_arguments_266
+%type<results> property_declaration_267_267
+%type<results> property_declaration_267
+%type<results> property_declaration_269
+%type<results> property_declaration_270
+%type<results> property_declaration_271
+%type<results> property_port_list_272
+%type<results> property_port_item_273
+%type<results> property_port_item_274_274
+%type<results> property_port_item_274
+%type<results> property_port_item_276
+%type<results> property_expr_277
+%type<results> property_expr_278
+%type<results> property_expr_279
+%type<results> property_expr_280
+%type<results> property_expr_281
+%type<results> property_expr_282
+%type<results> property_case_item_283
+%type<results> property_case_item_284
+%type<results> sequence_declaration_285_285
+%type<results> sequence_declaration_285
+%type<results> sequence_declaration_287
+%type<results> sequence_declaration_288
+%type<results> sequence_port_list_289
+%type<results> sequence_port_item_290
+%type<results> sequence_port_item_291_291
+%type<results> sequence_port_item_291
+%type<results> sequence_port_item_293
+%type<results> sequence_port_item_294
+%type<results> sequence_expr_295
+%type<results> sequence_expr_296
+%type<results> sequence_expr_297
+%type<results> sequence_expr_298
+%type<results> sequence_expr_299
+%type<results> sequence_expr_300
+%type<results> sequence_instance_301_301
+%type<results> sequence_instance_301
+%type<results> sequence_list_of_arguments_303
+%type<results> sequence_list_of_arguments_304
+%type<results> sequence_list_of_arguments_305
+%type<results> sequence_list_of_arguments_306
+%type<results> expression_or_dist_307_307
+%type<results> expression_or_dist_307
+%type<results> let_declaration_309_309
+%type<results> let_declaration_309
+%type<results> let_port_list_311
+%type<results> let_port_item_312
+%type<results> let_port_item_313
+%type<results> let_expression_314
+%type<results> let_expression_315_315
+%type<results> let_expression_315
+%type<results> let_list_of_arguments_317
+%type<results> let_list_of_arguments_318
+%type<results> let_list_of_arguments_319
+%type<results> let_list_of_arguments_320
+%type<results> covergroup_declaration_321
+%type<results> covergroup_declaration_322
+%type<results> covergroup_declaration_323
+%type<results> coverage_spec_or_option_324
+%type<results> coverage_spec_or_option_325
+%type<results> hierarchical_btf_identifier_326
+%type<results> cover_point_327_327
+%type<results> cover_point_327
+%type<results> cover_point_329
+%type<results> bins_or_empty_330_330
+%type<results> bins_or_empty_330_331
+%type<results> bins_or_empty_330
+%type<results> bins_or_options_333
+%type<results> bins_or_options_334_334
+%type<results> bins_or_options_334
+%type<results> bins_or_options_336
+%type<results> bins_or_options_337
+%type<results> bins_or_options_338_338
+%type<results> bins_or_options_338
+%type<results> trans_list_340
+%type<results> trans_set_341
+%type<results> cover_cross_342
+%type<results> list_of_cross_items_343
+%type<results> cross_body_344
+%type<results> bins_selection_or_option_345
+%type<results> bins_selection_or_option_346
+%type<results> select_expression_347
+%type<results> select_condition_348
+%type<results> bins_expression_349
+%type<results> covergroup_range_list_350
+%type<results> gate_instantiation_351
+%type<results> gate_instantiation_352
+%type<results> gate_instantiation_353
+%type<results> gate_instantiation_354
+%type<results> gate_instantiation_355
+%type<results> gate_instantiation_356
+%type<results> gate_instantiation_357
+%type<results> gate_instantiation_358
+%type<results> gate_instantiation_359
+%type<results> gate_instantiation_360
+%type<results> gate_instantiation_361
+%type<results> gate_instantiation_362
+%type<results> gate_instantiation_363
+%type<results> cmos_switch_instance_364
+%type<results> n_input_gate_instance_365
+%type<results> n_output_gate_instance_366
+%type<results> module_instantiation_367
+%type<results> parameter_value_assignment_368
+%type<results> list_of_parameter_assignments_369
+%type<results> list_of_parameter_assignments_370
+%type<results> named_parameter_assignment_371
+%type<results> hierarchical_instance_372
+%type<results> name_of_instance_373
+%type<results> list_of_port_connections_374
+%type<results> list_of_port_connections_375
+%type<results> ordered_port_connection_376
+%type<results> named_port_connection_377
+%type<results> named_port_connection_378
+%type<results> named_port_connection_379
+%type<results> interface_instantiation_380
+%type<results> program_instantiation_381
+%type<results> checker_instantiation_382
+%type<results> list_of_checker_port_connections_383
+%type<results> list_of_checker_port_connections_384
+%type<results> ordered_checker_port_connection_385
+%type<results> named_checker_port_connection_386
+%type<results> named_checker_port_connection_387
+%type<results> named_checker_port_connection_388
+%type<results> generate_region_389
+%type<results> genvar_initialization_390
+%type<results> if_generate_construct_391
+%type<results> case_generate_construct_392
+%type<results> case_generate_item_393
+%type<results> generate_block_394
+%type<results> generate_block_395
+%type<results> generate_block_396
+%type<results> udp_nonansi_declaration_397
+%type<results> udp_ansi_declaration_398
+%type<results> udp_declaration_399
+%type<results> udp_declaration_400
+%type<results> udp_declaration_401
+%type<results> udp_declaration_402
+%type<results> udp_port_list_403
+%type<results> udp_declaration_port_list_404
+%type<results> udp_output_declaration_405
+%type<results> udp_output_declaration_406
+%type<results> udp_input_declaration_407
+%type<results> udp_reg_declaration_408
+%type<results> combinational_body_409
+%type<results> sequential_body_410
+%type<results> sequential_body_411
+%type<results> level_input_list_412
+%type<results> edge_input_list_413
+%type<results> edge_input_list_414
+%type<results> udp_instantiation_415
+%type<results> udp_instance_416
+%type<results> list_of_net_assignments_417
+%type<results> list_of_variable_assignments_418
+%type<results> net_alias_419
+%type<results> blocking_assignment_420
+%type<results> nonblocking_assignment_421
+%type<results> action_block_422
+%type<results> seq_block_423
+%type<results> seq_block_424
+%type<results> seq_block_425
+%type<results> par_block_426
+%type<results> par_block_427
+%type<results> statement_or_null_428
+%type<results> statement_429
+%type<results> function_statement_or_null_430
+%type<results> variable_identifier_list_431
+%type<results> event_expression_432
+%type<results> event_expression_433
+%type<results> wait_statement_434
+%type<results> conditional_statement_435
+%type<results> conditional_statement_436
+%type<results> conditional_statement_437
+%type<results> cond_predicate_438
+%type<results> case_statement_439
+%type<results> case_statement_440
+%type<results> case_statement_441
+%type<results> case_item_442
+%type<results> case_pattern_item_443
+%type<results> randcase_statement_444
+%type<results> open_range_list_445
+%type<results> pattern_446
+%type<results> pattern_447
+%type<results> pattern_448
+%type<results> assignment_pattern_449
+%type<results> assignment_pattern_450
+%type<results> assignment_pattern_451
+%type<results> assignment_pattern_452
+%type<results> assignment_pattern_expression_453
+%type<results> assignment_pattern_net_lvalue_454
+%type<results> assignment_pattern_variable_lvalue_455
+%type<results> loop_statement_456
+%type<results> loop_statement_457
+%type<results> for_initialization_458
+%type<results> for_variable_declaration_459
+%type<results> for_step_460
+%type<results> loop_variables_461
+%type<results> loop_variables_462
+%type<results> clocking_declaration_463
+%type<results> clocking_declaration_464
+%type<results> clocking_declaration_465
+%type<results> clocking_declaration_466
+%type<results> clocking_item_467
+%type<results> clocking_direction_468
+%type<results> list_of_clocking_decl_assign_469
+%type<results> clocking_drive_470
+%type<results> randsequence_statement_471
+%type<results> randsequence_statement_472
+%type<results> production_473
+%type<results> production_474
+%type<results> production_475
+%type<results> rs_rule_476_476
+%type<results> rs_rule_476
+%type<results> rs_production_list_478
+%type<results> rs_production_list_479
+%type<results> rs_code_block_480
+%type<results> rs_code_block_481
+%type<results> rs_if_else_482
+%type<results> rs_case_483
+%type<results> rs_case_item_484
+%type<results> specify_block_485
+%type<results> parallel_path_description_486
+%type<results> list_of_path_inputs_487
+%type<results> list_of_path_outputs_488
+%type<results> specify_input_terminal_descriptor_489
+%type<results> setup_timing_check_490_490
+%type<results> setup_timing_check_490
+%type<results> setuphold_timing_check_492_492_492
+%type<results> setuphold_timing_check_492_492_493_493
+%type<results> setuphold_timing_check_492_492_493_494_494
+%type<results> setuphold_timing_check_492_492_493_494_495_495
+%type<results> setuphold_timing_check_492_492_493_494_495
+%type<results> setuphold_timing_check_492_492_493_494
+%type<results> setuphold_timing_check_492_492_493
+%type<results> setuphold_timing_check_492_492
+%type<results> setuphold_timing_check_492
+%type<results> timeskew_timing_check_501_501_501
+%type<results> timeskew_timing_check_501_501_502_502
+%type<results> timeskew_timing_check_501_501_502
+%type<results> timeskew_timing_check_501_501
+%type<results> timeskew_timing_check_501
+%type<results> timing_check_event_506
+%type<results> timing_check_event_507
+%type<results> edge_control_specifier_508
+%type<results> concatenation_509
+%type<results> constant_concatenation_510
+%type<results> module_path_concatenation_511
+%type<results> streaming_concatenation_512
+%type<results> stream_concatenation_513
+%type<results> stream_expression_514
+%type<results> tf_call_515
+%type<results> system_tf_call_516
+%type<results> subroutine_call_517
+%type<results> list_of_arguments_518
+%type<results> list_of_arguments_519
+%type<results> list_of_arguments_520
+%type<results> method_call_body_521
+%type<results> array_manipulation_call_522
+%type<results> array_manipulation_call_523
+%type<results> randomize_call_524
+%type<results> randomize_call_525_525
+%type<results> randomize_call_525
+%type<results> randomize_call_527_527_527
+%type<results> randomize_call_527_527
+%type<results> randomize_call_527
+%type<results> inc_or_dec_expression_530
+%type<results> inc_or_dec_expression_531
+%type<results> conditional_expression_532
+%type<results> constant_expression_533
+%type<results> constant_expression_534
+%type<results> constant_expression_535
+%type<results> expression_536
+%type<results> expression_537
+%type<results> module_path_conditional_expression_538
+%type<results> module_path_expression_539
+%type<results> module_path_expression_540
+%type<results> primary_541
+%type<results> primary_542
+%type<results> class_qualifier_543
+%type<results> bit_select_544
+%type<results> select_545_545
+%type<results> select_545
+%type<results> select_547
+%type<results> nonrange_select_548_548
+%type<results> nonrange_select_548
+%type<results> constant_bit_select_550
+%type<results> constant_select_551_551
+%type<results> constant_select_551
+%type<results> constant_select_553
+%type<results> net_lvalue_554
+%type<results> variable_lvalue_555
+%type<results> variable_lvalue_556
+%type<results> attribute_instance_557
+%type<results> hierarchical_identifier_558
+%type<results> hierarchical_identifier_559
+%type<results> ps_parameter_identifier_560_560
+%type<results> ps_parameter_identifier_560
+%type<results> ps_type_identifier_562
 %type<results> c_identifier
 %type<results> escaped_identifier
 %type<results> file_path_spec
@@ -1952,13 +1681,13 @@ module_nonansi_header_8 module_keyword module_nonansi_header_9 module_identifier
 ;
 
 module_ansi_header:
-module_ansi_header_12 module_keyword module_ansi_header_13 module_identifier module_ansi_header_14 module_ansi_header_15 module_ansi_header_16 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+module_ansi_header_12 module_keyword module_nonansi_header_9 module_identifier module_ansi_header_13 module_nonansi_header_11 module_ansi_header_14 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 module_declaration:
-module_nonansi_header module_declaration_17 module_declaration_18 ENDMODULE_ module_declaration_19 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| module_ansi_header module_declaration_20 module_declaration_21 ENDMODULE_ module_declaration_22 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| module_declaration_23 module_keyword module_declaration_24 module_identifier '(' DOTS ')' ';' module_declaration_25 module_declaration_26 ENDMODULE_ module_declaration_27 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); P($$, $12); }
+module_nonansi_header source_text_4 module_declaration_15 ENDMODULE_ module_declaration_16 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| module_ansi_header source_text_4 module_declaration_17 ENDMODULE_ module_declaration_16 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| module_declaration_18 module_keyword module_nonansi_header_9 module_identifier '(' DOTS ')' ';' source_text_4 module_declaration_19 ENDMODULE_ module_declaration_16 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); P($$, $12); }
 | EXTERN_ module_nonansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 | EXTERN_ module_ansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
@@ -1969,57 +1698,57 @@ MODULE_ { C($$); T($$, @1, zero, zero); }
 ;
 
 interface_declaration:
-interface_nonansi_header interface_declaration_28 interface_declaration_29 ENDINTERFACE_ interface_declaration_30 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| interface_ansi_header interface_declaration_31 interface_declaration_32 ENDINTERFACE_ interface_declaration_33 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| interface_declaration_34 INTERFACE_ interface_identifier '(' DOTS ')' ';' interface_declaration_35 interface_declaration_36 ENDINTERFACE_ interface_declaration_37 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
+interface_nonansi_header source_text_4 interface_declaration_20 ENDINTERFACE_ interface_declaration_21 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| interface_ansi_header source_text_4 interface_declaration_22 ENDINTERFACE_ interface_declaration_21 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| interface_declaration_23 INTERFACE_ interface_identifier '(' DOTS ')' ';' source_text_4 interface_declaration_24 ENDINTERFACE_ interface_declaration_21 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
 | EXTERN_ interface_nonansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 | EXTERN_ interface_ansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 | interface_class_declaration
 ;
 
 interface_nonansi_header:
-interface_nonansi_header_38 INTERFACE_ interface_nonansi_header_39 interface_identifier interface_nonansi_header_40 interface_nonansi_header_41 list_of_ports ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+interface_nonansi_header_25 INTERFACE_ module_nonansi_header_9 interface_identifier interface_nonansi_header_26 module_nonansi_header_11 list_of_ports ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 interface_ansi_header:
-interface_ansi_header_42 INTERFACE_ interface_ansi_header_43 interface_identifier interface_ansi_header_44 interface_ansi_header_45 interface_ansi_header_46 ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+interface_ansi_header_27 INTERFACE_ module_nonansi_header_9 interface_identifier interface_ansi_header_28 module_nonansi_header_11 module_ansi_header_14 ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 program_declaration:
-program_nonansi_header program_declaration_47 program_declaration_48 ENDPROGRAM_ program_declaration_49 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| program_ansi_header program_declaration_50 program_declaration_51 ENDPROGRAM_ program_declaration_52 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| program_declaration_53 PROGRAM_ program_identifier '(' DOTS ')' ';' program_declaration_54 program_declaration_55 ENDPROGRAM_ program_declaration_56 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
+program_nonansi_header source_text_4 program_declaration_29 ENDPROGRAM_ program_declaration_30 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| program_ansi_header source_text_4 program_declaration_31 ENDPROGRAM_ program_declaration_30 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| program_declaration_32 PROGRAM_ program_identifier '(' DOTS ')' ';' source_text_4 program_declaration_33 ENDPROGRAM_ program_declaration_30 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
 | EXTERN_ program_nonansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 | EXTERN_ program_ansi_header { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 program_nonansi_header:
-program_nonansi_header_57 PROGRAM_ program_nonansi_header_58 program_identifier program_nonansi_header_59 program_nonansi_header_60 list_of_ports ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+program_nonansi_header_34 PROGRAM_ module_nonansi_header_9 program_identifier program_nonansi_header_35 module_nonansi_header_11 list_of_ports ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 program_ansi_header:
-program_ansi_header_61 PROGRAM_ program_ansi_header_62 program_identifier program_ansi_header_63 program_ansi_header_64 program_ansi_header_65 ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+program_ansi_header_36 PROGRAM_ module_nonansi_header_9 program_identifier program_ansi_header_37 module_nonansi_header_11 module_ansi_header_14 ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 checker_declaration:
-CHECKER_ checker_identifier checker_declaration_66 ';' checker_declaration_68 ENDCHECKER_ checker_declaration_70 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+CHECKER_ checker_identifier checker_declaration_38 ';' checker_declaration_40 ENDCHECKER_ checker_declaration_42 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
 ;
 
 class_declaration:
-class_declaration_71 CLASS_ class_declaration_72 class_identifier class_declaration_73 class_declaration_74 class_declaration_76 ';' class_declaration_78 ENDCLASS_ class_declaration_79 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
+class_declaration_43 CLASS_ module_nonansi_header_9 class_identifier module_nonansi_header_11 class_declaration_44 class_declaration_46 ';' class_declaration_48 ENDCLASS_ class_declaration_49 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
 ;
 
 interface_class_type:
-ps_class_identifier interface_class_type_80 { $$ = $1; P($$, $2); }
+ps_class_identifier interface_class_type_50 { $$ = $1; P($$, $2); }
 ;
 
 interface_class_declaration:
-INTERFACE_ CLASS_ class_identifier interface_class_declaration_81 interface_class_declaration_82 ';' interface_class_declaration_84 ENDCLASS_ interface_class_declaration_85 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
+INTERFACE_ CLASS_ class_identifier module_nonansi_header_11 interface_class_declaration_51 ';' interface_class_declaration_53 ENDCLASS_ class_declaration_49 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 ;
 
 interface_class_item:
 type_declaration
-| interface_class_item_86 interface_class_method { $$ = $1; P($$, $2); }
+| interface_class_item_54 interface_class_method { $$ = $1; P($$, $2); }
 | local_parameter_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 | parameter_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 | ';' { C($$); T($$, @1, zero, zero); }
@@ -2030,19 +1759,19 @@ PURE_ VIRTUAL_ method_prototype ';' { C($$); T($$, @1, zero, zero); T($$, @2, ze
 ;
 
 package_declaration:
-package_declaration_87 PACKAGE_ package_declaration_88 package_identifier ';' package_declaration_89 package_declaration_90 ENDPACKAGE_ package_declaration_92 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
+package_declaration_55 PACKAGE_ module_nonansi_header_9 package_identifier ';' source_text_4 package_declaration_56 ENDPACKAGE_ package_declaration_58 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 ;
 
 timeunits_declaration:
-TIMEUNIT_ time_literal timeunits_declaration_93 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+TIMEUNIT_ time_literal timeunits_declaration_59 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 | TIMEPRECISION_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | TIMEUNIT_ time_literal ';' TIMEPRECISION_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 | TIMEPRECISION_ time_literal ';' TIMEUNIT_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 parameter_port_list:
-'#' '(' list_of_param_assignments parameter_port_list_94 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| '#' '(' parameter_port_declaration parameter_port_list_95 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+'#' '(' list_of_param_assignments parameter_port_list_60 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| '#' '(' parameter_port_declaration parameter_port_list_61 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 | '#' '(' ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); }
 ;
 
@@ -2054,29 +1783,29 @@ parameter_declaration
 ;
 
 list_of_ports:
-'(' port list_of_ports_96 ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'(' port list_of_ports_62 ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 list_of_port_declarations:
-'(' list_of_port_declarations_97 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+'(' list_of_port_declarations_63 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 port_declaration:
-port_declaration_101 inout_declaration { $$ = $1; P($$, $2); }
-| port_declaration_102 input_declaration { $$ = $1; P($$, $2); }
-| port_declaration_103 output_declaration { $$ = $1; P($$, $2); }
-| port_declaration_104 ref_declaration { $$ = $1; P($$, $2); }
-| port_declaration_105 interface_port_declaration { $$ = $1; P($$, $2); }
+port_declaration_67 inout_declaration { $$ = $1; P($$, $2); }
+| port_declaration_68 input_declaration { $$ = $1; P($$, $2); }
+| port_declaration_69 output_declaration { $$ = $1; P($$, $2); }
+| port_declaration_70 ref_declaration { $$ = $1; P($$, $2); }
+| port_declaration_71 interface_port_declaration { $$ = $1; P($$, $2); }
 ;
 
 port:
-port_106
-| '.' port_identifier '(' port_107 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
+port_72
+| '.' port_identifier '(' port_72 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 port_expression:
 port_reference
-| '{' port_reference port_expression_108 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| '{' port_reference port_expression_73 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 port_reference:
@@ -2091,29 +1820,29 @@ INPUT_ { C($$); T($$, @1, zero, zero); }
 ;
 
 net_port_header:
-net_port_header_109 net_port_type { $$ = $1; P($$, $2); }
+net_port_header_74 net_port_type { $$ = $1; P($$, $2); }
 ;
 
 variable_port_header:
-variable_port_header_110 variable_port_type { $$ = $1; P($$, $2); }
+net_port_header_74 variable_port_type { $$ = $1; P($$, $2); }
 ;
 
 interface_port_header:
-interface_identifier interface_port_header_111 { $$ = $1; P($$, $2); }
-| INTERFACE_ interface_port_header_112 { C($$); T($$, @1, zero, zero); P($$, $2); }
+interface_identifier interface_port_header_75 { $$ = $1; P($$, $2); }
+| INTERFACE_ interface_port_header_75 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 ansi_port_declaration:
-ansi_port_declaration_113 port_identifier ansi_port_declaration_114 ansi_port_declaration_115 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
-| ansi_port_declaration_116 port_identifier ansi_port_declaration_117 ansi_port_declaration_118 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
-| ansi_port_declaration_119 '.' port_identifier '(' ansi_port_declaration_120 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+ansi_port_declaration_76 port_identifier ansi_port_declaration_77 ansi_port_declaration_78 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| ansi_port_declaration_79 port_identifier ansi_port_declaration_80 ansi_port_declaration_78 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| net_port_header_74 '.' port_identifier '(' ansi_port_declaration_81 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 elaboration_system_task:
-Dfatal elaboration_system_task_121 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| Derror elaboration_system_task_123 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| Dwarning elaboration_system_task_125 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| Dinfo elaboration_system_task_127 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+Dfatal elaboration_system_task_82 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| Derror elaboration_system_task_84 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| Dwarning elaboration_system_task_84 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| Dinfo elaboration_system_task_84 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 finish_number:
@@ -2144,11 +1873,11 @@ port_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 module_or_generate_item:
-module_or_generate_item_129 parameter_override { $$ = $1; P($$, $2); }
-| module_or_generate_item_130 gate_instantiation { $$ = $1; P($$, $2); }
-| module_or_generate_item_131 udp_instantiation { $$ = $1; P($$, $2); }
-| module_or_generate_item_132 module_instantiation { $$ = $1; P($$, $2); }
-| module_or_generate_item_133 module_common_item { $$ = $1; P($$, $2); }
+module_or_generate_item_86 parameter_override { $$ = $1; P($$, $2); }
+| module_or_generate_item_87 gate_instantiation { $$ = $1; P($$, $2); }
+| module_or_generate_item_88 udp_instantiation { $$ = $1; P($$, $2); }
+| module_or_generate_item_89 module_instantiation { $$ = $1; P($$, $2); }
+| module_or_generate_item_90 module_common_item { $$ = $1; P($$, $2); }
 ;
 
 module_or_generate_item_declaration:
@@ -2163,7 +1892,7 @@ non_port_module_item:
 generate_region
 | module_or_generate_item
 | specify_block
-| non_port_module_item_134 specparam_declaration { $$ = $1; P($$, $2); }
+| non_port_module_item_91 specparam_declaration { $$ = $1; P($$, $2); }
 | program_declaration
 | module_declaration
 | interface_declaration
@@ -2175,7 +1904,7 @@ DEFPARAM_ list_of_defparam_assignments ';' { C($$); T($$, @1, zero, zero); P($$,
 ;
 
 bind_directive:
-BIND_ bind_target_scope bind_directive_135 bind_instantiation ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+BIND_ bind_target_scope bind_directive_92 bind_instantiation ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 | BIND_ bind_target_instance bind_instantiation ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
@@ -2189,7 +1918,7 @@ hierarchical_identifier constant_bit_select { $$ = $1; P($$, $2); }
 ;
 
 bind_target_instance_list:
-bind_target_instance bind_target_instance_list_136 { $$ = $1; P($$, $2); }
+bind_target_instance bind_target_instance_list_93 { $$ = $1; P($$, $2); }
 ;
 
 bind_instantiation:
@@ -2200,11 +1929,11 @@ program_instantiation
 ;
 
 config_declaration:
-CONFIG_ config_identifier ';' config_declaration_137 design_statement config_declaration_138 ENDCONFIG_ config_declaration_139 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
+CONFIG_ config_identifier ';' config_declaration_94 design_statement config_declaration_95 ENDCONFIG_ config_declaration_96 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
 ;
 
 design_statement:
-DESIGN_ design_statement_140 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+DESIGN_ design_statement_97 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 config_rule_statement:
@@ -2224,27 +1953,27 @@ INSTANCE_ inst_name { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 inst_name:
-topmodule_identifier inst_name_142 { $$ = $1; P($$, $2); }
+topmodule_identifier inst_name_99 { $$ = $1; P($$, $2); }
 ;
 
 cell_clause:
-CELL_ cell_clause_143 cell_identifier { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+CELL_ design_statement_97_97 cell_identifier { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 liblist_clause:
-LIBLIST_ liblist_clause_144 { C($$); T($$, @1, zero, zero); P($$, $2); }
+LIBLIST_ liblist_clause_100 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 use_clause:
-USE_ use_clause_145 cell_identifier use_clause_146 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
-| USE_ named_parameter_assignment use_clause_147 use_clause_148 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
-| USE_ use_clause_149 cell_identifier named_parameter_assignment use_clause_150 use_clause_151 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+USE_ design_statement_97_97 cell_identifier use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+| USE_ named_parameter_assignment use_clause_102 use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+| USE_ design_statement_97_97 cell_identifier named_parameter_assignment use_clause_103 use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 interface_or_generate_item:
-interface_or_generate_item_152 module_common_item { $$ = $1; P($$, $2); }
-| interface_or_generate_item_153 modport_declaration { $$ = $1; P($$, $2); }
-| interface_or_generate_item_154 extern_tf_declaration { $$ = $1; P($$, $2); }
+interface_or_generate_item_104 module_common_item { $$ = $1; P($$, $2); }
+| interface_or_generate_item_105 modport_declaration { $$ = $1; P($$, $2); }
+| interface_or_generate_item_106 extern_tf_declaration { $$ = $1; P($$, $2); }
 ;
 
 extern_tf_declaration:
@@ -2271,11 +2000,11 @@ port_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 non_port_program_item:
-non_port_program_item_155 continuous_assign { $$ = $1; P($$, $2); }
-| non_port_program_item_156 module_or_generate_item_declaration { $$ = $1; P($$, $2); }
-| non_port_program_item_157 initial_construct { $$ = $1; P($$, $2); }
-| non_port_program_item_158 final_construct { $$ = $1; P($$, $2); }
-| non_port_program_item_159 concurrent_assertion_item { $$ = $1; P($$, $2); }
+non_port_program_item_107 continuous_assign { $$ = $1; P($$, $2); }
+| non_port_program_item_108 module_or_generate_item_declaration { $$ = $1; P($$, $2); }
+| non_port_program_item_109 initial_construct { $$ = $1; P($$, $2); }
+| non_port_program_item_110 final_construct { $$ = $1; P($$, $2); }
+| non_port_program_item_111 concurrent_assertion_item { $$ = $1; P($$, $2); }
 | timeunits_declaration
 | program_generate_item
 ;
@@ -2288,11 +2017,11 @@ loop_generate_construct
 ;
 
 checker_port_list:
-checker_port_item checker_port_list_160 { $$ = $1; P($$, $2); }
+checker_port_item checker_port_list_112 { $$ = $1; P($$, $2); }
 ;
 
 checker_port_item:
-checker_port_item_161 checker_port_item_162 property_formal_type formal_port_identifier checker_port_item_163 checker_port_item_164 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+checker_port_item_113 checker_port_item_114 property_formal_type formal_port_identifier checker_port_item_115 checker_port_item_116 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 checker_port_direction:
@@ -2311,7 +2040,7 @@ checker_or_generate_item_declaration
 ;
 
 checker_or_generate_item_declaration:
-checker_or_generate_item_declaration_165 data_declaration { $$ = $1; P($$, $2); }
+checker_or_generate_item_declaration_117 data_declaration { $$ = $1; P($$, $2); }
 | function_declaration
 | checker_declaration
 | assertion_item_declaration
@@ -2332,32 +2061,32 @@ loop_generate_construct
 ;
 
 class_item:
-class_item_166 class_property { $$ = $1; P($$, $2); }
-| class_item_167 class_method { $$ = $1; P($$, $2); }
-| class_item_168 class_constraint { $$ = $1; P($$, $2); }
-| class_item_169 class_declaration { $$ = $1; P($$, $2); }
-| class_item_170 covergroup_declaration { $$ = $1; P($$, $2); }
+class_item_118 class_property { $$ = $1; P($$, $2); }
+| class_item_119 class_method { $$ = $1; P($$, $2); }
+| class_item_120 class_constraint { $$ = $1; P($$, $2); }
+| class_item_121 class_declaration { $$ = $1; P($$, $2); }
+| class_item_122 covergroup_declaration { $$ = $1; P($$, $2); }
 | local_parameter_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 | parameter_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 | ';' { C($$); T($$, @1, zero, zero); }
 ;
 
 class_property:
-class_property_171 data_declaration { $$ = $1; P($$, $2); }
-| CONST_ class_property_172 data_type const_identifier class_property_173 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+class_property_123 data_declaration { $$ = $1; P($$, $2); }
+| CONST_ class_property_124 data_type const_identifier ansi_port_declaration_78 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 class_method:
-class_method_174 task_declaration { $$ = $1; P($$, $2); }
-| class_method_175 function_declaration { $$ = $1; P($$, $2); }
-| PURE_ VIRTUAL_ class_method_176 method_prototype ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| EXTERN_ class_method_177 method_prototype ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| class_method_178 class_constructor_declaration { $$ = $1; P($$, $2); }
-| EXTERN_ class_method_179 class_constructor_prototype { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+class_method_125 task_declaration { $$ = $1; P($$, $2); }
+| class_method_126 function_declaration { $$ = $1; P($$, $2); }
+| PURE_ VIRTUAL_ class_method_127 method_prototype ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| EXTERN_ class_method_128 method_prototype ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| class_method_129 class_constructor_declaration { $$ = $1; P($$, $2); }
+| EXTERN_ class_method_130 class_constructor_prototype { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 class_constructor_prototype:
-FUNCTION_ NEW_ class_constructor_prototype_180 ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+FUNCTION_ NEW_ class_constructor_prototype_131 ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 class_constraint:
@@ -2382,7 +2111,7 @@ RAND_ { C($$); T($$, @1, zero, zero); }
 ;
 
 method_qualifier:
-method_qualifier_182 VIRTUAL_ { $$ = $1; T($$, @2, zero, zero); }
+method_qualifier_133 VIRTUAL_ { $$ = $1; T($$, @2, zero, zero); }
 | class_item_qualifier
 ;
 
@@ -2392,15 +2121,15 @@ task_prototype
 ;
 
 class_constructor_declaration:
-FUNCTION_ class_constructor_declaration_183 NEW_ class_constructor_declaration_184 ';' class_constructor_declaration_186 class_constructor_declaration_187 class_constructor_declaration_189 ENDFUNCTION_ class_constructor_declaration_190 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); }
+FUNCTION_ class_constructor_declaration_134 NEW_ class_constructor_prototype_131 ';' class_constructor_declaration_135 class_constructor_declaration_136 class_constructor_declaration_137 ENDFUNCTION_ class_constructor_declaration_138 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); }
 ;
 
 constraint_declaration:
-constraint_declaration_191 CONSTRAINT_ constraint_identifier constraint_block { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+constraint_declaration_139 CONSTRAINT_ constraint_identifier constraint_block { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 constraint_block:
-'{' constraint_block_192 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+'{' constraint_block_140 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 constraint_block_item:
@@ -2409,19 +2138,19 @@ SOLVE_ solve_before_list BEFORE_ solve_before_list ';' { C($$); T($$, @1, zero, 
 ;
 
 solve_before_list:
-constraint_primary solve_before_list_193 { $$ = $1; P($$, $2); }
+constraint_primary solve_before_list_141 { $$ = $1; P($$, $2); }
 ;
 
 constraint_primary:
-constraint_primary_194 hierarchical_identifier select { $$ = $1; P($$, $2); P($$, $3); }
+constraint_primary_142 hierarchical_identifier select { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 constraint_expression:
-constraint_expression_195 expression_or_dist ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+constraint_expression_143 expression_or_dist ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 | uniqueness_constraint ';' { $$ = $1; T($$, @2, zero, zero); }
 | expression MG constraint_set { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| IF_ '(' expression ')' constraint_set constraint_expression_196 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
-| FOREACH_ '(' ps_or_hierarchical_array_identifier constraint_expression_197 ')' constraint_set { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| IF_ '(' expression ')' constraint_set constraint_expression_144 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
+| FOREACH_ '(' ps_or_hierarchical_array_identifier constraint_expression_145 ')' constraint_set { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 | DISABLE_ SOFT_ constraint_primary ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
@@ -2431,15 +2160,15 @@ UNIQUE_ '{' open_range_list '}' { C($$); T($$, @1, zero, zero); T($$, @2, zero, 
 
 constraint_set:
 constraint_expression
-| '{' constraint_set_198 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '{' constraint_set_146 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 dist_list:
-dist_item dist_list_199 { $$ = $1; P($$, $2); }
+dist_item dist_list_147 { $$ = $1; P($$, $2); }
 ;
 
 dist_item:
-value_range dist_item_200 { $$ = $1; P($$, $2); }
+value_range dist_item_148 { $$ = $1; P($$, $2); }
 ;
 
 dist_weight:
@@ -2448,7 +2177,7 @@ CE expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 constraint_prototype:
-constraint_prototype_201 constraint_prototype_202 CONSTRAINT_ constraint_identifier ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
+constraint_prototype_149 constraint_declaration_139 CONSTRAINT_ constraint_identifier ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 constraint_prototype_qualifier:
@@ -2457,11 +2186,11 @@ EXTERN_ { C($$); T($$, @1, zero, zero); }
 ;
 
 extern_constraint_declaration:
-extern_constraint_declaration_203 CONSTRAINT_ class_scope constraint_identifier constraint_block { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
+constraint_declaration_139 CONSTRAINT_ class_scope constraint_identifier constraint_block { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 identifier_list:
-identifier identifier_list_204 { $$ = $1; P($$, $2); }
+identifier identifier_list_150 { $$ = $1; P($$, $2); }
 ;
 
 package_item:
@@ -2490,7 +2219,7 @@ net_declaration
 ;
 
 anonymous_program:
-PROGRAM_ ';' anonymous_program_205 ENDPROGRAM_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+PROGRAM_ ';' anonymous_program_151 ENDPROGRAM_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 anonymous_program_item:
@@ -2513,7 +2242,7 @@ PARAMETER_ data_type_or_implicit list_of_param_assignments { C($$); T($$, @1, ze
 ;
 
 specparam_declaration:
-SPECPARAM_ specparam_declaration_206 list_of_specparam_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+SPECPARAM_ specparam_declaration_152 list_of_specparam_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 inout_declaration:
@@ -2540,13 +2269,13 @@ REF_ variable_port_type list_of_variable_identifiers { C($$); T($$, @1, zero, ze
 ;
 
 data_declaration:
-data_declaration_207 data_declaration_208 data_declaration_209 data_type_or_implicit list_of_variable_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+data_declaration_153 data_declaration_154 module_nonansi_header_9 data_type_or_implicit list_of_variable_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 | type_declaration
 | package_import_declaration net_type_declaration { $$ = $1; P($$, $2); }
 ;
 
 package_import_declaration:
-IMPORT_ package_import_item package_import_declaration_210 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+IMPORT_ package_import_item package_import_declaration_155 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 package_import_item:
@@ -2556,7 +2285,7 @@ package_identifier CC identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 
 package_export_declaration:
 EXPORT_ SCCS ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); }
-| EXPORT_ package_import_item package_export_declaration_211 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| EXPORT_ package_import_item package_export_declaration_156 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 genvar_declaration:
@@ -2564,20 +2293,20 @@ GENVAR_ list_of_genvar_identifiers ';' { C($$); T($$, @1, zero, zero); P($$, $2)
 ;
 
 net_declaration:
-net_type net_declaration_212 net_declaration_213 data_type_or_implicit net_declaration_214 list_of_net_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
-| net_type_identifier net_declaration_215 list_of_net_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| INTERCONNECT_ implicit_data_type net_declaration_216 net_identifier net_declaration_217 net_declaration_218 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+net_type net_declaration_157 net_declaration_158 data_type_or_implicit net_declaration_159 list_of_net_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+| net_type_identifier net_declaration_160 list_of_net_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| INTERCONNECT_ implicit_data_type net_declaration_161 net_identifier net_declaration_162 net_declaration_163 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 type_declaration:
-TYPEDEF_ data_type type_identifier type_declaration_220 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+TYPEDEF_ data_type type_identifier type_declaration_165 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 | TYPEDEF_ interface_instance_identifier constant_bit_select '.' type_identifier type_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
-| TYPEDEF_ type_declaration_221 type_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| TYPEDEF_ type_declaration_166 type_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 net_type_declaration:
-NETTYPE_ data_type net_type_identifier net_type_declaration_222 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| NETTYPE_ net_type_declaration_224 net_type_identifier net_type_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+NETTYPE_ data_type net_type_identifier net_type_declaration_167 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| NETTYPE_ net_type_declaration_167_167 net_type_identifier net_type_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 lifetime:
@@ -2594,15 +2323,15 @@ simple_type
 ;
 
 data_type:
-integer_vector_type data_type_225 data_type_226 { $$ = $1; P($$, $2); P($$, $3); }
-| integer_atom_type data_type_227 { $$ = $1; P($$, $2); }
+integer_vector_type data_type_169 data_type_170 { $$ = $1; P($$, $2); P($$, $3); }
+| integer_atom_type data_type_169 { $$ = $1; P($$, $2); }
 | non_integer_type
-| struct_union data_type_228 '{' struct_union_member data_type_230 '}' data_type_231 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
-| ENUM_ data_type_232 '{' enum_name_declaration data_type_233 '}' data_type_234 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+| struct_union data_type_171 '{' struct_union_member data_type_172 '}' data_type_173 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+| ENUM_ data_type_174 '{' enum_name_declaration data_type_175 '}' data_type_176 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
 | STRING_ { C($$); T($$, @1, zero, zero); }
 | CHANDLE_ { C($$); T($$, @1, zero, zero); }
-| VIRTUAL_ data_type_235 interface_identifier data_type_236 data_type_237 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
-| data_type_238 type_identifier data_type_239 { $$ = $1; P($$, $2); P($$, $3); }
+| VIRTUAL_ data_type_177 interface_identifier interface_class_type_50 interface_port_header_75 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
+| data_type_178 type_identifier data_type_179 { $$ = $1; P($$, $2); P($$, $3); }
 | class_type
 | EVENT_ { C($$); T($$, @1, zero, zero); }
 | ps_covergroup_identifier
@@ -2615,17 +2344,17 @@ data_type
 ;
 
 implicit_data_type:
-implicit_data_type_240 implicit_data_type_241 { $$ = $1; P($$, $2); }
+data_type_169 implicit_data_type_180 { $$ = $1; P($$, $2); }
 ;
 
 enum_base_type:
-integer_atom_type enum_base_type_242 { $$ = $1; P($$, $2); }
-| integer_vector_type enum_base_type_243 enum_base_type_244 { $$ = $1; P($$, $2); P($$, $3); }
-| type_identifier enum_base_type_245 { $$ = $1; P($$, $2); }
+integer_atom_type data_type_169 { $$ = $1; P($$, $2); }
+| integer_vector_type data_type_169 specparam_declaration_152 { $$ = $1; P($$, $2); P($$, $3); }
+| type_identifier specparam_declaration_152 { $$ = $1; P($$, $2); }
 ;
 
 enum_name_declaration:
-enum_identifier enum_name_declaration_246 enum_name_declaration_248 { $$ = $1; P($$, $2); P($$, $3); }
+enum_identifier enum_name_declaration_181 ansi_port_declaration_78 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 class_scope:
@@ -2633,7 +2362,7 @@ class_type CC { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 class_type:
-ps_class_identifier class_type_249 class_type_250 { $$ = $1; P($$, $2); P($$, $3); }
+ps_class_identifier interface_class_type_50 class_type_183 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 integer_type:
@@ -2678,7 +2407,7 @@ SUPPLY0_ { C($$); T($$, @1, zero, zero); }
 ;
 
 net_port_type:
-net_port_type_252 data_type_or_implicit { $$ = $1; P($$, $2); }
+net_port_type_184 data_type_or_implicit { $$ = $1; P($$, $2); }
 | net_type_identifier
 | INTERCONNECT_ implicit_data_type { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
@@ -2705,7 +2434,7 @@ integer_type
 ;
 
 struct_union_member:
-struct_union_member_253 struct_union_member_254 data_type_or_void list_of_variable_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+struct_union_member_185 struct_union_member_186 data_type_or_void list_of_variable_decl_assignments ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 data_type_or_void:
@@ -2715,7 +2444,7 @@ data_type
 
 struct_union:
 STRUCT_ { C($$); T($$, @1, zero, zero); }
-| UNION_ struct_union_255 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| UNION_ struct_union_187 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 type_reference:
@@ -2754,12 +2483,12 @@ charge_strength:
 
 delay3:
 '#' delay_value { C($$); T($$, @1, zero, zero); P($$, $2); }
-| '#' '(' mintypmax_expression delay3_256 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| '#' '(' mintypmax_expression delay3_188 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 delay2:
 '#' delay_value { C($$); T($$, @1, zero, zero); P($$, $2); }
-| '#' '(' mintypmax_expression delay2_258 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| '#' '(' mintypmax_expression delay3_188_188 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 delay_value:
@@ -2771,55 +2500,55 @@ unsigned_number
 ;
 
 list_of_defparam_assignments:
-defparam_assignment list_of_defparam_assignments_259 { $$ = $1; P($$, $2); }
+defparam_assignment list_of_defparam_assignments_190 { $$ = $1; P($$, $2); }
 ;
 
 list_of_genvar_identifiers:
-genvar_identifier list_of_genvar_identifiers_260 { $$ = $1; P($$, $2); }
+genvar_identifier list_of_genvar_identifiers_191 { $$ = $1; P($$, $2); }
 ;
 
 list_of_interface_identifiers:
-interface_identifier list_of_interface_identifiers_261 list_of_interface_identifiers_262 { $$ = $1; P($$, $2); P($$, $3); }
+interface_identifier list_of_interface_identifiers_192 list_of_interface_identifiers_193 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 list_of_net_decl_assignments:
-net_decl_assignment list_of_net_decl_assignments_264 { $$ = $1; P($$, $2); }
+net_decl_assignment list_of_net_decl_assignments_195 { $$ = $1; P($$, $2); }
 ;
 
 list_of_param_assignments:
-param_assignment list_of_param_assignments_265 { $$ = $1; P($$, $2); }
+param_assignment list_of_param_assignments_196 { $$ = $1; P($$, $2); }
 ;
 
 list_of_port_identifiers:
-port_identifier list_of_port_identifiers_266 list_of_port_identifiers_267 { $$ = $1; P($$, $2); P($$, $3); }
+port_identifier list_of_port_identifiers_197 list_of_port_identifiers_198 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 list_of_udp_port_identifiers:
-port_identifier list_of_udp_port_identifiers_269 { $$ = $1; P($$, $2); }
+port_identifier list_of_udp_port_identifiers_200 { $$ = $1; P($$, $2); }
 ;
 
 list_of_specparam_assignments:
-specparam_assignment list_of_specparam_assignments_270 { $$ = $1; P($$, $2); }
+specparam_assignment list_of_specparam_assignments_201 { $$ = $1; P($$, $2); }
 ;
 
 list_of_tf_variable_identifiers:
-port_identifier list_of_tf_variable_identifiers_271 list_of_tf_variable_identifiers_272 list_of_tf_variable_identifiers_273 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+port_identifier list_of_tf_variable_identifiers_202 list_of_tf_variable_identifiers_203 list_of_tf_variable_identifiers_204 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 list_of_type_assignments:
-type_assignment list_of_type_assignments_276 { $$ = $1; P($$, $2); }
+type_assignment list_of_type_assignments_206 { $$ = $1; P($$, $2); }
 ;
 
 list_of_variable_decl_assignments:
-variable_decl_assignment list_of_variable_decl_assignments_277 { $$ = $1; P($$, $2); }
+variable_decl_assignment list_of_variable_decl_assignments_207 { $$ = $1; P($$, $2); }
 ;
 
 list_of_variable_identifiers:
-variable_identifier list_of_variable_identifiers_278 list_of_variable_identifiers_279 { $$ = $1; P($$, $2); P($$, $3); }
+variable_identifier list_of_variable_identifiers_208 list_of_variable_identifiers_209 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 list_of_variable_port_identifiers:
-port_identifier list_of_variable_port_identifiers_281 list_of_variable_port_identifiers_282 list_of_variable_port_identifiers_283 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+port_identifier list_of_variable_port_identifiers_211 ansi_port_declaration_78 list_of_variable_port_identifiers_212 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 defparam_assignment:
@@ -2827,11 +2556,11 @@ hierarchical_parameter_identifier '=' constant_mintypmax_expression { $$ = $1; T
 ;
 
 net_decl_assignment:
-net_identifier net_decl_assignment_286 net_decl_assignment_287 { $$ = $1; P($$, $2); P($$, $3); }
+net_identifier net_decl_assignment_214 list_of_tf_variable_identifiers_203 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 param_assignment:
-parameter_identifier param_assignment_288 param_assignment_289 { $$ = $1; P($$, $2); P($$, $3); }
+parameter_identifier param_assignment_215 param_assignment_216 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 specparam_assignment:
@@ -2840,12 +2569,12 @@ specparam_identifier '=' constant_mintypmax_expression { $$ = $1; T($$, @2, zero
 ;
 
 type_assignment:
-type_identifier type_assignment_290 { $$ = $1; P($$, $2); }
+type_identifier type_assignment_217 { $$ = $1; P($$, $2); }
 ;
 
 pulse_control_specparam:
-PATHPULSED '=' '(' reject_limit_value pulse_control_specparam_291 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| PATHPULSED specify_input_terminal_descriptor '$' specify_output_terminal_descriptor '=' '(' reject_limit_value pulse_control_specparam_292 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
+PATHPULSED '=' '(' reject_limit_value pulse_control_specparam_218 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| PATHPULSED specify_input_terminal_descriptor '$' specify_output_terminal_descriptor '=' '(' reject_limit_value pulse_control_specparam_218 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
 ;
 
 error_limit_value:
@@ -2861,18 +2590,18 @@ constant_mintypmax_expression
 ;
 
 variable_decl_assignment:
-variable_identifier variable_decl_assignment_293 variable_decl_assignment_294 { $$ = $1; P($$, $2); P($$, $3); }
-| dynamic_array_variable_identifier unsized_dimension variable_decl_assignment_295 variable_decl_assignment_296 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
-| class_variable_identifier variable_decl_assignment_297 { $$ = $1; P($$, $2); }
+variable_identifier variable_decl_assignment_219 list_of_tf_variable_identifiers_203 { $$ = $1; P($$, $2); P($$, $3); }
+| dynamic_array_variable_identifier unsized_dimension variable_decl_assignment_220 variable_decl_assignment_221 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| class_variable_identifier variable_decl_assignment_222 { $$ = $1; P($$, $2); }
 ;
 
 class_new:
-class_new_298 NEW_ class_new_299 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+class_constructor_declaration_134 NEW_ class_declaration_44_44 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | NEW_ expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 dynamic_array_new:
-NEW_ '[' expression ']' dynamic_array_new_300 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+NEW_ '[' expression ']' dynamic_array_new_223 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
 unpacked_dimension:
@@ -2898,7 +2627,7 @@ unsized_dimension
 ;
 
 queue_dimension:
-'[' '$' queue_dimension_301 ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+'[' '$' queue_dimension_224 ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 unsized_dimension:
@@ -2911,23 +2640,23 @@ data_type_or_void
 ;
 
 function_declaration:
-FUNCTION_ function_declaration_302 function_body_declaration { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+FUNCTION_ module_nonansi_header_9 function_body_declaration { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 function_body_declaration:
-function_data_type_or_implicit function_body_declaration_303 function_identifier ';' function_body_declaration_304 function_body_declaration_305 ENDFUNCTION_ function_body_declaration_306 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
-| function_data_type_or_implicit function_body_declaration_307 function_identifier '(' function_body_declaration_308 ')' ';' function_body_declaration_309 function_body_declaration_310 ENDFUNCTION_ function_body_declaration_311 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
+function_data_type_or_implicit function_body_declaration_225 function_identifier ';' function_body_declaration_226 function_body_declaration_227 ENDFUNCTION_ function_body_declaration_228 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
+| function_data_type_or_implicit function_body_declaration_225 function_identifier '(' class_constructor_prototype_131_131 ')' ';' function_body_declaration_229 function_body_declaration_230 ENDFUNCTION_ function_body_declaration_228 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
 ;
 
 function_prototype:
-FUNCTION_ data_type_or_void function_identifier function_prototype_312 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+FUNCTION_ data_type_or_void function_identifier class_constructor_prototype_131 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 dpi_import_export:
-IMPORT_ dpi_spec_string dpi_import_export_314 dpi_import_export_315 dpi_function_proto ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| IMPORT_ dpi_spec_string dpi_import_export_316 dpi_import_export_317 dpi_task_proto ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| EXPORT_ dpi_spec_string dpi_import_export_318 FUNCTION_ function_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
-| EXPORT_ dpi_spec_string dpi_import_export_319 TASK_ task_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+IMPORT_ dpi_spec_string dpi_import_export_231 dpi_import_export_232 dpi_function_proto ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| IMPORT_ dpi_spec_string dpi_import_export_233 dpi_import_export_232 dpi_task_proto ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| EXPORT_ dpi_spec_string dpi_import_export_232 FUNCTION_ function_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+| EXPORT_ dpi_spec_string dpi_import_export_232 TASK_ task_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 dpi_spec_string:
@@ -2953,12 +2682,12 @@ task_prototype
 ;
 
 task_declaration:
-TASK_ task_declaration_320 task_body_declaration { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+TASK_ module_nonansi_header_9 task_body_declaration { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 task_body_declaration:
-task_body_declaration_321 task_identifier ';' task_body_declaration_322 task_body_declaration_323 ENDTASK_ task_body_declaration_324 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
-| task_body_declaration_325 task_identifier '(' task_body_declaration_326 ')' ';' task_body_declaration_327 task_body_declaration_328 ENDTASK_ task_body_declaration_329 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); }
+function_body_declaration_225 task_identifier ';' task_body_declaration_234 task_body_declaration_235 ENDTASK_ task_body_declaration_236 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+| function_body_declaration_225 task_identifier '(' class_constructor_prototype_131_131 ')' ';' task_body_declaration_237 task_body_declaration_238 ENDTASK_ task_body_declaration_236 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); }
 ;
 
 tf_item_declaration:
@@ -2967,11 +2696,11 @@ block_item_declaration
 ;
 
 tf_port_list:
-tf_port_item tf_port_list_330 { $$ = $1; P($$, $2); }
+tf_port_item tf_port_list_239 { $$ = $1; P($$, $2); }
 ;
 
 tf_port_item:
-tf_port_item_331 tf_port_item_332 tf_port_item_333 data_type_or_implicit tf_port_item_334 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
+tf_port_item_240 tf_port_item_241 data_declaration_154 data_type_or_implicit tf_port_item_242 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 tf_port_direction:
@@ -2980,19 +2709,19 @@ port_direction
 ;
 
 tf_port_declaration:
-tf_port_declaration_337 tf_port_direction tf_port_declaration_338 data_type_or_implicit list_of_tf_variable_identifiers ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+tf_port_declaration_244 tf_port_direction data_declaration_154 data_type_or_implicit list_of_tf_variable_identifiers ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 task_prototype:
-TASK_ task_identifier task_prototype_339 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+TASK_ task_identifier class_constructor_prototype_131 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 block_item_declaration:
-block_item_declaration_341 data_declaration { $$ = $1; P($$, $2); }
-| block_item_declaration_342 local_parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
-| block_item_declaration_343 parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
-| block_item_declaration_344 overload_declaration { $$ = $1; P($$, $2); }
-| block_item_declaration_345 let_declaration { $$ = $1; P($$, $2); }
+block_item_declaration_245 data_declaration { $$ = $1; P($$, $2); }
+| block_item_declaration_246 local_parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| block_item_declaration_247 parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| block_item_declaration_248 overload_declaration { $$ = $1; P($$, $2); }
+| block_item_declaration_249 let_declaration { $$ = $1; P($$, $2); }
 ;
 
 overload_declaration:
@@ -3018,21 +2747,21 @@ overload_operator:
 ;
 
 overload_proto_formals:
-data_type overload_proto_formals_346 { $$ = $1; P($$, $2); }
+data_type overload_proto_formals_250 { $$ = $1; P($$, $2); }
 ;
 
 modport_declaration:
-MODPORT_ modport_item modport_declaration_347 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+MODPORT_ modport_item modport_declaration_251 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 modport_item:
-modport_identifier '(' modport_ports_declaration modport_item_348 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+modport_identifier '(' modport_ports_declaration modport_item_252 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 modport_ports_declaration:
-modport_ports_declaration_349 modport_simple_ports_declaration { $$ = $1; P($$, $2); }
-| modport_ports_declaration_350 modport_tf_ports_declaration { $$ = $1; P($$, $2); }
-| modport_ports_declaration_351 modport_clocking_declaration { $$ = $1; P($$, $2); }
+modport_ports_declaration_253 modport_simple_ports_declaration { $$ = $1; P($$, $2); }
+| modport_ports_declaration_254 modport_tf_ports_declaration { $$ = $1; P($$, $2); }
+| modport_ports_declaration_255 modport_clocking_declaration { $$ = $1; P($$, $2); }
 ;
 
 modport_clocking_declaration:
@@ -3040,16 +2769,16 @@ CLOCKING_ clocking_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 modport_simple_ports_declaration:
-port_direction modport_simple_port modport_simple_ports_declaration_352 { $$ = $1; P($$, $2); P($$, $3); }
+port_direction modport_simple_port modport_simple_ports_declaration_256 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 modport_simple_port:
 port_identifier
-| '.' port_identifier '(' modport_simple_port_353 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
+| '.' port_identifier '(' ansi_port_declaration_81 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 modport_tf_ports_declaration:
-import_export modport_tf_port modport_tf_ports_declaration_354 { $$ = $1; P($$, $2); P($$, $3); }
+import_export modport_tf_port modport_tf_ports_declaration_257 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 modport_tf_port:
@@ -3063,7 +2792,7 @@ IMPORT_ { C($$); T($$, @1, zero, zero); }
 ;
 
 concurrent_assertion_item:
-concurrent_assertion_item_355 concurrent_assertion_statement { $$ = $1; P($$, $2); }
+concurrent_assertion_item_258 concurrent_assertion_statement { $$ = $1; P($$, $2); }
 | checker_instantiation
 ;
 
@@ -3092,7 +2821,7 @@ EXPECT_ '(' property_spec ')' action_block { C($$); T($$, @1, zero, zero); T($$,
 ;
 
 cover_sequence_statement:
-COVER_ SEQUENCE_ '(' cover_sequence_statement_356 cover_sequence_statement_357 sequence_expr ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
+COVER_ SEQUENCE_ '(' cover_sequence_statement_259 cover_sequence_statement_260 sequence_expr ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
 ;
 
 restrict_property_statement:
@@ -3100,12 +2829,12 @@ RESTRICT_ PROPERTY_ '(' property_spec ')' ';' { C($$); T($$, @1, zero, zero); T(
 ;
 
 property_instance:
-ps_or_hierarchical_property_identifier property_instance_358 { $$ = $1; P($$, $2); }
+ps_or_hierarchical_property_identifier property_instance_261 { $$ = $1; P($$, $2); }
 ;
 
 property_list_of_arguments:
-property_list_of_arguments_360 property_list_of_arguments_361 property_list_of_arguments_363 { $$ = $1; P($$, $2); P($$, $3); }
-| '.' identifier '(' property_list_of_arguments_365 ')' property_list_of_arguments_366 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+property_list_of_arguments_263 property_list_of_arguments_264 property_list_of_arguments_265 { $$ = $1; P($$, $2); P($$, $3); }
+| '.' identifier '(' property_list_of_arguments_263 ')' property_list_of_arguments_266 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 property_actual_arg:
@@ -3120,15 +2849,15 @@ property_declaration
 ;
 
 property_declaration:
-PROPERTY_ property_identifier property_declaration_368 ';' property_declaration_370 property_spec property_declaration_371 ENDPROPERTY_ property_declaration_372 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
+PROPERTY_ property_identifier property_declaration_267 ';' property_declaration_269 property_spec property_declaration_270 ENDPROPERTY_ property_declaration_271 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 ;
 
 property_port_list:
-property_port_item property_port_list_373 { $$ = $1; P($$, $2); }
+property_port_item property_port_list_272 { $$ = $1; P($$, $2); }
 ;
 
 property_port_item:
-property_port_item_374 property_port_item_375 property_formal_type formal_port_identifier property_port_item_377 property_port_item_378 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+property_port_item_273 property_port_item_274 property_formal_type formal_port_identifier property_port_item_276 checker_port_item_116 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 property_lvar_port_direction:
@@ -3141,7 +2870,7 @@ sequence_formal_type
 ;
 
 property_spec:
-property_spec_379 property_spec_380 property_expr { $$ = $1; P($$, $2); P($$, $3); }
+cover_sequence_statement_259 cover_sequence_statement_260 property_expr { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 property_expr:
@@ -3154,20 +2883,20 @@ sequence_expr
 | property_expr AND_ property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr PIPEMG property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr PIPEEG property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| IF_ '(' expression_or_dist ')' property_expr property_expr_381 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
-| CASE_ '(' expression_or_dist ')' property_case_item property_expr_382 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+| IF_ '(' expression_or_dist ')' property_expr property_expr_277 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
+| CASE_ '(' expression_or_dist ')' property_case_item property_expr_278 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 | sequence_expr NMN property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr NEN property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | NEXTTIME_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| NEXTTIME_ property_expr_383 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| NEXTTIME_ property_expr_279 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 | S_NEXTTIME_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| S_NEXTTIME_ property_expr_384 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| S_NEXTTIME_ property_expr_280 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 | ALWAYS_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| ALWAYS_ property_expr_385 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-| S_ALWAYS_ property_expr_386 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ALWAYS_ property_expr_281 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| S_ALWAYS_ property_expr_282 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 | S_EVENTUALLY_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
-| EVENTUALLY_ property_expr_387 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-| S_EVENTUALLY_ property_expr_388 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| EVENTUALLY_ property_expr_282 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| S_EVENTUALLY_ property_expr_281 property_expr { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 | property_expr UNTIL_ property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | property_expr S_UNTIL_ property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | property_expr UNTIL_WITH_ property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
@@ -3183,20 +2912,20 @@ sequence_expr
 ;
 
 property_case_item:
-expression_or_dist property_case_item_389 ':' property_expr property_case_item_390 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
-| DEFAULT_ property_case_item_391 property_expr property_case_item_392 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+expression_or_dist property_case_item_283 ':' property_expr property_declaration_270 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
+| DEFAULT_ property_case_item_284 property_expr property_declaration_270 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 sequence_declaration:
-SEQUENCE_ sequence_identifier sequence_declaration_393 ';' sequence_declaration_395 sequence_expr sequence_declaration_396 ENDSEQUENCE_ sequence_declaration_397 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
+SEQUENCE_ sequence_identifier sequence_declaration_285 ';' sequence_declaration_287 sequence_expr property_declaration_270 ENDSEQUENCE_ sequence_declaration_288 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 ;
 
 sequence_port_list:
-sequence_port_item sequence_port_list_398 { $$ = $1; P($$, $2); }
+sequence_port_item sequence_port_list_289 { $$ = $1; P($$, $2); }
 ;
 
 sequence_port_item:
-sequence_port_item_399 sequence_port_item_400 sequence_formal_type formal_port_identifier sequence_port_item_402 sequence_port_item_403 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+sequence_port_item_290 sequence_port_item_291 sequence_formal_type formal_port_identifier sequence_port_item_293 sequence_port_item_294 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 sequence_lvar_port_direction:
@@ -3212,15 +2941,15 @@ data_type_or_implicit
 ;
 
 sequence_expr:
-cycle_delay_range sequence_expr sequence_expr_404 { $$ = $1; P($$, $2); P($$, $3); }
-| sequence_expr cycle_delay_range sequence_expr sequence_expr_405 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
-| expression_or_dist sequence_expr_406 { $$ = $1; P($$, $2); }
-| sequence_instance sequence_expr_407 { $$ = $1; P($$, $2); }
-| '(' sequence_expr sequence_expr_408 ')' sequence_expr_409 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+cycle_delay_range sequence_expr sequence_expr_295 { $$ = $1; P($$, $2); P($$, $3); }
+| sequence_expr cycle_delay_range sequence_expr sequence_expr_296 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| expression_or_dist sequence_expr_297 { $$ = $1; P($$, $2); }
+| sequence_instance sequence_expr_298 { $$ = $1; P($$, $2); }
+| '(' sequence_expr sequence_expr_299 ')' sequence_expr_298 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | sequence_expr AND_ sequence_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr INTERSECT_ sequence_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr OR_ sequence_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| FIRST_MATCH_ '(' sequence_expr sequence_expr_410 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| FIRST_MATCH_ '(' sequence_expr sequence_expr_300 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 | expression_or_dist THROUGHOUT_ sequence_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr WITHIN_ sequence_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | clocking_event sequence_expr { $$ = $1; P($$, $2); }
@@ -3244,12 +2973,12 @@ operator_assignment
 ;
 
 sequence_instance:
-ps_or_hierarchical_sequence_identifier sequence_instance_411 { $$ = $1; P($$, $2); }
+ps_or_hierarchical_sequence_identifier sequence_instance_301 { $$ = $1; P($$, $2); }
 ;
 
 sequence_list_of_arguments:
-sequence_list_of_arguments_413 sequence_list_of_arguments_414 sequence_list_of_arguments_416 { $$ = $1; P($$, $2); P($$, $3); }
-| '.' identifier '(' sequence_list_of_arguments_418 ')' sequence_list_of_arguments_419 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+sequence_list_of_arguments_303 sequence_list_of_arguments_304 sequence_list_of_arguments_305 { $$ = $1; P($$, $2); P($$, $3); }
+| '.' identifier '(' sequence_list_of_arguments_303 ')' sequence_list_of_arguments_306 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 sequence_actual_arg:
@@ -3292,7 +3021,7 @@ constant_expression ':' constant_expression { $$ = $1; T($$, @2, zero, zero); P(
 ;
 
 expression_or_dist:
-expression expression_or_dist_421 { $$ = $1; P($$, $2); }
+expression expression_or_dist_307 { $$ = $1; P($$, $2); }
 ;
 
 assertion_variable_declaration:
@@ -3300,7 +3029,7 @@ var_data_type list_of_variable_decl_assignments ';' { $$ = $1; P($$, $2); T($$, 
 ;
 
 let_declaration:
-LET_ let_identifier let_declaration_423 '=' expression ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+LET_ let_identifier let_declaration_309 '=' expression ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 let_identifier:
@@ -3308,11 +3037,11 @@ identifier
 ;
 
 let_port_list:
-let_port_item let_port_list_425 { $$ = $1; P($$, $2); }
+let_port_item let_port_list_311 { $$ = $1; P($$, $2); }
 ;
 
 let_port_item:
-let_port_item_426 let_formal_type formal_port_identifier let_port_item_427 let_port_item_428 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
+let_port_item_312 let_formal_type formal_port_identifier let_port_item_313 list_of_tf_variable_identifiers_203 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 let_formal_type:
@@ -3321,12 +3050,12 @@ data_type_or_implicit
 ;
 
 let_expression:
-let_expression_429 let_identifier let_expression_430 { $$ = $1; P($$, $2); P($$, $3); }
+let_expression_314 let_identifier let_expression_315 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 let_list_of_arguments:
-let_list_of_arguments_432 let_list_of_arguments_433 let_list_of_arguments_435 { $$ = $1; P($$, $2); P($$, $3); }
-| '.' identifier '(' let_list_of_arguments_437 ')' let_list_of_arguments_438 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+let_list_of_arguments_317 let_list_of_arguments_318 let_list_of_arguments_319 { $$ = $1; P($$, $2); P($$, $3); }
+| '.' identifier '(' let_list_of_arguments_317 ')' let_list_of_arguments_320 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 let_actual_arg:
@@ -3334,12 +3063,12 @@ expression
 ;
 
 covergroup_declaration:
-COVERGROUP_ covergroup_identifier covergroup_declaration_440 covergroup_declaration_442 ';' covergroup_declaration_443 ENDGROUP_ covergroup_declaration_444 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
+COVERGROUP_ covergroup_identifier class_constructor_prototype_131 covergroup_declaration_321 ';' covergroup_declaration_322 ENDGROUP_ covergroup_declaration_323 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
 ;
 
 coverage_spec_or_option:
-coverage_spec_or_option_445 coverage_spec { $$ = $1; P($$, $2); }
-| coverage_spec_or_option_446 coverage_option ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+coverage_spec_or_option_324 coverage_spec { $$ = $1; P($$, $2); }
+| coverage_spec_or_option_325 coverage_option ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 ;
 
 coverage_option:
@@ -3354,7 +3083,7 @@ cover_point
 
 coverage_event:
 clocking_event
-| WITH_ FUNCTION_ SAMPLE_ '(' coverage_event_447 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+| WITH_ FUNCTION_ SAMPLE_ '(' class_constructor_prototype_131_131 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 | ATAT '(' block_event_expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
@@ -3367,26 +3096,26 @@ block_event_expression OR_ block_event_expression { $$ = $1; T($$, @2, zero, zer
 hierarchical_btf_identifier:
 hierarchical_tf_identifier
 | hierarchical_block_identifier
-| hierarchical_btf_identifier_448 method_identifier { $$ = $1; P($$, $2); }
+| hierarchical_btf_identifier_326 method_identifier { $$ = $1; P($$, $2); }
 ;
 
 cover_point:
-cover_point_449 COVERPOINT_ expression cover_point_451 bins_or_empty { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
+cover_point_327 COVERPOINT_ expression cover_point_329 bins_or_empty { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 bins_or_empty:
-bins_or_empty_452
+bins_or_empty_330
 | ';' { C($$); T($$, @1, zero, zero); }
 ;
 
 bins_or_options:
 coverage_option
-| bins_or_options_455 bins_keyword bin_identifier bins_or_options_456 '=' '{' covergroup_range_list '}' bins_or_options_458 bins_or_options_459 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); }
-| bins_or_options_460 bins_keyword bin_identifier bins_or_options_461 '=' cover_point_identifier bins_or_options_463 bins_or_options_464 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); }
-| bins_or_options_465 bins_keyword bin_identifier bins_or_options_466 '=' set_covergroup_expression bins_or_options_468 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); }
-| bins_or_options_469 bins_keyword bin_identifier bins_or_options_470 '=' trans_list bins_or_options_471 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); }
-| bins_keyword bin_identifier bins_or_options_472 '=' DEFAULT_ bins_or_options_475 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); P($$, $6); }
-| bins_keyword bin_identifier '=' DEFAULT_ SEQUENCE_ bins_or_options_476 { $$ = $1; P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); T($$, @5, zero, zero); P($$, $6); }
+| bins_or_options_333 bins_keyword bin_identifier bins_or_options_334 '=' '{' covergroup_range_list '}' bins_or_options_336 cover_point_329 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); }
+| bins_or_options_333 bins_keyword bin_identifier bins_or_options_334 '=' cover_point_identifier bins_or_options_336 cover_point_329 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); }
+| bins_or_options_333 bins_keyword bin_identifier bins_or_options_334 '=' set_covergroup_expression cover_point_329 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); }
+| bins_or_options_333 bins_keyword bin_identifier bins_or_options_337 '=' trans_list cover_point_329 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); }
+| bins_keyword bin_identifier bins_or_options_338 '=' DEFAULT_ cover_point_329 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); P($$, $6); }
+| bins_keyword bin_identifier '=' DEFAULT_ SEQUENCE_ cover_point_329 { $$ = $1; P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 bins_keyword:
@@ -3396,11 +3125,11 @@ BINS_ { C($$); T($$, @1, zero, zero); }
 ;
 
 trans_list:
-'(' trans_set ')' trans_list_477 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+'(' trans_set ')' trans_list_340 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); }
 ;
 
 trans_set:
-trans_range_list trans_set_478 { $$ = $1; P($$, $2); }
+trans_range_list trans_set_341 { $$ = $1; P($$, $2); }
 ;
 
 trans_range_list:
@@ -3420,11 +3149,11 @@ covergroup_expression
 ;
 
 cover_cross:
-cover_cross_479 CROSS_ list_of_cross_items cover_cross_480 cross_body { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
+cover_cross_342 CROSS_ list_of_cross_items cover_point_329 cross_body { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 list_of_cross_items:
-cross_item ',' cross_item list_of_cross_items_481 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+cross_item ',' cross_item list_of_cross_items_343 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 cross_item:
@@ -3433,7 +3162,7 @@ cover_point_identifier
 ;
 
 cross_body:
-'{' cross_body_482 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+'{' cross_body_344 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | ';' { C($$); T($$, @1, zero, zero); }
 ;
 
@@ -3443,12 +3172,12 @@ function_declaration
 ;
 
 bins_selection_or_option:
-bins_selection_or_option_483 coverage_option { $$ = $1; P($$, $2); }
-| bins_selection_or_option_484 bins_selection { $$ = $1; P($$, $2); }
+bins_selection_or_option_345 coverage_option { $$ = $1; P($$, $2); }
+| bins_selection_or_option_346 bins_selection { $$ = $1; P($$, $2); }
 ;
 
 bins_selection:
-bins_keyword bin_identifier '=' select_expression bins_selection_485 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
+bins_keyword bin_identifier '=' select_expression cover_point_329 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
 ;
 
 select_expression:
@@ -3457,22 +3186,22 @@ select_condition
 | select_expression AMPAMP select_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | select_expression PIPEPIPE select_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | '(' select_expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| select_expression WITH_ '(' with_covergroup_expression ')' select_expression_486 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| select_expression WITH_ '(' with_covergroup_expression ')' select_expression_347 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 | cross_identifier
-| cross_set_expression select_expression_487 { $$ = $1; P($$, $2); }
+| cross_set_expression select_expression_347 { $$ = $1; P($$, $2); }
 ;
 
 select_condition:
-BINSOF_ '(' bins_expression ')' select_condition_488 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+BINSOF_ '(' bins_expression ')' select_condition_348 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
 bins_expression:
 variable_identifier
-| cover_point_identifier bins_expression_489 { $$ = $1; P($$, $2); }
+| cover_point_identifier bins_expression_349 { $$ = $1; P($$, $2); }
 ;
 
 covergroup_range_list:
-covergroup_value_range covergroup_range_list_490 { $$ = $1; P($$, $2); }
+covergroup_value_range covergroup_range_list_350 { $$ = $1; P($$, $2); }
 ;
 
 covergroup_value_range:
@@ -3501,47 +3230,47 @@ expression
 ;
 
 gate_instantiation:
-cmos_switchtype gate_instantiation_491 cmos_switch_instance gate_instantiation_492 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| enable_gatetype gate_instantiation_493 gate_instantiation_494 enable_gate_instance gate_instantiation_495 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| mos_switchtype gate_instantiation_496 mos_switch_instance gate_instantiation_497 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| n_input_gatetype gate_instantiation_498 gate_instantiation_499 n_input_gate_instance gate_instantiation_500 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| n_output_gatetype gate_instantiation_501 gate_instantiation_502 n_output_gate_instance gate_instantiation_503 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| pass_en_switchtype gate_instantiation_504 pass_enable_switch_instance gate_instantiation_505 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| pass_switchtype pass_switch_instance gate_instantiation_506 ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| PULLDOWN_ gate_instantiation_507 pull_gate_instance gate_instantiation_508 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| PULLUP_ gate_instantiation_509 pull_gate_instance gate_instantiation_510 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+cmos_switchtype net_declaration_159 cmos_switch_instance gate_instantiation_351 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| enable_gatetype gate_instantiation_352 net_declaration_159 enable_gate_instance gate_instantiation_353 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| mos_switchtype net_declaration_159 mos_switch_instance gate_instantiation_354 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| n_input_gatetype gate_instantiation_352 gate_instantiation_355 n_input_gate_instance gate_instantiation_356 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| n_output_gatetype gate_instantiation_352 gate_instantiation_355 n_output_gate_instance gate_instantiation_357 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| pass_en_switchtype gate_instantiation_355 pass_enable_switch_instance gate_instantiation_358 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| pass_switchtype pass_switch_instance gate_instantiation_359 ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| PULLDOWN_ gate_instantiation_360 pull_gate_instance gate_instantiation_361 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| PULLUP_ gate_instantiation_362 pull_gate_instance gate_instantiation_363 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 cmos_switch_instance:
-cmos_switch_instance_511 '(' output_terminal ',' input_terminal ',' ncontrol_terminal ',' pcontrol_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); T($$, @10, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ',' input_terminal ',' ncontrol_terminal ',' pcontrol_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); T($$, @10, zero, zero); }
 ;
 
 enable_gate_instance:
-enable_gate_instance_512 '(' output_terminal ',' input_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ',' input_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 mos_switch_instance:
-mos_switch_instance_513 '(' output_terminal ',' input_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ',' input_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 n_input_gate_instance:
-n_input_gate_instance_514 '(' output_terminal ',' input_terminal n_input_gate_instance_515 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ',' input_terminal n_input_gate_instance_365 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 n_output_gate_instance:
-n_output_gate_instance_516 '(' output_terminal n_output_gate_instance_517 ',' input_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal n_output_gate_instance_366 ',' input_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 pass_switch_instance:
-pass_switch_instance_518 '(' inout_terminal ',' inout_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+cmos_switch_instance_364 '(' inout_terminal ',' inout_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 pass_enable_switch_instance:
-pass_enable_switch_instance_519 '(' inout_terminal ',' inout_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
+cmos_switch_instance_364 '(' inout_terminal ',' inout_terminal ',' enable_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 pull_gate_instance:
-pull_gate_instance_520 '(' output_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 pulldown_strength:
@@ -3626,16 +3355,16 @@ TRAN_ { C($$); T($$, @1, zero, zero); }
 ;
 
 module_instantiation:
-module_identifier module_instantiation_521 hierarchical_instance module_instantiation_522 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+module_identifier interface_class_type_50 hierarchical_instance module_instantiation_367 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 parameter_value_assignment:
-'#' '(' parameter_value_assignment_523 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+'#' '(' parameter_value_assignment_368 ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 list_of_parameter_assignments:
-ordered_parameter_assignment list_of_parameter_assignments_524 { $$ = $1; P($$, $2); }
-| named_parameter_assignment list_of_parameter_assignments_525 { $$ = $1; P($$, $2); }
+ordered_parameter_assignment list_of_parameter_assignments_369 { $$ = $1; P($$, $2); }
+| named_parameter_assignment list_of_parameter_assignments_370 { $$ = $1; P($$, $2); }
 ;
 
 ordered_parameter_assignment:
@@ -3643,59 +3372,59 @@ param_expression
 ;
 
 named_parameter_assignment:
-'.' parameter_identifier '(' named_parameter_assignment_526 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
+'.' parameter_identifier '(' named_parameter_assignment_371 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 hierarchical_instance:
-name_of_instance '(' hierarchical_instance_527 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+name_of_instance '(' hierarchical_instance_372 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 name_of_instance:
-instance_identifier name_of_instance_528 { $$ = $1; P($$, $2); }
+instance_identifier name_of_instance_373 { $$ = $1; P($$, $2); }
 ;
 
 list_of_port_connections:
-ordered_port_connection list_of_port_connections_529 { $$ = $1; P($$, $2); }
-| named_port_connection list_of_port_connections_530 { $$ = $1; P($$, $2); }
+ordered_port_connection list_of_port_connections_374 { $$ = $1; P($$, $2); }
+| named_port_connection list_of_port_connections_375 { $$ = $1; P($$, $2); }
 ;
 
 ordered_port_connection:
-ordered_port_connection_531 ordered_port_connection_532 { $$ = $1; P($$, $2); }
+ordered_port_connection_376 ansi_port_declaration_81 { $$ = $1; P($$, $2); }
 ;
 
 named_port_connection:
-named_port_connection_533 '.' port_identifier named_port_connection_534 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
-| named_port_connection_536 DOTS { $$ = $1; T($$, @2, zero, zero); }
+named_port_connection_377 '.' port_identifier named_port_connection_378 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| named_port_connection_379 DOTS { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 interface_instantiation:
-interface_identifier interface_instantiation_537 hierarchical_instance interface_instantiation_538 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+interface_identifier interface_class_type_50 hierarchical_instance interface_instantiation_380 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 program_instantiation:
-program_identifier program_instantiation_539 hierarchical_instance program_instantiation_540 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+program_identifier interface_class_type_50 hierarchical_instance program_instantiation_381 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 checker_instantiation:
-ps_checker_identifier name_of_instance '(' checker_instantiation_541 ')' ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); }
+ps_checker_identifier name_of_instance '(' checker_instantiation_382 ')' ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); }
 ;
 
 list_of_checker_port_connections:
-ordered_checker_port_connection list_of_checker_port_connections_542 { $$ = $1; P($$, $2); }
-| named_checker_port_connection list_of_checker_port_connections_543 { $$ = $1; P($$, $2); }
+ordered_checker_port_connection list_of_checker_port_connections_383 { $$ = $1; P($$, $2); }
+| named_checker_port_connection list_of_checker_port_connections_384 { $$ = $1; P($$, $2); }
 ;
 
 ordered_checker_port_connection:
-ordered_checker_port_connection_544 ordered_checker_port_connection_545 { $$ = $1; P($$, $2); }
+ordered_checker_port_connection_385 property_list_of_arguments_263 { $$ = $1; P($$, $2); }
 ;
 
 named_checker_port_connection:
-named_checker_port_connection_546 '.' formal_port_identifier named_checker_port_connection_547 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
-| named_checker_port_connection_549 DOTS { $$ = $1; T($$, @2, zero, zero); }
+named_checker_port_connection_386 '.' formal_port_identifier named_checker_port_connection_387 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| named_checker_port_connection_388 DOTS { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 generate_region:
-GENERATE_ generate_region_550 ENDGENERATE_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+GENERATE_ generate_region_389 ENDGENERATE_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 loop_generate_construct:
@@ -3703,7 +3432,7 @@ FOR_ '(' genvar_initialization ';' genvar_expression ';' genvar_iteration ')' ge
 ;
 
 genvar_initialization:
-genvar_initialization_551 genvar_identifier '=' constant_expression { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+genvar_initialization_390 genvar_identifier '=' constant_expression { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
 ;
 
 genvar_iteration:
@@ -3718,21 +3447,21 @@ if_generate_construct
 ;
 
 if_generate_construct:
-IF_ '(' constant_expression ')' generate_block if_generate_construct_552 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
+IF_ '(' constant_expression ')' generate_block if_generate_construct_391 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
 ;
 
 case_generate_construct:
-CASE_ '(' constant_expression ')' case_generate_item case_generate_construct_553 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+CASE_ '(' constant_expression ')' case_generate_item case_generate_construct_392 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 case_generate_item:
-constant_expression case_generate_item_554 ':' generate_block { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
-| DEFAULT_ case_generate_item_555 generate_block { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+constant_expression case_generate_item_393 ':' generate_block { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+| DEFAULT_ property_case_item_284 generate_block { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 generate_block:
 generate_item
-| generate_block_556 BEGIN_ generate_block_557 generate_block_558 END_ generate_block_559 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| generate_block_394 BEGIN_ generate_block_395 generate_block_396 END_ generate_block_395 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 generate_item:
@@ -3742,27 +3471,27 @@ module_or_generate_item
 ;
 
 udp_nonansi_declaration:
-udp_nonansi_declaration_560 PRIMITIVE_ udp_identifier '(' udp_port_list ')' ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
+udp_nonansi_declaration_397 PRIMITIVE_ udp_identifier '(' udp_port_list ')' ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
 ;
 
 udp_ansi_declaration:
-udp_ansi_declaration_561 PRIMITIVE_ udp_identifier '(' udp_declaration_port_list ')' ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
+udp_ansi_declaration_398 PRIMITIVE_ udp_identifier '(' udp_declaration_port_list ')' ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
 ;
 
 udp_declaration:
-udp_nonansi_declaration udp_port_declaration udp_declaration_562 udp_body ENDPRIMITIVE_ udp_declaration_563 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
-| udp_ansi_declaration udp_body ENDPRIMITIVE_ udp_declaration_564 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+udp_nonansi_declaration udp_port_declaration udp_declaration_399 udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| udp_ansi_declaration udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
 | EXTERN_ udp_nonansi_declaration { C($$); T($$, @1, zero, zero); P($$, $2); }
 | EXTERN_ udp_ansi_declaration { C($$); T($$, @1, zero, zero); P($$, $2); }
-| udp_declaration_565 PRIMITIVE_ udp_identifier '(' DOTS ')' ';' udp_declaration_566 udp_body ENDPRIMITIVE_ udp_declaration_567 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
+| udp_declaration_401 PRIMITIVE_ udp_identifier '(' DOTS ')' ';' udp_declaration_402 udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); T($$, @5, zero, zero); T($$, @6, zero, zero); T($$, @7, zero, zero); P($$, $8); P($$, $9); T($$, @10, zero, zero); P($$, $11); }
 ;
 
 udp_port_list:
-output_port_identifier ',' input_port_identifier udp_port_list_568 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+output_port_identifier ',' input_port_identifier udp_port_list_403 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 udp_declaration_port_list:
-udp_output_declaration ',' udp_input_declaration udp_declaration_port_list_569 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+udp_output_declaration ',' udp_input_declaration udp_declaration_port_list_404 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 udp_port_declaration:
@@ -3772,16 +3501,16 @@ udp_output_declaration ';' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 udp_output_declaration:
-udp_output_declaration_570 OUTPUT_ port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| udp_output_declaration_571 OUTPUT_ REG_ port_identifier udp_output_declaration_572 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
+udp_output_declaration_405 OUTPUT_ port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| udp_output_declaration_406 OUTPUT_ REG_ port_identifier ansi_port_declaration_78 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); P($$, $5); }
 ;
 
 udp_input_declaration:
-udp_input_declaration_573 INPUT_ list_of_udp_port_identifiers { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+udp_input_declaration_407 INPUT_ list_of_udp_port_identifiers { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 udp_reg_declaration:
-udp_reg_declaration_574 REG_ variable_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+udp_reg_declaration_408 REG_ variable_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 udp_body:
@@ -3790,7 +3519,7 @@ combinational_body
 ;
 
 combinational_body:
-TABLE_ combinational_entry combinational_body_575 ENDTABLE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+TABLE_ combinational_entry combinational_body_409 ENDTABLE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 combinational_entry:
@@ -3798,7 +3527,7 @@ level_input_list ':' output_symbol ';' { $$ = $1; T($$, @2, zero, zero); P($$, $
 ;
 
 sequential_body:
-sequential_body_576 TABLE_ sequential_entry sequential_body_577 ENDTABLE_ { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+sequential_body_410 TABLE_ sequential_entry sequential_body_411 ENDTABLE_ { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 udp_initial_statement:
@@ -3828,11 +3557,11 @@ level_input_list
 ;
 
 level_input_list:
-level_symbol level_input_list_578 { $$ = $1; P($$, $2); }
+level_symbol level_input_list_412 { $$ = $1; P($$, $2); }
 ;
 
 edge_input_list:
-edge_input_list_579 edge_indicator edge_input_list_580 { $$ = $1; P($$, $2); P($$, $3); }
+edge_input_list_413 edge_indicator edge_input_list_414 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 edge_indicator:
@@ -3879,28 +3608,28 @@ edge_symbol:
 ;
 
 udp_instantiation:
-udp_identifier udp_instantiation_581 udp_instantiation_582 udp_instance udp_instantiation_583 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+udp_identifier gate_instantiation_352 gate_instantiation_355 udp_instance udp_instantiation_415 ';' { $$ = $1; P($$, $2); P($$, $3); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 udp_instance:
-udp_instance_584 '(' output_terminal ',' input_terminal udp_instance_585 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+cmos_switch_instance_364 '(' output_terminal ',' input_terminal udp_instance_416 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 continuous_assign:
-ASSIGN_ continuous_assign_586 continuous_assign_587 list_of_net_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
-| ASSIGN_ continuous_assign_588 list_of_variable_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+ASSIGN_ gate_instantiation_352 net_declaration_159 list_of_net_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+| ASSIGN_ net_declaration_160 list_of_variable_assignments ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 list_of_net_assignments:
-net_assignment list_of_net_assignments_589 { $$ = $1; P($$, $2); }
+net_assignment list_of_net_assignments_417 { $$ = $1; P($$, $2); }
 ;
 
 list_of_variable_assignments:
-variable_assignment list_of_variable_assignments_590 { $$ = $1; P($$, $2); }
+variable_assignment list_of_variable_assignments_418 { $$ = $1; P($$, $2); }
 ;
 
 net_alias:
-ALIAS_ net_lvalue '=' net_lvalue net_alias_591 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+ALIAS_ net_lvalue '=' net_lvalue net_alias_419 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 net_assignment:
@@ -3929,7 +3658,7 @@ FINAL_ function_statement { C($$); T($$, @1, zero, zero); P($$, $2); }
 blocking_assignment:
 variable_lvalue '=' delay_or_event_control expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 | nonrange_variable_lvalue '=' dynamic_array_new { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| blocking_assignment_592 hierarchical_variable_identifier select BANGE class_new { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| blocking_assignment_420 hierarchical_variable_identifier select BANGE class_new { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | operator_assignment
 ;
 
@@ -3954,7 +3683,7 @@ assignment_operator:
 ;
 
 nonblocking_assignment:
-variable_lvalue LE nonblocking_assignment_593 expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+variable_lvalue LE nonblocking_assignment_421 expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 procedural_continuous_assignment:
@@ -3972,15 +3701,15 @@ variable_lvalue '=' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 
 action_block:
 statement_or_null
-| action_block_594 ELSE_ statement_or_null { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| action_block_422 ELSE_ statement_or_null { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 seq_block:
-BEGIN_ seq_block_595 seq_block_596 seq_block_597 END_ seq_block_598 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+BEGIN_ seq_block_423 seq_block_424 seq_block_425 END_ seq_block_423 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 par_block:
-FORK_ par_block_599 par_block_600 par_block_601 join_keyword par_block_602 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+FORK_ seq_block_423 par_block_426 par_block_427 join_keyword seq_block_423 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 join_keyword:
@@ -3991,11 +3720,11 @@ JOIN_ { C($$); T($$, @1, zero, zero); }
 
 statement_or_null:
 statement
-| statement_or_null_603 ';' { $$ = $1; T($$, @2, zero, zero); }
+| statement_or_null_428 ';' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 statement:
-statement_604 statement_605 statement_item { $$ = $1; P($$, $2); P($$, $3); }
+concurrent_assertion_item_258 statement_429 statement_item { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 statement_item:
@@ -4027,11 +3756,11 @@ statement
 
 function_statement_or_null:
 function_statement
-| function_statement_or_null_606 ';' { $$ = $1; T($$, @2, zero, zero); }
+| function_statement_or_null_430 ';' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
 variable_identifier_list:
-variable_identifier variable_identifier_list_607 { $$ = $1; P($$, $2); }
+variable_identifier variable_identifier_list_431 { $$ = $1; P($$, $2); }
 ;
 
 procedural_timing_control_statement:
@@ -4058,8 +3787,8 @@ event_control:
 ;
 
 event_expression:
-event_expression_608 expression event_expression_609 { $$ = $1; P($$, $2); P($$, $3); }
-| sequence_instance event_expression_610 { $$ = $1; P($$, $2); }
+event_expression_432 expression event_expression_433 { $$ = $1; P($$, $2); P($$, $3); }
+| sequence_instance event_expression_433 { $$ = $1; P($$, $2); }
 | event_expression OR_ event_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | event_expression ',' event_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | '(' event_expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
@@ -4072,7 +3801,7 @@ delay_control
 ;
 
 jump_statement:
-RETURN_ jump_statement_611 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+RETURN_ ansi_port_declaration_81 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | BREAK_ ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 | CONTINUE_ ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
@@ -4080,12 +3809,12 @@ RETURN_ jump_statement_611 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, 
 wait_statement:
 WAIT_ '(' expression ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | WAIT_ FORK_ ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); }
-| WAIT_ORDER_ '(' hierarchical_identifier wait_statement_612 ')' action_block { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| WAIT_ORDER_ '(' hierarchical_identifier wait_statement_434 ')' action_block { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 event_trigger:
 MG hierarchical_event_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| MGG event_trigger_613 hierarchical_event_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| MGG nonblocking_assignment_421 hierarchical_event_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 disable_statement:
@@ -4095,7 +3824,7 @@ DISABLE_ hierarchical_task_identifier ';' { C($$); T($$, @1, zero, zero); P($$, 
 ;
 
 conditional_statement:
-conditional_statement_614 IF_ '(' cond_predicate ')' statement_or_null conditional_statement_615 conditional_statement_616 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); }
+conditional_statement_435 IF_ '(' cond_predicate ')' statement_or_null conditional_statement_436 conditional_statement_437 { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); P($$, $8); }
 ;
 
 unique_priority:
@@ -4105,7 +3834,7 @@ UNIQUE_ { C($$); T($$, @1, zero, zero); }
 ;
 
 cond_predicate:
-expression_or_cond_pattern cond_predicate_617 { $$ = $1; P($$, $2); }
+expression_or_cond_pattern cond_predicate_438 { $$ = $1; P($$, $2); }
 ;
 
 expression_or_cond_pattern:
@@ -4118,13 +3847,13 @@ expression MATCHES_ pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 case_statement:
-case_statement_618 case_keyword '(' case_expression ')' case_item case_statement_619 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
-| case_statement_620 case_keyword '(' case_expression ')' MATCHES_ case_pattern_item case_statement_621 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
-| case_statement_622 CASE_ '(' case_expression ')' INSIDE_ case_inside_item case_statement_623 ENDCASE_ { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
+conditional_statement_435 case_keyword '(' case_expression ')' case_item case_statement_439 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
+| conditional_statement_435 case_keyword '(' case_expression ')' MATCHES_ case_pattern_item case_statement_440 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
+| conditional_statement_435 CASE_ '(' case_expression ')' INSIDE_ case_inside_item case_statement_441 ENDCASE_ { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
 ;
 
 case_keyword:
-CASE_ { C($$); T($$, @1, zero, zero); }
+CASE_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 | CASEZ_ { C($$); T($$, @1, zero, zero); }
 | CASEX_ { C($$); T($$, @1, zero, zero); }
 ;
@@ -4134,18 +3863,18 @@ expression
 ;
 
 case_item:
-case_item_expression case_item_624 ':' statement_or_null { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
-| DEFAULT_ case_item_625 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+case_item_expression case_item_442 ':' statement_or_null { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+| DEFAULT_ property_case_item_284 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 case_pattern_item:
-pattern case_pattern_item_626 ':' statement_or_null { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
-| DEFAULT_ case_pattern_item_627 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+pattern case_pattern_item_443 ':' statement_or_null { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+| DEFAULT_ property_case_item_284 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 case_inside_item:
 open_range_list ':' statement_or_null { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-| DEFAULT_ case_inside_item_628 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| DEFAULT_ property_case_item_284 statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 case_item_expression:
@@ -4153,7 +3882,7 @@ expression
 ;
 
 randcase_statement:
-RANDCASE_ randcase_item randcase_statement_629 ENDCASE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+RANDCASE_ randcase_item randcase_statement_444 ENDCASE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 randcase_item:
@@ -4161,7 +3890,7 @@ expression ':' statement_or_null { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 open_range_list:
-open_value_range open_range_list_630 { $$ = $1; P($$, $2); }
+open_value_range open_range_list_445 { $$ = $1; P($$, $2); }
 ;
 
 open_value_range:
@@ -4172,16 +3901,16 @@ pattern:
 '.' variable_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 | DOTS { C($$); T($$, @1, zero, zero); }
 | constant_expression
-| TAGGED_ member_identifier pattern_631 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-| APOSOCB pattern pattern_632 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| APOSOCB member_identifier ':' pattern pattern_633 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| TAGGED_ member_identifier pattern_446 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| APOSOCB pattern pattern_447 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| APOSOCB member_identifier ':' pattern pattern_448 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 assignment_pattern:
-APOSOCB expression assignment_pattern_634 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| APOSOCB structure_pattern_key ':' expression assignment_pattern_635 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| APOSOCB array_pattern_key ':' expression assignment_pattern_636 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
-| APOSOCB constant_expression '{' expression assignment_pattern_637 '}' '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
+APOSOCB expression assignment_pattern_449 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| APOSOCB structure_pattern_key ':' expression assignment_pattern_450 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| APOSOCB array_pattern_key ':' expression assignment_pattern_451 '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); }
+| APOSOCB constant_expression '{' expression assignment_pattern_452 '}' '}' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
 ;
 
 structure_pattern_key:
@@ -4200,7 +3929,7 @@ simple_type
 ;
 
 assignment_pattern_expression:
-assignment_pattern_expression_638 assignment_pattern { $$ = $1; P($$, $2); }
+assignment_pattern_expression_453 assignment_pattern { $$ = $1; P($$, $2); }
 ;
 
 assignment_pattern_expression_type:
@@ -4215,33 +3944,33 @@ assignment_pattern_expression
 ;
 
 assignment_pattern_net_lvalue:
-APOSOCB net_lvalue assignment_pattern_net_lvalue_639 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+APOSOCB net_lvalue assignment_pattern_net_lvalue_454 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 assignment_pattern_variable_lvalue:
-APOSOCB variable_lvalue assignment_pattern_variable_lvalue_640 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+APOSOCB variable_lvalue assignment_pattern_variable_lvalue_455 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 loop_statement:
 FOREVER_ statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); }
 | REPEAT_ '(' expression ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | WHILE_ '(' expression ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-| FOR_ '(' loop_statement_641 ';' loop_statement_642 ';' loop_statement_643 ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
+| FOR_ '(' loop_statement_456 ';' ansi_port_declaration_81 ';' loop_statement_457 ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 | DO_ statement_or_null WHILE_ '(' expression ')' ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
-| FOREACH_ '(' ps_or_hierarchical_array_identifier loop_statement_644 ')' statement { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| FOREACH_ '(' ps_or_hierarchical_array_identifier constraint_expression_145 ')' statement { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 for_initialization:
 list_of_variable_assignments
-| for_variable_declaration for_initialization_645 { $$ = $1; P($$, $2); }
+| for_variable_declaration for_initialization_458 { $$ = $1; P($$, $2); }
 ;
 
 for_variable_declaration:
-for_variable_declaration_646 data_type variable_identifier '=' expression for_variable_declaration_647 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
+data_declaration_154 data_type variable_identifier '=' expression for_variable_declaration_459 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
 ;
 
 for_step:
-for_step_assignment for_step_648 { $$ = $1; P($$, $2); }
+for_step_assignment for_step_460 { $$ = $1; P($$, $2); }
 ;
 
 for_step_assignment:
@@ -4251,7 +3980,7 @@ operator_assignment
 ;
 
 loop_variables:
-loop_variables_649 loop_variables_650 { $$ = $1; P($$, $2); }
+loop_variables_461 loop_variables_462 { $$ = $1; P($$, $2); }
 ;
 
 subroutine_call_statement:
@@ -4265,7 +3994,7 @@ concurrent_assertion_item
 ;
 
 deferred_immediate_assertion_item:
-deferred_immediate_assertion_item_652 deferred_immediate_assertion_statement { $$ = $1; P($$, $2); }
+concurrent_assertion_item_258 deferred_immediate_assertion_statement { $$ = $1; P($$, $2); }
 ;
 
 procedural_assertion_statement:
@@ -4319,8 +4048,8 @@ COVER_ N0 '(' expression ')' statement_or_null { C($$); T($$, @1, zero, zero); T
 ;
 
 clocking_declaration:
-clocking_declaration_653 CLOCKING_ clocking_declaration_654 clocking_event ';' clocking_declaration_655 ENDCLOCKING_ clocking_declaration_656 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
-| GLOBAL_ CLOCKING_ clocking_declaration_657 clocking_event ';' ENDCLOCKING_ clocking_declaration_658 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); }
+clocking_declaration_463 CLOCKING_ clocking_declaration_464 clocking_event ';' clocking_declaration_465 ENDCLOCKING_ clocking_declaration_466 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); P($$, $8); }
+| GLOBAL_ CLOCKING_ clocking_declaration_464 clocking_event ';' ENDCLOCKING_ clocking_declaration_466 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); }
 ;
 
 clocking_event:
@@ -4331,7 +4060,7 @@ clocking_event:
 clocking_item:
 DEFAULT_ default_skew ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | clocking_direction list_of_clocking_decl_assign ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
-| clocking_item_659 assertion_item_declaration { $$ = $1; P($$, $2); }
+| clocking_item_467 assertion_item_declaration { $$ = $1; P($$, $2); }
 ;
 
 default_skew:
@@ -4341,27 +4070,27 @@ INPUT_ clocking_skew { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 clocking_direction:
-INPUT_ clocking_direction_660 { C($$); T($$, @1, zero, zero); P($$, $2); }
-| OUTPUT_ clocking_direction_661 { C($$); T($$, @1, zero, zero); P($$, $2); }
-| INPUT_ clocking_direction_662 OUTPUT_ clocking_direction_663 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); }
+INPUT_ clocking_direction_468 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| OUTPUT_ clocking_direction_468 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| INPUT_ clocking_direction_468 OUTPUT_ clocking_direction_468 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); }
 | INOUT_ { C($$); T($$, @1, zero, zero); }
 ;
 
 list_of_clocking_decl_assign:
-clocking_decl_assign list_of_clocking_decl_assign_664 { $$ = $1; P($$, $2); }
+clocking_decl_assign list_of_clocking_decl_assign_469 { $$ = $1; P($$, $2); }
 ;
 
 clocking_decl_assign:
-signal_identifier clocking_decl_assign_665 { $$ = $1; P($$, $2); }
+signal_identifier list_of_tf_variable_identifiers_203 { $$ = $1; P($$, $2); }
 ;
 
 clocking_skew:
-edge_identifier clocking_skew_666 { $$ = $1; P($$, $2); }
+edge_identifier net_declaration_160 { $$ = $1; P($$, $2); }
 | delay_control
 ;
 
 clocking_drive:
-clockvar_expression LE clocking_drive_667 expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+clockvar_expression LE clocking_drive_470 expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
 cycle_delay:
@@ -4379,20 +4108,20 @@ clockvar select { $$ = $1; P($$, $2); }
 ;
 
 randsequence_statement:
-RANDSEQUENCE_ '(' randsequence_statement_668 ')' production randsequence_statement_669 ENDSEQUENCE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+RANDSEQUENCE_ '(' randsequence_statement_471 ')' production randsequence_statement_472 ENDSEQUENCE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 production:
-production_670 production_identifier production_671 ':' rs_rule production_672 ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+production_473 production_identifier production_474 ':' rs_rule production_475 ';' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 rs_rule:
-rs_production_list rs_rule_673 { $$ = $1; P($$, $2); }
+rs_production_list rs_rule_476 { $$ = $1; P($$, $2); }
 ;
 
 rs_production_list:
-rs_prod rs_production_list_675 { $$ = $1; P($$, $2); }
-| RAND_ JOIN_ rs_production_list_676 production_item production_item rs_production_list_677 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+rs_prod rs_production_list_478 { $$ = $1; P($$, $2); }
+| RAND_ JOIN_ dynamic_array_new_223 production_item production_item rs_production_list_479 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
 ;
 
 weight_specification:
@@ -4401,7 +4130,7 @@ integral_number
 ;
 
 rs_code_block:
-'{' rs_code_block_678 rs_code_block_679 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'{' rs_code_block_480 rs_code_block_481 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 rs_prod:
@@ -4413,11 +4142,11 @@ production_item
 ;
 
 production_item:
-production_identifier production_item_680 { $$ = $1; P($$, $2); }
+production_identifier class_declaration_44_44 { $$ = $1; P($$, $2); }
 ;
 
 rs_if_else:
-IF_ '(' expression ')' production_item rs_if_else_681 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
+IF_ '(' expression ')' production_item rs_if_else_482 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
 ;
 
 rs_repeat:
@@ -4425,16 +4154,16 @@ REPEAT_ '(' expression ')' production_item { C($$); T($$, @1, zero, zero); T($$,
 ;
 
 rs_case:
-CASE_ '(' case_expression ')' rs_case_item rs_case_682 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+CASE_ '(' case_expression ')' rs_case_item rs_case_483 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
 ;
 
 rs_case_item:
-case_item_expression rs_case_item_683 ':' production_item ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
-| DEFAULT_ rs_case_item_684 production_item ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+case_item_expression rs_case_item_484 ':' production_item ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
+| DEFAULT_ property_case_item_284 production_item ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 specify_block:
-SPECIFY_ specify_block_685 ENDSPECIFY_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+SPECIFY_ specify_block_485 ENDSPECIFY_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 specify_item:
@@ -4467,27 +4196,27 @@ parallel_path_description '=' path_delay_value { $$ = $1; T($$, @2, zero, zero);
 ;
 
 parallel_path_description:
-'(' specify_input_terminal_descriptor parallel_path_description_686 EG specify_output_terminal_descriptor ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+'(' specify_input_terminal_descriptor parallel_path_description_486 EG specify_output_terminal_descriptor ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 full_path_description:
-'(' list_of_path_inputs full_path_description_687 SG list_of_path_outputs ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+'(' list_of_path_inputs parallel_path_description_486 SG list_of_path_outputs ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 list_of_path_inputs:
-specify_input_terminal_descriptor list_of_path_inputs_688 { $$ = $1; P($$, $2); }
+specify_input_terminal_descriptor list_of_path_inputs_487 { $$ = $1; P($$, $2); }
 ;
 
 list_of_path_outputs:
-specify_output_terminal_descriptor list_of_path_outputs_689 { $$ = $1; P($$, $2); }
+specify_output_terminal_descriptor list_of_path_outputs_488 { $$ = $1; P($$, $2); }
 ;
 
 specify_input_terminal_descriptor:
-input_identifier specify_input_terminal_descriptor_690 { $$ = $1; P($$, $2); }
+input_identifier specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
 ;
 
 specify_output_terminal_descriptor:
-output_identifier specify_output_terminal_descriptor_691 { $$ = $1; P($$, $2); }
+output_identifier specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
 ;
 
 input_identifier:
@@ -4589,11 +4318,11 @@ parallel_edge_sensitive_path_description '=' path_delay_value { $$ = $1; T($$, @
 ;
 
 parallel_edge_sensitive_path_description:
-'(' parallel_edge_sensitive_path_description_692 specify_input_terminal_descriptor parallel_edge_sensitive_path_description_693 EG '(' specify_output_terminal_descriptor parallel_edge_sensitive_path_description_694 ':' data_source_expression ')' ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+'(' event_expression_432 specify_input_terminal_descriptor parallel_path_description_486 EG '(' specify_output_terminal_descriptor parallel_path_description_486 ':' data_source_expression ')' ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 full_edge_sensitive_path_description:
-'(' full_edge_sensitive_path_description_695 list_of_path_inputs full_edge_sensitive_path_description_696 SG '(' list_of_path_outputs full_edge_sensitive_path_description_697 ':' data_source_expression ')' ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+'(' event_expression_432 list_of_path_inputs parallel_path_description_486 SG '(' list_of_path_outputs parallel_path_description_486 ':' data_source_expression ')' ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 data_source_expression:
@@ -4633,51 +4362,51 @@ setup_timing_check
 ;
 
 setup_timing_check:
-Dsetup '(' data_event ',' reference_event ',' timing_check_limit setup_timing_check_698 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dsetup '(' data_event ',' reference_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 hold_timing_check:
-Dhold '(' reference_event ',' data_event ',' timing_check_limit hold_timing_check_700 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dhold '(' reference_event ',' data_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 setuphold_timing_check:
-Dsetuphold '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit setuphold_timing_check_702 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+Dsetuphold '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit setuphold_timing_check_492 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 recovery_timing_check:
-Drecovery '(' reference_event ',' data_event ',' timing_check_limit recovery_timing_check_712 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Drecovery '(' reference_event ',' data_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 removal_timing_check:
-Dremoval '(' reference_event ',' data_event ',' timing_check_limit removal_timing_check_714 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dremoval '(' reference_event ',' data_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 recrem_timing_check:
-Drecrem '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit recrem_timing_check_716 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+Drecrem '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit setuphold_timing_check_492 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 skew_timing_check:
-Dskew '(' reference_event ',' data_event ',' timing_check_limit skew_timing_check_726 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dskew '(' reference_event ',' data_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 timeskew_timing_check:
-Dtimeskew '(' reference_event ',' data_event ',' timing_check_limit timeskew_timing_check_728 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dtimeskew '(' reference_event ',' data_event ',' timing_check_limit timeskew_timing_check_501 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 fullskew_timing_check:
-Dfullskew '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit fullskew_timing_check_734 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+Dfullskew '(' reference_event ',' data_event ',' timing_check_limit ',' timing_check_limit timeskew_timing_check_501 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 period_timing_check:
-Dperiod '(' controlled_reference_event ',' timing_check_limit period_timing_check_740 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); T($$, @8, zero, zero); }
+Dperiod '(' controlled_reference_event ',' timing_check_limit setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); T($$, @8, zero, zero); }
 ;
 
 width_timing_check:
-Dwidth '(' controlled_reference_event ',' timing_check_limit ',' threshold width_timing_check_742 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
+Dwidth '(' controlled_reference_event ',' timing_check_limit ',' threshold setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); T($$, @10, zero, zero); }
 ;
 
 nochange_timing_check:
-Dnochange '(' reference_event ',' data_event ',' start_edge_offset ',' end_edge_offset nochange_timing_check_744 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
+Dnochange '(' reference_event ',' data_event ',' start_edge_offset ',' end_edge_offset setup_timing_check_490 ')' ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); P($$, $10); T($$, @11, zero, zero); T($$, @12, zero, zero); }
 ;
 
 timecheck_condition:
@@ -4739,11 +4468,11 @@ expression
 ;
 
 timing_check_event:
-timing_check_event_746 specify_terminal_descriptor timing_check_event_747 { $$ = $1; P($$, $2); P($$, $3); }
+timing_check_event_506 specify_terminal_descriptor timing_check_event_507 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 controlled_timing_check_event:
-timing_check_event_control specify_terminal_descriptor controlled_timing_check_event_748 { $$ = $1; P($$, $2); P($$, $3); }
+timing_check_event_control specify_terminal_descriptor timing_check_event_507 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 timing_check_event_control:
@@ -4759,7 +4488,7 @@ specify_input_terminal_descriptor
 ;
 
 edge_control_specifier:
-EDGE_ '[' edge_descriptor edge_control_specifier_749 ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+EDGE_ '[' edge_descriptor edge_control_specifier_508 ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 edge_descriptor:
@@ -4809,11 +4538,11 @@ _1APOSb0 { C($$); T($$, @1, zero, zero); }
 ;
 
 concatenation:
-'{' expression concatenation_750 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'{' expression concatenation_509 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 constant_concatenation:
-'{' constant_expression constant_concatenation_751 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'{' constant_expression constant_concatenation_510 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 constant_multiple_concatenation:
@@ -4821,7 +4550,7 @@ constant_multiple_concatenation:
 ;
 
 module_path_concatenation:
-'{' module_path_expression module_path_concatenation_752 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'{' module_path_expression module_path_concatenation_511 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 module_path_multiple_concatenation:
@@ -4833,7 +4562,7 @@ multiple_concatenation:
 ;
 
 streaming_concatenation:
-'{' stream_operator streaming_concatenation_753 stream_concatenation '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+'{' stream_operator streaming_concatenation_512 stream_concatenation '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 stream_operator:
@@ -4847,11 +4576,11 @@ simple_type
 ;
 
 stream_concatenation:
-'{' stream_expression stream_concatenation_754 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+'{' stream_expression stream_concatenation_513 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 stream_expression:
-expression stream_expression_755 { $$ = $1; P($$, $2); }
+expression stream_expression_514 { $$ = $1; P($$, $2); }
 ;
 
 array_range_expression:
@@ -4870,19 +4599,19 @@ function_subroutine_call
 ;
 
 tf_call:
-ps_or_hierarchical_tf_identifier tf_call_756 tf_call_757 { $$ = $1; P($$, $2); P($$, $3); }
+ps_or_hierarchical_tf_identifier tf_call_515 class_declaration_44_44 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 system_tf_call:
-system_tf_identifier system_tf_call_758 { $$ = $1; P($$, $2); }
-| system_tf_identifier '(' data_type system_tf_call_759 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+system_tf_identifier class_declaration_44_44 { $$ = $1; P($$, $2); }
+| system_tf_identifier '(' data_type system_tf_call_516 ')' { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 subroutine_call:
 tf_call
 | system_tf_call
 | method_call
-| subroutine_call_760 randomize_call { $$ = $1; P($$, $2); }
+| subroutine_call_517 randomize_call { $$ = $1; P($$, $2); }
 ;
 
 function_subroutine_call:
@@ -4890,8 +4619,8 @@ subroutine_call
 ;
 
 list_of_arguments:
-list_of_arguments_761 list_of_arguments_762 list_of_arguments_764 { $$ = $1; P($$, $2); P($$, $3); }
-| '.' identifier '(' list_of_arguments_766 ')' list_of_arguments_767 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+ansi_port_declaration_81 list_of_arguments_518 list_of_arguments_519 { $$ = $1; P($$, $2); P($$, $3); }
+| '.' identifier '(' ansi_port_declaration_81 ')' list_of_arguments_520 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 method_call:
@@ -4899,7 +4628,7 @@ method_call_root '.' method_call_body { $$ = $1; T($$, @2, zero, zero); P($$, $3
 ;
 
 method_call_body:
-method_identifier method_call_body_769 method_call_body_770 { $$ = $1; P($$, $2); P($$, $3); }
+method_identifier method_call_body_521 class_declaration_44_44 { $$ = $1; P($$, $2); P($$, $3); }
 | built_in_method_call
 ;
 
@@ -4909,11 +4638,11 @@ array_manipulation_call
 ;
 
 array_manipulation_call:
-array_method_name array_manipulation_call_771 array_manipulation_call_772 array_manipulation_call_773 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+array_method_name array_manipulation_call_522 class_declaration_44_44 array_manipulation_call_523 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 randomize_call:
-RANDOMIZE_ randomize_call_774 randomize_call_775 randomize_call_777 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+RANDOMIZE_ randomize_call_524 randomize_call_525 randomize_call_527 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
 ;
 
 method_call_root:
@@ -4930,19 +4659,19 @@ method_identifier
 ;
 
 inc_or_dec_expression:
-inc_or_dec_operator inc_or_dec_expression_780 variable_lvalue { $$ = $1; P($$, $2); P($$, $3); }
-| variable_lvalue inc_or_dec_expression_781 inc_or_dec_operator { $$ = $1; P($$, $2); P($$, $3); }
+inc_or_dec_operator inc_or_dec_expression_530 variable_lvalue { $$ = $1; P($$, $2); P($$, $3); }
+| variable_lvalue inc_or_dec_expression_531 inc_or_dec_operator { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 conditional_expression:
-cond_predicate '?' conditional_expression_782 expression ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+cond_predicate '?' conditional_expression_532 expression ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 constant_expression:
 constant_primary
-| unary_operator constant_expression_783 constant_primary { $$ = $1; P($$, $2); P($$, $3); }
-| constant_expression binary_operator constant_expression_784 constant_expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
-| constant_expression '?' constant_expression_785 constant_expression ':' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| unary_operator constant_expression_533 constant_primary { $$ = $1; P($$, $2); P($$, $3); }
+| constant_expression binary_operator constant_expression_534 constant_expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| constant_expression '?' constant_expression_535 constant_expression ':' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 constant_mintypmax_expression:
@@ -4983,17 +4712,17 @@ constant_expression PLUSC constant_expression { $$ = $1; T($$, @2, zero, zero); 
 
 expression:
 primary
-| unary_operator expression_786 primary { $$ = $1; P($$, $2); P($$, $3); }
+| unary_operator expression_536 primary { $$ = $1; P($$, $2); P($$, $3); }
 | inc_or_dec_expression
 | '(' operator_assignment ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-| expression binary_operator expression_787 expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| expression binary_operator expression_537 expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
 | conditional_expression
 | inside_expression
 | tagged_union_expression
 ;
 
 tagged_union_expression:
-TAGGED_ member_identifier tagged_union_expression_788 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+TAGGED_ member_identifier ansi_port_declaration_81 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
 inside_expression:
@@ -5011,13 +4740,13 @@ expression
 ;
 
 module_path_conditional_expression:
-module_path_expression '?' module_path_conditional_expression_789 module_path_expression ':' module_path_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+module_path_expression '?' module_path_conditional_expression_538 module_path_expression ':' module_path_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 module_path_expression:
 module_path_primary
-| unary_module_path_operator module_path_expression_790 module_path_primary { $$ = $1; P($$, $2); P($$, $3); }
-| module_path_expression binary_module_path_operator module_path_expression_791 module_path_expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
+| unary_module_path_operator module_path_expression_539 module_path_primary { $$ = $1; P($$, $2); P($$, $3); }
+| module_path_expression binary_module_path_operator module_path_expression_540 module_path_expression { $$ = $1; P($$, $2); P($$, $3); P($$, $4); }
 | module_path_conditional_expression
 ;
 
@@ -5043,12 +4772,12 @@ constant_expression
 constant_primary:
 primary_literal
 | ps_parameter_identifier constant_select { $$ = $1; P($$, $2); }
-| specparam_identifier constant_primary_792 { $$ = $1; P($$, $2); }
+| specparam_identifier specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
 | genvar_identifier
 | formal_port_identifier constant_select { $$ = $1; P($$, $2); }
-| constant_primary_793 enum_identifier { $$ = $1; P($$, $2); }
-| constant_concatenation constant_primary_794 { $$ = $1; P($$, $2); }
-| constant_multiple_concatenation constant_primary_795 { $$ = $1; P($$, $2); }
+| net_type_declaration_167_167 enum_identifier { $$ = $1; P($$, $2); }
+| constant_concatenation specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
+| constant_multiple_concatenation specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
 | constant_function_call
 | constant_let_expression
 | '(' constant_mintypmax_expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
@@ -5068,10 +4797,10 @@ number
 
 primary:
 primary_literal
-| primary_796 hierarchical_identifier select { $$ = $1; P($$, $2); P($$, $3); }
+| primary_541 hierarchical_identifier select { $$ = $1; P($$, $2); P($$, $3); }
 | empty_queue
-| concatenation primary_797 { $$ = $1; P($$, $2); }
-| multiple_concatenation primary_798 { $$ = $1; P($$, $2); }
+| concatenation primary_542 { $$ = $1; P($$, $2); }
+| multiple_concatenation primary_542 { $$ = $1; P($$, $2); }
 | function_subroutine_call
 | let_expression
 | '(' mintypmax_expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
@@ -5085,7 +4814,7 @@ primary_literal
 ;
 
 class_qualifier:
-class_qualifier_799 class_qualifier_800 { $$ = $1; P($$, $2); }
+class_qualifier_543 constraint_primary_142 { $$ = $1; P($$, $2); }
 ;
 
 range_expression:
@@ -5121,23 +4850,23 @@ THIS_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
 bit_select:
-bit_select_801
+bit_select_544
 ;
 
 select:
-select_802 bit_select select_804 { $$ = $1; P($$, $2); P($$, $3); }
+select_545 bit_select select_547 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 nonrange_select:
-nonrange_select_805 bit_select { $$ = $1; P($$, $2); }
+nonrange_select_548 bit_select { $$ = $1; P($$, $2); }
 ;
 
 constant_bit_select:
-constant_bit_select_807
+constant_bit_select_550
 ;
 
 constant_select:
-constant_select_808 constant_bit_select constant_select_810 { $$ = $1; P($$, $2); P($$, $3); }
+constant_select_551 constant_bit_select constant_select_553 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 constant_cast:
@@ -5154,19 +4883,19 @@ casting_type '\'' '(' expression ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3,
 
 net_lvalue:
 ps_or_hierarchical_net_identifier constant_select { $$ = $1; P($$, $2); }
-| '{' net_lvalue net_lvalue_811 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| net_lvalue_812 assignment_pattern_net_lvalue { $$ = $1; P($$, $2); }
+| '{' net_lvalue net_lvalue_554 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| assignment_pattern_expression_453 assignment_pattern_net_lvalue { $$ = $1; P($$, $2); }
 ;
 
 variable_lvalue:
-variable_lvalue_813 hierarchical_variable_identifier select { $$ = $1; P($$, $2); P($$, $3); }
-| '{' variable_lvalue variable_lvalue_814 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
-| variable_lvalue_815 assignment_pattern_variable_lvalue { $$ = $1; P($$, $2); }
+variable_lvalue_555 hierarchical_variable_identifier select { $$ = $1; P($$, $2); P($$, $3); }
+| '{' variable_lvalue variable_lvalue_556 '}' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| assignment_pattern_expression_453 assignment_pattern_variable_lvalue { $$ = $1; P($$, $2); }
 | streaming_concatenation
 ;
 
 nonrange_variable_lvalue:
-nonrange_variable_lvalue_816 hierarchical_variable_identifier nonrange_select { $$ = $1; P($$, $2); P($$, $3); }
+variable_lvalue_555 hierarchical_variable_identifier nonrange_select { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 unary_operator:
@@ -5250,11 +4979,11 @@ integral_number
 ;
 
 attribute_instance:
-OPS attr_spec attribute_instance_817 SCP { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+OPS attr_spec attribute_instance_557 SCP { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 attr_spec:
-attr_name attr_spec_818 { $$ = $1; P($$, $2); }
+attr_name ansi_port_declaration_78 { $$ = $1; P($$, $2); }
 ;
 
 attr_name:
@@ -5350,7 +5079,7 @@ hierarchical_identifier
 ;
 
 hierarchical_identifier:
-hierarchical_identifier_819 hierarchical_identifier_820 identifier { $$ = $1; P($$, $2); P($$, $3); }
+hierarchical_identifier_558 hierarchical_identifier_559 identifier { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 hierarchical_net_identifier:
@@ -5472,52 +5201,52 @@ identifier
 ;
 
 ps_class_identifier:
-ps_class_identifier_821 class_identifier { $$ = $1; P($$, $2); }
+let_expression_314 class_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_covergroup_identifier:
-ps_covergroup_identifier_822 covergroup_identifier { $$ = $1; P($$, $2); }
+let_expression_314 covergroup_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_checker_identifier:
-ps_checker_identifier_823 checker_identifier { $$ = $1; P($$, $2); }
+let_expression_314 checker_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_identifier:
-ps_identifier_824 identifier { $$ = $1; P($$, $2); }
+let_expression_314 identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_or_hierarchical_array_identifier:
-ps_or_hierarchical_array_identifier_825 hierarchical_array_identifier { $$ = $1; P($$, $2); }
+blocking_assignment_420 hierarchical_array_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_or_hierarchical_net_identifier:
-ps_or_hierarchical_net_identifier_826 net_identifier { $$ = $1; P($$, $2); }
+let_expression_314 net_identifier { $$ = $1; P($$, $2); }
 | hierarchical_net_identifier
 ;
 
 ps_or_hierarchical_property_identifier:
-ps_or_hierarchical_property_identifier_827 property_identifier { $$ = $1; P($$, $2); }
+let_expression_314 property_identifier { $$ = $1; P($$, $2); }
 | hierarchical_property_identifier
 ;
 
 ps_or_hierarchical_sequence_identifier:
-ps_or_hierarchical_sequence_identifier_828 sequence_identifier { $$ = $1; P($$, $2); }
+let_expression_314 sequence_identifier { $$ = $1; P($$, $2); }
 | hierarchical_sequence_identifier
 ;
 
 ps_or_hierarchical_tf_identifier:
-ps_or_hierarchical_tf_identifier_829 tf_identifier { $$ = $1; P($$, $2); }
+let_expression_314 tf_identifier { $$ = $1; P($$, $2); }
 | hierarchical_tf_identifier
 ;
 
 ps_parameter_identifier:
-ps_parameter_identifier_830 parameter_identifier { $$ = $1; P($$, $2); }
-| ps_parameter_identifier_831 parameter_identifier { $$ = $1; P($$, $2); }
+net_type_declaration_167_167 parameter_identifier { $$ = $1; P($$, $2); }
+| ps_parameter_identifier_560 parameter_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_type_identifier:
-ps_type_identifier_833 type_identifier { $$ = $1; P($$, $2); }
+ps_type_identifier_562 type_identifier { $$ = $1; P($$, $2); }
 ;
 
 sequence_identifier:
@@ -5627,1049 +5356,774 @@ module_ansi_header_12:
 
 module_ansi_header_13:
 %empty { C($$); }
-| lifetime
+| module_ansi_header_13 package_import_declaration { $$ = $1; P($$, $2); }
 ;
 
 module_ansi_header_14:
 %empty { C($$); }
-| module_ansi_header_14 package_import_declaration { $$ = $1; P($$, $2); }
-;
-
-module_ansi_header_15:
-%empty { C($$); }
-| parameter_port_list
-;
-
-module_ansi_header_16:
-%empty { C($$); }
 | list_of_port_declarations
+;
+
+module_declaration_15:
+%empty { C($$); }
+| module_declaration_15 module_item { $$ = $1; P($$, $2); }
+;
+
+module_declaration_16:
+%empty { C($$); }
+| ':' module_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 module_declaration_17:
 %empty { C($$); }
-| timeunits_declaration
+| module_declaration_17 non_port_module_item { $$ = $1; P($$, $2); }
 ;
 
 module_declaration_18:
-%empty { C($$); }
-| module_declaration_18 module_item { $$ = $1; P($$, $2); }
+%empty /* { C($$); } -- ignore */
+| module_declaration_18 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
 module_declaration_19:
 %empty { C($$); }
-| ':' module_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| module_declaration_19 module_item { $$ = $1; P($$, $2); }
 ;
 
-module_declaration_20:
+interface_declaration_20:
 %empty { C($$); }
-| timeunits_declaration
+| interface_declaration_20 interface_item { $$ = $1; P($$, $2); }
 ;
 
-module_declaration_21:
-%empty { C($$); }
-| module_declaration_21 non_port_module_item { $$ = $1; P($$, $2); }
-;
-
-module_declaration_22:
-%empty { C($$); }
-| ':' module_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-module_declaration_23:
-%empty /* { C($$); } -- ignore */
-| module_declaration_23 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-module_declaration_24:
-%empty { C($$); }
-| lifetime
-;
-
-module_declaration_25:
-%empty { C($$); }
-| timeunits_declaration
-;
-
-module_declaration_26:
-%empty { C($$); }
-| module_declaration_26 module_item { $$ = $1; P($$, $2); }
-;
-
-module_declaration_27:
-%empty { C($$); }
-| ':' module_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-interface_declaration_28:
-%empty { C($$); }
-| timeunits_declaration
-;
-
-interface_declaration_29:
-%empty { C($$); }
-| interface_declaration_29 interface_item { $$ = $1; P($$, $2); }
-;
-
-interface_declaration_30:
+interface_declaration_21:
 %empty { C($$); }
 | ':' interface_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-interface_declaration_31:
+interface_declaration_22:
 %empty { C($$); }
-| timeunits_declaration
+| interface_declaration_22 non_port_interface_item { $$ = $1; P($$, $2); }
 ;
 
-interface_declaration_32:
+interface_declaration_23:
 %empty { C($$); }
-| interface_declaration_32 non_port_interface_item { $$ = $1; P($$, $2); }
+| interface_declaration_23 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_declaration_33:
+interface_declaration_24:
 %empty { C($$); }
-| ':' interface_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| interface_declaration_24 interface_item { $$ = $1; P($$, $2); }
 ;
 
-interface_declaration_34:
+interface_nonansi_header_25:
 %empty { C($$); }
-| interface_declaration_34 attribute_instance { $$ = $1; P($$, $2); }
+| interface_nonansi_header_25 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_declaration_35:
+interface_nonansi_header_26:
 %empty { C($$); }
-| timeunits_declaration
+| interface_nonansi_header_26 package_import_declaration { $$ = $1; P($$, $2); }
 ;
 
-interface_declaration_36:
-%empty { C($$); }
-| interface_declaration_36 interface_item { $$ = $1; P($$, $2); }
-;
-
-interface_declaration_37:
-%empty { C($$); }
-| ':' interface_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-interface_nonansi_header_38:
-%empty { C($$); }
-| interface_nonansi_header_38 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-interface_nonansi_header_39:
-%empty { C($$); }
-| lifetime
-;
-
-interface_nonansi_header_40:
-%empty { C($$); }
-| interface_nonansi_header_40 package_import_declaration { $$ = $1; P($$, $2); }
-;
-
-interface_nonansi_header_41:
-%empty { C($$); }
-| parameter_port_list
-;
-
-interface_ansi_header_42:
+interface_ansi_header_27:
 %empty /* { C($$); } -- ignore */
-| interface_ansi_header_42 attribute_instance { $$ = $1; P($$, $2); }
+| interface_ansi_header_27 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_ansi_header_43:
+interface_ansi_header_28:
 %empty { C($$); }
-| lifetime
+| interface_ansi_header_28 package_import_declaration { $$ = $1; P($$, $2); }
 ;
 
-interface_ansi_header_44:
+program_declaration_29:
 %empty { C($$); }
-| interface_ansi_header_44 package_import_declaration { $$ = $1; P($$, $2); }
+| program_declaration_29 program_item { $$ = $1; P($$, $2); }
 ;
 
-interface_ansi_header_45:
-%empty { C($$); }
-| parameter_port_list
-;
-
-interface_ansi_header_46:
-%empty { C($$); }
-| list_of_port_declarations
-;
-
-program_declaration_47:
-%empty { C($$); }
-| timeunits_declaration
-;
-
-program_declaration_48:
-%empty { C($$); }
-| program_declaration_48 program_item { $$ = $1; P($$, $2); }
-;
-
-program_declaration_49:
+program_declaration_30:
 %empty { C($$); }
 | ':' program_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-program_declaration_50:
+program_declaration_31:
 %empty { C($$); }
-| timeunits_declaration
+| program_declaration_31 non_port_program_item { $$ = $1; P($$, $2); }
 ;
 
-program_declaration_51:
+program_declaration_32:
 %empty { C($$); }
-| program_declaration_51 non_port_program_item { $$ = $1; P($$, $2); }
+| program_declaration_32 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-program_declaration_52:
+program_declaration_33:
 %empty { C($$); }
-| ':' program_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| program_declaration_33 program_item { $$ = $1; P($$, $2); }
 ;
 
-program_declaration_53:
+program_nonansi_header_34:
 %empty { C($$); }
-| program_declaration_53 attribute_instance { $$ = $1; P($$, $2); }
+| program_nonansi_header_34 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-program_declaration_54:
+program_nonansi_header_35:
 %empty { C($$); }
-| timeunits_declaration
+| program_nonansi_header_35 package_import_declaration { $$ = $1; P($$, $2); }
 ;
 
-program_declaration_55:
-%empty { C($$); }
-| program_declaration_55 program_item { $$ = $1; P($$, $2); }
-;
-
-program_declaration_56:
-%empty { C($$); }
-| ':' program_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-program_nonansi_header_57:
-%empty { C($$); }
-| program_nonansi_header_57 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-program_nonansi_header_58:
-%empty { C($$); }
-| lifetime
-;
-
-program_nonansi_header_59:
-%empty { C($$); }
-| program_nonansi_header_59 package_import_declaration { $$ = $1; P($$, $2); }
-;
-
-program_nonansi_header_60:
-%empty { C($$); }
-| parameter_port_list
-;
-
-program_ansi_header_61:
+program_ansi_header_36:
 %empty /* { C($$); } -- ignore */
-| program_ansi_header_61 attribute_instance { $$ = $1; P($$, $2); }
+| program_ansi_header_36 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-program_ansi_header_62:
+program_ansi_header_37:
 %empty { C($$); }
-| lifetime
+| program_ansi_header_37 package_import_declaration { $$ = $1; P($$, $2); }
 ;
 
-program_ansi_header_63:
-%empty { C($$); }
-| program_ansi_header_63 package_import_declaration { $$ = $1; P($$, $2); }
-;
-
-program_ansi_header_64:
-%empty { C($$); }
-| parameter_port_list
-;
-
-program_ansi_header_65:
-%empty { C($$); }
-| list_of_port_declarations
-;
-
-checker_declaration_66_66:
+checker_declaration_38_38:
 %empty { C($$); }
 | checker_port_list
 ;
 
-checker_declaration_66:
+checker_declaration_38:
 %empty { C($$); }
-| '(' checker_declaration_66_66 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' checker_declaration_38_38 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-checker_declaration_68_68:
+checker_declaration_40_40:
 %empty { C($$); }
-| checker_declaration_68_68 attribute_instance { $$ = $1; P($$, $2); }
+| checker_declaration_40_40 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-checker_declaration_68:
+checker_declaration_40:
 %empty { C($$); }
-| checker_declaration_68 checker_declaration_68_68 checker_or_generate_item { $$ = $1; P($$, $2); P($$, $3); }
+| checker_declaration_40 checker_declaration_40_40 checker_or_generate_item { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-checker_declaration_70:
+checker_declaration_42:
 %empty { C($$); }
 | ':' checker_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-class_declaration_71:
+class_declaration_43:
 %empty { C($$); }
 | VIRTUAL_ { C($$); T($$, @1, zero, zero); }
 ;
 
-class_declaration_72:
-%empty { C($$); }
-| lifetime
-;
-
-class_declaration_73:
-%empty { C($$); }
-| parameter_port_list
-;
-
-class_declaration_74_74:
+class_declaration_44_44:
 %empty { C($$); }
 | '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-class_declaration_74:
+class_declaration_44:
 %empty { C($$); }
-| EXTENDS_ class_type class_declaration_74_74 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| EXTENDS_ class_type class_declaration_44_44 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-class_declaration_76_76:
+class_declaration_46_46:
 %empty { C($$); }
-| class_declaration_76_76 ',' interface_class_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| class_declaration_46_46 ',' interface_class_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-class_declaration_76:
+class_declaration_46:
 %empty { C($$); }
-| IMPLEMENTS_ interface_class_type class_declaration_76_76 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| IMPLEMENTS_ interface_class_type class_declaration_46_46 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-class_declaration_78:
+class_declaration_48:
 %empty { C($$); }
-| class_declaration_78 class_item { $$ = $1; P($$, $2); }
+| class_declaration_48 class_item { $$ = $1; P($$, $2); }
 ;
 
-class_declaration_79:
+class_declaration_49:
 %empty { C($$); }
 | ':' class_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-interface_class_type_80:
+interface_class_type_50:
 %empty { C($$); }
 | parameter_value_assignment
 ;
 
-interface_class_declaration_81:
+interface_class_declaration_51_51:
 %empty { C($$); }
-| parameter_port_list
+| interface_class_declaration_51_51 ',' interface_class_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-interface_class_declaration_82_82:
+interface_class_declaration_51:
 %empty { C($$); }
-| interface_class_declaration_82_82 ',' interface_class_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| EXTENDS_ interface_class_type interface_class_declaration_51_51 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-interface_class_declaration_82:
+interface_class_declaration_53:
 %empty { C($$); }
-| EXTENDS_ interface_class_type interface_class_declaration_82_82 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| interface_class_declaration_53 interface_class_item { $$ = $1; P($$, $2); }
 ;
 
-interface_class_declaration_84:
+interface_class_item_54:
 %empty { C($$); }
-| interface_class_declaration_84 interface_class_item { $$ = $1; P($$, $2); }
+| interface_class_item_54 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_class_declaration_85:
+package_declaration_55:
 %empty { C($$); }
-| ':' class_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| package_declaration_55 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_class_item_86:
+package_declaration_56_56:
 %empty { C($$); }
-| interface_class_item_86 attribute_instance { $$ = $1; P($$, $2); }
+| package_declaration_56_56 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-package_declaration_87:
+package_declaration_56:
 %empty { C($$); }
-| package_declaration_87 attribute_instance { $$ = $1; P($$, $2); }
+| package_declaration_56 package_declaration_56_56 package_item { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-package_declaration_88:
-%empty { C($$); }
-| lifetime
-;
-
-package_declaration_89:
-%empty { C($$); }
-| timeunits_declaration
-;
-
-package_declaration_90_90:
-%empty { C($$); }
-| package_declaration_90_90 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-package_declaration_90:
-%empty { C($$); }
-| package_declaration_90 package_declaration_90_90 package_item { $$ = $1; P($$, $2); P($$, $3); }
-;
-
-package_declaration_92:
+package_declaration_58:
 %empty { C($$); }
 | ':' package_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-timeunits_declaration_93:
+timeunits_declaration_59:
 %empty /* { C($$); } -- ignore */
 | '/' time_literal { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-parameter_port_list_94:
+parameter_port_list_60:
 %empty { C($$); }
-| parameter_port_list_94 ',' parameter_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| parameter_port_list_60 ',' parameter_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-parameter_port_list_95:
+parameter_port_list_61:
 %empty { C($$); }
-| parameter_port_list_95 ',' parameter_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| parameter_port_list_61 ',' parameter_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_ports_96:
+list_of_ports_62:
 %empty { C($$); }
-| list_of_ports_96 ',' port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_ports_62 ',' port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_port_declarations_97_97:
+list_of_port_declarations_63_63:
 %empty { C($$); }
-| list_of_port_declarations_97_97 attribute_instance { $$ = $1; P($$, $2); }
+| list_of_port_declarations_63_63 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-list_of_port_declarations_97_98_98:
+list_of_port_declarations_63_64_64:
 %empty { C($$); }
-| list_of_port_declarations_97_98_98 attribute_instance { $$ = $1; P($$, $2); }
+| list_of_port_declarations_63_64_64 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-list_of_port_declarations_97_98:
+list_of_port_declarations_63_64:
 %empty { C($$); }
-| list_of_port_declarations_97_98 ',' list_of_port_declarations_97_98_98 ansi_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| list_of_port_declarations_63_64 ',' list_of_port_declarations_63_64_64 ansi_port_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-list_of_port_declarations_97:
+list_of_port_declarations_63:
 %empty { C($$); }
-| list_of_port_declarations_97_97 ansi_port_declaration list_of_port_declarations_97_98 { $$ = $1; P($$, $2); P($$, $3); }
+| list_of_port_declarations_63_63 ansi_port_declaration list_of_port_declarations_63_64 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-port_declaration_101:
+port_declaration_67:
 %empty { C($$); }
-| port_declaration_101 attribute_instance { $$ = $1; P($$, $2); }
+| port_declaration_67 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-port_declaration_102:
+port_declaration_68:
 %empty { C($$); }
-| port_declaration_102 attribute_instance { $$ = $1; P($$, $2); }
+| port_declaration_68 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-port_declaration_103:
+port_declaration_69:
 %empty { C($$); }
-| port_declaration_103 attribute_instance { $$ = $1; P($$, $2); }
+| port_declaration_69 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-port_declaration_104:
+port_declaration_70:
 %empty { C($$); }
-| port_declaration_104 attribute_instance { $$ = $1; P($$, $2); }
+| port_declaration_70 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-port_declaration_105:
+port_declaration_71:
 %empty { C($$); }
-| port_declaration_105 attribute_instance { $$ = $1; P($$, $2); }
+| port_declaration_71 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-port_106:
-%empty { C($$); }
-| port_expression
-;
-
-port_107:
+port_72:
 %empty { C($$); }
 | port_expression
 ;
 
-port_expression_108:
+port_expression_73:
 %empty { C($$); }
-| port_expression_108 ',' port_reference { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| port_expression_73 ',' port_reference { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-net_port_header_109:
-%empty { C($$); }
-| port_direction
-;
-
-variable_port_header_110:
+net_port_header_74:
 %empty { C($$); }
 | port_direction
 ;
 
-interface_port_header_111:
+interface_port_header_75:
 %empty { C($$); }
 | '.' modport_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-interface_port_header_112:
-%empty { C($$); }
-| '.' modport_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-ansi_port_declaration_113:
+ansi_port_declaration_76:
 %empty /* { C($$); } -- ignore */
 | net_port_header
 | interface_port_header
 ;
 
-ansi_port_declaration_114:
+ansi_port_declaration_77:
 %empty { C($$); }
-| ansi_port_declaration_114 unpacked_dimension { $$ = $1; P($$, $2); }
+| ansi_port_declaration_77 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-ansi_port_declaration_115:
+ansi_port_declaration_78:
 %empty { C($$); }
 | '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-ansi_port_declaration_116:
+ansi_port_declaration_79:
 %empty /* { C($$); } -- ignore */
 | variable_port_header
 ;
 
-ansi_port_declaration_117:
+ansi_port_declaration_80:
 %empty { C($$); }
-| ansi_port_declaration_117 variable_dimension { $$ = $1; P($$, $2); }
+| ansi_port_declaration_80 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-ansi_port_declaration_118:
-%empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-ansi_port_declaration_119:
-%empty { C($$); }
-| port_direction
-;
-
-ansi_port_declaration_120:
+ansi_port_declaration_81:
 %empty { C($$); }
 | expression
 ;
 
-elaboration_system_task_121_121:
+elaboration_system_task_82_82:
 %empty { C($$); }
 | ',' list_of_arguments { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-elaboration_system_task_121:
+elaboration_system_task_82:
 %empty { C($$); }
-| '(' finish_number elaboration_system_task_121_121 ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| '(' finish_number elaboration_system_task_82_82 ')' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-elaboration_system_task_123_123:
-%empty { C($$); }
-| list_of_arguments
-;
-
-elaboration_system_task_123:
-%empty { C($$); }
-| '(' elaboration_system_task_123_123 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-elaboration_system_task_125_125:
-%empty { C($$); }
-| list_of_arguments
-;
-
-elaboration_system_task_125:
-%empty { C($$); }
-| '(' elaboration_system_task_125_125 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-elaboration_system_task_127_127:
-%empty { C($$); }
-| list_of_arguments
-;
-
-elaboration_system_task_127:
-%empty { C($$); }
-| '(' elaboration_system_task_127_127 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-module_or_generate_item_129:
-%empty { C($$); }
-| module_or_generate_item_129 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-module_or_generate_item_130:
-%empty { C($$); }
-| module_or_generate_item_130 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-module_or_generate_item_131:
-%empty { C($$); }
-| module_or_generate_item_131 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-module_or_generate_item_132:
+elaboration_system_task_84_84:
 %empty /* { C($$); } -- ignore */
-| module_or_generate_item_132 attribute_instance { $$ = $1; P($$, $2); }
+| list_of_arguments
 ;
 
-module_or_generate_item_133:
+elaboration_system_task_84:
 %empty { C($$); }
-| module_or_generate_item_133 attribute_instance { $$ = $1; P($$, $2); }
+| '(' elaboration_system_task_84_84 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-non_port_module_item_134:
+module_or_generate_item_86:
 %empty { C($$); }
-| non_port_module_item_134 attribute_instance { $$ = $1; P($$, $2); }
+| module_or_generate_item_86 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-bind_directive_135:
+module_or_generate_item_87:
+%empty { C($$); }
+| module_or_generate_item_87 attribute_instance { $$ = $1; P($$, $2); }
+;
+
+module_or_generate_item_88:
+%empty { C($$); }
+| module_or_generate_item_88 attribute_instance { $$ = $1; P($$, $2); }
+;
+
+module_or_generate_item_89:
+%empty /* { C($$); } -- ignore */
+| module_or_generate_item_89 attribute_instance { $$ = $1; P($$, $2); }
+;
+
+module_or_generate_item_90:
+%empty { C($$); }
+| module_or_generate_item_90 attribute_instance { $$ = $1; P($$, $2); }
+;
+
+non_port_module_item_91:
+%empty { C($$); }
+| non_port_module_item_91 attribute_instance { $$ = $1; P($$, $2); }
+;
+
+bind_directive_92:
 %empty { C($$); }
 | ':' bind_target_instance_list { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-bind_target_instance_list_136:
+bind_target_instance_list_93:
 %empty { C($$); }
-| bind_target_instance_list_136 ',' bind_target_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| bind_target_instance_list_93 ',' bind_target_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-config_declaration_137:
+config_declaration_94:
 %empty { C($$); }
-| config_declaration_137 local_parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| config_declaration_94 local_parameter_declaration ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 ;
 
-config_declaration_138:
+config_declaration_95:
 %empty { C($$); }
-| config_declaration_138 config_rule_statement { $$ = $1; P($$, $2); }
+| config_declaration_95 config_rule_statement { $$ = $1; P($$, $2); }
 ;
 
-config_declaration_139:
+config_declaration_96:
 %empty { C($$); }
 | ':' config_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-design_statement_140_140:
+design_statement_97_97:
 %empty /* { C($$); } -- ignore */
 | library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
-design_statement_140:
+design_statement_97:
 %empty { C($$); }
-| design_statement_140 design_statement_140_140 cell_identifier { $$ = $1; P($$, $2); P($$, $3); }
+| design_statement_97 design_statement_97_97 cell_identifier { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-inst_name_142:
+inst_name_99:
 %empty { C($$); }
-| inst_name_142 '.' instance_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| inst_name_99 '.' instance_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-cell_clause_143:
-%empty /* { C($$); } -- ignore */
-| library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
-;
-
-liblist_clause_144:
+liblist_clause_100:
 %empty { C($$); }
-| liblist_clause_144 library_identifier { $$ = $1; P($$, $2); }
+| liblist_clause_100 library_identifier { $$ = $1; P($$, $2); }
 ;
 
-use_clause_145:
-%empty /* { C($$); } -- ignore */
-| library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
-;
-
-use_clause_146:
+use_clause_101:
 %empty { C($$); }
 | ':' CONFIG_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
 
-use_clause_147:
+use_clause_102:
 %empty { C($$); }
-| use_clause_147 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| use_clause_102 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-use_clause_148:
+use_clause_103:
 %empty { C($$); }
-| ':' CONFIG_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
+| use_clause_103 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-use_clause_149:
-%empty /* { C($$); } -- ignore */
-| library_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
-;
-
-use_clause_150:
+interface_or_generate_item_104:
 %empty { C($$); }
-| use_clause_150 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| interface_or_generate_item_104 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-use_clause_151:
+interface_or_generate_item_105:
 %empty { C($$); }
-| ':' CONFIG_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
+| interface_or_generate_item_105 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_or_generate_item_152:
+interface_or_generate_item_106:
 %empty { C($$); }
-| interface_or_generate_item_152 attribute_instance { $$ = $1; P($$, $2); }
+| interface_or_generate_item_106 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_or_generate_item_153:
+non_port_program_item_107:
 %empty { C($$); }
-| interface_or_generate_item_153 attribute_instance { $$ = $1; P($$, $2); }
+| non_port_program_item_107 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-interface_or_generate_item_154:
+non_port_program_item_108:
 %empty { C($$); }
-| interface_or_generate_item_154 attribute_instance { $$ = $1; P($$, $2); }
+| non_port_program_item_108 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-non_port_program_item_155:
+non_port_program_item_109:
 %empty { C($$); }
-| non_port_program_item_155 attribute_instance { $$ = $1; P($$, $2); }
+| non_port_program_item_109 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-non_port_program_item_156:
+non_port_program_item_110:
 %empty { C($$); }
-| non_port_program_item_156 attribute_instance { $$ = $1; P($$, $2); }
+| non_port_program_item_110 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-non_port_program_item_157:
+non_port_program_item_111:
 %empty { C($$); }
-| non_port_program_item_157 attribute_instance { $$ = $1; P($$, $2); }
+| non_port_program_item_111 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-non_port_program_item_158:
+checker_port_list_112:
 %empty { C($$); }
-| non_port_program_item_158 attribute_instance { $$ = $1; P($$, $2); }
+| checker_port_list_112 ',' checker_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-non_port_program_item_159:
+checker_port_item_113:
 %empty { C($$); }
-| non_port_program_item_159 attribute_instance { $$ = $1; P($$, $2); }
+| checker_port_item_113 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-checker_port_list_160:
-%empty { C($$); }
-| checker_port_list_160 ',' checker_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-checker_port_item_161:
-%empty { C($$); }
-| checker_port_item_161 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-checker_port_item_162:
+checker_port_item_114:
 %empty { C($$); }
 | checker_port_direction
 ;
 
-checker_port_item_163:
+checker_port_item_115:
 %empty { C($$); }
-| checker_port_item_163 variable_dimension { $$ = $1; P($$, $2); }
+| checker_port_item_115 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-checker_port_item_164:
+checker_port_item_116:
 %empty { C($$); }
 | '=' property_actual_arg { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-checker_or_generate_item_declaration_165:
+checker_or_generate_item_declaration_117:
 %empty { C($$); }
 | RAND_ { C($$); T($$, @1, zero, zero); }
 ;
 
-class_item_166:
+class_item_118:
 %empty { C($$); }
-| class_item_166 attribute_instance { $$ = $1; P($$, $2); }
+| class_item_118 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-class_item_167:
+class_item_119:
 %empty { C($$); }
-| class_item_167 attribute_instance { $$ = $1; P($$, $2); }
+| class_item_119 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-class_item_168:
+class_item_120:
 %empty { C($$); }
-| class_item_168 attribute_instance { $$ = $1; P($$, $2); }
+| class_item_120 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-class_item_169:
+class_item_121:
 %empty { C($$); }
-| class_item_169 attribute_instance { $$ = $1; P($$, $2); }
+| class_item_121 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-class_item_170:
+class_item_122:
 %empty { C($$); }
-| class_item_170 attribute_instance { $$ = $1; P($$, $2); }
+| class_item_122 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-class_property_171:
+class_property_123:
 %empty { C($$); }
-| class_property_171 property_qualifier { $$ = $1; P($$, $2); }
+| class_property_123 property_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_property_172:
+class_property_124:
 %empty { C($$); }
-| class_property_172 class_item_qualifier { $$ = $1; P($$, $2); }
+| class_property_124 class_item_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_property_173:
+class_method_125:
 %empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| class_method_125 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_method_174:
+class_method_126:
 %empty { C($$); }
-| class_method_174 method_qualifier { $$ = $1; P($$, $2); }
+| class_method_126 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_method_175:
+class_method_127:
 %empty { C($$); }
-| class_method_175 method_qualifier { $$ = $1; P($$, $2); }
+| class_method_127 class_item_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_method_176:
+class_method_128:
 %empty { C($$); }
-| class_method_176 class_item_qualifier { $$ = $1; P($$, $2); }
+| class_method_128 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_method_177:
-%empty { C($$); }
-| class_method_177 method_qualifier { $$ = $1; P($$, $2); }
-;
-
-class_method_178:
+class_method_129:
 %empty /* { C($$); } -- ignore */
-| class_method_178 method_qualifier { $$ = $1; P($$, $2); }
+| class_method_129 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_method_179:
+class_method_130:
 %empty /* { C($$); } -- ignore */
-| class_method_179 method_qualifier { $$ = $1; P($$, $2); }
+| class_method_130 method_qualifier { $$ = $1; P($$, $2); }
 ;
 
-class_constructor_prototype_180_180:
+class_constructor_prototype_131_131:
 %empty { C($$); }
 | tf_port_list
 ;
 
-class_constructor_prototype_180:
+class_constructor_prototype_131:
 %empty { C($$); }
-| '(' class_constructor_prototype_180_180 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' class_constructor_prototype_131_131 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-method_qualifier_182:
+method_qualifier_133:
 %empty { C($$); }
 | PURE_ { C($$); T($$, @1, zero, zero); }
 ;
 
-class_constructor_declaration_183:
+class_constructor_declaration_134:
 %empty { C($$); }
 | class_scope
 ;
 
-class_constructor_declaration_184_184:
+class_constructor_declaration_135:
 %empty { C($$); }
-| tf_port_list
+| class_constructor_declaration_135 block_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-class_constructor_declaration_184:
+class_constructor_declaration_136:
 %empty { C($$); }
-| '(' class_constructor_declaration_184_184 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| SUPER_ '.' NEW_ class_declaration_44_44 ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
-class_constructor_declaration_186:
+class_constructor_declaration_137:
 %empty { C($$); }
-| class_constructor_declaration_186 block_item_declaration { $$ = $1; P($$, $2); }
+| class_constructor_declaration_137 function_statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-class_constructor_declaration_187_187:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-class_constructor_declaration_187:
-%empty { C($$); }
-| SUPER_ '.' NEW_ class_constructor_declaration_187_187 ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
-;
-
-class_constructor_declaration_189:
-%empty { C($$); }
-| class_constructor_declaration_189 function_statement_or_null { $$ = $1; P($$, $2); }
-;
-
-class_constructor_declaration_190:
+class_constructor_declaration_138:
 %empty { C($$); }
 | ':' NEW_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
 
-constraint_declaration_191:
+constraint_declaration_139:
 %empty { C($$); }
 | STATIC_ { C($$); T($$, @1, zero, zero); }
 ;
 
-constraint_block_192:
+constraint_block_140:
 %empty { C($$); }
-| constraint_block_192 constraint_block_item { $$ = $1; P($$, $2); }
+| constraint_block_140 constraint_block_item { $$ = $1; P($$, $2); }
 ;
 
-solve_before_list_193:
+solve_before_list_141:
 %empty { C($$); }
-| solve_before_list_193 ',' constraint_primary { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| solve_before_list_141 ',' constraint_primary { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-constraint_primary_194:
+constraint_primary_142:
 %empty { C($$); }
 | implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
 
-constraint_expression_195:
+constraint_expression_143:
 %empty { C($$); }
 | SOFT_ { C($$); T($$, @1, zero, zero); }
 ;
 
-constraint_expression_196:
+constraint_expression_144:
 %empty { C($$); }
 | ELSE_ constraint_set { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-constraint_expression_197:
+constraint_expression_145:
 %empty { C($$); }
 | loop_variables
 ;
 
-constraint_set_198:
+constraint_set_146:
 %empty { C($$); }
-| constraint_set_198 constraint_expression { $$ = $1; P($$, $2); }
+| constraint_set_146 constraint_expression { $$ = $1; P($$, $2); }
 ;
 
-dist_list_199:
+dist_list_147:
 %empty { C($$); }
-| dist_list_199 ',' dist_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| dist_list_147 ',' dist_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-dist_item_200:
+dist_item_148:
 %empty { C($$); }
 | dist_weight
 ;
 
-constraint_prototype_201:
+constraint_prototype_149:
 %empty /* { C($$); } -- ignore */
 | constraint_prototype_qualifier
 ;
 
-constraint_prototype_202:
+identifier_list_150:
 %empty { C($$); }
-| STATIC_ { C($$); T($$, @1, zero, zero); }
+| identifier_list_150 ',' identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-extern_constraint_declaration_203:
+anonymous_program_151:
 %empty { C($$); }
-| STATIC_ { C($$); T($$, @1, zero, zero); }
+| anonymous_program_151 anonymous_program_item { $$ = $1; P($$, $2); }
 ;
 
-identifier_list_204:
-%empty { C($$); }
-| identifier_list_204 ',' identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-anonymous_program_205:
-%empty { C($$); }
-| anonymous_program_205 anonymous_program_item { $$ = $1; P($$, $2); }
-;
-
-specparam_declaration_206:
+specparam_declaration_152:
 %empty { C($$); }
 | packed_dimension
 ;
 
-data_declaration_207:
+data_declaration_153:
 %empty { C($$); }
 | CONST_ { C($$); T($$, @1, zero, zero); }
 ;
 
-data_declaration_208:
+data_declaration_154:
 %empty { C($$); }
 | VAR_ { C($$); T($$, @1, zero, zero); }
 ;
 
-data_declaration_209:
+package_import_declaration_155:
 %empty { C($$); }
-| lifetime
+| package_import_declaration_155 ',' package_import_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-package_import_declaration_210:
+package_export_declaration_156:
 %empty { C($$); }
-| package_import_declaration_210 ',' package_import_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| package_export_declaration_156 ',' package_import_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-package_export_declaration_211:
-%empty { C($$); }
-| package_export_declaration_211 ',' package_import_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-net_declaration_212:
+net_declaration_157:
 %empty { C($$); }
 | drive_strength
 | charge_strength
 ;
 
-net_declaration_213:
+net_declaration_158:
 %empty { C($$); }
 | VECTORED_ { C($$); T($$, @1, zero, zero); }
 | SCALARED_ { C($$); T($$, @1, zero, zero); }
 ;
 
-net_declaration_214:
+net_declaration_159:
 %empty { C($$); }
 | delay3
 ;
 
-net_declaration_215:
+net_declaration_160:
 %empty { C($$); }
 | delay_control
 ;
 
-net_declaration_216:
+net_declaration_161:
 %empty { C($$); }
 | '#' delay_value { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-net_declaration_217:
+net_declaration_162:
 %empty { C($$); }
-| net_declaration_217 unpacked_dimension { $$ = $1; P($$, $2); }
+| net_declaration_162 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-net_declaration_218_218:
+net_declaration_163_163:
 %empty { C($$); }
-| net_declaration_218_218 unpacked_dimension { $$ = $1; P($$, $2); }
+| net_declaration_163_163 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-net_declaration_218:
+net_declaration_163:
 %empty { C($$); }
-| ',' net_identifier net_declaration_218_218 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' net_identifier net_declaration_163_163 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-type_declaration_220:
+type_declaration_165:
 %empty { C($$); }
-| type_declaration_220 variable_dimension { $$ = $1; P($$, $2); }
+| type_declaration_165 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-type_declaration_221:
+type_declaration_166:
 %empty /* { C($$); } -- ignore */
 | ENUM_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 | STRUCT_ { C($$); T($$, @1, zero, zero); }
@@ -6678,3081 +6132,1991 @@ type_declaration_221:
 | INTERFACE_ CLASS_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
 
-net_type_declaration_222_222:
+net_type_declaration_167_167:
 %empty /* { C($$); } -- ignore */
 | package_scope
 | class_scope
 ;
 
-net_type_declaration_222:
+net_type_declaration_167:
 %empty { C($$); }
-| WITH_ net_type_declaration_222_222 tf_identifier { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| WITH_ net_type_declaration_167_167 tf_identifier { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-net_type_declaration_224:
-%empty /* { C($$); } -- ignore */
-| package_scope
-| class_scope
-;
-
-data_type_225:
+data_type_169:
 %empty { C($$); }
 | signing
 ;
 
-data_type_226:
+data_type_170:
 %empty { C($$); }
-| data_type_226 packed_dimension { $$ = $1; P($$, $2); }
+| data_type_170 packed_dimension { $$ = $1; P($$, $2); }
 ;
 
-data_type_227:
+data_type_171:
 %empty { C($$); }
-| signing
+| PACKED_ data_type_169 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-data_type_228_228:
+data_type_172:
 %empty { C($$); }
-| signing
+| data_type_172 struct_union_member { $$ = $1; P($$, $2); }
 ;
 
-data_type_228:
+data_type_173:
 %empty { C($$); }
-| PACKED_ data_type_228_228 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| data_type_173 packed_dimension { $$ = $1; P($$, $2); }
 ;
 
-data_type_230:
-%empty { C($$); }
-| data_type_230 struct_union_member { $$ = $1; P($$, $2); }
-;
-
-data_type_231:
-%empty { C($$); }
-| data_type_231 packed_dimension { $$ = $1; P($$, $2); }
-;
-
-data_type_232:
+data_type_174:
 %empty { C($$); }
 | enum_base_type
 ;
 
-data_type_233:
+data_type_175:
 %empty { C($$); }
-| data_type_233 ',' enum_name_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| data_type_175 ',' enum_name_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-data_type_234:
+data_type_176:
 %empty { C($$); }
-| data_type_234 packed_dimension { $$ = $1; P($$, $2); }
+| data_type_176 packed_dimension { $$ = $1; P($$, $2); }
 ;
 
-data_type_235:
+data_type_177:
 %empty { C($$); }
 | INTERFACE_ { C($$); T($$, @1, zero, zero); }
 ;
 
-data_type_236:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-data_type_237:
-%empty { C($$); }
-| '.' modport_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-data_type_238:
+data_type_178:
 %empty /* { C($$); } -- ignore */
 | class_scope
 | package_scope
 ;
 
-data_type_239:
+data_type_179:
 %empty { C($$); }
-| data_type_239 packed_dimension { $$ = $1; P($$, $2); }
+| data_type_179 packed_dimension { $$ = $1; P($$, $2); }
 ;
 
-implicit_data_type_240:
+implicit_data_type_180:
 %empty { C($$); }
-| signing
+| implicit_data_type_180 packed_dimension { $$ = $1; P($$, $2); }
 ;
 
-implicit_data_type_241:
-%empty { C($$); }
-| implicit_data_type_241 packed_dimension { $$ = $1; P($$, $2); }
-;
-
-enum_base_type_242:
-%empty { C($$); }
-| signing
-;
-
-enum_base_type_243:
-%empty { C($$); }
-| signing
-;
-
-enum_base_type_244:
-%empty { C($$); }
-| packed_dimension
-;
-
-enum_base_type_245:
-%empty { C($$); }
-| packed_dimension
-;
-
-enum_name_declaration_246_246:
+enum_name_declaration_181_181:
 %empty { C($$); }
 | ':' integral_number { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-enum_name_declaration_246:
+enum_name_declaration_181:
 %empty { C($$); }
-| '[' integral_number enum_name_declaration_246_246 ']' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| '[' integral_number enum_name_declaration_181_181 ']' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-enum_name_declaration_248:
+class_type_183:
 %empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| class_type_183 CC class_identifier interface_class_type_50 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-class_type_249:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-class_type_250_250:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-class_type_250:
-%empty { C($$); }
-| class_type_250 CC class_identifier class_type_250_250 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
-;
-
-net_port_type_252:
+net_port_type_184:
 %empty { C($$); }
 | net_type
 ;
 
-struct_union_member_253:
+struct_union_member_185:
 %empty { C($$); }
-| struct_union_member_253 attribute_instance { $$ = $1; P($$, $2); }
+| struct_union_member_185 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-struct_union_member_254:
+struct_union_member_186:
 %empty { C($$); }
 | random_qualifier
 ;
 
-struct_union_255:
+struct_union_187:
 %empty { C($$); }
 | TAGGED_ { C($$); T($$, @1, zero, zero); }
 ;
 
-delay3_256_256:
+delay3_188_188:
 %empty { C($$); }
 | ',' mintypmax_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-delay3_256:
+delay3_188:
 %empty { C($$); }
-| ',' mintypmax_expression delay3_256_256 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' mintypmax_expression delay3_188_188 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-delay2_258:
+list_of_defparam_assignments_190:
 %empty { C($$); }
-| ',' mintypmax_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| list_of_defparam_assignments_190 ',' defparam_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_defparam_assignments_259:
+list_of_genvar_identifiers_191:
 %empty { C($$); }
-| list_of_defparam_assignments_259 ',' defparam_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_genvar_identifiers_191 ',' genvar_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_genvar_identifiers_260:
+list_of_interface_identifiers_192:
 %empty { C($$); }
-| list_of_genvar_identifiers_260 ',' genvar_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_interface_identifiers_192 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_interface_identifiers_261:
+list_of_interface_identifiers_193_193:
 %empty { C($$); }
-| list_of_interface_identifiers_261 unpacked_dimension { $$ = $1; P($$, $2); }
+| list_of_interface_identifiers_193_193 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_interface_identifiers_262_262:
+list_of_interface_identifiers_193:
 %empty { C($$); }
-| list_of_interface_identifiers_262_262 unpacked_dimension { $$ = $1; P($$, $2); }
+| list_of_interface_identifiers_193 ',' interface_identifier list_of_interface_identifiers_193_193 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-list_of_interface_identifiers_262:
+list_of_net_decl_assignments_195:
 %empty { C($$); }
-| list_of_interface_identifiers_262 ',' interface_identifier list_of_interface_identifiers_262_262 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| list_of_net_decl_assignments_195 ',' net_decl_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_net_decl_assignments_264:
+list_of_param_assignments_196:
 %empty { C($$); }
-| list_of_net_decl_assignments_264 ',' net_decl_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_param_assignments_196 ',' param_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_param_assignments_265:
+list_of_port_identifiers_197:
 %empty { C($$); }
-| list_of_param_assignments_265 ',' param_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_port_identifiers_197 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_port_identifiers_266:
+list_of_port_identifiers_198_198:
 %empty { C($$); }
-| list_of_port_identifiers_266 unpacked_dimension { $$ = $1; P($$, $2); }
+| list_of_port_identifiers_198_198 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_port_identifiers_267_267:
+list_of_port_identifiers_198:
 %empty { C($$); }
-| list_of_port_identifiers_267_267 unpacked_dimension { $$ = $1; P($$, $2); }
+| list_of_port_identifiers_198 ',' port_identifier list_of_port_identifiers_198_198 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-list_of_port_identifiers_267:
+list_of_udp_port_identifiers_200:
 %empty { C($$); }
-| list_of_port_identifiers_267 ',' port_identifier list_of_port_identifiers_267_267 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| list_of_udp_port_identifiers_200 ',' port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_udp_port_identifiers_269:
+list_of_specparam_assignments_201:
 %empty { C($$); }
-| list_of_udp_port_identifiers_269 ',' port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_specparam_assignments_201 ',' specparam_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_specparam_assignments_270:
+list_of_tf_variable_identifiers_202:
 %empty { C($$); }
-| list_of_specparam_assignments_270 ',' specparam_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_tf_variable_identifiers_202 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_tf_variable_identifiers_271:
-%empty { C($$); }
-| list_of_tf_variable_identifiers_271 variable_dimension { $$ = $1; P($$, $2); }
-;
-
-list_of_tf_variable_identifiers_272:
+list_of_tf_variable_identifiers_203:
 %empty { C($$); }
 | '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-list_of_tf_variable_identifiers_273_273:
+list_of_tf_variable_identifiers_204_204:
 %empty { C($$); }
-| list_of_tf_variable_identifiers_273_273 variable_dimension { $$ = $1; P($$, $2); }
+| list_of_tf_variable_identifiers_204_204 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_tf_variable_identifiers_273_274:
+list_of_tf_variable_identifiers_204:
 %empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| list_of_tf_variable_identifiers_204 ',' port_identifier list_of_tf_variable_identifiers_204_204 list_of_tf_variable_identifiers_203 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
-list_of_tf_variable_identifiers_273:
+list_of_type_assignments_206:
 %empty { C($$); }
-| list_of_tf_variable_identifiers_273 ',' port_identifier list_of_tf_variable_identifiers_273_273 list_of_tf_variable_identifiers_273_274 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
+| list_of_type_assignments_206 ',' type_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_type_assignments_276:
+list_of_variable_decl_assignments_207:
 %empty { C($$); }
-| list_of_type_assignments_276 ',' type_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_variable_decl_assignments_207 ',' variable_decl_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_variable_decl_assignments_277:
+list_of_variable_identifiers_208:
 %empty { C($$); }
-| list_of_variable_decl_assignments_277 ',' variable_decl_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_variable_identifiers_208 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_identifiers_278:
+list_of_variable_identifiers_209_209:
 %empty { C($$); }
-| list_of_variable_identifiers_278 variable_dimension { $$ = $1; P($$, $2); }
+| list_of_variable_identifiers_209_209 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_identifiers_279_279:
+list_of_variable_identifiers_209:
 %empty { C($$); }
-| list_of_variable_identifiers_279_279 variable_dimension { $$ = $1; P($$, $2); }
+| list_of_variable_identifiers_209 ',' variable_identifier list_of_variable_identifiers_209_209 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-list_of_variable_identifiers_279:
+list_of_variable_port_identifiers_211:
 %empty { C($$); }
-| list_of_variable_identifiers_279 ',' variable_identifier list_of_variable_identifiers_279_279 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| list_of_variable_port_identifiers_211 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_port_identifiers_281:
+list_of_variable_port_identifiers_212_212:
 %empty { C($$); }
-| list_of_variable_port_identifiers_281 variable_dimension { $$ = $1; P($$, $2); }
+| list_of_variable_port_identifiers_212_212 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_port_identifiers_282:
+list_of_variable_port_identifiers_212:
 %empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| list_of_variable_port_identifiers_212 ',' port_identifier list_of_variable_port_identifiers_212_212 ansi_port_declaration_78 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
-list_of_variable_port_identifiers_283_283:
+net_decl_assignment_214:
 %empty { C($$); }
-| list_of_variable_port_identifiers_283_283 variable_dimension { $$ = $1; P($$, $2); }
+| net_decl_assignment_214 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_port_identifiers_283_284:
+param_assignment_215:
 %empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| param_assignment_215 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_variable_port_identifiers_283:
-%empty { C($$); }
-| list_of_variable_port_identifiers_283 ',' port_identifier list_of_variable_port_identifiers_283_283 list_of_variable_port_identifiers_283_284 { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
-;
-
-net_decl_assignment_286:
-%empty { C($$); }
-| net_decl_assignment_286 unpacked_dimension { $$ = $1; P($$, $2); }
-;
-
-net_decl_assignment_287:
-%empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-param_assignment_288:
-%empty { C($$); }
-| param_assignment_288 unpacked_dimension { $$ = $1; P($$, $2); }
-;
-
-param_assignment_289:
+param_assignment_216:
 %empty { C($$); }
 | '=' constant_param_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-type_assignment_290:
+type_assignment_217:
 %empty { C($$); }
 | '=' data_type { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-pulse_control_specparam_291:
+pulse_control_specparam_218:
 %empty { C($$); }
 | ',' error_limit_value { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-pulse_control_specparam_292:
-%empty { C($$); }
-| ',' error_limit_value { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-variable_decl_assignment_293:
+variable_decl_assignment_219:
 %empty /* { C($$); } -- ignore */
-| variable_decl_assignment_293 variable_dimension { $$ = $1; P($$, $2); }
+| variable_decl_assignment_219 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-variable_decl_assignment_294:
+variable_decl_assignment_220:
 %empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| variable_decl_assignment_220 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-variable_decl_assignment_295:
-%empty { C($$); }
-| variable_decl_assignment_295 variable_dimension { $$ = $1; P($$, $2); }
-;
-
-variable_decl_assignment_296:
+variable_decl_assignment_221:
 %empty { C($$); }
 | '=' dynamic_array_new { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-variable_decl_assignment_297:
+variable_decl_assignment_222:
 %empty { C($$); }
 | '=' class_new { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-class_new_298:
-%empty /* { C($$); } -- ignore */
-| class_scope
-;
-
-class_new_299:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-dynamic_array_new_300:
+dynamic_array_new_223:
 %empty { C($$); }
 | '(' expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-queue_dimension_301:
+queue_dimension_224:
 %empty { C($$); }
 | ':' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-function_declaration_302:
-%empty { C($$); }
-| lifetime
-;
-
-function_body_declaration_303:
+function_body_declaration_225:
 %empty /* { C($$); } -- ignore */
 | interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
 
-function_body_declaration_304:
+function_body_declaration_226:
 %empty { C($$); }
-| function_body_declaration_304 tf_item_declaration { $$ = $1; P($$, $2); }
+| function_body_declaration_226 tf_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-function_body_declaration_305:
+function_body_declaration_227:
 %empty { C($$); }
-| function_body_declaration_305 function_statement_or_null { $$ = $1; P($$, $2); }
+| function_body_declaration_227 function_statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-function_body_declaration_306:
-%empty { C($$); }
-| ':' function_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-function_body_declaration_307:
-%empty /* { C($$); } -- ignore */
-| interface_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
-| class_scope /* ignore */
-;
-
-function_body_declaration_308:
-%empty { C($$); }
-| tf_port_list
-;
-
-function_body_declaration_309:
-%empty { C($$); }
-| function_body_declaration_309 block_item_declaration { $$ = $1; P($$, $2); }
-;
-
-function_body_declaration_310:
-%empty { C($$); }
-| function_body_declaration_310 function_statement_or_null { $$ = $1; P($$, $2); }
-;
-
-function_body_declaration_311:
+function_body_declaration_228:
 %empty { C($$); }
 | ':' function_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-function_prototype_312_312:
+function_body_declaration_229:
 %empty { C($$); }
-| tf_port_list
+| function_body_declaration_229 block_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-function_prototype_312:
+function_body_declaration_230:
 %empty { C($$); }
-| '(' function_prototype_312_312 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| function_body_declaration_230 function_statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-dpi_import_export_314:
+dpi_import_export_231:
 %empty { C($$); }
 | dpi_function_import_property
 ;
 
-dpi_import_export_315:
+dpi_import_export_232:
 %empty { C($$); }
 | c_identifier '=' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
-dpi_import_export_316:
+dpi_import_export_233:
 %empty { C($$); }
 | dpi_task_import_property
 ;
 
-dpi_import_export_317:
+task_body_declaration_234:
 %empty { C($$); }
-| c_identifier '=' { $$ = $1; T($$, @2, zero, zero); }
+| task_body_declaration_234 tf_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-dpi_import_export_318:
+task_body_declaration_235:
 %empty { C($$); }
-| c_identifier '=' { $$ = $1; T($$, @2, zero, zero); }
+| task_body_declaration_235 statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-dpi_import_export_319:
-%empty { C($$); }
-| c_identifier '=' { $$ = $1; T($$, @2, zero, zero); }
-;
-
-task_declaration_320:
-%empty { C($$); }
-| lifetime
-;
-
-task_body_declaration_321:
-%empty /* { C($$); } -- ignore */
-| interface_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
-| class_scope
-;
-
-task_body_declaration_322:
-%empty { C($$); }
-| task_body_declaration_322 tf_item_declaration { $$ = $1; P($$, $2); }
-;
-
-task_body_declaration_323:
-%empty { C($$); }
-| task_body_declaration_323 statement_or_null { $$ = $1; P($$, $2); }
-;
-
-task_body_declaration_324:
+task_body_declaration_236:
 %empty { C($$); }
 | ':' task_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-task_body_declaration_325:
-%empty /* { C($$); } -- ignore */
-| interface_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
-| class_scope /* ignore */
-;
-
-task_body_declaration_326:
+task_body_declaration_237:
 %empty { C($$); }
-| tf_port_list
+| task_body_declaration_237 block_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-task_body_declaration_327:
+task_body_declaration_238:
 %empty { C($$); }
-| task_body_declaration_327 block_item_declaration { $$ = $1; P($$, $2); }
+| task_body_declaration_238 statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-task_body_declaration_328:
+tf_port_list_239:
 %empty { C($$); }
-| task_body_declaration_328 statement_or_null { $$ = $1; P($$, $2); }
+| tf_port_list_239 ',' tf_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-task_body_declaration_329:
+tf_port_item_240:
 %empty { C($$); }
-| ':' task_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| tf_port_item_240 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tf_port_list_330:
-%empty { C($$); }
-| tf_port_list_330 ',' tf_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-tf_port_item_331:
-%empty { C($$); }
-| tf_port_item_331 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-tf_port_item_332:
+tf_port_item_241:
 %empty { C($$); }
 | tf_port_direction
 ;
 
-tf_port_item_333:
+tf_port_item_242_242:
 %empty { C($$); }
-| VAR_ { C($$); T($$, @1, zero, zero); }
+| tf_port_item_242_242 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-tf_port_item_334_334:
+tf_port_item_242:
 %empty { C($$); }
-| tf_port_item_334_334 variable_dimension { $$ = $1; P($$, $2); }
+| port_identifier tf_port_item_242_242 list_of_tf_variable_identifiers_203 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-tf_port_item_334_335:
+tf_port_declaration_244:
 %empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| tf_port_declaration_244 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tf_port_item_334:
+block_item_declaration_245:
 %empty { C($$); }
-| port_identifier tf_port_item_334_334 tf_port_item_334_335 { $$ = $1; P($$, $2); P($$, $3); }
+| block_item_declaration_245 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tf_port_declaration_337:
+block_item_declaration_246:
 %empty { C($$); }
-| tf_port_declaration_337 attribute_instance { $$ = $1; P($$, $2); }
+| block_item_declaration_246 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tf_port_declaration_338:
+block_item_declaration_247:
 %empty { C($$); }
-| VAR_ { C($$); T($$, @1, zero, zero); }
+| block_item_declaration_247 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-task_prototype_339_339:
-%empty /* { C($$); } -- ignore */
-| tf_port_list
-;
-
-task_prototype_339:
+block_item_declaration_248:
 %empty { C($$); }
-| '(' task_prototype_339_339 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| block_item_declaration_248 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-block_item_declaration_341:
+block_item_declaration_249:
 %empty { C($$); }
-| block_item_declaration_341 attribute_instance { $$ = $1; P($$, $2); }
+| block_item_declaration_249 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-block_item_declaration_342:
+overload_proto_formals_250:
 %empty { C($$); }
-| block_item_declaration_342 attribute_instance { $$ = $1; P($$, $2); }
+| overload_proto_formals_250 ',' data_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-block_item_declaration_343:
+modport_declaration_251:
 %empty { C($$); }
-| block_item_declaration_343 attribute_instance { $$ = $1; P($$, $2); }
+| modport_declaration_251 ',' modport_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-block_item_declaration_344:
+modport_item_252:
 %empty { C($$); }
-| block_item_declaration_344 attribute_instance { $$ = $1; P($$, $2); }
+| modport_item_252 ',' modport_ports_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-block_item_declaration_345:
+modport_ports_declaration_253:
 %empty { C($$); }
-| block_item_declaration_345 attribute_instance { $$ = $1; P($$, $2); }
+| modport_ports_declaration_253 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-overload_proto_formals_346:
+modport_ports_declaration_254:
 %empty { C($$); }
-| overload_proto_formals_346 ',' data_type { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| modport_ports_declaration_254 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-modport_declaration_347:
+modport_ports_declaration_255:
 %empty { C($$); }
-| modport_declaration_347 ',' modport_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| modport_ports_declaration_255 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-modport_item_348:
+modport_simple_ports_declaration_256:
 %empty { C($$); }
-| modport_item_348 ',' modport_ports_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| modport_simple_ports_declaration_256 ',' modport_simple_port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-modport_ports_declaration_349:
+modport_tf_ports_declaration_257:
 %empty { C($$); }
-| modport_ports_declaration_349 attribute_instance { $$ = $1; P($$, $2); }
+| modport_tf_ports_declaration_257 ',' modport_tf_port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-modport_ports_declaration_350:
-%empty { C($$); }
-| modport_ports_declaration_350 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-modport_ports_declaration_351:
-%empty { C($$); }
-| modport_ports_declaration_351 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-modport_simple_ports_declaration_352:
-%empty { C($$); }
-| modport_simple_ports_declaration_352 ',' modport_simple_port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-modport_simple_port_353:
-%empty { C($$); }
-| expression
-;
-
-modport_tf_ports_declaration_354:
-%empty { C($$); }
-| modport_tf_ports_declaration_354 ',' modport_tf_port { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-concurrent_assertion_item_355:
+concurrent_assertion_item_258:
 %empty { C($$); }
 | block_identifier ':' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
-cover_sequence_statement_356:
+cover_sequence_statement_259:
 %empty { C($$); }
 | clocking_event
 ;
 
-cover_sequence_statement_357:
+cover_sequence_statement_260:
 %empty { C($$); }
 | DISABLE_ IFF_ '(' expression_or_dist ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
-property_instance_358_358:
+property_instance_261_261:
 %empty { C($$); }
 | property_list_of_arguments
 ;
 
-property_instance_358:
+property_instance_261:
 %empty { C($$); }
-| '(' property_instance_358_358 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' property_instance_261_261 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-property_list_of_arguments_360:
-%empty { C($$); }
-| property_actual_arg
-;
-
-property_list_of_arguments_361_361:
+property_list_of_arguments_263:
 %empty { C($$); }
 | property_actual_arg
 ;
 
-property_list_of_arguments_361:
+property_list_of_arguments_264:
 %empty { C($$); }
-| property_list_of_arguments_361 ',' property_list_of_arguments_361_361 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| property_list_of_arguments_264 ',' property_list_of_arguments_263 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-property_list_of_arguments_363_363:
+property_list_of_arguments_265:
 %empty { C($$); }
-| property_actual_arg
+| property_list_of_arguments_265 ',' '.' identifier '(' property_list_of_arguments_263 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-property_list_of_arguments_363:
+property_list_of_arguments_266:
 %empty { C($$); }
-| property_list_of_arguments_363 ',' '.' identifier '(' property_list_of_arguments_363_363 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
+| property_list_of_arguments_266 ',' '.' identifier '(' property_list_of_arguments_263 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-property_list_of_arguments_365:
-%empty { C($$); }
-| property_actual_arg
-;
-
-property_list_of_arguments_366_366:
-%empty { C($$); }
-| property_actual_arg
-;
-
-property_list_of_arguments_366:
-%empty { C($$); }
-| property_list_of_arguments_366 ',' '.' identifier '(' property_list_of_arguments_366_366 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
-;
-
-property_declaration_368_368:
+property_declaration_267_267:
 %empty { C($$); }
 | property_port_list
 ;
 
-property_declaration_368:
+property_declaration_267:
 %empty { C($$); }
-| '(' property_declaration_368_368 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' property_declaration_267_267 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-property_declaration_370:
+property_declaration_269:
 %empty { C($$); }
-| property_declaration_370 assertion_variable_declaration { $$ = $1; P($$, $2); }
+| property_declaration_269 assertion_variable_declaration { $$ = $1; P($$, $2); }
 ;
 
-property_declaration_371:
+property_declaration_270:
 %empty { C($$); }
 | ';' { C($$); T($$, @1, zero, zero); }
 ;
 
-property_declaration_372:
+property_declaration_271:
 %empty { C($$); }
 | ':' property_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-property_port_list_373:
+property_port_list_272:
 %empty { C($$); }
-| property_port_list_373 ',' property_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| property_port_list_272 ',' property_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-property_port_item_374:
+property_port_item_273:
 %empty { C($$); }
-| property_port_item_374 attribute_instance { $$ = $1; P($$, $2); }
+| property_port_item_273 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-property_port_item_375_375:
+property_port_item_274_274:
 %empty { C($$); }
 | property_lvar_port_direction
 ;
 
-property_port_item_375:
+property_port_item_274:
 %empty { C($$); }
-| LOCAL_ property_port_item_375_375 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| LOCAL_ property_port_item_274_274 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-property_port_item_377:
+property_port_item_276:
 %empty { C($$); }
-| property_port_item_377 variable_dimension { $$ = $1; P($$, $2); }
+| property_port_item_276 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-property_port_item_378:
-%empty { C($$); }
-| '=' property_actual_arg { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-property_spec_379:
-%empty { C($$); }
-| clocking_event
-;
-
-property_spec_380:
-%empty { C($$); }
-| DISABLE_ IFF_ '(' expression_or_dist ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
-;
-
-property_expr_381:
+property_expr_277:
 %empty { C($$); }
 | ELSE_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-property_expr_382:
+property_expr_278:
 %empty { C($$); }
-| property_expr_382 property_case_item { $$ = $1; P($$, $2); }
+| property_expr_278 property_case_item { $$ = $1; P($$, $2); }
 ;
 
-property_expr_383:
+property_expr_279:
 %empty { C($$); }
 | CONSTANT_ expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-property_expr_384:
+property_expr_280:
 %empty { C($$); }
 | constant_expression
 ;
 
-property_expr_385:
+property_expr_281:
 %empty { C($$); }
 | cycle_delay_const_range_expression
 ;
 
-property_expr_386:
+property_expr_282:
 %empty { C($$); }
 | constant_range
 ;
 
-property_expr_387:
+property_case_item_283:
 %empty { C($$); }
-| constant_range
+| property_case_item_283 ',' expression_or_dist { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-property_expr_388:
-%empty { C($$); }
-| cycle_delay_const_range_expression
-;
-
-property_case_item_389:
-%empty { C($$); }
-| property_case_item_389 ',' expression_or_dist { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-property_case_item_390:
-%empty { C($$); }
-| ';' { C($$); T($$, @1, zero, zero); }
-;
-
-property_case_item_391:
+property_case_item_284:
 %empty { C($$); }
 | ':' { C($$); T($$, @1, zero, zero); }
 ;
 
-property_case_item_392:
-%empty { C($$); }
-| ';' { C($$); T($$, @1, zero, zero); }
-;
-
-sequence_declaration_393_393:
+sequence_declaration_285_285:
 %empty { C($$); }
 | sequence_port_list
 ;
 
-sequence_declaration_393:
+sequence_declaration_285:
 %empty { C($$); }
-| '(' sequence_declaration_393_393 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' sequence_declaration_285_285 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-sequence_declaration_395:
+sequence_declaration_287:
 %empty { C($$); }
-| sequence_declaration_395 assertion_variable_declaration { $$ = $1; P($$, $2); }
+| sequence_declaration_287 assertion_variable_declaration { $$ = $1; P($$, $2); }
 ;
 
-sequence_declaration_396:
-%empty { C($$); }
-| ';' { C($$); T($$, @1, zero, zero); }
-;
-
-sequence_declaration_397:
+sequence_declaration_288:
 %empty { C($$); }
 | ':' sequence_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-sequence_port_list_398:
+sequence_port_list_289:
 %empty { C($$); }
-| sequence_port_list_398 ',' sequence_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| sequence_port_list_289 ',' sequence_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-sequence_port_item_399:
+sequence_port_item_290:
 %empty { C($$); }
-| sequence_port_item_399 attribute_instance { $$ = $1; P($$, $2); }
+| sequence_port_item_290 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-sequence_port_item_400_400:
+sequence_port_item_291_291:
 %empty { C($$); }
 | sequence_lvar_port_direction
 ;
 
-sequence_port_item_400:
+sequence_port_item_291:
 %empty { C($$); }
-| LOCAL_ sequence_port_item_400_400 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| LOCAL_ sequence_port_item_291_291 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-sequence_port_item_402:
+sequence_port_item_293:
 %empty { C($$); }
-| sequence_port_item_402 variable_dimension { $$ = $1; P($$, $2); }
+| sequence_port_item_293 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-sequence_port_item_403:
+sequence_port_item_294:
 %empty { C($$); }
 | '=' sequence_actual_arg { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-sequence_expr_404:
+sequence_expr_295:
 %empty { C($$); }
-| sequence_expr_404 cycle_delay_range sequence_expr { $$ = $1; P($$, $2); P($$, $3); }
+| sequence_expr_295 cycle_delay_range sequence_expr { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-sequence_expr_405:
+sequence_expr_296:
 %empty { C($$); }
-| sequence_expr_405 cycle_delay_range sequence_expr { $$ = $1; P($$, $2); P($$, $3); }
+| sequence_expr_296 cycle_delay_range sequence_expr { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-sequence_expr_406:
+sequence_expr_297:
 %empty { C($$); }
 | boolean_abbrev
 ;
 
-sequence_expr_407:
+sequence_expr_298:
 %empty { C($$); }
 | sequence_abbrev
 ;
 
-sequence_expr_408:
+sequence_expr_299:
 %empty { C($$); }
-| sequence_expr_408 ',' sequence_match_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| sequence_expr_299 ',' sequence_match_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-sequence_expr_409:
+sequence_expr_300:
 %empty { C($$); }
-| sequence_abbrev
+| sequence_expr_300 ',' sequence_match_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-sequence_expr_410:
-%empty { C($$); }
-| sequence_expr_410 ',' sequence_match_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-sequence_instance_411_411:
+sequence_instance_301_301:
 %empty { C($$); }
 | sequence_list_of_arguments
 ;
 
-sequence_instance_411:
+sequence_instance_301:
 %empty { C($$); }
-| '(' sequence_instance_411_411 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' sequence_instance_301_301 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-sequence_list_of_arguments_413:
-%empty { C($$); }
-| sequence_actual_arg
-;
-
-sequence_list_of_arguments_414_414:
+sequence_list_of_arguments_303:
 %empty { C($$); }
 | sequence_actual_arg
 ;
 
-sequence_list_of_arguments_414:
+sequence_list_of_arguments_304:
 %empty { C($$); }
-| sequence_list_of_arguments_414 ',' sequence_list_of_arguments_414_414 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| sequence_list_of_arguments_304 ',' sequence_list_of_arguments_303 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-sequence_list_of_arguments_416_416:
+sequence_list_of_arguments_305:
 %empty { C($$); }
-| sequence_actual_arg
+| sequence_list_of_arguments_305 ',' '.' identifier '(' sequence_list_of_arguments_303 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-sequence_list_of_arguments_416:
+sequence_list_of_arguments_306:
 %empty { C($$); }
-| sequence_list_of_arguments_416 ',' '.' identifier '(' sequence_list_of_arguments_416_416 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
+| sequence_list_of_arguments_306 ',' '.' identifier '(' sequence_list_of_arguments_303 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-sequence_list_of_arguments_418:
+expression_or_dist_307_307:
 %empty { C($$); }
-| sequence_actual_arg
+| expression_or_dist_307_307 dist_list { $$ = $1; P($$, $2); }
 ;
 
-sequence_list_of_arguments_419_419:
+expression_or_dist_307:
 %empty { C($$); }
-| sequence_actual_arg
+| DIST_ expression_or_dist_307_307 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-sequence_list_of_arguments_419:
-%empty { C($$); }
-| sequence_list_of_arguments_419 ',' '.' identifier '(' sequence_list_of_arguments_419_419 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
-;
-
-expression_or_dist_421_421:
-%empty { C($$); }
-| expression_or_dist_421_421 dist_list { $$ = $1; P($$, $2); }
-;
-
-expression_or_dist_421:
-%empty { C($$); }
-| DIST_ expression_or_dist_421_421 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-let_declaration_423_423:
+let_declaration_309_309:
 %empty { C($$); }
 | let_port_list
 ;
 
-let_declaration_423:
+let_declaration_309:
 %empty { C($$); }
-| '(' let_declaration_423_423 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' let_declaration_309_309 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-let_port_list_425:
+let_port_list_311:
 %empty { C($$); }
-| let_port_list_425 ',' let_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| let_port_list_311 ',' let_port_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-let_port_item_426:
+let_port_item_312:
 %empty { C($$); }
-| let_port_item_426 attribute_instance { $$ = $1; P($$, $2); }
+| let_port_item_312 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-let_port_item_427:
+let_port_item_313:
 %empty { C($$); }
-| let_port_item_427 variable_dimension { $$ = $1; P($$, $2); }
+| let_port_item_313 variable_dimension { $$ = $1; P($$, $2); }
 ;
 
-let_port_item_428:
-%empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-let_expression_429:
+let_expression_314:
 %empty /* { C($$); } -- ignore */
 | package_scope
 ;
 
-let_expression_430_430:
+let_expression_315_315:
 %empty { C($$); }
 | let_list_of_arguments
 ;
 
-let_expression_430:
+let_expression_315:
 %empty { C($$); }
-| '(' let_expression_430_430 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' let_expression_315_315 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-let_list_of_arguments_432:
-%empty { C($$); }
-| let_actual_arg
-;
-
-let_list_of_arguments_433_433:
+let_list_of_arguments_317:
 %empty { C($$); }
 | let_actual_arg
 ;
 
-let_list_of_arguments_433:
+let_list_of_arguments_318:
 %empty { C($$); }
-| let_list_of_arguments_433 ',' let_list_of_arguments_433_433 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| let_list_of_arguments_318 ',' let_list_of_arguments_317 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-let_list_of_arguments_435_435:
+let_list_of_arguments_319:
 %empty { C($$); }
-| let_actual_arg
+| let_list_of_arguments_319 ',' '.' identifier '(' let_list_of_arguments_317 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-let_list_of_arguments_435:
+let_list_of_arguments_320:
 %empty { C($$); }
-| let_list_of_arguments_435 ',' '.' identifier '(' let_list_of_arguments_435_435 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
+| let_list_of_arguments_320 ',' '.' identifier '(' let_list_of_arguments_317 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-let_list_of_arguments_437:
-%empty { C($$); }
-| let_actual_arg
-;
-
-let_list_of_arguments_438_438:
-%empty { C($$); }
-| let_actual_arg
-;
-
-let_list_of_arguments_438:
-%empty { C($$); }
-| let_list_of_arguments_438 ',' '.' identifier '(' let_list_of_arguments_438_438 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
-;
-
-covergroup_declaration_440_440:
-%empty /* { C($$); } -- ignore */
-| tf_port_list
-;
-
-covergroup_declaration_440:
-%empty { C($$); }
-| '(' covergroup_declaration_440_440 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-covergroup_declaration_442:
+covergroup_declaration_321:
 %empty { C($$); }
 | coverage_event
 ;
 
-covergroup_declaration_443:
+covergroup_declaration_322:
 %empty { C($$); }
-| covergroup_declaration_443 coverage_spec_or_option { $$ = $1; P($$, $2); }
+| covergroup_declaration_322 coverage_spec_or_option { $$ = $1; P($$, $2); }
 ;
 
-covergroup_declaration_444:
+covergroup_declaration_323:
 %empty { C($$); }
 | ':' covergroup_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-coverage_spec_or_option_445:
+coverage_spec_or_option_324:
 %empty { C($$); }
-| coverage_spec_or_option_445 attribute_instance { $$ = $1; P($$, $2); }
+| coverage_spec_or_option_324 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-coverage_spec_or_option_446:
+coverage_spec_or_option_325:
 %empty { C($$); }
-| coverage_spec_or_option_446 attribute_instance { $$ = $1; P($$, $2); }
+| coverage_spec_or_option_325 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-coverage_event_447:
-%empty /* { C($$); } -- ignore */
-| tf_port_list
-;
-
-hierarchical_btf_identifier_448:
+hierarchical_btf_identifier_326:
 %empty /* { C($$); } -- ignore */
 | hierarchical_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 ;
 
-cover_point_449_449:
+cover_point_327_327:
 %empty /* { C($$); } -- ignore */
 | data_type_or_implicit
 ;
 
-cover_point_449:
+cover_point_327:
 %empty { C($$); }
-| cover_point_449_449 cover_point_identifier ':' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| cover_point_327_327 cover_point_identifier ':' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 ;
 
-cover_point_451:
+cover_point_329:
 %empty { C($$); }
 | IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-bins_or_empty_452_452:
+bins_or_empty_330_330:
 %empty { C($$); }
-| bins_or_empty_452_452 attribute_instance { $$ = $1; P($$, $2); }
+| bins_or_empty_330_330 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-bins_or_empty_452_453:
+bins_or_empty_330_331:
 %empty { C($$); }
-| bins_or_empty_452_453 bins_or_options ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| bins_or_empty_330_331 bins_or_options ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 ;
 
-bins_or_empty_452:
+bins_or_empty_330:
 %empty { C($$); }
-| bins_or_empty_452 bins_or_empty_452_452 bins_or_empty_452_453 { $$ = $1; P($$, $2); P($$, $3); }
+| bins_or_empty_330 bins_or_empty_330_330 bins_or_empty_330_331 { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
-bins_or_options_455:
+bins_or_options_333:
 %empty /* { C($$); } -- ignore */
 | WILDCARD_ { C($$); T($$, @1, zero, zero); }
 ;
 
-bins_or_options_456_456:
-%empty { C($$); }
+bins_or_options_334_334:
+%empty /* { C($$); } -- ignore */
 | covergroup_expression
 ;
 
-bins_or_options_456:
+bins_or_options_334:
 %empty { C($$); }
-| '[' bins_or_options_456_456 ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '[' bins_or_options_334_334 ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-bins_or_options_458:
+bins_or_options_336:
 %empty { C($$); }
 | WITH_ '(' with_covergroup_expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-bins_or_options_459:
-%empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-bins_or_options_460:
+bins_or_options_337:
 %empty /* { C($$); } -- ignore */
-| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
-;
-
-bins_or_options_461_461:
-%empty { C($$); }
-| covergroup_expression
-;
-
-bins_or_options_461:
-%empty { C($$); }
-| '[' bins_or_options_461_461 ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-bins_or_options_463:
-%empty { C($$); }
-| WITH_ '(' with_covergroup_expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-bins_or_options_464:
-%empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-bins_or_options_465:
-%empty /* { C($$); } -- ignore */
-| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
-;
-
-bins_or_options_466_466:
-%empty { C($$); }
-| covergroup_expression
-;
-
-bins_or_options_466:
-%empty { C($$); }
-| '[' bins_or_options_466_466 ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-bins_or_options_468:
-%empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-bins_or_options_469:
-%empty /* { C($$); } -- ignore */
-| WILDCARD_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
-;
-
-bins_or_options_470:
-%empty { C($$); }
 | '[' ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
 
-bins_or_options_471:
-%empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-bins_or_options_472_472_472:
+bins_or_options_338_338:
 %empty /* { C($$); } -- ignore */
-| covergroup_expression
+| bins_or_options_334_334
 ;
 
-bins_or_options_472_472:
+bins_or_options_338:
 %empty /* { C($$); } -- ignore */
-| bins_or_options_472_472_472
+| bins_or_options_338_338
 ;
 
-bins_or_options_472:
-%empty /* { C($$); } -- ignore */
-| bins_or_options_472_472
-;
-
-bins_or_options_475:
+trans_list_340:
 %empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| trans_list_340 ',' '(' trans_set ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
-bins_or_options_476:
+trans_set_341:
 %empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| trans_set_341 EG trans_range_list { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-trans_list_477:
-%empty { C($$); }
-| trans_list_477 ',' '(' trans_set ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
-;
-
-trans_set_478:
-%empty { C($$); }
-| trans_set_478 EG trans_range_list { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-cover_cross_479:
+cover_cross_342:
 %empty { C($$); }
 | cross_identifier ':' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
-cover_cross_480:
+list_of_cross_items_343:
 %empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| list_of_cross_items_343 ',' cross_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_cross_items_481:
+cross_body_344:
 %empty { C($$); }
-| list_of_cross_items_481 ',' cross_item { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| cross_body_344 cross_body_item ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
 ;
 
-cross_body_482:
+bins_selection_or_option_345:
 %empty { C($$); }
-| cross_body_482 cross_body_item ';' { $$ = $1; P($$, $2); T($$, @3, zero, zero); }
+| bins_selection_or_option_345 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-bins_selection_or_option_483:
+bins_selection_or_option_346:
 %empty { C($$); }
-| bins_selection_or_option_483 attribute_instance { $$ = $1; P($$, $2); }
+| bins_selection_or_option_346 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-bins_selection_or_option_484:
-%empty { C($$); }
-| bins_selection_or_option_484 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-bins_selection_485:
-%empty { C($$); }
-| IFF_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
-;
-
-select_expression_486:
+select_expression_347:
 %empty { C($$); }
 | MATCHES_ integer_covergroup_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-select_expression_487:
-%empty { C($$); }
-| MATCHES_ integer_covergroup_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-select_condition_488:
+select_condition_348:
 %empty { C($$); }
 | INTERSECT_ '{' covergroup_range_list '}' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-bins_expression_489:
+bins_expression_349:
 %empty { C($$); }
 | '.' bin_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-covergroup_range_list_490:
+covergroup_range_list_350:
 %empty { C($$); }
-| covergroup_range_list_490 ',' covergroup_value_range { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| covergroup_range_list_350 ',' covergroup_value_range { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_491:
+gate_instantiation_351:
 %empty { C($$); }
-| delay3
+| gate_instantiation_351 ',' cmos_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_492:
-%empty { C($$); }
-| gate_instantiation_492 ',' cmos_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-gate_instantiation_493:
+gate_instantiation_352:
 %empty { C($$); }
 | drive_strength
 ;
 
-gate_instantiation_494:
+gate_instantiation_353:
 %empty { C($$); }
-| delay3
+| gate_instantiation_353 ',' enable_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_495:
+gate_instantiation_354:
 %empty { C($$); }
-| gate_instantiation_495 ',' enable_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| gate_instantiation_354 ',' mos_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_496:
-%empty { C($$); }
-| delay3
-;
-
-gate_instantiation_497:
-%empty { C($$); }
-| gate_instantiation_497 ',' mos_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-gate_instantiation_498:
-%empty { C($$); }
-| drive_strength
-;
-
-gate_instantiation_499:
+gate_instantiation_355:
 %empty { C($$); }
 | delay2
 ;
 
-gate_instantiation_500:
+gate_instantiation_356:
 %empty { C($$); }
-| gate_instantiation_500 ',' n_input_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| gate_instantiation_356 ',' n_input_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_501:
+gate_instantiation_357:
 %empty { C($$); }
-| drive_strength
+| gate_instantiation_357 ',' n_output_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_502:
+gate_instantiation_358:
 %empty { C($$); }
-| delay2
+| gate_instantiation_358 ',' pass_enable_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_503:
+gate_instantiation_359:
 %empty { C($$); }
-| gate_instantiation_503 ',' n_output_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| gate_instantiation_359 ',' pass_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_504:
-%empty { C($$); }
-| delay2
-;
-
-gate_instantiation_505:
-%empty { C($$); }
-| gate_instantiation_505 ',' pass_enable_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-gate_instantiation_506:
-%empty { C($$); }
-| gate_instantiation_506 ',' pass_switch_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-gate_instantiation_507:
+gate_instantiation_360:
 %empty { C($$); }
 | pulldown_strength
 ;
 
-gate_instantiation_508:
+gate_instantiation_361:
 %empty { C($$); }
-| gate_instantiation_508 ',' pull_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| gate_instantiation_361 ',' pull_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-gate_instantiation_509:
+gate_instantiation_362:
 %empty { C($$); }
 | pullup_strength
 ;
 
-gate_instantiation_510:
+gate_instantiation_363:
 %empty { C($$); }
-| gate_instantiation_510 ',' pull_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| gate_instantiation_363 ',' pull_gate_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-cmos_switch_instance_511:
-%empty { C($$); }
-| name_of_instance
-;
-
-enable_gate_instance_512:
+cmos_switch_instance_364:
 %empty { C($$); }
 | name_of_instance
 ;
 
-mos_switch_instance_513:
+n_input_gate_instance_365:
 %empty { C($$); }
-| name_of_instance
+| n_input_gate_instance_365 ',' input_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-n_input_gate_instance_514:
+n_output_gate_instance_366:
 %empty { C($$); }
-| name_of_instance
+| n_output_gate_instance_366 ',' output_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-n_input_gate_instance_515:
+module_instantiation_367:
 %empty { C($$); }
-| n_input_gate_instance_515 ',' input_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| module_instantiation_367 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-n_output_gate_instance_516:
-%empty { C($$); }
-| name_of_instance
-;
-
-n_output_gate_instance_517:
-%empty { C($$); }
-| n_output_gate_instance_517 ',' output_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-pass_switch_instance_518:
-%empty { C($$); }
-| name_of_instance
-;
-
-pass_enable_switch_instance_519:
-%empty { C($$); }
-| name_of_instance
-;
-
-pull_gate_instance_520:
-%empty { C($$); }
-| name_of_instance
-;
-
-module_instantiation_521:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-module_instantiation_522:
-%empty { C($$); }
-| module_instantiation_522 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-parameter_value_assignment_523:
+parameter_value_assignment_368:
 %empty { C($$); }
 | list_of_parameter_assignments
 ;
 
-list_of_parameter_assignments_524:
+list_of_parameter_assignments_369:
 %empty { C($$); }
-| list_of_parameter_assignments_524 ',' ordered_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_parameter_assignments_369 ',' ordered_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_parameter_assignments_525:
+list_of_parameter_assignments_370:
 %empty { C($$); }
-| list_of_parameter_assignments_525 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_parameter_assignments_370 ',' named_parameter_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-named_parameter_assignment_526:
+named_parameter_assignment_371:
 %empty { C($$); }
 | param_expression
 ;
 
-hierarchical_instance_527:
+hierarchical_instance_372:
 %empty { C($$); }
 | list_of_port_connections
 ;
 
-name_of_instance_528:
+name_of_instance_373:
 %empty { C($$); }
-| name_of_instance_528 unpacked_dimension { $$ = $1; P($$, $2); }
+| name_of_instance_373 unpacked_dimension { $$ = $1; P($$, $2); }
 ;
 
-list_of_port_connections_529:
+list_of_port_connections_374:
 %empty { C($$); }
-| list_of_port_connections_529 ',' ordered_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_port_connections_374 ',' ordered_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_port_connections_530:
+list_of_port_connections_375:
 %empty { C($$); }
-| list_of_port_connections_530 ',' named_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_port_connections_375 ',' named_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-ordered_port_connection_531:
+ordered_port_connection_376:
 %empty { C($$); }
-| ordered_port_connection_531 attribute_instance { $$ = $1; P($$, $2); }
+| ordered_port_connection_376 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-ordered_port_connection_532:
+named_port_connection_377:
 %empty { C($$); }
-| expression
+| named_port_connection_377 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-named_port_connection_533:
+named_port_connection_378:
 %empty { C($$); }
-| named_port_connection_533 attribute_instance { $$ = $1; P($$, $2); }
+| '(' ansi_port_declaration_81 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-named_port_connection_534_534:
+named_port_connection_379:
 %empty { C($$); }
-| expression
+| named_port_connection_379 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-named_port_connection_534:
+interface_instantiation_380:
 %empty { C($$); }
-| '(' named_port_connection_534_534 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| interface_instantiation_380 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-named_port_connection_536:
+program_instantiation_381:
 %empty { C($$); }
-| named_port_connection_536 attribute_instance { $$ = $1; P($$, $2); }
+| program_instantiation_381 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-interface_instantiation_537:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-interface_instantiation_538:
-%empty { C($$); }
-| interface_instantiation_538 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-program_instantiation_539:
-%empty { C($$); }
-| parameter_value_assignment
-;
-
-program_instantiation_540:
-%empty { C($$); }
-| program_instantiation_540 ',' hierarchical_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-checker_instantiation_541:
+checker_instantiation_382:
 %empty { C($$); }
 | list_of_checker_port_connections
 ;
 
-list_of_checker_port_connections_542:
+list_of_checker_port_connections_383:
 %empty { C($$); }
-| list_of_checker_port_connections_542 ',' ordered_checker_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_checker_port_connections_383 ',' ordered_checker_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_checker_port_connections_543:
+list_of_checker_port_connections_384:
 %empty { C($$); }
-| list_of_checker_port_connections_543 ',' named_checker_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_checker_port_connections_384 ',' named_checker_port_connection { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-ordered_checker_port_connection_544:
+ordered_checker_port_connection_385:
 %empty { C($$); }
-| ordered_checker_port_connection_544 attribute_instance { $$ = $1; P($$, $2); }
+| ordered_checker_port_connection_385 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-ordered_checker_port_connection_545:
+named_checker_port_connection_386:
 %empty { C($$); }
-| property_actual_arg
+| named_checker_port_connection_386 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-named_checker_port_connection_546:
+named_checker_port_connection_387:
 %empty { C($$); }
-| named_checker_port_connection_546 attribute_instance { $$ = $1; P($$, $2); }
+| '(' property_list_of_arguments_263 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-named_checker_port_connection_547_547:
+named_checker_port_connection_388:
 %empty { C($$); }
-| property_actual_arg
+| named_checker_port_connection_388 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-named_checker_port_connection_547:
+generate_region_389:
 %empty { C($$); }
-| '(' named_checker_port_connection_547_547 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| generate_region_389 generate_item { $$ = $1; P($$, $2); }
 ;
 
-named_checker_port_connection_549:
-%empty { C($$); }
-| named_checker_port_connection_549 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-generate_region_550:
-%empty { C($$); }
-| generate_region_550 generate_item { $$ = $1; P($$, $2); }
-;
-
-genvar_initialization_551:
+genvar_initialization_390:
 %empty { C($$); }
 | GENVAR_ { C($$); T($$, @1, zero, zero); }
 ;
 
-if_generate_construct_552:
+if_generate_construct_391:
 %empty { C($$); }
 | ELSE_ generate_block { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-case_generate_construct_553:
+case_generate_construct_392:
 %empty { C($$); }
-| case_generate_construct_553 case_generate_item { $$ = $1; P($$, $2); }
+| case_generate_construct_392 case_generate_item { $$ = $1; P($$, $2); }
 ;
 
-case_generate_item_554:
+case_generate_item_393:
 %empty { C($$); }
-| case_generate_item_554 ',' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| case_generate_item_393 ',' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-case_generate_item_555:
-%empty { C($$); }
-| ':' { C($$); T($$, @1, zero, zero); }
-;
-
-generate_block_556:
+generate_block_394:
 %empty { C($$); }
 | generate_block_identifier ':' { $$ = $1; T($$, @2, zero, zero); }
 ;
 
-generate_block_557:
+generate_block_395:
 %empty { C($$); }
 | ':' generate_block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-generate_block_558:
+generate_block_396:
 %empty { C($$); }
-| generate_block_558 generate_item { $$ = $1; P($$, $2); }
+| generate_block_396 generate_item { $$ = $1; P($$, $2); }
 ;
 
-generate_block_559:
+udp_nonansi_declaration_397:
 %empty { C($$); }
-| ':' generate_block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| udp_nonansi_declaration_397 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_nonansi_declaration_560:
-%empty { C($$); }
-| udp_nonansi_declaration_560 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-udp_ansi_declaration_561:
+udp_ansi_declaration_398:
 %empty /* { C($$); } -- ignore */
-| udp_ansi_declaration_561 attribute_instance { $$ = $1; P($$, $2); }
+| udp_ansi_declaration_398 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_declaration_562:
+udp_declaration_399:
 %empty { C($$); }
-| udp_declaration_562 udp_port_declaration { $$ = $1; P($$, $2); }
+| udp_declaration_399 udp_port_declaration { $$ = $1; P($$, $2); }
 ;
 
-udp_declaration_563:
+udp_declaration_400:
 %empty { C($$); }
 | ':' udp_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-udp_declaration_564:
-%empty { C($$); }
-| ':' udp_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-udp_declaration_565:
+udp_declaration_401:
 %empty /* { C($$); } -- ignore */
-| udp_declaration_565 attribute_instance { $$ = $1; P($$, $2); }
+| udp_declaration_401 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_declaration_566:
+udp_declaration_402:
 %empty { C($$); }
-| udp_declaration_566 udp_port_declaration { $$ = $1; P($$, $2); }
+| udp_declaration_402 udp_port_declaration { $$ = $1; P($$, $2); }
 ;
 
-udp_declaration_567:
+udp_port_list_403:
 %empty { C($$); }
-| ':' udp_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| udp_port_list_403 ',' input_port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_port_list_568:
+udp_declaration_port_list_404:
 %empty { C($$); }
-| udp_port_list_568 ',' input_port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| udp_declaration_port_list_404 ',' udp_input_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_declaration_port_list_569:
+udp_output_declaration_405:
 %empty { C($$); }
-| udp_declaration_port_list_569 ',' udp_input_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| udp_output_declaration_405 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_output_declaration_570:
-%empty { C($$); }
-| udp_output_declaration_570 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-udp_output_declaration_571:
+udp_output_declaration_406:
 %empty /* { C($$); } -- ignore */
-| udp_output_declaration_571 attribute_instance { $$ = $1; P($$, $2); }
+| udp_output_declaration_406 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_output_declaration_572:
+udp_input_declaration_407:
 %empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| udp_input_declaration_407 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_input_declaration_573:
+udp_reg_declaration_408:
 %empty { C($$); }
-| udp_input_declaration_573 attribute_instance { $$ = $1; P($$, $2); }
+| udp_reg_declaration_408 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-udp_reg_declaration_574:
+combinational_body_409:
 %empty { C($$); }
-| udp_reg_declaration_574 attribute_instance { $$ = $1; P($$, $2); }
+| combinational_body_409 combinational_entry { $$ = $1; P($$, $2); }
 ;
 
-combinational_body_575:
-%empty { C($$); }
-| combinational_body_575 combinational_entry { $$ = $1; P($$, $2); }
-;
-
-sequential_body_576:
+sequential_body_410:
 %empty /* { C($$); } -- ignore */
 | udp_initial_statement
 ;
 
-sequential_body_577:
+sequential_body_411:
 %empty { C($$); }
-| sequential_body_577 sequential_entry { $$ = $1; P($$, $2); }
+| sequential_body_411 sequential_entry { $$ = $1; P($$, $2); }
 ;
 
-level_input_list_578:
+level_input_list_412:
 %empty { C($$); }
-| level_input_list_578 level_symbol { $$ = $1; P($$, $2); }
+| level_input_list_412 level_symbol { $$ = $1; P($$, $2); }
 ;
 
-edge_input_list_579:
+edge_input_list_413:
 %empty { C($$); }
-| edge_input_list_579 level_symbol { $$ = $1; P($$, $2); }
+| edge_input_list_413 level_symbol { $$ = $1; P($$, $2); }
 ;
 
-edge_input_list_580:
+edge_input_list_414:
 %empty { C($$); }
-| edge_input_list_580 level_symbol { $$ = $1; P($$, $2); }
+| edge_input_list_414 level_symbol { $$ = $1; P($$, $2); }
 ;
 
-udp_instantiation_581:
+udp_instantiation_415:
 %empty { C($$); }
-| drive_strength
+| udp_instantiation_415 ',' udp_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_instantiation_582:
+udp_instance_416:
 %empty { C($$); }
-| delay2
+| udp_instance_416 ',' input_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_instantiation_583:
+list_of_net_assignments_417:
 %empty { C($$); }
-| udp_instantiation_583 ',' udp_instance { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_net_assignments_417 ',' net_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_instance_584:
+list_of_variable_assignments_418:
 %empty { C($$); }
-| name_of_instance
+| list_of_variable_assignments_418 ',' variable_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-udp_instance_585:
+net_alias_419:
 %empty { C($$); }
-| udp_instance_585 ',' input_terminal { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| net_alias_419 '=' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-continuous_assign_586:
+blocking_assignment_420:
 %empty { C($$); }
-| drive_strength
-;
-
-continuous_assign_587:
-%empty { C($$); }
-| delay3
-;
-
-continuous_assign_588:
-%empty { C($$); }
-| delay_control
-;
-
-list_of_net_assignments_589:
-%empty { C($$); }
-| list_of_net_assignments_589 ',' net_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-list_of_variable_assignments_590:
-%empty { C($$); }
-| list_of_variable_assignments_590 ',' variable_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-net_alias_591:
-%empty { C($$); }
-| net_alias_591 '=' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-blocking_assignment_592:
-%empty /* { C($$); } -- ignore */
 | implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
 | class_scope
 | package_scope
 ;
 
-nonblocking_assignment_593:
+nonblocking_assignment_421:
 %empty { C($$); }
 | delay_or_event_control
 ;
 
-action_block_594:
+action_block_422:
 %empty { C($$); }
 | statement /* ignore */
 ;
 
-seq_block_595:
+seq_block_423:
 %empty { C($$); }
 | ':' block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-seq_block_596:
+seq_block_424:
 %empty { C($$); }
-| seq_block_596 block_item_declaration { $$ = $1; P($$, $2); }
+| seq_block_424 block_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-seq_block_597:
+seq_block_425:
 %empty { C($$); }
-| seq_block_597 statement_or_null { $$ = $1; P($$, $2); }
+| seq_block_425 statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-seq_block_598:
+par_block_426:
 %empty { C($$); }
-| ':' block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| par_block_426 block_item_declaration { $$ = $1; P($$, $2); }
 ;
 
-par_block_599:
+par_block_427:
 %empty { C($$); }
-| ':' block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| par_block_427 statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-par_block_600:
+statement_or_null_428:
 %empty { C($$); }
-| par_block_600 block_item_declaration { $$ = $1; P($$, $2); }
+| statement_or_null_428 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-par_block_601:
+statement_429:
 %empty { C($$); }
-| par_block_601 statement_or_null { $$ = $1; P($$, $2); }
+| statement_429 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-par_block_602:
+function_statement_or_null_430:
 %empty { C($$); }
-| ':' block_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| function_statement_or_null_430 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-statement_or_null_603:
+variable_identifier_list_431:
 %empty { C($$); }
-| statement_or_null_603 attribute_instance { $$ = $1; P($$, $2); }
+| variable_identifier_list_431 ',' variable_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-statement_604:
-%empty { C($$); }
-| block_identifier ':' { $$ = $1; T($$, @2, zero, zero); }
-;
-
-statement_605:
-%empty { C($$); }
-| statement_605 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-function_statement_or_null_606:
-%empty { C($$); }
-| function_statement_or_null_606 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-variable_identifier_list_607:
-%empty { C($$); }
-| variable_identifier_list_607 ',' variable_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-event_expression_608:
+event_expression_432:
 %empty { C($$); }
 | edge_identifier
 ;
 
-event_expression_609:
+event_expression_433:
 %empty { C($$); }
 | IFF_ expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-event_expression_610:
+wait_statement_434:
 %empty { C($$); }
-| IFF_ expression { C($$); T($$, @1, zero, zero); P($$, $2); }
+| wait_statement_434 ',' hierarchical_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-jump_statement_611:
-%empty { C($$); }
-| expression
-;
-
-wait_statement_612:
-%empty { C($$); }
-| wait_statement_612 ',' hierarchical_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-event_trigger_613:
-%empty { C($$); }
-| delay_or_event_control
-;
-
-conditional_statement_614:
+conditional_statement_435:
 %empty { C($$); }
 | unique_priority
 ;
 
-conditional_statement_615:
+conditional_statement_436:
 %empty { C($$); }
-| conditional_statement_615 ELSE_ IF_ '(' cond_predicate ')' statement_or_null { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+| conditional_statement_436 ELSE_ IF_ '(' cond_predicate ')' statement_or_null { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
 ;
 
-conditional_statement_616:
+conditional_statement_437:
 %empty { C($$); }
 | ELSE_ statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-cond_predicate_617:
+cond_predicate_438:
 %empty { C($$); }
-| cond_predicate_617 AMPAMPAMP expression_or_cond_pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| cond_predicate_438 AMPAMPAMP expression_or_cond_pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-case_statement_618:
+case_statement_439:
 %empty { C($$); }
-| unique_priority
+| case_statement_439 case_item { $$ = $1; P($$, $2); }
 ;
 
-case_statement_619:
+case_statement_440:
 %empty { C($$); }
-| case_statement_619 case_item { $$ = $1; P($$, $2); }
+| case_statement_440 case_pattern_item { $$ = $1; P($$, $2); }
 ;
 
-case_statement_620:
-%empty /* { C($$); } -- ignore */
-| unique_priority /* ignore */
-;
-
-case_statement_621:
+case_statement_441:
 %empty { C($$); }
-| case_statement_621 case_pattern_item { $$ = $1; P($$, $2); }
+| case_statement_441 case_inside_item { $$ = $1; P($$, $2); }
 ;
 
-case_statement_622:
-%empty /* { C($$); } -- ignore */
-| unique_priority /* ignore */
-;
-
-case_statement_623:
+case_item_442:
 %empty { C($$); }
-| case_statement_623 case_inside_item { $$ = $1; P($$, $2); }
+| case_item_442 ',' case_item_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-case_item_624:
-%empty { C($$); }
-| case_item_624 ',' case_item_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-case_item_625:
-%empty { C($$); }
-| ':' { C($$); T($$, @1, zero, zero); }
-;
-
-case_pattern_item_626:
+case_pattern_item_443:
 %empty { C($$); }
 | AMPAMPAMP expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-case_pattern_item_627:
+randcase_statement_444:
 %empty { C($$); }
-| ':' { C($$); T($$, @1, zero, zero); }
+| randcase_statement_444 randcase_item { $$ = $1; P($$, $2); }
 ;
 
-case_inside_item_628:
+open_range_list_445:
 %empty { C($$); }
-| ':' { C($$); T($$, @1, zero, zero); }
+| open_range_list_445 ',' open_value_range { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-randcase_statement_629:
-%empty { C($$); }
-| randcase_statement_629 randcase_item { $$ = $1; P($$, $2); }
-;
-
-open_range_list_630:
-%empty { C($$); }
-| open_range_list_630 ',' open_value_range { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-pattern_631:
+pattern_446:
 %empty { C($$); }
 | pattern
 ;
 
-pattern_632:
+pattern_447:
 %empty { C($$); }
-| pattern_632 ',' pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| pattern_447 ',' pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-pattern_633:
+pattern_448:
 %empty { C($$); }
-| pattern_633 ',' member_identifier ':' pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| pattern_448 ',' member_identifier ':' pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
-assignment_pattern_634:
+assignment_pattern_449:
 %empty { C($$); }
-| assignment_pattern_634 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| assignment_pattern_449 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-assignment_pattern_635:
+assignment_pattern_450:
 %empty { C($$); }
-| assignment_pattern_635 ',' structure_pattern_key ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| assignment_pattern_450 ',' structure_pattern_key ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
-assignment_pattern_636:
+assignment_pattern_451:
 %empty { C($$); }
-| assignment_pattern_636 ',' array_pattern_key ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
+| assignment_pattern_451 ',' array_pattern_key ':' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
-assignment_pattern_637:
+assignment_pattern_452:
 %empty { C($$); }
-| assignment_pattern_637 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| assignment_pattern_452 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-assignment_pattern_expression_638:
+assignment_pattern_expression_453:
 %empty { C($$); }
 | assignment_pattern_expression_type
 ;
 
-assignment_pattern_net_lvalue_639:
+assignment_pattern_net_lvalue_454:
 %empty { C($$); }
-| assignment_pattern_net_lvalue_639 ',' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| assignment_pattern_net_lvalue_454 ',' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-assignment_pattern_variable_lvalue_640:
+assignment_pattern_variable_lvalue_455:
 %empty { C($$); }
-| assignment_pattern_variable_lvalue_640 ',' variable_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| assignment_pattern_variable_lvalue_455 ',' variable_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-loop_statement_641:
+loop_statement_456:
 %empty { C($$); }
 | for_initialization
 ;
 
-loop_statement_642:
-%empty { C($$); }
-| expression
-;
-
-loop_statement_643:
+loop_statement_457:
 %empty { C($$); }
 | for_step
 ;
 
-loop_statement_644:
+for_initialization_458:
 %empty { C($$); }
-| loop_variables
+| for_initialization_458 ',' for_variable_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-for_initialization_645:
+for_variable_declaration_459:
 %empty { C($$); }
-| for_initialization_645 ',' for_variable_declaration { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| for_variable_declaration_459 ',' variable_identifier '=' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 ;
 
-for_variable_declaration_646:
+for_step_460:
 %empty { C($$); }
-| VAR_ { C($$); T($$, @1, zero, zero); }
+| for_step_460 ',' for_step_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-for_variable_declaration_647:
-%empty { C($$); }
-| for_variable_declaration_647 ',' variable_identifier '=' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
-;
-
-for_step_648:
-%empty { C($$); }
-| for_step_648 ',' for_step_assignment { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-loop_variables_649:
+loop_variables_461:
 %empty { C($$); }
 | index_variable_identifier
 ;
 
-loop_variables_650_650:
+loop_variables_462:
 %empty { C($$); }
-| index_variable_identifier
+| loop_variables_462 ',' loop_variables_461 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-loop_variables_650:
-%empty { C($$); }
-| loop_variables_650 ',' loop_variables_650_650 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-deferred_immediate_assertion_item_652:
-%empty /* { C($$); } -- ignore */
-| block_identifier ':' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
-;
-
-clocking_declaration_653:
+clocking_declaration_463:
 %empty { C($$); }
 | DEFAULT_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
 ;
 
-clocking_declaration_654:
+clocking_declaration_464:
 %empty { C($$); }
 | clocking_identifier
 ;
 
-clocking_declaration_655:
+clocking_declaration_465:
 %empty { C($$); }
-| clocking_declaration_655 clocking_item { $$ = $1; P($$, $2); }
+| clocking_declaration_465 clocking_item { $$ = $1; P($$, $2); }
 ;
 
-clocking_declaration_656:
-%empty { C($$); }
-| ':' clocking_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-clocking_declaration_657:
-%empty { C($$); }
-| clocking_identifier
-;
-
-clocking_declaration_658:
+clocking_declaration_466:
 %empty { C($$); }
 | ':' clocking_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-clocking_item_659:
+clocking_item_467:
 %empty { C($$); }
-| clocking_item_659 attribute_instance { $$ = $1; P($$, $2); }
+| clocking_item_467 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-clocking_direction_660:
-%empty { C($$); }
-| clocking_skew
-;
-
-clocking_direction_661:
+clocking_direction_468:
 %empty { C($$); }
 | clocking_skew
 ;
 
-clocking_direction_662:
+list_of_clocking_decl_assign_469:
 %empty { C($$); }
-| clocking_skew
+| list_of_clocking_decl_assign_469 ',' clocking_decl_assign { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-clocking_direction_663:
-%empty { C($$); }
-| clocking_skew
-;
-
-list_of_clocking_decl_assign_664:
-%empty { C($$); }
-| list_of_clocking_decl_assign_664 ',' clocking_decl_assign { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-clocking_decl_assign_665:
-%empty { C($$); }
-| '=' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-clocking_skew_666:
-%empty { C($$); }
-| delay_control
-;
-
-clocking_drive_667:
+clocking_drive_470:
 %empty { C($$); }
 | cycle_delay
 ;
 
-randsequence_statement_668:
+randsequence_statement_471:
 %empty { C($$); }
 | production_identifier
 ;
 
-randsequence_statement_669:
+randsequence_statement_472:
 %empty { C($$); }
-| randsequence_statement_669 production { $$ = $1; P($$, $2); }
+| randsequence_statement_472 production { $$ = $1; P($$, $2); }
 ;
 
-production_670:
+production_473:
 %empty /* { C($$); } -- ignore */
 | data_type_or_void
 ;
 
-production_671:
+production_474:
 %empty { C($$); }
 | '(' tf_port_list ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-production_672:
+production_475:
 %empty { C($$); }
-| production_672 '|' rs_rule { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| production_475 '|' rs_rule { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-rs_rule_673_673:
+rs_rule_476_476:
 %empty { C($$); }
 | rs_code_block
 ;
 
-rs_rule_673:
+rs_rule_476:
 %empty { C($$); }
-| CE weight_specification rs_rule_673_673 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| CE weight_specification rs_rule_476_476 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-rs_production_list_675:
+rs_production_list_478:
 %empty { C($$); }
-| rs_production_list_675 rs_prod { $$ = $1; P($$, $2); }
+| rs_production_list_478 rs_prod { $$ = $1; P($$, $2); }
 ;
 
-rs_production_list_676:
+rs_production_list_479:
 %empty { C($$); }
-| '(' expression ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| rs_production_list_479 production_item { $$ = $1; P($$, $2); }
 ;
 
-rs_production_list_677:
+rs_code_block_480:
 %empty { C($$); }
-| rs_production_list_677 production_item { $$ = $1; P($$, $2); }
+| rs_code_block_480 data_declaration { $$ = $1; P($$, $2); }
 ;
 
-rs_code_block_678:
+rs_code_block_481:
 %empty { C($$); }
-| rs_code_block_678 data_declaration { $$ = $1; P($$, $2); }
+| rs_code_block_481 statement_or_null { $$ = $1; P($$, $2); }
 ;
 
-rs_code_block_679:
-%empty { C($$); }
-| rs_code_block_679 statement_or_null { $$ = $1; P($$, $2); }
-;
-
-production_item_680:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-rs_if_else_681:
+rs_if_else_482:
 %empty { C($$); }
 | ELSE_ production_item { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-rs_case_682:
+rs_case_483:
 %empty { C($$); }
-| rs_case_682 rs_case_item { $$ = $1; P($$, $2); }
+| rs_case_483 rs_case_item { $$ = $1; P($$, $2); }
 ;
 
-rs_case_item_683:
+rs_case_item_484:
 %empty { C($$); }
-| rs_case_item_683 ',' case_item_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| rs_case_item_484 ',' case_item_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-rs_case_item_684:
+specify_block_485:
 %empty { C($$); }
-| ':' { C($$); T($$, @1, zero, zero); }
+| specify_block_485 specify_item { $$ = $1; P($$, $2); }
 ;
 
-specify_block_685:
-%empty { C($$); }
-| specify_block_685 specify_item { $$ = $1; P($$, $2); }
-;
-
-parallel_path_description_686:
+parallel_path_description_486:
 %empty { C($$); }
 | polarity_operator
 ;
 
-full_path_description_687:
+list_of_path_inputs_487:
 %empty { C($$); }
-| polarity_operator
+| list_of_path_inputs_487 ',' specify_input_terminal_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_path_inputs_688:
+list_of_path_outputs_488:
 %empty { C($$); }
-| list_of_path_inputs_688 ',' specify_input_terminal_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_path_outputs_488 ',' specify_output_terminal_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_path_outputs_689:
-%empty { C($$); }
-| list_of_path_outputs_689 ',' specify_output_terminal_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-specify_input_terminal_descriptor_690:
+specify_input_terminal_descriptor_489:
 %empty { C($$); }
 | '[' constant_range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-specify_output_terminal_descriptor_691:
-%empty { C($$); }
-| '[' constant_range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-parallel_edge_sensitive_path_description_692:
-%empty /* { C($$); } -- ignore */
-| edge_identifier
-;
-
-parallel_edge_sensitive_path_description_693:
-%empty { C($$); }
-| polarity_operator
-;
-
-parallel_edge_sensitive_path_description_694:
-%empty { C($$); }
-| polarity_operator
-;
-
-full_edge_sensitive_path_description_695:
-%empty /* { C($$); } -- ignore */
-| edge_identifier /* ignore */
-;
-
-full_edge_sensitive_path_description_696:
-%empty { C($$); }
-| polarity_operator
-;
-
-full_edge_sensitive_path_description_697:
-%empty { C($$); }
-| polarity_operator
-;
-
-setup_timing_check_698_698:
+setup_timing_check_490_490:
 %empty { C($$); }
 | notifier
 ;
 
-setup_timing_check_698:
+setup_timing_check_490:
 %empty { C($$); }
-| ',' setup_timing_check_698_698 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| ',' setup_timing_check_490_490 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-hold_timing_check_700_700:
-%empty { C($$); }
-| notifier
-;
-
-hold_timing_check_700:
-%empty { C($$); }
-| ',' hold_timing_check_700_700 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-setuphold_timing_check_702_702:
-%empty { C($$); }
-| notifier
-;
-
-setuphold_timing_check_702_703_703:
+setuphold_timing_check_492_492_492:
 %empty { C($$); }
 | timestamp_condition
 ;
 
-setuphold_timing_check_702_703_704_704:
+setuphold_timing_check_492_492_493_493:
 %empty { C($$); }
 | timecheck_condition
 ;
 
-setuphold_timing_check_702_703_704_705_705:
+setuphold_timing_check_492_492_493_494_494:
 %empty { C($$); }
 | delayed_reference
 ;
 
-setuphold_timing_check_702_703_704_705_706_706:
+setuphold_timing_check_492_492_493_494_495_495:
 %empty { C($$); }
 | delayed_data
 ;
 
-setuphold_timing_check_702_703_704_705_706:
+setuphold_timing_check_492_492_493_494_495:
 %empty { C($$); }
-| ',' setuphold_timing_check_702_703_704_705_706_706 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| ',' setuphold_timing_check_492_492_493_494_495_495 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-setuphold_timing_check_702_703_704_705:
+setuphold_timing_check_492_492_493_494:
 %empty { C($$); }
-| ',' setuphold_timing_check_702_703_704_705_705 setuphold_timing_check_702_703_704_705_706 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' setuphold_timing_check_492_492_493_494_494 setuphold_timing_check_492_492_493_494_495 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-setuphold_timing_check_702_703_704:
+setuphold_timing_check_492_492_493:
 %empty { C($$); }
-| ',' setuphold_timing_check_702_703_704_704 setuphold_timing_check_702_703_704_705 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' setuphold_timing_check_492_492_493_493 setuphold_timing_check_492_492_493_494 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-setuphold_timing_check_702_703:
+setuphold_timing_check_492_492:
 %empty { C($$); }
-| ',' setuphold_timing_check_702_703_703 setuphold_timing_check_702_703_704 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' setuphold_timing_check_492_492_492 setuphold_timing_check_492_492_493 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-setuphold_timing_check_702:
+setuphold_timing_check_492:
 %empty { C($$); }
-| ',' setuphold_timing_check_702_702 setuphold_timing_check_702_703 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' setup_timing_check_490_490 setuphold_timing_check_492_492 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-recovery_timing_check_712_712:
-%empty { C($$); }
-| notifier
-;
-
-recovery_timing_check_712:
-%empty { C($$); }
-| ',' recovery_timing_check_712_712 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-removal_timing_check_714_714:
-%empty { C($$); }
-| notifier
-;
-
-removal_timing_check_714:
-%empty { C($$); }
-| ',' removal_timing_check_714_714 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-recrem_timing_check_716_716:
-%empty { C($$); }
-| notifier
-;
-
-recrem_timing_check_716_717_717:
-%empty { C($$); }
-| timestamp_condition
-;
-
-recrem_timing_check_716_717_718_718:
-%empty { C($$); }
-| timecheck_condition
-;
-
-recrem_timing_check_716_717_718_719_719:
-%empty { C($$); }
-| delayed_reference
-;
-
-recrem_timing_check_716_717_718_719_720_720:
-%empty { C($$); }
-| delayed_data
-;
-
-recrem_timing_check_716_717_718_719_720:
-%empty { C($$); }
-| ',' recrem_timing_check_716_717_718_719_720_720 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-recrem_timing_check_716_717_718_719:
-%empty { C($$); }
-| ',' recrem_timing_check_716_717_718_719_719 recrem_timing_check_716_717_718_719_720 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-recrem_timing_check_716_717_718:
-%empty { C($$); }
-| ',' recrem_timing_check_716_717_718_718 recrem_timing_check_716_717_718_719 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-recrem_timing_check_716_717:
-%empty { C($$); }
-| ',' recrem_timing_check_716_717_717 recrem_timing_check_716_717_718 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-recrem_timing_check_716:
-%empty { C($$); }
-| ',' recrem_timing_check_716_716 recrem_timing_check_716_717 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-skew_timing_check_726_726:
-%empty { C($$); }
-| notifier
-;
-
-skew_timing_check_726:
-%empty { C($$); }
-| ',' skew_timing_check_726_726 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-timeskew_timing_check_728_728:
-%empty { C($$); }
-| notifier
-;
-
-timeskew_timing_check_728_729_729:
+timeskew_timing_check_501_501_501:
 %empty { C($$); }
 | event_based_flag
 ;
 
-timeskew_timing_check_728_729_730_730:
+timeskew_timing_check_501_501_502_502:
 %empty { C($$); }
 | remain_active_flag
 ;
 
-timeskew_timing_check_728_729_730:
+timeskew_timing_check_501_501_502:
 %empty { C($$); }
-| ',' timeskew_timing_check_728_729_730_730 { C($$); T($$, @1, zero, zero); P($$, $2); }
+| ',' timeskew_timing_check_501_501_502_502 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-timeskew_timing_check_728_729:
+timeskew_timing_check_501_501:
 %empty { C($$); }
-| ',' timeskew_timing_check_728_729_729 timeskew_timing_check_728_729_730 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' timeskew_timing_check_501_501_501 timeskew_timing_check_501_501_502 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-timeskew_timing_check_728:
+timeskew_timing_check_501:
 %empty { C($$); }
-| ',' timeskew_timing_check_728_728 timeskew_timing_check_728_729 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| ',' setup_timing_check_490_490 timeskew_timing_check_501_501 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-fullskew_timing_check_734_734:
-%empty { C($$); }
-| notifier
-;
-
-fullskew_timing_check_734_735_735:
-%empty { C($$); }
-| event_based_flag
-;
-
-fullskew_timing_check_734_735_736_736:
-%empty { C($$); }
-| remain_active_flag
-;
-
-fullskew_timing_check_734_735_736:
-%empty { C($$); }
-| ',' fullskew_timing_check_734_735_736_736 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-fullskew_timing_check_734_735:
-%empty { C($$); }
-| ',' fullskew_timing_check_734_735_735 fullskew_timing_check_734_735_736 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-fullskew_timing_check_734:
-%empty { C($$); }
-| ',' fullskew_timing_check_734_734 fullskew_timing_check_734_735 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
-;
-
-period_timing_check_740_740:
-%empty { C($$); }
-| notifier
-;
-
-period_timing_check_740:
-%empty { C($$); }
-| ',' period_timing_check_740_740 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-width_timing_check_742_742:
-%empty { C($$); }
-| notifier
-;
-
-width_timing_check_742:
-%empty { C($$); }
-| ',' width_timing_check_742_742 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-nochange_timing_check_744_744:
-%empty { C($$); }
-| notifier
-;
-
-nochange_timing_check_744:
-%empty { C($$); }
-| ',' nochange_timing_check_744_744 { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-timing_check_event_746:
+timing_check_event_506:
 %empty { C($$); }
 | timing_check_event_control
 ;
 
-timing_check_event_747:
+timing_check_event_507:
 %empty { C($$); }
 | AMPAMPAMP timing_check_condition { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-controlled_timing_check_event_748:
+edge_control_specifier_508:
 %empty { C($$); }
-| AMPAMPAMP timing_check_condition { C($$); T($$, @1, zero, zero); P($$, $2); }
+| edge_control_specifier_508 ',' edge_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-edge_control_specifier_749:
+concatenation_509:
 %empty { C($$); }
-| edge_control_specifier_749 ',' edge_descriptor { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| concatenation_509 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-concatenation_750:
+constant_concatenation_510:
 %empty { C($$); }
-| concatenation_750 ',' expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| constant_concatenation_510 ',' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-constant_concatenation_751:
+module_path_concatenation_511:
 %empty { C($$); }
-| constant_concatenation_751 ',' constant_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| module_path_concatenation_511 ',' module_path_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-module_path_concatenation_752:
-%empty { C($$); }
-| module_path_concatenation_752 ',' module_path_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-streaming_concatenation_753:
+streaming_concatenation_512:
 %empty /* { C($$); } -- ignore */
 | slice_size
 ;
 
-stream_concatenation_754:
+stream_concatenation_513:
 %empty { C($$); }
-| stream_concatenation_754 ',' stream_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| stream_concatenation_513 ',' stream_expression { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-stream_expression_755:
+stream_expression_514:
 %empty { C($$); }
 | WITH_ '[' array_range_expression ']' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-tf_call_756:
+tf_call_515:
 %empty { C($$); }
-| tf_call_756 attribute_instance { $$ = $1; P($$, $2); }
+| tf_call_515 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tf_call_757:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-system_tf_call_758:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-system_tf_call_759:
+system_tf_call_516:
 %empty { C($$); }
 | ',' expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
-subroutine_call_760:
+subroutine_call_517:
 %empty { C($$); }
 | stdCC { C($$); T($$, @1, zero, zero); }
 ;
 
-list_of_arguments_761:
+list_of_arguments_518:
 %empty { C($$); }
-| expression
+| list_of_arguments_518 ',' ansi_port_declaration_81 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-list_of_arguments_762_762:
+list_of_arguments_519:
 %empty { C($$); }
-| expression
+| list_of_arguments_519 ',' '.' identifier '(' ansi_port_declaration_81 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-list_of_arguments_762:
+list_of_arguments_520:
 %empty { C($$); }
-| list_of_arguments_762 ',' list_of_arguments_762_762 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| list_of_arguments_520 ',' '.' identifier '(' ansi_port_declaration_81 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
 ;
 
-list_of_arguments_764_764:
-%empty { C($$); }
-| expression
-;
-
-list_of_arguments_764:
-%empty { C($$); }
-| list_of_arguments_764 ',' '.' identifier '(' list_of_arguments_764_764 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
-;
-
-list_of_arguments_766:
-%empty { C($$); }
-| expression
-;
-
-list_of_arguments_767_767:
-%empty { C($$); }
-| expression
-;
-
-list_of_arguments_767:
-%empty { C($$); }
-| list_of_arguments_767 ',' '.' identifier '(' list_of_arguments_767_767 ')' { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
-;
-
-method_call_body_769:
+method_call_body_521:
 %empty /* { C($$); } -- ignore */
-| method_call_body_769 attribute_instance { $$ = $1; P($$, $2); }
+| method_call_body_521 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-method_call_body_770:
+array_manipulation_call_522:
 %empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| array_manipulation_call_522 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-array_manipulation_call_771:
-%empty { C($$); }
-| array_manipulation_call_771 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-array_manipulation_call_772:
-%empty { C($$); }
-| '(' list_of_arguments ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-array_manipulation_call_773:
+array_manipulation_call_523:
 %empty { C($$); }
 | WITH_ '(' expression ')' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-randomize_call_774:
+randomize_call_524:
 %empty { C($$); }
-| randomize_call_774 attribute_instance { $$ = $1; P($$, $2); }
+| randomize_call_524 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-randomize_call_775_775:
+randomize_call_525_525:
 %empty { C($$); }
 | variable_identifier_list
 | NULL_ { C($$); T($$, @1, zero, zero); }
 ;
 
-randomize_call_775:
+randomize_call_525:
 %empty { C($$); }
-| '(' randomize_call_775_775 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' randomize_call_525_525 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-randomize_call_777_777_777:
+randomize_call_527_527_527:
 %empty { C($$); }
 | identifier_list
 ;
 
-randomize_call_777_777:
+randomize_call_527_527:
 %empty { C($$); }
-| '(' randomize_call_777_777_777 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+| '(' randomize_call_527_527_527 ')' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-randomize_call_777:
+randomize_call_527:
 %empty { C($$); }
-| WITH_ randomize_call_777_777 constraint_block { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+| WITH_ randomize_call_527_527 constraint_block { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 ;
 
-inc_or_dec_expression_780:
+inc_or_dec_expression_530:
 %empty { C($$); }
-| inc_or_dec_expression_780 attribute_instance { $$ = $1; P($$, $2); }
+| inc_or_dec_expression_530 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-inc_or_dec_expression_781:
+inc_or_dec_expression_531:
 %empty { C($$); }
-| inc_or_dec_expression_781 attribute_instance { $$ = $1; P($$, $2); }
+| inc_or_dec_expression_531 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-conditional_expression_782:
+conditional_expression_532:
 %empty { C($$); }
-| conditional_expression_782 attribute_instance { $$ = $1; P($$, $2); }
+| conditional_expression_532 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-constant_expression_783:
+constant_expression_533:
 %empty { C($$); }
-| constant_expression_783 attribute_instance { $$ = $1; P($$, $2); }
+| constant_expression_533 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-constant_expression_784:
+constant_expression_534:
 %empty { C($$); }
-| constant_expression_784 attribute_instance { $$ = $1; P($$, $2); }
+| constant_expression_534 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-constant_expression_785:
+constant_expression_535:
 %empty { C($$); }
-| constant_expression_785 attribute_instance { $$ = $1; P($$, $2); }
+| constant_expression_535 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-expression_786:
+expression_536:
 %empty { C($$); }
-| expression_786 attribute_instance { $$ = $1; P($$, $2); }
+| expression_536 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-expression_787:
+expression_537:
 %empty { C($$); }
-| expression_787 attribute_instance { $$ = $1; P($$, $2); }
+| expression_537 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-tagged_union_expression_788:
+module_path_conditional_expression_538:
 %empty { C($$); }
-| expression
+| module_path_conditional_expression_538 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-module_path_conditional_expression_789:
+module_path_expression_539:
 %empty { C($$); }
-| module_path_conditional_expression_789 attribute_instance { $$ = $1; P($$, $2); }
+| module_path_expression_539 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-module_path_expression_790:
+module_path_expression_540:
 %empty { C($$); }
-| module_path_expression_790 attribute_instance { $$ = $1; P($$, $2); }
+| module_path_expression_540 attribute_instance { $$ = $1; P($$, $2); }
 ;
 
-module_path_expression_791:
-%empty { C($$); }
-| module_path_expression_791 attribute_instance { $$ = $1; P($$, $2); }
-;
-
-constant_primary_792:
-%empty { C($$); }
-| '[' constant_range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-constant_primary_793:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-| class_scope
-;
-
-constant_primary_794:
-%empty { C($$); }
-| '[' constant_range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-constant_primary_795:
-%empty { C($$); }
-| '[' constant_range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-primary_796:
+primary_541:
 %empty /* { C($$); } -- ignore */
 | class_qualifier
 | package_scope
 ;
 
-primary_797:
+primary_542:
 %empty { C($$); }
 | '[' range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-primary_798:
-%empty { C($$); }
-| '[' range_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
-;
-
-class_qualifier_799:
+class_qualifier_543:
 %empty /* { C($$); } -- ignore */
 | localCC { C($$); T($$, @1, zero, zero); }
 ;
 
-class_qualifier_800:
+bit_select_544:
 %empty { C($$); }
-| implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
-| class_scope
+| bit_select_544 '[' expression ']' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-bit_select_801:
+select_545_545:
 %empty { C($$); }
-| bit_select_801 '[' expression ']' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| select_545_545 '.' member_identifier bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-select_802_802:
+select_545:
 %empty { C($$); }
-| select_802_802 '.' member_identifier bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| select_545_545 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-select_802:
-%empty { C($$); }
-| select_802_802 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-select_804:
+select_547:
 %empty { C($$); }
 | '[' part_select_range ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-nonrange_select_805_805:
-%empty { C($$); }
-| nonrange_select_805_805 '.' member_identifier bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+nonrange_select_548_548:
+%empty /* { C($$); } -- ignore */
+| nonrange_select_548_548 '.' member_identifier bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-nonrange_select_805:
-%empty { C($$); }
-| nonrange_select_805_805 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+nonrange_select_548:
+%empty /* { C($$); } -- ignore */
+| nonrange_select_548_548 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-constant_bit_select_807:
+constant_bit_select_550:
 %empty { C($$); }
-| constant_bit_select_807 '[' constant_expression ']' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+| constant_bit_select_550 '[' constant_expression ']' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-constant_select_808_808:
+constant_select_551_551:
 %empty { C($$); }
-| constant_select_808_808 '.' member_identifier constant_bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
+| constant_select_551_551 '.' member_identifier constant_bit_select { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); }
 ;
 
-constant_select_808:
+constant_select_551:
 %empty { C($$); }
-| constant_select_808_808 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| constant_select_551_551 '.' member_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-constant_select_810:
+constant_select_553:
 %empty { C($$); }
 | '[' constant_part_select_range ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-net_lvalue_811:
+net_lvalue_554:
 %empty { C($$); }
-| net_lvalue_811 ',' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| net_lvalue_554 ',' net_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-net_lvalue_812:
-%empty { C($$); }
-| assignment_pattern_expression_type
-;
-
-variable_lvalue_813:
+variable_lvalue_555:
 %empty { C($$); }
 | implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
 | package_scope
 ;
 
-variable_lvalue_814:
+variable_lvalue_556:
 %empty { C($$); }
-| variable_lvalue_814 ',' variable_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| variable_lvalue_556 ',' variable_lvalue { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-variable_lvalue_815:
+attribute_instance_557:
 %empty { C($$); }
-| assignment_pattern_expression_type
+| attribute_instance_557 ',' attr_spec { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
-nonrange_variable_lvalue_816:
-%empty /* { C($$); } -- ignore */
-| implicit_class_handle '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
-| package_scope /* ignore */
-;
-
-attribute_instance_817:
-%empty { C($$); }
-| attribute_instance_817 ',' attr_spec { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
-;
-
-attr_spec_818:
-%empty { C($$); }
-| '=' constant_expression { C($$); T($$, @1, zero, zero); P($$, $2); }
-;
-
-hierarchical_identifier_819:
+hierarchical_identifier_558:
 %empty { C($$); }
 | Droot '.' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
 ;
 
-hierarchical_identifier_820:
+hierarchical_identifier_559:
 %empty { C($$); }
-| hierarchical_identifier_820 identifier constant_bit_select '.' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| hierarchical_identifier_559 identifier constant_bit_select '.' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-ps_class_identifier_821:
-%empty /* { C($$); } -- ignore */
-| package_scope
-;
-
-ps_covergroup_identifier_822:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-;
-
-ps_checker_identifier_823:
-%empty /* { C($$); } -- ignore */
-| package_scope
-;
-
-ps_identifier_824:
-%empty /* { C($$); } -- ignore */
-| package_scope
-;
-
-ps_or_hierarchical_array_identifier_825:
-%empty { C($$); }
-| implicit_class_handle '.' { $$ = $1; T($$, @2, zero, zero); }
-| class_scope
-| package_scope
-;
-
-ps_or_hierarchical_net_identifier_826:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-;
-
-ps_or_hierarchical_property_identifier_827:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-;
-
-ps_or_hierarchical_sequence_identifier_828:
-%empty /* { C($$); } -- ignore */
-| package_scope
-;
-
-ps_or_hierarchical_tf_identifier_829:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-;
-
-ps_parameter_identifier_830:
-%empty /* { C($$); } -- ignore */
-| package_scope /* ignore */
-| class_scope
-;
-
-ps_parameter_identifier_831_831:
+ps_parameter_identifier_560_560:
 %empty { C($$); }
 | '[' constant_expression ']' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
-ps_parameter_identifier_831:
+ps_parameter_identifier_560:
 %empty /* { C($$); } -- ignore */
-| ps_parameter_identifier_831 generate_block_identifier ps_parameter_identifier_831_831 '.' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+| ps_parameter_identifier_560 generate_block_identifier ps_parameter_identifier_560_560 '.' { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); }
 ;
 
-ps_type_identifier_833:
+ps_type_identifier_562:
 %empty /* { C($$); } -- ignore */
 | localCC { C($$); T($$, @1, zero, zero); }
 | package_scope /* ignore */

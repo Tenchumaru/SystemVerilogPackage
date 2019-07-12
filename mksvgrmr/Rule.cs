@@ -31,9 +31,17 @@ namespace mksvgrmr
                         if(innerText == "{" || innerText == "[")
                         {
                             var s = $"{name}_{extras.Count}";
-                            var r = new Rule(s, nodes);
-                            extras.Add(r);
-                            RightHandSide.Add(s);
+                            var rule = new Rule(s, nodes);
+                            var currentRule = extras.FirstOrDefault(r => Enumerable.SequenceEqual(r.RightHandSide, rule.RightHandSide));
+                            if(currentRule == null)
+                            {
+                                extras.Add(rule);
+                                RightHandSide.Add(s);
+                            }
+                            else
+                            {
+                                RightHandSide.Add(currentRule.Name);
+                            }
                         }
                         else if(innerText == "]")
                         {
