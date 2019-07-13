@@ -56,9 +56,9 @@ function Main() {
     if(match) {
       i = Number(match[1]) - 1;
       text = lines[i];
-      n = text.indexOf('{');
+      n = text.indexOf(' { ');
       if(~n) {
-        lines[i] = text.substr(0, n) + '/* ' + text.substr(n) + ' -- ignore */';
+        lines[i] = text.substr(0, n) + ' /*' + text.substr(n) + ' -- ignore */';
       } else {
         lines[i] += ' /* ignore */';
       }
