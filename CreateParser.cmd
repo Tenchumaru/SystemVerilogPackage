@@ -7,15 +7,19 @@ SET T=%TEMP%\%RANDOM%
 REM Create the parser.
 mksvgrmr\bin\Debug\mksvgrmr.exe parser "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
 win_bison --output=NUL --defines=%T%__ %T% 2> %T%_
+IF NOT EXIST %T%__ (
+	TYPE %T%_
+	EXIT /B 1
+)
 cscript //nologo add_ignore.js %T% %T%_
 cscript //nologo mknames.js %T%__ Utility\names.inl
-COPY /B header.y+%T%+footer.y %T%_
+COPY /B header.y+%T%+footer.y %T%_ > NUL
 CALL :copy_if_newer %T%_ Utility\parser.y
 DEL %T%*
 
 REM Create the scanner.
 mksvgrmr\bin\Debug\mksvgrmr.exe scanner "tmp\SystemVerilog IEEE 1800-2012 Grammar - Sigasi.html" %T%
-COPY /B header.l+%T%+footer.l %T%_
+COPY /B header.l+%T%+footer.l %T%_ > NUL
 CALL :copy_if_newer %T%_ Utility\scanner.l
 DEL %T%
 
