@@ -89,9 +89,10 @@ namespace mksvgrmr
             extras.Add(new Rule("real_number", "REAL_NUMBER_"));
             extras.Add(new Rule("unbased_unsized_literal", "UNBASED_UNSIZED_LITERAL_"));
             extras.Add(new Rule("unsigned_number", "INTEGRAL_NUMBER_"));
-            q = q.Concat(extras).ToArray();
+            q = q.Concat(extras);
 
-            // Prepare the output.
+            // Sort the rules and prepare the output.
+            q = q.OrderBy(r => r.Name).ToArray();
             using(fout = outputFilePath != null ? File.CreateText(outputFilePath) : Console.Out)
             {
                 // Print the token declarations.
