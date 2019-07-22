@@ -1063,6 +1063,9 @@
 %type<results> type_identifier
 %type<results> udp_identifier
 %type<results> variable_identifier
+%type<results> dotted_identifier
+%type<results> opt_dotted_identifier
+%type<results> level_symbol_0n
 %type<results> library_text_0
 %type<results> library_declaration_1
 %type<results> library_declaration_2_2
@@ -1763,10 +1766,11 @@ package_declaration_55 PACKAGE_ module_nonansi_header_9 package_identifier ';' s
 ;
 
 timeunits_declaration:
-TIMEUNIT_ time_literal timeunits_declaration_59 ';' { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+TIMEUNIT_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | TIMEPRECISION_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 | TIMEUNIT_ time_literal ';' TIMEPRECISION_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 | TIMEPRECISION_ time_literal ';' TIMEUNIT_ time_literal ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+| TIMEUNIT_ time_literal '/' time_literal ':' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); }
 ;
 
 parameter_port_list:
@@ -1909,8 +1913,7 @@ BIND_ bind_target_scope bind_directive_92 bind_instantiation ';' { C($$); T($$, 
 ;
 
 bind_target_scope:
-module_identifier
-| interface_identifier
+identifier
 ;
 
 bind_target_instance:
@@ -1933,7 +1936,7 @@ CONFIG_ config_identifier ';' config_declaration_94 design_statement config_decl
 ;
 
 design_statement:
-DESIGN_ design_statement_97 ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+DESIGN_ opt_dotted_identifier ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 config_rule_statement:
@@ -1957,7 +1960,7 @@ topmodule_identifier inst_name_99 { $$ = $1; P($$, $2); }
 ;
 
 cell_clause:
-CELL_ design_statement_97_97 cell_identifier { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+CELL_ dotted_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 liblist_clause:
@@ -1965,9 +1968,9 @@ LIBLIST_ liblist_clause_100 { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 use_clause:
-USE_ design_statement_97_97 cell_identifier use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
+USE_ dotted_identifier use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
 | USE_ named_parameter_assignment use_clause_102 use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); }
-| USE_ design_statement_97_97 cell_identifier named_parameter_assignment use_clause_103 use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+| USE_ dotted_identifier named_parameter_assignment use_clause_103 use_clause_101 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 interface_or_generate_item:
@@ -2150,7 +2153,7 @@ constraint_expression_143 expression_or_dist ';' { $$ = $1; P($$, $2); T($$, @3,
 | uniqueness_constraint ';' { $$ = $1; T($$, @2, zero, zero); }
 | expression MG constraint_set { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | IF_ '(' expression ')' constraint_set constraint_expression_144 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
-| FOREACH_ '(' ps_or_hierarchical_array_identifier constraint_expression_145 ')' constraint_set { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| FOREACH_ '(' ps_or_hierarchical_array_identifier loop_variables ')' constraint_set { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 | DISABLE_ SOFT_ constraint_primary ';' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
@@ -3157,8 +3160,7 @@ cross_item ',' cross_item list_of_cross_items_343 { $$ = $1; T($$, @2, zero, zer
 ;
 
 cross_item:
-cover_point_identifier
-| variable_identifier
+identifier
 ;
 
 cross_body:
@@ -3196,8 +3198,7 @@ BINSOF_ '(' bins_expression ')' select_condition_348 { C($$); T($$, @1, zero, ze
 ;
 
 bins_expression:
-variable_identifier
-| cover_point_identifier bins_expression_349 { $$ = $1; P($$, $2); }
+dotted_identifier
 ;
 
 covergroup_range_list:
@@ -3514,16 +3515,15 @@ udp_reg_declaration_408 REG_ variable_identifier { $$ = $1; T($$, @2, zero, zero
 ;
 
 udp_body:
-combinational_body
-| sequential_body
+sequential_body
 ;
 
 combinational_body:
-TABLE_ combinational_body_409 ENDTABLE_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
+TABLE_ combinational_body_409 ENDTABLE_ /* { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); } -- ignore */
 ;
 
 combinational_entry:
-level_input_list ':' output_symbol ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
+level_input_list ':' output_symbol ';' /* { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); } -- ignore */
 ;
 
 sequential_body:
@@ -3549,19 +3549,21 @@ _1APOSb0 { C($$); T($$, @1, zero, zero); }
 
 sequential_entry:
 seq_input_list ':' current_state ':' next_state ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
+| seq_input_list ':' output_symbol ';' { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 seq_input_list:
-level_input_list
-| edge_input_list
+edge_indicator level_symbol_0n { $$ = $1; P($$, $2); }
+| level_symbol level_symbol_0n { $$ = $1; P($$, $2); }
+| level_symbol edge_indicator level_symbol_0n { $$ = $1; P($$, $2); P($$, $3); }
 ;
 
 level_input_list:
-level_input_list_412
+level_input_list_412 /* ignore */
 ;
 
 edge_input_list:
-edge_input_list_413 edge_indicator edge_input_list_414 { $$ = $1; P($$, $2); P($$, $3); }
+edge_input_list_413 edge_indicator edge_input_list_414 /* { $$ = $1; P($$, $2); P($$, $3); } -- ignore */
 ;
 
 edge_indicator:
@@ -3957,7 +3959,7 @@ FOREVER_ statement_or_null { C($$); T($$, @1, zero, zero); P($$, $2); }
 | WHILE_ '(' expression ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | FOR_ '(' loop_statement_456 ';' ansi_port_declaration_81 ';' loop_statement_457 ')' statement_or_null { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); P($$, $9); }
 | DO_ statement_or_null WHILE_ '(' expression ')' ';' { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); T($$, @7, zero, zero); }
-| FOREACH_ '(' ps_or_hierarchical_array_identifier constraint_expression_145 ')' statement { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+| FOREACH_ '(' ps_or_hierarchical_array_identifier loop_variables ')' statement { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 ;
 
 for_initialization:
@@ -3980,7 +3982,9 @@ operator_assignment
 ;
 
 loop_variables:
-loop_variables_461 loop_variables_462 { $$ = $1; P($$, $2); }
+identifier
+| loop_variables ',' { $$ = $1; T($$, @2, zero, zero); }
+| loop_variables ',' identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 subroutine_call_statement:
@@ -4220,14 +4224,12 @@ output_identifier specify_input_terminal_descriptor_489 { $$ = $1; P($$, $2); }
 ;
 
 input_identifier:
-input_port_identifier
-| inout_port_identifier
+identifier
 | interface_identifier '.' port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 output_identifier:
-output_port_identifier
-| inout_port_identifier
+identifier
 | interface_identifier '.' port_identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
@@ -4624,7 +4626,7 @@ ansi_port_declaration_81 list_of_arguments_518 list_of_arguments_519 { $$ = $1; 
 ;
 
 method_call:
-method_call_root '.' method_call_body { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+method_call_root method_call_body { $$ = $1; P($$, $2); }
 ;
 
 method_call_body:
@@ -4646,7 +4648,7 @@ RANDOMIZE_ randomize_call_524 randomize_call_525 randomize_call_527 { C($$); T($
 ;
 
 method_call_root:
-primary
+primary '.' { $$ = $1; T($$, @2, zero, zero); }
 | implicit_class_handle
 ;
 
@@ -4844,9 +4846,9 @@ time_unit:
 ;
 
 implicit_class_handle:
-THIS_ /* { C($$); T($$, @1, zero, zero); } -- ignore */
-| SUPER_ { C($$); T($$, @1, zero, zero); }
-| THIS_ '.' SUPER_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); }
+THIS_ '.' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
+| SUPER_ '.' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); }
+| THIS_ '.' SUPER_ '.' { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); T($$, @3, zero, zero); T($$, @4, zero, zero); }
 ;
 
 bit_select:
@@ -4999,7 +5001,7 @@ identifier
 ;
 
 cell_identifier:
-identifier
+identifier /* ignore */
 ;
 
 checker_identifier:
@@ -5116,7 +5118,7 @@ simple_identifier
 ;
 
 index_variable_identifier:
-identifier
+identifier /* ignore */
 ;
 
 interface_identifier:
@@ -5128,7 +5130,7 @@ identifier
 ;
 
 inout_port_identifier:
-identifier
+identifier /* ignore */
 ;
 
 input_port_identifier:
@@ -5201,19 +5203,21 @@ identifier
 ;
 
 ps_class_identifier:
-let_expression_314 class_identifier { $$ = $1; P($$, $2); }
+ps_identifier
 ;
 
 ps_covergroup_identifier:
-let_expression_314 covergroup_identifier { $$ = $1; P($$, $2); }
+ps_identifier /* ignore */
 ;
 
 ps_checker_identifier:
-let_expression_314 checker_identifier { $$ = $1; P($$, $2); }
+ps_identifier
 ;
 
 ps_identifier:
-let_expression_314 identifier { $$ = $1; P($$, $2); }
+identifier
+| package_identifier CC identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+| Dunit CC identifier { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); }
 ;
 
 ps_or_hierarchical_array_identifier:
@@ -5246,7 +5250,9 @@ net_type_declaration_167_167 parameter_identifier { $$ = $1; P($$, $2); }
 ;
 
 ps_type_identifier:
-ps_type_identifier_562 type_identifier { $$ = $1; P($$, $2); }
+type_identifier
+| localCC type_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| package_scope type_identifier { $$ = $1; P($$, $2); }
 ;
 
 sequence_identifier:
@@ -5287,6 +5293,21 @@ identifier
 
 variable_identifier:
 identifier
+;
+
+dotted_identifier:
+identifier
+| identifier '.' identifier { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+;
+
+opt_dotted_identifier:
+%empty { C($$); }
+| dotted_identifier
+;
+
+level_symbol_0n:
+%empty { C($$); }
+| level_symbol_0n level_symbol { $$ = $1; P($$, $2); }
 ;
 
 library_text_0:
@@ -5586,7 +5607,7 @@ package_declaration_58:
 
 timeunits_declaration_59:
 %empty /* { C($$); } -- ignore */
-| '/' time_literal { C($$); T($$, @1, zero, zero); P($$, $2); }
+| '/' time_literal /* { C($$); T($$, @1, zero, zero); P($$, $2); } -- ignore */
 ;
 
 parameter_port_list_60:
@@ -5777,12 +5798,12 @@ config_declaration_96:
 
 design_statement_97_97:
 %empty /* { C($$); } -- ignore */
-| library_identifier '.' { $$ = $1; T($$, @2, zero, zero); }
+| library_identifier '.' /* { $$ = $1; T($$, @2, zero, zero); } -- ignore */
 ;
 
 design_statement_97:
-%empty { C($$); }
-| design_statement_97 design_statement_97_97 cell_identifier { $$ = $1; P($$, $2); P($$, $3); }
+%empty /* { C($$); } -- ignore */
+| design_statement_97 design_statement_97_97 cell_identifier /* { $$ = $1; P($$, $2); P($$, $3); } -- ignore */
 ;
 
 inst_name_99:
@@ -6017,8 +6038,8 @@ constraint_expression_144:
 ;
 
 constraint_expression_145:
-%empty { C($$); }
-| loop_variables
+%empty /* { C($$); } -- ignore */
+| loop_variables /* ignore */
 ;
 
 constraint_set_146:
@@ -7047,8 +7068,8 @@ select_condition_348:
 ;
 
 bins_expression_349:
-%empty { C($$); }
-| '.' bin_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+%empty /* { C($$); } -- ignore */
+| '.' bin_identifier /* { C($$); T($$, @1, zero, zero); P($$, $2); } -- ignore */
 ;
 
 covergroup_range_list_350:
@@ -7347,12 +7368,12 @@ udp_reg_declaration_408:
 ;
 
 combinational_body_409:
-combinational_entry
-| combinational_body_409 combinational_entry { $$ = $1; P($$, $2); }
+combinational_entry /* ignore */
+| combinational_body_409 combinational_entry /* { $$ = $1; P($$, $2); } -- ignore */
 ;
 
 sequential_body_410:
-%empty /* { C($$); } -- ignore */
+%empty { C($$); }
 | udp_initial_statement
 ;
 
@@ -7362,18 +7383,18 @@ sequential_entry
 ;
 
 level_input_list_412:
-level_symbol
-| level_input_list_412 level_symbol { $$ = $1; P($$, $2); }
+level_symbol /* ignore */
+| level_input_list_412 level_symbol /* { $$ = $1; P($$, $2); } -- ignore */
 ;
 
 edge_input_list_413:
-%empty { C($$); }
-| edge_input_list_413 level_symbol { $$ = $1; P($$, $2); }
+%empty /* { C($$); } -- ignore */
+| edge_input_list_413 level_symbol /* { $$ = $1; P($$, $2); } -- ignore */
 ;
 
 edge_input_list_414:
-%empty { C($$); }
-| edge_input_list_414 level_symbol { $$ = $1; P($$, $2); }
+%empty /* { C($$); } -- ignore */
+| edge_input_list_414 level_symbol /* { $$ = $1; P($$, $2); } -- ignore */
 ;
 
 udp_instantiation_415:
@@ -7609,13 +7630,13 @@ for_step_460:
 ;
 
 loop_variables_461:
-%empty { C($$); }
-| index_variable_identifier
+%empty /* { C($$); } -- ignore */
+| index_variable_identifier /* ignore */
 ;
 
 loop_variables_462:
-%empty { C($$); }
-| loop_variables_462 ',' loop_variables_461 { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
+%empty /* { C($$); } -- ignore */
+| loop_variables_462 ',' loop_variables_461 /* { $$ = $1; T($$, @2, zero, zero); P($$, $3); } -- ignore */
 ;
 
 clocking_declaration_463:
@@ -8118,7 +8139,7 @@ ps_parameter_identifier_560:
 
 ps_type_identifier_562:
 %empty /* { C($$); } -- ignore */
-| localCC { C($$); T($$, @1, zero, zero); }
+| localCC /* { C($$); T($$, @1, zero, zero); } -- ignore */
 | package_scope /* ignore */
 ;
 
