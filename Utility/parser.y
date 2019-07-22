@@ -2326,7 +2326,7 @@ data_type:
 integer_vector_type data_type_169 data_type_170 { $$ = $1; P($$, $2); P($$, $3); }
 | integer_atom_type data_type_169 { $$ = $1; P($$, $2); }
 | non_integer_type
-| struct_union data_type_171 '{' struct_union_member data_type_172 '}' data_type_173 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
+| struct_union data_type_171 '{' data_type_172 '}' data_type_173 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
 | ENUM_ data_type_174 '{' enum_name_declaration data_type_175 '}' data_type_176 { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); P($$, $4); P($$, $5); T($$, @6, zero, zero); P($$, $7); }
 | STRING_ { C($$); T($$, @1, zero, zero); }
 | CHANDLE_ { C($$); T($$, @1, zero, zero); }
@@ -2884,7 +2884,7 @@ sequence_expr
 | sequence_expr PIPEMG property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr PIPEEG property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | IF_ '(' expression_or_dist ')' property_expr property_expr_277 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); }
-| CASE_ '(' expression_or_dist ')' property_case_item property_expr_278 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+| CASE_ '(' expression_or_dist ')' property_expr_278 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 | sequence_expr NMN property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | sequence_expr NEN property_expr { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 | NEXTTIME_ property_expr { C($$); T($$, @1, zero, zero); P($$, $2); }
@@ -3451,7 +3451,7 @@ IF_ '(' constant_expression ')' generate_block if_generate_construct_391 { C($$)
 ;
 
 case_generate_construct:
-CASE_ '(' constant_expression ')' case_generate_item case_generate_construct_392 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+CASE_ '(' constant_expression ')' case_generate_construct_392 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 case_generate_item:
@@ -3479,7 +3479,7 @@ udp_ansi_declaration_398 PRIMITIVE_ udp_identifier '(' udp_declaration_port_list
 ;
 
 udp_declaration:
-udp_nonansi_declaration udp_port_declaration udp_declaration_399 udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; P($$, $2); P($$, $3); P($$, $4); T($$, @5, zero, zero); P($$, $6); }
+udp_nonansi_declaration udp_declaration_399 udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; P($$, $2); P($$, $3); T($$, @4, zero, zero); P($$, $5); }
 | udp_ansi_declaration udp_body ENDPRIMITIVE_ udp_declaration_400 { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); }
 | EXTERN_ udp_nonansi_declaration { C($$); T($$, @1, zero, zero); P($$, $2); }
 | EXTERN_ udp_ansi_declaration { C($$); T($$, @1, zero, zero); P($$, $2); }
@@ -3519,7 +3519,7 @@ combinational_body
 ;
 
 combinational_body:
-TABLE_ combinational_entry combinational_body_409 ENDTABLE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+TABLE_ combinational_body_409 ENDTABLE_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 combinational_entry:
@@ -3527,7 +3527,7 @@ level_input_list ':' output_symbol ';' { $$ = $1; T($$, @2, zero, zero); P($$, $
 ;
 
 sequential_body:
-sequential_body_410 TABLE_ sequential_entry sequential_body_411 ENDTABLE_ { $$ = $1; T($$, @2, zero, zero); P($$, $3); P($$, $4); T($$, @5, zero, zero); }
+sequential_body_410 TABLE_ sequential_body_411 ENDTABLE_ { $$ = $1; T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); }
 ;
 
 udp_initial_statement:
@@ -3557,7 +3557,7 @@ level_input_list
 ;
 
 level_input_list:
-level_symbol level_input_list_412 { $$ = $1; P($$, $2); }
+level_input_list_412
 ;
 
 edge_input_list:
@@ -3847,9 +3847,9 @@ expression MATCHES_ pattern { $$ = $1; T($$, @2, zero, zero); P($$, $3); }
 ;
 
 case_statement:
-conditional_statement_435 case_keyword '(' case_expression ')' case_item case_statement_439 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); P($$, $7); T($$, @8, zero, zero); }
-| conditional_statement_435 case_keyword '(' case_expression ')' MATCHES_ case_pattern_item case_statement_440 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
-| conditional_statement_435 CASE_ '(' case_expression ')' INSIDE_ case_inside_item case_statement_441 ENDCASE_ { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); P($$, $8); T($$, @9, zero, zero); }
+conditional_statement_435 case_keyword '(' case_expression ')' case_statement_439 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); P($$, $6); T($$, @7, zero, zero); }
+| conditional_statement_435 case_keyword '(' case_expression ')' MATCHES_ case_statement_440 ENDCASE_ { $$ = $1; P($$, $2); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
+| conditional_statement_435 CASE_ '(' case_expression ')' INSIDE_ case_statement_441 ENDCASE_ { $$ = $1; T($$, @2, zero, zero); T($$, @3, zero, zero); P($$, $4); T($$, @5, zero, zero); T($$, @6, zero, zero); P($$, $7); T($$, @8, zero, zero); }
 ;
 
 case_keyword:
@@ -3882,7 +3882,7 @@ expression
 ;
 
 randcase_statement:
-RANDCASE_ randcase_item randcase_statement_444 ENDCASE_ { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); T($$, @4, zero, zero); }
+RANDCASE_ randcase_statement_444 ENDCASE_ { C($$); T($$, @1, zero, zero); P($$, $2); T($$, @3, zero, zero); }
 ;
 
 randcase_item:
@@ -4108,7 +4108,7 @@ clockvar select { $$ = $1; P($$, $2); }
 ;
 
 randsequence_statement:
-RANDSEQUENCE_ '(' randsequence_statement_471 ')' production randsequence_statement_472 ENDSEQUENCE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+RANDSEQUENCE_ '(' randsequence_statement_471 ')' randsequence_statement_472 ENDSEQUENCE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 production:
@@ -4120,8 +4120,8 @@ rs_production_list rs_rule_476 { $$ = $1; P($$, $2); }
 ;
 
 rs_production_list:
-rs_prod rs_production_list_478 { $$ = $1; P($$, $2); }
-| RAND_ JOIN_ dynamic_array_new_223 production_item production_item rs_production_list_479 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); P($$, $6); }
+rs_production_list_478
+| RAND_ JOIN_ dynamic_array_new_223 production_item rs_production_list_479 { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); P($$, $4); P($$, $5); }
 ;
 
 weight_specification:
@@ -4154,7 +4154,7 @@ REPEAT_ '(' expression ')' production_item { C($$); T($$, @1, zero, zero); T($$,
 ;
 
 rs_case:
-CASE_ '(' case_expression ')' rs_case_item rs_case_483 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); P($$, $6); T($$, @7, zero, zero); }
+CASE_ '(' case_expression ')' rs_case_483 ENDCASE_ { C($$); T($$, @1, zero, zero); T($$, @2, zero, zero); P($$, $3); T($$, @4, zero, zero); P($$, $5); T($$, @6, zero, zero); }
 ;
 
 rs_case_item:
@@ -6159,7 +6159,7 @@ data_type_171:
 ;
 
 data_type_172:
-%empty { C($$); }
+struct_union_member
 | data_type_172 struct_union_member { $$ = $1; P($$, $2); }
 ;
 
@@ -6691,7 +6691,7 @@ property_expr_277:
 ;
 
 property_expr_278:
-%empty { C($$); }
+property_case_item
 | property_expr_278 property_case_item { $$ = $1; P($$, $2); }
 ;
 
@@ -7262,7 +7262,7 @@ if_generate_construct_391:
 ;
 
 case_generate_construct_392:
-%empty { C($$); }
+case_generate_item
 | case_generate_construct_392 case_generate_item { $$ = $1; P($$, $2); }
 ;
 
@@ -7297,7 +7297,7 @@ udp_ansi_declaration_398:
 ;
 
 udp_declaration_399:
-%empty { C($$); }
+udp_port_declaration
 | udp_declaration_399 udp_port_declaration { $$ = $1; P($$, $2); }
 ;
 
@@ -7347,7 +7347,7 @@ udp_reg_declaration_408:
 ;
 
 combinational_body_409:
-%empty { C($$); }
+combinational_entry
 | combinational_body_409 combinational_entry { $$ = $1; P($$, $2); }
 ;
 
@@ -7357,12 +7357,12 @@ sequential_body_410:
 ;
 
 sequential_body_411:
-%empty { C($$); }
+sequential_entry
 | sequential_body_411 sequential_entry { $$ = $1; P($$, $2); }
 ;
 
 level_input_list_412:
-%empty { C($$); }
+level_symbol
 | level_input_list_412 level_symbol { $$ = $1; P($$, $2); }
 ;
 
@@ -7499,17 +7499,17 @@ cond_predicate_438:
 ;
 
 case_statement_439:
-%empty { C($$); }
+case_item
 | case_statement_439 case_item { $$ = $1; P($$, $2); }
 ;
 
 case_statement_440:
-%empty { C($$); }
+case_pattern_item
 | case_statement_440 case_pattern_item { $$ = $1; P($$, $2); }
 ;
 
 case_statement_441:
-%empty { C($$); }
+case_inside_item
 | case_statement_441 case_inside_item { $$ = $1; P($$, $2); }
 ;
 
@@ -7524,7 +7524,7 @@ case_pattern_item_443:
 ;
 
 randcase_statement_444:
-%empty { C($$); }
+randcase_item
 | randcase_statement_444 randcase_item { $$ = $1; P($$, $2); }
 ;
 
@@ -7664,7 +7664,7 @@ randsequence_statement_471:
 ;
 
 randsequence_statement_472:
-%empty { C($$); }
+production
 | randsequence_statement_472 production { $$ = $1; P($$, $2); }
 ;
 
@@ -7694,12 +7694,12 @@ rs_rule_476:
 ;
 
 rs_production_list_478:
-%empty { C($$); }
+rs_prod
 | rs_production_list_478 rs_prod { $$ = $1; P($$, $2); }
 ;
 
 rs_production_list_479:
-%empty { C($$); }
+production_item
 | rs_production_list_479 production_item { $$ = $1; P($$, $2); }
 ;
 
@@ -7719,7 +7719,7 @@ rs_if_else_482:
 ;
 
 rs_case_483:
-%empty { C($$); }
+rs_case_item
 | rs_case_483 rs_case_item { $$ = $1; P($$, $2); }
 ;
 

@@ -32,6 +32,12 @@ namespace mksvgrmr
                         {
                             var s = $"{name}_{extras.Count}";
                             var rule = new Rule(s, nodes);
+                            if(rule.RightHandSide.Count == 4 && rule.RightHandSide.SequenceEqual(new[] { "%empty", "|", rule.Name, RightHandSide.LastOrDefault() }))
+                            {
+                                // This is a one-or-more case.
+                                rule.RightHandSide[0] = RightHandSide.Last();
+                                RightHandSide.RemoveAt(RightHandSide.Count - 1);
+                            }
                             var currentRule = extras.FirstOrDefault(r => Enumerable.SequenceEqual(r.RightHandSide, rule.RightHandSide));
                             if(currentRule == null)
                             {
