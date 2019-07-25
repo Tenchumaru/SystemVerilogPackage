@@ -100,6 +100,7 @@ namespace mksvgrmr
             new[] { "left", "*", "/", "%" },
             new[] { "left", "+", "-" },
             new[] { "left", "<<", ">>", "<<<", ">>>" },
+            new[] { "nonassoc", "tagged" },
             new[] { "left", "<", "<=", ">", ">=", "inside", "dist" },
             new[] { "left", "==", "!=", "===", "!==", "==?", "!=?" },
             new[] { "left", "&" },

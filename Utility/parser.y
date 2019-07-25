@@ -298,7 +298,6 @@
 %token SYNC_ACCEPT_ON_
 %token SYNC_REJECT_ON_
 %token TABLE_
-%token TAGGED_
 %token TASK_
 %token THIS_
 %token THROUGHOUT_
@@ -356,6 +355,7 @@
 %left '&'
 %left EE BANGE EEE BANGEE EEQ BANGEQ
 %left '<' LE '>' GE INSIDE_ DIST_
+%nonassoc TAGGED_
 %left LL GG LLL GGG
 %left '+' '-'
 %left '*' '/' '%'
@@ -7540,7 +7540,8 @@ path_delay_expression
 ;
 
 tagged_union_expression:
-TAGGED_ member_identifier ansi_port_declaration_81 { C($$); T($$, @1, zero, zero); P($$, $2); P($$, $3); }
+TAGGED_ member_identifier { C($$); T($$, @1, zero, zero); P($$, $2); }
+| TAGGED_ member_identifier expression { C($$); T($$, @1, zero, zero); P($$, $2); }
 ;
 
 task_body_declaration:

@@ -76,6 +76,7 @@ namespace mksvgrmr
             ReplaceRightHandSide(q, "implicit_class_handle", "THIS_", "'.'", "|", "SUPER_", "'.'", "|", "THIS_", "'.'", "SUPER_", "'.'");
             q.Single(r => r.Name == "method_call_root").RightHandSide.Insert(1, "'.'");
             q.Single(r => r.Name == "method_call").RightHandSide.RemoveAt(1);
+            ReplaceRightHandSide(q, "tagged_union_expression", "TAGGED_", "member_identifier", "|", "TAGGED_ member_identifier", "expression");
 
             // Add missing rules.
             extras.Add(new Rule("c_identifier", "CID_"));
