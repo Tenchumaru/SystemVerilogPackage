@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using HtmlAgilityPack;
 
 namespace mksvgrmr
 {
@@ -33,35 +34,31 @@ namespace mksvgrmr
                 excludeIdentifiers = true;
                 args = args.Skip(1).ToArray();
             }
-            string lastSection = excludeIdentifiers ? "A.9.4" : "A.9.3";
             var text = File.ReadAllText(args[0]);
 
-            // Include only modules through identifier branches and exclude comments and strings.
-            text = text.Split(new[] { "A.1.3" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(new[] { "A.9.5" }, StringSplitOptions.RemoveEmptyEntries)[0];
-            text = Regex.Replace(text, @"^[\S\s]+?H2.", "", RegexOptions.IgnoreCase);
-            text = text.Split(new[] { "A.9.2" }, StringSplitOptions.RemoveEmptyEntries)[0] + text.Split(new[] { lastSection }, StringSplitOptions.RemoveEmptyEntries)[1];
-            text = text.Split(new[] { "A.8.8" }, StringSplitOptions.RemoveEmptyEntries)[0] + text.Split(new[] { "A.9.1" }, StringSplitOptions.RemoveEmptyEntries)[1];
-
             // Apply fixes.
-            text = Regex.Replace(text, @"<.span>\s*:\s", ":</span> ", RegexOptions.IgnoreCase); // broken literal
-            text = Regex.Replace(text, @"this[^.]*.", "this</SPAN> <SPAN CLASS=\"BNFkeyword\">.</SPAN> ");
-            text = Regex.Replace(text, @"super[^.]*.", "super</SPAN> <SPAN CLASS=\"BNFkeyword\">.</SPAN> ");
-            text = Regex.Replace(text, @"::=\s*<.p>", "::= ", RegexOptions.IgnoreCase);
+            text = text.Replace("uwire|</b></font>", "uwire</b></font> |"); // broken literal
+            text = text.Replace("\"DPI-C\"", "DPI-C");
+            text = text.Replace("\"DPI\"", "DPI");
+            text = text.Replace("::=!", "::=");
+            text = text.Replace("function_declaraton", "function_declaration");
+            text = text.Replace("href=\"#constant\">constant</a> <a href=\"#_expression\">_expression", "href=\"#constant_expression\">constant_expression");
+            foreach(var s in new[] { "const", "first_match", "output", "ref", "scalared", "task", "var", "void" })
+            {
+                text = text.Replace($"<a href=\"#{s}\">{s}</a>", $"<font color=\"red\"><b>{s}</b></font>");
+            }
 
             // Remove C identifiers.
             if(!excludeIdentifiers)
             {
-                ReplaceIdentifier("1267956", "c_identifier ::= ID", ref text);
-                ReplaceIdentifier("1031035", "simple_identifier ::= IDD", ref text);
-                ReplaceIdentifier("1031041", "system_function_identifier ::= DID", ref text);
-                ReplaceIdentifier("1031043", "system_task_identifier ::= DID", ref text);
+                text = text.Replace("[ <font color=\"red\"><b>a-zA-Z_</b></font> ] { [ <font color=\"red\"><b>a-zA-Z0-9_</b></font> ] }", "CID_");
+                text = text.Replace("<font color=\"red\"><b>\\</b></font> { <a href=\"#any_printable_ASCII_character_except_white_space\">any_printable_ASCII_character_except_white_space</a> } <a href=\"#white_space\">white_space</a>", "EID_");
+                text = text.Replace("[ <font color=\"red\"><b>a-zA-Z_</b></font> ] { [ <font color=\"red\"><b>a-zA-Z0-9_$</b></font> ] }", "CID_ | SID_");
+                text = text.Replace("<font color=\"red\"><b>$</b></font> [ <font color=\"red\"><b>a-zA-Z0-9_$</b></font> ] { [ <font color=\"red\"><b>a-zA-Z0-9_$</b></font> ] }", "SYSID_");
             }
 
-            // Remove superscripts.
-            text = Regex.Replace(text, @"<span\s*class..superscript[\S\s]*?span>", " ", RegexOptions.IgnoreCase);
-
             // Replace HTML token specifications with fancily quoted ones.
-            var rx = new Regex(@".span class..BNFkeyword..\s*([\S\s]*?)\s*..span.", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var rx = new Regex(".font color=.red...b.([^<]*?)..b...font.", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             Match parts;
             for(int i = 0; (parts = rx.Match(text, i)).Success;)
             {
@@ -76,20 +73,20 @@ namespace mksvgrmr
             // different place-holder for literal square brackets and curly braces.
             text = text.Replace("@''[''@", "@@OSB@@").Replace("@'']''@", "@@CSB@@").Replace("@''{''@", "@@OCB@@").Replace("@''}''@", "@@CCB@@");
 
-            // Remove anchor, break, emphasis, and header tags.
-            text = Regex.Replace(text, @"<a[\S\s]*?>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.a>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<br[^>]*.", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<em[\S\s]*?>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.em>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<h2[\S\s]+?h2>", " ", RegexOptions.IgnoreCase);
+            // Parse the HTML.
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(text);
 
-            // Remove the opening paragraph tags and replace the closing paragraph tags with a fancily formatted Yacc-rule-ending semicolon.
-            text = Regex.Replace(text, @"<p\s*class..bnf_syntaxitem.>", " ", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"<.p>", " ;;; ", RegexOptions.IgnoreCase);
+            // Include only modules through identifier branches and exclude comments and strings.
+            var skippedSections = new[] { "8.8 Strings", "9.2 Comments" };
+            var q = htmlDocument.DocumentNode.Descendants("pre").
+                SkipWhile(n => !n.PreviousSibling.PreviousSibling.InnerText.Contains("1.2 SystemVerilog source text")).
+                Where(n => !skippedSections.Any(s => n.PreviousSibling.PreviousSibling.InnerText.Contains(s))).
+                Select(n => n.InnerText);
+            text = String.Join("\r\n\r\n", q);
 
-            // Remove the rest of the tags.
-            text = Regex.Replace(text, @"<[\S\s]*?>", " ", RegexOptions.IgnoreCase);
+            // Replace double newlines with a fancily formatted Yacc-rule-ending semicolon.
+            text = Regex.Replace(text, "\r\n\r\n", " ;;;\r\n\r\n", RegexOptions.IgnoreCase);
 
             // Replace the entities.
             text = text.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&amp;", "&").Replace("&quot;", @"\");
@@ -120,14 +117,6 @@ namespace mksvgrmr
             }
 
             // Remove scanner-level constructs.
-            text = Regex.Replace(text, @"\sescaped_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\scell_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\sconfig_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\sinstance_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\slibrary_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\stext_macro_identifier\s*::=[^;]+...", " ");
-            text = Regex.Replace(text, @"\stopmodule_identifier\s*::=[^;]+...", " ");
-            text = text.Replace("escaped_identifier", "EID");
             text = text.Replace("string_literal", "STRING");
             text = Regex.Replace(text, @"\} \[ \{([^:]*)\} \]", "} { $1 }");
 
@@ -150,7 +139,7 @@ namespace mksvgrmr
             text = text.Replace(" $", " _d_");
 
             // Format for human readability.
-            text = Regex.Replace(text, @"\s+(\w+)\s*:?:=\s*", "\r\n$1:\r\n");
+            text = Regex.Replace(text, @"\s*(\w+)\s*:?:=\s*", "\r\n$1:\r\n");
             text = Regex.Replace(text, @"\s+\|\s*", "\r\n| ");
             text = Regex.Replace(text, @"\s+;;;\s*", "\r\n;\r\n\r\n");
             text = text.Trim();
@@ -159,10 +148,10 @@ namespace mksvgrmr
             using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
             {
                 // Print the token declarations.
-                Print("%token ID");
-                Print("%token EID");
-                Print("%token DID");
-                Print("%token IDD");
+                Print("%token CID_");
+                Print("%token EID_");
+                Print("%token SID_");
+                Print("%token SYSID_");
                 Print("%token STRING");
                 foreach(var pair in tokens)
                 {
