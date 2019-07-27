@@ -18,9 +18,9 @@ namespace mksvgrmr
         private static string[] leftTokens = { "==", "===", "!=", "!==", "=?=", "!?=", "&&", "||", "**", ">=", ">>", "<<", ">>>", "<<<" };
         private static string[] rightTokens = { "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>=", "<<<=", ">>>=" };
 
-        static void print(params object[] args)
+        static void Print(params object[] args)
         {
-            var s = string.Join(" ", args);
+            var s = String.Join(" ", args);
             fout.WriteLine(s);
         }
 
@@ -68,7 +68,7 @@ namespace mksvgrmr
                 i = parts.Index;
                 var token = parts.Groups[1].Value;
                 var literals = ws.Split(token);
-                token = " @''" + string.Join("''@ @''", literals) + "''@ ";
+                token = " @''" + String.Join("''@ @''", literals) + "''@ ";
                 text = text.Substring(0, parts.Index) + token + text.Substring(parts.Index + parts.Length);
             }
 
@@ -113,7 +113,7 @@ namespace mksvgrmr
                 }
                 else
                 {
-                    name = char.ToLower(key[0]) < 'a' || char.ToLower(key[0]) > 'z' || Regex.IsMatch(key, @"\W") ? "TOKEN" + ++j : key.ToUpper() + "_";
+                    name = Char.ToLower(key[0]) < 'a' || Char.ToLower(key[0]) > 'z' || Regex.IsMatch(key, @"\W") ? "TOKEN" + ++j : key.ToUpper() + "_";
                     tokens[key] = name;
                 }
                 text = rx.Replace(text, " " + name + " ", 1);
@@ -137,7 +137,10 @@ namespace mksvgrmr
             AddChoices(ref text);
 
             // Restore the literal brackets and braces.
-            Func<string, string> fn = s => { return s.Replace("@@OSB@@", "'['").Replace("@@CSB@@", "']'").Replace("@@OCB@@", "'{'").Replace("@@CCB@@", "'}'"); };
+            string fn(string s)
+            {
+                return s.Replace("@@OSB@@", "'['").Replace("@@CSB@@", "']'").Replace("@@OCB@@", "'{'").Replace("@@CCB@@", "'}'");
+            }
             text = fn(text);
 
             // Replace all white space with a single space.
@@ -156,43 +159,43 @@ namespace mksvgrmr
             using(fout = args.Length > 1 ? File.CreateText(args[1]) : Console.Out)
             {
                 // Print the token declarations.
-                print("%token ID");
-                print("%token EID");
-                print("%token DID");
-                print("%token IDD");
-                print("%token STRING");
+                Print("%token ID");
+                Print("%token EID");
+                Print("%token DID");
+                Print("%token IDD");
+                Print("%token STRING");
                 foreach(var pair in tokens)
                 {
                     string tokenType = leftTokens.Contains(pair.Key) ? "%left" : rightTokens.Contains(pair.Key) ? "%right" : "%token";
-                    print(tokenType, pair.Value, '"' + pair.Key.Replace(@"\", @"\\") + '"');
+                    Print(tokenType, pair.Value, '"' + pair.Key.Replace(@"\", @"\\") + '"');
                 }
 
                 // Print the separator between the Yacc sections.
-                print();
-                print("%%");
-                print();
+                Print();
+                Print("%%");
+                Print();
 
                 // Print the text.
-                print(text);
+                Print(text);
 
                 // Print the repeated item rules.
                 foreach(var part in repeatedItems.Values)
                 {
-                    print();
-                    print(part.name + ":");
-                    print("%empty");
-                    print("|", part.name, fn(string.Join(" ", part.rhs)));
-                    print(';');
+                    Print();
+                    Print(part.name + ":");
+                    Print("%empty");
+                    Print("|", part.name, fn(String.Join(" ", part.rhs)));
+                    Print(';');
                 }
 
                 // Print the optional item rules.
                 foreach(var part in optionalItems.Values)
                 {
-                    print();
-                    print(part.name + ":");
-                    print("%empty");
-                    print("|", fn(string.Join(" ", part.rhs)));
-                    print(';');
+                    Print();
+                    Print(part.name + ":");
+                    Print("%empty");
+                    Print("|", fn(String.Join(" ", part.rhs)));
+                    Print(';');
                 }
             }
         }
@@ -202,7 +205,7 @@ namespace mksvgrmr
             string s = "";
             foreach(var item in choices)
             {
-                s += string.Format(" choice_{0} ::= {1} ;;; ", item.Value, item.Key);
+                s += $" choice_{item.Value} ::= {item.Key} ;;; ";
             }
             text += s;
         }
@@ -218,7 +221,7 @@ namespace mksvgrmr
                 CheckForChoice(ref s, ref text);
                 ReplaceRepeatedItems(ref s);
                 var rhs = ws.Split(s.Trim());
-                var key = string.Join(":", rhs);
+                var key = String.Join(":", rhs);
                 string name;
                 if(optionalItems.ContainsKey(key))
                 {
@@ -244,7 +247,7 @@ namespace mksvgrmr
                 CheckForChoice(ref s, ref text);
                 ReplaceOptionalItems(ref s);
                 var rhs = ws.Split(s.Trim());
-                var key = string.Join(":", rhs);
+                var key = String.Join(":", rhs);
                 string name;
                 if(repeatedItems.ContainsKey(key))
                 {
@@ -273,7 +276,7 @@ namespace mksvgrmr
                     i = choices.Count;
                     choices.Add(s, i);
                 }
-                s = string.Format(" choice_{0} ", i);
+                s = $" choice_{i} ";
             }
         }
 
@@ -291,9 +294,6 @@ namespace mksvgrmr
         public string name;
         public string[] rhs;
 
-        public override string ToString()
-        {
-            return string.Format("{0}: {1}", name, string.Join(" ", rhs));
-        }
+        public override string ToString() => $"{name}: {String.Join(" ", rhs)}";
     }
 }
